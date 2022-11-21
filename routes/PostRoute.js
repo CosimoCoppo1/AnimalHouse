@@ -8,4 +8,4 @@ router.put('/:id', updatePost)
 router.delete('/:id', deletePost)
 router.get('/', getPosts)
 
-export default router
+module.exports = router

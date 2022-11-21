@@ -2,7 +2,7 @@ const PostModel = require('../models/postModel.js');
 
 // creating a post
 
-export const createPost = async (req, res) => {
+const createPost = async (req, res) => {
   const newPost = new PostModel(req.body);
 
   try {
@@ -15,7 +15,7 @@ export const createPost = async (req, res) => {
 
 // get a post
 
-export const getPost = async (req, res) => {
+const getPost = async (req, res) => {
   const id = req.params.id;
 
   try {
@@ -27,7 +27,7 @@ export const getPost = async (req, res) => {
 };
 
 // update post
-export const updatePost = async (req, res) => {
+const updatePost = async (req, res) => {
   const postId = req.params.id;
   //const { userId } = req.body;
 
@@ -45,7 +45,7 @@ export const updatePost = async (req, res) => {
 };
 
 // delete a post
-export const deletePost = async (req, res) => {
+const deletePost = async (req, res) => {
   const id = req.params.id;
   //const { userId } = req.body;
 
@@ -64,7 +64,7 @@ export const deletePost = async (req, res) => {
 
 
 // Get posts
-export const getPosts = async (req, res) => {
+const getPosts = async (req, res) => {
   try {
     const posts = await PostModel.find({});
 
@@ -73,3 +73,11 @@ export const getPosts = async (req, res) => {
     res.status(400).json(error);
   }
 };
+
+module.exports = {
+  createPost,
+  getPost,
+  updatePost,
+  deletePost,
+  getPosts  
+}
