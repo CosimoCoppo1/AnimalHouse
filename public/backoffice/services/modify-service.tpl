@@ -124,7 +124,7 @@
 									<a class="nav-link" href="backoffice/services/">Serivizi in negozio</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">Servizi di comunità</a>
+									<a class="nav-link" href="backoffice/community/">Servizi di comunità</a>
 								</li>
 							</ul>
 						</div>

@@ -7,6 +7,7 @@ const Service  = require('../models/service')
 const Location = require('../models/location')
 const Bookable = require('../models/bookable_service')
 const User    = require('../models/user')
+const Post    = require('../models/postModel')
 const fs      = require('fs').promises;
 const path    = require('path');
 
@@ -19,6 +20,7 @@ let dbPopulate = async function()
 	await Service.deleteMany();
 	await Bookable.deleteMany();
 	await User.deleteMany();
+	await Post.deleteMany();
 
 	let petsMap = {};
 	petsMap = await petPopulate();
@@ -37,6 +39,7 @@ let dbPopulate = async function()
 	await BookableServicePopulate(petsMap, locationsMap, servicesMap);
 
 	await userPopulate();
+	await postPopulate();
 }
 
 async function petPopulate()
@@ -166,6 +169,20 @@ async function userPopulate()
 	for (let i = 0; i < users.length; i++) {
 		const u = new User(users[i]);
 		await u.save();
+	}
+}
+
+async function postPopulate()
+{
+	let posts = await fs.readFile(
+		path.join(global.rootDir, 'dbImage/posts.json'), 
+		'utf8');
+
+	posts = JSON.parse(posts);
+
+	for (let i = 0; i < posts.length; i++) {
+		const p = new Post(posts[i]);
+		await p.save();
 	}
 }
 
