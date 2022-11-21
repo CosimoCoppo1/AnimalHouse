@@ -1,6 +1,6 @@
-import express from 'express'
+const express = require('express') 
 const router = express.Router()
-import multer from 'multer'
+const multer = require('multer') 
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {

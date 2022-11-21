@@ -1,5 +1,5 @@
-import express from 'express'
-import { createPost, deletePost, getPost, getPosts, updatePost } from '../controllers/PostController.js'
+const express = require('express')
+const { createPost, deletePost, getPost, getPosts, updatePost } = require('../controllers/PostController.js') 
 const router = express.Router()
 
 router.post('/',createPost)
