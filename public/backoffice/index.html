@@ -8,120 +8,76 @@
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
+		<script src="jquery-3.6.0.js"></script>
 		<script>
-			function set_img_visibility(btn, vis)
+
+			function login()
 			{
-				btn.children[0].children[0].style.visibility = vis;
+				const form = $('#login-form');
+				const action = 'http://site212225.tw.cs.unibo.it/auth/admin/login';
+
+				const email    = $('#email').val();
+				const password = $('#password').val();
+				const adminData = { 
+						'email': email,
+						'password': password
+					};
+
+				$.post(action, adminData)
+				.then((res) => {
+					const home = 'http://site212225.tw.cs.unibo.it/backoffice/home.html';
+					$(location).attr('href', home);
+				})
+				.catch((err) => {
+					alert('Login fallito');
+				});
 			}
+				
+
+			$(document).ready(() => {
+				$('#login-form').submit((event) => {
+					login();
+					return false;
+				});
+			});
+
 		</script>
 	</head>
 
-	<body>
-		<header>
-			<div class="container-fluid">
-				<div class="row d-flex flex-nowrap my-3 px-0 px-sm-5">
-					<div class="col-2 col-lg-1">
-						<span><img class="img-fluid" src="backoffice/img/company.png" alt="Company logo"></span>
-					</div>
-					<div class="col-auto d-flex align-items-center">
-						<h1>BACK OFFICE APPS</h1>
-					</div>
-					<!--
-					<div class="col-auto d-inline-flex align-items-center ms-auto">
-						<button type="button" class="btn btn-danger">Logout</button>
-					</div>
-					-->
+	<body class="bg-secondary" style="--bs-bg-opacity: .15;">
+		<div class="container">
+			<div class="row d-flex flex-nowrap justify-content-center my-3 px-0 px-sm-5">
+				<div class="col-2 col-lg-1">
+					<span>
+						<img class="img-fluid" src="backoffice/img/company.png" alt="Company logo">
+					</span>
+				</div>
+				<div class="col-auto d-flex align-items-center">
+					<h1>BACK OFFICE APPS</h1>
 				</div>
 			</div>
-
-			<!-- NAVBAR GLOBAL -->
-			<div class="row border-top border-bottom border-secondary bg-secondary mt-3 px-0 px-sm-5" style="--bs-bg-opacity: .15;">
-				<nav class="navbar navbar-expand-lg" style="padding-top: 4px;padding-bottom: 4px;">
-					<div class="container-fluid">
-						<a class="navbar-brand active" aria-current="page" href="backoffice/">Backoffice</a>
-						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						  <span class="navbar-toggler-icon"></span>
-						</button>
-						<div class="collapse navbar-collapse" id="navbarNav">
-							<ul class="navbar-nav">
-								<li class="nav-item">
-									<a class="nav-link" href="backoffice/users/">Gestione utenti</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="backoffice/ecommerce">Ecommerce</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="backoffice/services/">Serivizi in negozio</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="backoffice/community/">Servizi di comunità</a>
-								</li>
-							</ul>
-						</div>
+			<div class="row justify-content-center mx-1">
+				<div class="card shadow-lg p-3 border border-success border-2" style="width: 35rem; border-radius: 25px;">
+					<div class="card-body">
+						<h2 class="card-title text-center">Login</h2>
+						<h3 class="card-subtitle mb-2 text-center text-muted">Inserisci email e password</h3>
+						<hr>
+						<form id="login-form" method="POST" action="backoffice/auth/admin/login">
+							<div class="mb-3">
+								<label for="email" class="form-label">Inserisci la tua email:</label>
+								<input type="text" class="form-control" id="email">
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label">Inserisci la tua password:</label>
+								<input type="password" class="form-control" id="password">
+							</div>
+							<div class="mb-3 d-flex justify-content-end">
+								<button type="submit" class="btn btn-sm btn-danger">Login</button>
+							</div>
+						</form>
 					</div>
-				</nav>
+				</div>
 			</div>
-			<!-- END navbar global -->
-
-		</header>
-
-		<main class="my-5">
-			<div class="container d-flex flex-wrap justify-content-center justify-content-xxl-between">
-				<div class="card m-3" style="width: 25rem;">
-					<span class="pt-4 d-flex justify-content-center"><img src="backoffice/img/gestione-utenti.png" alt="" height="64"></span>
-					<div class="card-body">
-						<h3 class="card-title text-center">Gestione Utenti</h3>
-						<p class="card-text">
-							Gestione delle informazioni sui clienti: registrazione, login, cambio password, 
-							reset password, rimozione account, animali preferiti e punteggi giochi.
-						</p>
-						<a href="backoffice/users/" type="button" class="btn btn-outline-dark" onmouseover="set_img_visibility(this, 'hidden')" onmouseleave="set_img_visibility(this, 'visible')">
-							Vai <span><img src="backoffice/img/arrow-2.jpeg" alt="" height="16"></span>
-						</a>
-					</div>
-				</div>	
-				<div class="card m-3" style="width: 25rem;">
-					<span class="pt-4 d-flex justify-content-center"><img src="backoffice/img/ecommerce.png" alt="" height="64"></span>
-					<div class="card-body">
-						<h3 class="card-title text-center">E-commerce</h3>
-						<p class="card-text">
-							Gestione dei prodotti nel catalogo online: aggiungi o togli prodotti, prezzi o descrizioni.
-						</p>
-						<a role="button" href="backoffice/ecommerce" class="btn btn-outline-dark" onmouseover="set_img_visibility(this, 'hidden')" onmouseleave="set_img_visibility(this, 'visible')">
-							Vai <span><img src="backoffice/img/arrow-2.jpeg" alt="" height="16"></span>
-						</a>
-					</div>
-				</div>	
-				<div class="card m-3" style="width: 25rem;">
-					<span class="pt-4 d-flex justify-content-center"><img src="backoffice/img/negozio.png" alt="" height="64"></span>
-					<div class="card-body">
-						<h3 class="card-title text-center">Servizi in negozio</h3>
-						<p class="card-text">
-							Gestione dei servizi offerti in uno dei punti vendità: effettua, modifica o cancella prenotazioni e visualizza le disponibilità.
-						</p>
-						<a role="button" href="backoffice/services/" class="btn btn-outline-dark" onmouseover="set_img_visibility(this, 'hidden')" onmouseleave="set_img_visibility(this, 'visible')">
-							Vai <span><img src="backoffice/img/arrow-2.jpeg" alt="" height="16"></span>
-						</a>
-					</div>
-				</div>	
-				<div class="card m-3" style="width: 25rem;">
-					<span class="pt-4 d-flex justify-content-center"><img src="backoffice/img/community.png" alt="" height="64"></span>
-					<div class="card-body">
-						<h3 class="card-title text-center">Servizi di comunità</h3>
-						<p class="card-text">
-							Gestione degli spazi dedicati alla comunità: aggiungi, controlla o cancella i messaggi nelle bacheche.
-						</p>
-						<a role="button" href="backoffice/community/" class="btn btn-outline-dark" onmouseover="set_img_visibility(this, 'hidden')" onmouseleave="set_img_visibility(this, 'visible')">
-							Vai <span><img src="backoffice/img/arrow-2.jpeg" alt="" height="16"></span>
-						</a>
-					</div>
-				</div>	
-			</div>
-		</main>
-		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">
-			<div class="container-fluid py-5">
-				<p class="text-center">Questa è una frase finale per riempire lo spazio del footer</p>
-			</div>
-		</footer>
+		</div>
 	</body>
 </html>
