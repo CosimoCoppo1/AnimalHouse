@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="it">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +28,7 @@
 				<div class="row border-top border-bottom border-secondary bg-secondary mt-3 px-0 px-sm-5" style="--bs-bg-opacity: .15;">
 					<nav class="navbar navbar-expand-lg" style="padding-top: 4px;padding-bottom: 4px;">
 						<div class="container-fluid">
-							<a class="navbar-brand" href="backoffice/">Backoffice</a>
+							<a class="navbar-brand" href="backoffice/home.html">Backoffice</a>
 							<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 							  <span class="navbar-toggler-icon"></span>
 							</button>
@@ -70,7 +70,7 @@
 												<img src="{{this.img}}" alt="{{this.alt}}" class="img-fluid">
 											</div>
 											<div class="col-7 d-flex align-items-center justify-content-center">
-												<h4>{{this.name}}</h4>
+												<h2 class="h4">{{this.name}}</h2>
 											</div>
 										</div>
 										<div class="card-body">
