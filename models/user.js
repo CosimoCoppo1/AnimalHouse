@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true, "Please add a password"],
         minlength: 6,
-        select: false,
+        select: false 
+		//il campo 'password' non viene selezionato con una User.find
     },
     resetPasswordToken: String,
     resetPasswordExpire: Date,

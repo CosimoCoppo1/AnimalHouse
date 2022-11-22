@@ -34,7 +34,8 @@ app.use('/backoffice/services', require('./tpl-script/backoffice-service'))
 app.use('/backoffice/ecommerce', require('./tpl-script/backoffice-ecommerce'))
 
 
-app.use('/auth', require('./routes/auth'))
+app.use('/auth/user/', require('./routes/auth'))
+app.use('/auth/admin/', require('./routes/adminAuth'))
 app.use('/private', require('./routes/private')) 
 app.use('/images', express.static('images'));
 app.use('/posts', require('./routes/PostRoute.js'))

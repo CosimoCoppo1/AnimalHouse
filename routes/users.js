@@ -30,16 +30,10 @@ router.get('/', async (req, res) => {
 		if ('id' in req.query) dbQuery['_id'] = req.query.id;
 
         const userList = await User.find(dbQuery).lean();
-		let userListNoPsw = [];
-		for (let i = 0; i < userList.length; i++) {
-			userListNoPsw.push(
-				{
-					'_id': userList[i]._id,
-					'username': userList[i].username,
-					'email': userList[i].email
-				});
-		}
-		res.status(200).json(userListNoPsw);
+		/* La password non viene restiuta da mongo,
+		 * vedi select: false in models/user.js */
+
+		res.status(200).json(userList);
     }
 	catch (err) {
         res.status(400).json({message: err.message});
