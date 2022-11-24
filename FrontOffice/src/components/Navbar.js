@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
 
@@ -24,6 +24,9 @@ const Navbar = ({click}) => {
                 </li>
                 <li className="nav-item">
                     <Link className="navbar-brand" to={'/e-commerce'}> E-commerce </Link>
+                </li>
+                <li className="nav-item">
+                    <Link className="navbar-brand" to={'/services'}> Services </Link>
                 </li>
                 <li className="nav-item">
                     <Link className="cart_link" to={'/cart'}> 

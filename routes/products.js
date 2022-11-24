@@ -88,6 +88,43 @@ router.delete('/:id', async (req, res) => {
     }
 })
 
+router.post('/buy-from-cart', async (req, res) =>{
+
+	try {
+		const {cartItemsToBuy} = req.body
+		let msg = []
+
+		for (let item of cartItemsToBuy){
+			let itemInDb = await Product.findById(item.product)		
+			if(item.qty > itemInDb.pieces_left){
+				msg.push(`Of product ${item.title} there are ${itemInDb.pieces_left} pieces left \n`)
+			}
+		}
+
+		if(msg.length == 0){
+			for (let item of cartItemsToBuy){
+				let itemInDb = await Product.findById(item.product)
+				itemInDb.pieces_left -= item.qty
+				await itemInDb.save()			
+			}
+		}
+
+
+		if(msg.length == 0){
+			msg.push("Products purchased succesfully!")
+			res.json({result: 0, msg})
+		}else{
+			msg.push("\n Please, change your selections")
+			res.json({result: 1, msg})
+		}
+
+	}catch(err) {
+		res.status(400).json({message: err.message})
+	}
+})
+
+
+
 router.get("/front/:id", getProductById)
 
 

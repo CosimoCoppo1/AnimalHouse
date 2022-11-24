@@ -9,6 +9,7 @@ import Home from './components/Home'
 import ECommerce from './components/e-commerce/ECommerce'
 import CartScreen from './components/e-commerce/CartScreen'
 import ProductScreen from './components/e-commerce/ProductScreen'
+import Services from './components/Services'
 
 import Login from './components/auth/Login'
 import SignUp from './components/auth/SignUp'
@@ -21,7 +22,7 @@ import ResetPassword from './components/auth/ResetPassword'
 const App = () => {
 
   const [sideToggle, setSideToggle] = useState(false)
-
+  
   return (
     <Router>
       <div className="App">
@@ -31,8 +32,9 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/e-commerce" element={<ECommerce />} />
-          <Route exact path="/products/:id" element={<ProductScreen />} />
-          <Route exact path="/cart" element={<CartScreen />} />   
+          <Route exact path="/products/:id" element={<ProductScreen/>} />
+          <Route exact path="/cart" element={<CartScreen/>} />
+          <Route exact path="/services" element={<Services />} />   
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<SignUp />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />

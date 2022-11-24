@@ -18,7 +18,7 @@ const getProductById = async (req, res) => {
         res.json(product)
     }catch(err){
         console.error(err)
-        return res.status(500).json({message: err.message})
+        return res.status(400).json({message: err.message})
     }   
 }
 

@@ -41,7 +41,6 @@ const PostShare = ({setShared}) => {
         console.log(err);
       }
     }
-    console.log(newPost);
     uploadPost(newPost);
     
     setShared(true)

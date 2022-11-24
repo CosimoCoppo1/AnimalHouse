@@ -1,5 +1,4 @@
-import React from 'react'
-import { useEffect } from "react";
+import {React, useEffect} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Cart from '../Cart'
@@ -10,9 +9,10 @@ const CartScreen = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  const { cartItems, messages } = cart;
+  const { cartItems, msg } = cart;
 
-  useEffect(() => {}, []);
+  useEffect(() => {             
+  }, [cartItems, msg]);
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -34,7 +34,7 @@ const CartScreen = () => {
 
   const checkoutHandler = () => {
     dispatch(buyFromCart());
-    alert(messages)
+    alert(msg)
   };
 
 

@@ -31,18 +31,18 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
       };
     case actionTypes.BUY_THE_CART:
       const {result, msg} = action.payload
-
+      
       if(result === 0){
         return {
           ...state,
           cartItems: [], 
-          messages: msg
+          msg: msg
         };    
       }else{
         return {
           ...state,
           cartItems: state.cartItems, 
-          messages: msg
+          msg: msg
         }
       }
       
