@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react'
+import {React} from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Cart from '../Cart'
@@ -9,10 +9,7 @@ const CartScreen = () => {
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  const { cartItems, msg } = cart;
-
-  useEffect(() => {             
-  }, [cartItems, msg]);
+  const { cartItems } = cart;
 
   const qtyChangeHandler = (id, qty) => {
     dispatch(addToCart(id, qty));
@@ -33,7 +30,8 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-    dispatch(buyFromCart());
+    dispatch(buyFromCart()) 
+    let msg = localStorage.getItem("cartMsg")
     alert(msg)
   };
 
@@ -43,8 +41,7 @@ const CartScreen = () => {
         <div className="cartscreen">
             <div className="cartscreen__left">
                 <h2>Shopping Cart</h2>
-
-                {cartItems.length === 0 ? (
+                {cartItems.length === 0 ? (                                    
                     <div>
                       Your Cart Is Empty <Link to="/e-commerce">Go Back</Link>
                     </div>
@@ -66,7 +63,7 @@ const CartScreen = () => {
                 </div>
                 <div>
                     <button onClick={() => checkoutHandler()} disabled={cartItems.length === 0}>
-                      Proceed To Checkout
+                      Proceed To Checkout                    
                     </button>
                 </div>
             </div>
