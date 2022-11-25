@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="it">
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,16 +35,16 @@
 
 				if (users.length == 0) {
 					innerHTML += `
-						<h3 class="fw-bold text-secondary text-center">Nessun risultato...</h3>
+						<h2 class="fw-bold text-secondary text-center h3">Nessun risultato...</h2>
 						<p class="text-secondary text-center">
 							Non ci sono utenti registrati.
 						</p>`;
 				}
 				else {
 					innerHTML += `
-						<h3 class="text-secondary">
+						<h2 class="text-secondary h3">
 							<span class="fw-bold">Utenti registrati:</span>
-						</h3>
+						</h2>
 					`;
 				}
 
@@ -57,7 +57,7 @@
 								</div>
 								<div>
 									<a role="button" href="backoffice/users/modifyUser.html?id=${users[i]._id}" class="btn p-0" aria-label="Modifica utente corrente">
-										<img src="backoffice/img/icons8-edit-32.png" height="16" alt="">
+										<img src="backoffice/img/icons8-edit-32.png" height="16" alt="Modifica utente corrente">
 									</a>
 									<button type="button" onclick="deleteUser('${users[i]._id}')" class="btn p-0" aria-label="Elimina utente corrente">
 										<img src="backoffice/img/trash-9-32.png" height="16" alt="">
@@ -113,7 +113,7 @@
 			<div class="row border-top border-bottom border-secondary bg-secondary mt-3 px-0 px-sm-5" style="--bs-bg-opacity: .15;">
 				<nav class="navbar navbar-expand-lg" style="padding-top: 4px;padding-bottom: 4px;">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="backoffice/">Backoffice</a>
+						<a class="navbar-brand" href="backoffice/home.html">Backoffice</a>
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 						  <span class="navbar-toggler-icon"></span>
 						</button>
