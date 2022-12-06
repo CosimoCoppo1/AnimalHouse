@@ -7,28 +7,25 @@ import { addToCart } from "../../redux/actions/cartActions";
 
 const ProductScreen = () => {
 
-  const { id } = useParams();    
+  const { id } = useParams();  
+  const [qty, setQty] = useState(1);
   const navigate = useNavigate()
-
-  const [qty, setQty] = useState(0);
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.getProductDetails);
   const { loading, error, product } = productDetails;
 
-  useEffect(() => {
-    if (product && id !== product._id) {
-      dispatch(getProductDetails(id));
-    }
-    // if(qty > product.pieces_left){
-    //     setQty(product.pieces_left)
-    // }
+  useEffect(() => { 
+    dispatch(getProductDetails(id));       
   }, [dispatch, id, qty]);
+
+
 
   const addToCartHandler = () => {
     dispatch(addToCart(product._id, qty));
     navigate(`/cart`);
   };
+  
   return (
     <div className="productscreen">
         {loading ? (
@@ -65,8 +62,8 @@ const ProductScreen = () => {
                                 {(product.pieces_left > 0) ? (
                                     <select value={qty} onChange={(e) => setQty(e.target.value)}>
                                         {[...Array(product.pieces_left).keys()].map((x) => (
-                                        <option key={x + 1} value={x + 1}>
-                                            {x + 1}
+                                        <option key={x+1} value={x+1}>
+                                            {x+1}
                                         </option>
                                         ))}
                                     </select>
@@ -77,7 +74,7 @@ const ProductScreen = () => {
                             
                         </p>
                         <p>
-                            <button type="button" onClick={addToCartHandler} disabled={qty === 0}>
+                            <button type="button" onClick={addToCartHandler} disabled={product.pieces_left === 0}>
                             Add To Cart
                             </button>
                         </p>

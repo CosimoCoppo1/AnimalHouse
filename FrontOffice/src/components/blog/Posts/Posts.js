@@ -11,7 +11,6 @@ const Posts = ({shared, setShared}) => {
     try {
       const { data } = await axios.get('http://localhost:8000/posts')
       setposts(data) 
-      console.log("getPosts")
     } catch (error) {
       console.log(error);
     }

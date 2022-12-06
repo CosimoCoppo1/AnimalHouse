@@ -1,7 +1,7 @@
 import * as actionTypes from "../constants/cartConstants";
 
 const CART_INITIAL_STATE = {
-  cartItems: [],
+  cartItems: []
 };
 
 export const cartReducer = (state = CART_INITIAL_STATE, action) => {
@@ -30,19 +30,17 @@ export const cartReducer = (state = CART_INITIAL_STATE, action) => {
         cartItems: state.cartItems.filter((x) => x.product !== action.payload),
       };
     case actionTypes.BUY_THE_CART:
-      const {result, msg} = action.payload
-
+      const {result} = action.payload
+      
       if(result === 0){
         return {
           ...state,
-          cartItems: [], 
-          messages: msg
+          cartItems: []
         };    
       }else{
         return {
           ...state,
-          cartItems: state.cartItems, 
-          messages: msg
+          cartItems: state.cartItems
         }
       }
       

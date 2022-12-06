@@ -19,7 +19,7 @@ const cartItemsInLocalStorage = localStorage.getItem("cart")
 
 const INITIAL_STATE = {
   cart: {
-    cartItems: cartItemsInLocalStorage,
+    cartItems: cartItemsInLocalStorage
   },
 };
 

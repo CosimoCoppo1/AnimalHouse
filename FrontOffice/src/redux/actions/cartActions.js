@@ -31,11 +31,13 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 export const buyFromCart = () => async (dispatch, getState) => {
   const cartItemsToBuy = JSON.parse(localStorage.getItem("cart"));
     
-  const {data} = await axios.post(`/products/buy-from-cart`, {cartItemsToBuy})     
+  const {data} = await axios.post(`/products/buy-from-cart`, {cartItemsToBuy}) 
   
+  localStorage.setItem("cartMsg", data.msg)
+
   dispatch({
     type: actionTypes.BUY_THE_CART,
-    payload: data.data
+    payload: data
   });
     
   localStorage.setItem("cart", JSON.stringify(getState().cart.cartItems));

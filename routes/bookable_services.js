@@ -4,6 +4,7 @@ const Pet      = require('../models/pet')
 const Location = require('../models/location')
 const Service  = require('../models/service')
 const Bookable_service = require('../models/bookable_service')
+const Reservation = require('../models/reservation')
 
 
 router.get('/', async (req, res) => {
@@ -125,5 +126,46 @@ router.delete('/:id/', async (req, res) => {
 		res.status(400).json({ 'message': err.message });
 	}
 });
+
+router.post('/reservation', async (req, res) => {
+
+	const {qty, user_id, service_id} = req.body
+	let reservationResult = false
+	let serviceR = {}
+
+    try{
+		const serviceToBook = await Bookable_service.findById(service_id)
+
+		if(serviceToBook.reservation_left >= qty){
+			//riserva possibile
+			serviceR = await Reservation.create({
+				qty, user_id, service_id
+			})
+
+			serviceToBook.reservation_left -= qty
+			await serviceToBook.save()
+
+			reservationResult = true
+
+			res.json({reservationResult, serviceR})
+		}else{
+			//quantità riserva non disponibile
+			res.json({reservationResult, serviceR})
+		}
+
+    }catch (err){
+        res.status(400).json({ 'message': err.message });
+    }
+
+})
+
+router.get('/reservation', async (req, res) => {
+	try{
+		const recerveces = await Reservation.find({})
+		res.json(recerveces)
+	}catch(err){
+		res.status(400).json({ 'message': err.message });
+	}   
+})
 
 module.exports = router
