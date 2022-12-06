@@ -22,13 +22,12 @@
 					'password': password
 				};
 
-				$.post(`http://site212225.tw.cs.unibo.it/auth/register`, userData)
+				$.post(`http://site212225.tw.cs.unibo.it/auth/user/register`, userData)
 				.then((res) => {
-					
-					alert('Utente registrato con successo');
+					$('#res-success').modal('show');					
 				})
 				.catch((err) => {
-					alert('Registrazione utente fallita');
+					$('#res-fail').modal('show');					
 				});
 
 			}
@@ -117,6 +116,48 @@
 						<button type="submit" class="btn btn-success">Registra</button>
 					</div>
 				</form>
+
+				<!-- MODAL success -->
+				<div id="res-success" class="modal" tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+					  		<div class="modal-header">
+								<h2 class="modal-title h4">Registrazione nuovo utente</h2>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					  		</div>
+					  		<div class="modal-body">
+								<p>Utente registrato con <span class="text-success">successo</span>.</p>
+					  		</div>
+					  		<div class="modal-footer">
+								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+								<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
+					  		</div>
+						</div>
+				  	</div>
+				</div>
+				<!-- END modal success -->
+
+				<!-- MODAL fail -->
+				<div id="res-fail" class="modal" tabindex="-1">
+					<div class="modal-dialog">
+						<div class="modal-content">
+					  		<div class="modal-header">
+								<h2 class="modal-title h4">Registrazione nuovo utente</h2>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					  		</div>
+					  		<div class="modal-body">
+								<p>Registrazione utente <span class="text-danger">fallita</span>.</p>
+					  		</div>
+					  		<div class="modal-footer">
+								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+								<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
+					  		</div>
+						</div>
+				  	</div>
+				</div>
+				<!-- END modal fail -->
+
+
 			</div>
 		</main>
 		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">

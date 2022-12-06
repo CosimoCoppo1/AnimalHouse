@@ -24,6 +24,17 @@ let dbPopulate = async function()
 	await Admin.deleteMany();
 	await Post.deleteMany();
 
+	/* https://mongoosejs.com/docs/api.html#model_Model-syncIndexes */
+	await Pet.syncIndexes();
+	await Section.syncIndexes();
+	await Product.syncIndexes();
+	await Location.syncIndexes();
+	await Service.syncIndexes();
+	await Bookable.syncIndexes();
+	await User.syncIndexes();
+	await Admin.syncIndexes();
+	await Post.syncIndexes();
+
 	let petsMap = {};
 	petsMap = await petPopulate();
 
@@ -74,12 +85,13 @@ async function sectionsPopulate(petsMap)
 	sections = JSON.parse(sections);
 
 	for (let i = 0; i < sections.length; i++) {
+		let petName = sections[i].pet;
 		sections[i].pet = petsMap[sections[i].pet];
 
 		const s = new Section(sections[i]);
 		const snew = await s.save();
 
-		sectionsMap[snew.name] = snew._id;
+		sectionsMap[`${petName}-${snew.name}`] = snew._id;
 	}
 
 	return sectionsMap;
@@ -94,8 +106,8 @@ async function productsPopulate(petsMap, sectionsMap)
 	products = JSON.parse(products);
 
 	for (let i = 0; i < products.length; i++) {
+		products[i].section = sectionsMap[`${products[i].pet}-${products[i].section}`];
 		products[i].pet = petsMap[products[i].pet];
-		products[i].section = sectionsMap[products[i].section];
 
 		const p = new Product(products[i]);
 		await p.save();

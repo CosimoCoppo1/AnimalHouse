@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const productSchema = new mongoose.Schema({
+const sectionSchema = new mongoose.Schema({
     pet: {
         type: mongoose.Schema.Types.ObjectId,
 		ref: 'pet',
@@ -8,8 +8,7 @@ const productSchema = new mongoose.Schema({
     },
     name: {
         type: String,
-        required: true,
-		unique: true
+        required: true
     },
 	img: {
 		type: String,
@@ -25,4 +24,6 @@ const productSchema = new mongoose.Schema({
 	}
 });
 
-module.exports = mongoose.model('section', productSchema)
+sectionSchema.index({ pet: 1, name: 1 }, { unique: true });
+
+module.exports = mongoose.model('section', sectionSchema)
