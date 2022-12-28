@@ -17,7 +17,7 @@ const ForgotPassword = () => {
     };
 
     try {
-      const { data } = await axios.post("/auth/forgotpassword", { email }, config);
+      const { data } = await axios.post("/auth/user/forgotpassword", { email }, config);
 
       setSuccess(data.data);
     } catch (error) {

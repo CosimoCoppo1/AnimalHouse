@@ -28,7 +28,7 @@ const SignUp = () => {
 
     try {
       
-      const { data } = await axios.post("/auth/register", {username, email, password}, config);
+      const { data } = await axios.post("/auth/user/register", {username, email, password}, config);
       localStorage.setItem("authToken", data.token);
       navigate("/e-commerce");
 

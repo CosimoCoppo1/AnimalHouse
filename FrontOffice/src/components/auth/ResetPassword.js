@@ -29,7 +29,7 @@ const ResetPassword = () => {
 
     try {
 
-      const { data } = await axios.put(`/auth/resetpassword/${resetToken}`, {password}, config);      
+      const { data } = await axios.put(`/auth/user/resetpassword/${resetToken}`, {password}, config);      
       setSuccess(data.data);
       
     } catch (error) {

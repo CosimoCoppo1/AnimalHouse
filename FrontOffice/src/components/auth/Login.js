@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -8,33 +8,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [privateData, setPrivateData] = useState("");
   const navigate = useNavigate();
+
   
-  useEffect(() => {    
-    const fetchPrivateDate = async () => {
-      const config = {
-         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("authToken")}`,
-        }
-      };
-
-      try {
-
-        const { data } = await axios.get("/private", config);
-        setPrivateData(data.data);
-
-      } catch (error) {
-        localStorage.removeItem("authToken");
-        setError("You are not authorized please login");
-      }
-    };
-
-    fetchPrivateDate();
-  }, [privateData]);
-
-
   const loginHandler = async (e) => {
     e.preventDefault();
 
@@ -44,7 +20,7 @@ const Login = () => {
 
     try {
 
-      const { data } = await axios.post("/auth/login", {email, password}, config);
+      const { data } = await axios.post("/auth/user/login", {email, password}, config);
       localStorage.setItem("authToken", data.token);
       navigate("/e-commerce")
       
@@ -56,8 +32,8 @@ const Login = () => {
   };
 
   const logoutHandler = () => {
-    localStorage.removeItem("authToken")
-    setPrivateData("")    
+    localStorage.removeItem("authToken")   
+    navigate("/")
   }
 
 
@@ -113,7 +89,7 @@ const Login = () => {
     :
       <div>
         <div style={{background: "green", color: "white"}}>
-          {privateData}
+          <h3>You are logged in</h3>
         </div>
 
         <button onClick={() => logoutHandler()}>Logout</button>

@@ -37,12 +37,11 @@ const SideDrawer = ({show, click}) => {
               </span>
             </Link>
           </li>
-          <li className="nav-auth">
-            <Link className="navbar-brand" to={'/login'}> Login </Link>
-          </li>
-          <li className="nav-auth">
-            <Link className="navbar-brand" to={'/register'}> Sign up </Link>
-          </li>
+          <li className="nav-item">
+                    <Link className="navbar-brand" to={'/auth'}>
+                        <i className="fa-sharp fa-solid fa-user"></i>
+                    </Link>
+                </li>       
         </ul>
       </div>
     )
