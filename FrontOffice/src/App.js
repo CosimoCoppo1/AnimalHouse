@@ -27,7 +27,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Navbar click={() => setSideToggle(true)}/> 
+        <Navbar click={() => setSideToggle(true)} /> 
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
         <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>       
         <Routes>
@@ -37,8 +37,8 @@ const App = () => {
           <Route exact path="/cart" element={<CartScreen/>} />
           <Route exact path="/services" element={<Services />} />   
           <Route exact path="/auth" element={<Auth />} />
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<SignUp />} />
+          <Route exact path="/login" element={<Login />}  />
+          <Route exact path="/register" element={<SignUp />}  />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
           <Route exact path="/resetpassword/:resetToken" element={<ResetPassword />} />
         </Routes>

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -9,7 +9,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
+
 
 
   const registerHandler = async (e) => {
@@ -30,7 +30,10 @@ const SignUp = () => {
       
       const { data } = await axios.post("/auth/user/register", {username, email, password}, config);
       localStorage.setItem("authToken", data.token);
-      navigate("/e-commerce");
+      localStorage.setItem("userName", data.username);
+      localStorage.setItem("userId", data.userId);
+      window.location.href = "/e-commerce"
+      
 
     } catch (error) {
       setError(error.response.data.error);

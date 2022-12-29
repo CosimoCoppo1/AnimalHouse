@@ -1,14 +1,13 @@
 import React from "react";
 import { useState} from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
 
   
   const loginHandler = async (e) => {
@@ -22,18 +21,21 @@ const Login = () => {
 
       const { data } = await axios.post("/auth/user/login", {email, password}, config);
       localStorage.setItem("authToken", data.token);
-      navigate("/e-commerce")
-      
+      localStorage.setItem("userName", data.username);
+      localStorage.setItem("userId", data.userId);
+      window.location.href = "/e-commerce"               
 
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {setError("")}, 5000);
-    }
+    } 
   };
 
   const logoutHandler = () => {
-    localStorage.removeItem("authToken")   
-    navigate("/")
+    localStorage.removeItem("authToken")
+    localStorage.removeItem("userName")
+    localStorage.removeItem("userId")  
+    window.location.href = "/"
   }
 
 

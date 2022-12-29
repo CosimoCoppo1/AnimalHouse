@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
 
@@ -9,7 +8,7 @@ const Navbar = ({click}) => {
 
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
-  };
+  };  
 
   return (
     <div>
@@ -40,6 +39,7 @@ const Navbar = ({click}) => {
                 <li className="nav-item">
                     <Link className="navbar-brand" to={'/auth'}>
                         <i className="fa-sharp fa-solid fa-user"></i>
+                        <span> {localStorage.userName ?? "Accedi" }</span>
                     </Link>
                 </li>             
             </ul>
