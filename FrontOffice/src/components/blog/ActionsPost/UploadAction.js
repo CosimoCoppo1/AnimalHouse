@@ -3,7 +3,7 @@ import axios from "axios";
 export const uploadImage = async (data) => {
   try {
     console.log("Image upload Action start")
-    await axios.post("http://localhost:8000/upload/", data)
+    await axios.post("http://localhost:8000/upload", data)
   } catch (error) {
     console.log(error);
   }

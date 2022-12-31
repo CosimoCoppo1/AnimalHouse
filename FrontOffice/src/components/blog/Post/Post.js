@@ -10,9 +10,9 @@ const Post = ({ data }) => {
   return (
     <div className="Post">
 
-      <h2>
-        <b> User </b>
-      </h2>
+      <h4>
+        <span> {data.userId} </span>
+      </h4>
 
       <img
         src={data.image ? "http://localhost:8000/images/" + data.image : ""}
