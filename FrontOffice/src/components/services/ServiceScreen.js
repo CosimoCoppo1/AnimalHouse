@@ -5,11 +5,13 @@ import axios from 'axios'
 import { Card, Col, Container, Row } from "react-bootstrap";
 import Filters from "./Filters.js";
 import Mappa from "./Mappa.js";
+import BookService from './BookService'
+import ServiceCarousel from "./ServiceCarousel.js";
 
 
 const ServiceScreen = () => {
-  const [services, setServices] = useState(null);
-  const [shopLocations, setShopLocations] = useState(null);
+  const [services, setServices] = useState([]);
+  const [bookableServices, setBookableServices] = useState([]);
 
   const getServices = async () => {
     try {
@@ -19,34 +21,35 @@ const ServiceScreen = () => {
       console.log(error);
     }
   };
-
-  const getLocations = async () => {
+  
+  const getBookableServices = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/locations')
-      setShopLocations(data) 
+      const { data } = await axios.get('http://localhost:8000/bookable_services')
+      setBookableServices(data.filter(s => s.reservation_left > 0)) 
     } catch (error) {
       console.log(error);
     }
   };
 
+
   useEffect(() => {
-    getServices() 
-    getLocations()  
+    getServices()  
+    getBookableServices()
   }, []);
 
-  const ServiceCard = ({data}) => {
-    return (
-      <Card style={{ width: '18rem' }}>
-        <Card.Body>
-          <Card.Title>{data.name}</Card.Title>
-          <Card.Text>
-            {data.description}
-          </Card.Text>
-          <Card.Link href="#">More info</Card.Link>
-        </Card.Body>
-      </Card>
-    );
-  }
+  // const ServiceCard = ({data}) => {
+  //   return (
+  //     <Card style={{ width: '18rem' }}>
+  //       <Card.Body>
+  //         <Card.Title>{data.name}</Card.Title>
+  //         <Card.Text>
+  //           {data.description}
+  //         </Card.Text>
+  //         <Card.Link href="#">More info</Card.Link>
+  //       </Card.Body>
+  //     </Card>
+  //   );
+  // }
 
   const handleSubmit = (e, service, location, startDate) => {
 		e.preventDefault()
@@ -71,18 +74,37 @@ const ServiceScreen = () => {
             <br/>
 						<h2 className="text-center"> I nostri servizi </h2>
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <div style={{width: '50vw', height: '60vh' }}>
               {services === null
                 ? "Fetching services...."
-                : services.map((service, id) => {
-                  return <ServiceCard data={service} key={id} />                   
-                })
+                :  <ServiceCarousel services={services}  />                   
+                
               }
-            </Row>
+            </div>
+            </Row>            
             <br/>
             <h2 className="text-center"> Le nostre sedi </h2>
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <Mappa shopLocations={shopLocations}/>
+              <Mappa />
             </Row>
+            <br/>
+            <h2 className="text-center"> Servizi prenotabili </h2>
+            { 
+              bookableServices.length === 0 ? (
+                <h4>No bookable service available</h4>
+              ) :(
+                bookableServices.map((servizio) => {
+
+                  let time = servizio.day;
+                  time = time.split("T");
+                  let date = time[0];
+                  let orario = time[1].split(".")[0];
+  
+                  return <BookService servizio={servizio} date={date} orario={orario}/>
+                })
+              )
+            }
+
 					</Col>
 				</Row>
 			</Container>

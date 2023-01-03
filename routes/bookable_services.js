@@ -128,23 +128,28 @@ router.delete('/:id/', async (req, res) => {
 });
 
 router.post('/reservation', async (req, res) => {
-
 	const {qty, user_id, service_id} = req.body
 	let reservationResult = false
 	let serviceR = {}
 
-    try{
+
+    try{		
 		const serviceToBook = await Bookable_service.findById(service_id)
-
+		
 		if(serviceToBook.reservation_left >= qty){
-			//riserva possibile
-			serviceR = await Reservation.create({
-				qty, user_id, service_id
-			})
 
+			//riserva possibile
+			try{
+				serviceR = await Reservation.create({
+					qty, user_id, service_id
+				})		
+			}catch (error){
+				console.log(error)
+			}
+			
 			serviceToBook.reservation_left -= qty
 			await serviceToBook.save()
-
+			
 			reservationResult = true
 
 			res.json({reservationResult, serviceR})
