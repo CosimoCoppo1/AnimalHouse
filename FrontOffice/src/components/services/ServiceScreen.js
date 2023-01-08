@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Card, Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import Filters from "./Filters.js";
 import Mappa from "./Mappa.js";
 import BookService from './BookService'
@@ -37,19 +37,6 @@ const ServiceScreen = () => {
     getBookableServices()
   }, []);
 
-  // const ServiceCard = ({data}) => {
-  //   return (
-  //     <Card style={{ width: '18rem' }}>
-  //       <Card.Body>
-  //         <Card.Title>{data.name}</Card.Title>
-  //         <Card.Text>
-  //           {data.description}
-  //         </Card.Text>
-  //         <Card.Link href="#">More info</Card.Link>
-  //       </Card.Body>
-  //     </Card>
-  //   );
-  // }
 
   const handleSubmit = (e, service, location, startDate) => {
 		e.preventDefault()

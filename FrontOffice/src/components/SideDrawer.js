@@ -38,6 +38,9 @@ const SideDrawer = ({show, click}) => {
             </Link>
           </li>
           <li className="nav-item">
+                    <Link className="navbar-brand" to={'/community'}> Community </Link>
+                </li>
+          <li className="nav-item">
                     <Link className="navbar-brand" to={'/auth'}>
                         <i className="fa-sharp fa-solid fa-user"></i>
                     </Link>

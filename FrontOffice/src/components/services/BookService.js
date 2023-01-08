@@ -9,11 +9,11 @@ const BookService = ({servizio, date, orario}) => {
 
     const bookingHandler = async () => {
         if(localStorage.authToken){
-            const service_id=servizio._id 
-            const user_id=localStorage.getItem("userId") 
+            const bookable_service=servizio._id 
+            const user=localStorage.getItem("userId") 
 
             try {
-                const {data} = await axios.post("http://localhost:8000/bookable_services/reservation", {qty, user_id ,service_id})            
+                const {data} = await axios.post("http://localhost:8000/bookable_services/reservation", {qty, user ,bookable_service})            
                 console.log(data)
                 if(data.reservationResult){
                     alert("Service reserved succesfully")

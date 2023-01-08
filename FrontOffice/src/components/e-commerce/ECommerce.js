@@ -1,43 +1,46 @@
 import React from 'react'
-import Product from './Product'
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getProducts as listProducts } from "../../redux/actions/productActions"
+import SearchProduct from './SearchProduct';
+import SelectSection from './SelectSection';
+import { useRef, useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import SectionScreen from './SectionScreen';
 
 
 const ECommerce = () => { 
-  
-    const dispatch = useDispatch();
 
-    const getProducts = useSelector((state) => state.getProducts);
-    const { products, loading, error } = getProducts;
+    const searchProduct = useRef("");
+    const [radioValue, setRadioValue] = useState(null);
 
     useEffect(() => {
-      dispatch(listProducts());
-    }, [dispatch]);
+      if(!localStorage.petSection){
+        localStorage.setItem("petSection", "Cani")
+        setRadioValue("cani")
+      }
+      
+    }, []);        
 
     return ( 
       <div className="homescreen">
-        
-        <h2 className="homescreen__title">Latest Products</h2>
-        <div className="homescreen__products">
-          {loading ? (
-            <h2>Loading...</h2>
-          ) : error ? (
-            <h2>{error}</h2>
-          ) : (
-            products.map((product) => (
-              <Product
-                key={product._id}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                image={product.image}
-                productId={product._id}
-              />
-            ))
-          )}
-        </div>
+
+        <Row md={2}>
+          <Container>
+            <SearchProduct searchProduct={searchProduct} />        
+          </Container>
+        </Row>
+
+        <Container fluid>
+          <Row>
+            <Col md={2} style={{ paddingBottom: "100%"}}>
+              <SelectSection radioValue={radioValue} setRadioValue={setRadioValue} />						
+            </Col>
+
+            <Col >	
+                <SectionScreen radioValue={radioValue}/>		              		
+            </Col>
+          </Row>
+        </Container>
+
+
       </div>     
     )  
 }

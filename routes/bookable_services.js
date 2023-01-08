@@ -128,26 +128,24 @@ router.delete('/:id/', async (req, res) => {
 });
 
 router.post('/reservation', async (req, res) => {
-	const {qty, user_id, service_id} = req.body
 	let reservationResult = false
 	let serviceR = {}
 
 
     try{		
-		const serviceToBook = await Bookable_service.findById(service_id)
+		const serviceToBook = await Bookable_service.findById(req.body.bookable_service)
 		
-		if(serviceToBook.reservation_left >= qty){
+		if(serviceToBook.reservation_left >= req.body.qty){
 
 			//riserva possibile
 			try{
-				serviceR = await Reservation.create({
-					qty, user_id, service_id
-				})		
+				serviceR = new Reservation(req.body)
+				await serviceR.save();		
 			}catch (error){
 				console.log(error)
 			}
 			
-			serviceToBook.reservation_left -= qty
+			serviceToBook.reservation_left -= req.body.qty
 			await serviceToBook.save()
 			
 			reservationResult = true
@@ -165,8 +163,22 @@ router.post('/reservation', async (req, res) => {
 })
 
 router.get('/reservation', async (req, res) => {
+	
 	try{
+
 		const recerveces = await Reservation.find({})
+			.populate({
+				path: 'bookable_service',
+				populate: [{
+					path: 'service',
+					model: 'service'
+				}, {
+					path: 'location',
+					model: 'location'
+				}]
+			})
+			.lean();
+			
 		res.json(recerveces)
 	}catch(err){
 		res.status(400).json({ 'message': err.message });
