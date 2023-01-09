@@ -1,9 +1,8 @@
 import React from 'react'
 import { useState } from "react";
 import { Container, Row, Col, ButtonGroup, ToggleButton } from "react-bootstrap";
-import Breadcrumb from 'react-bootstrap/Breadcrumb';
 
-const SelectSection = ({ radioValue, setRadioValue}) => {
+const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
     const radios = [
         { name: "Cani", value: "Cani" },
         { name: "Gatti", value: "Gatti" },
@@ -20,11 +19,9 @@ const SelectSection = ({ radioValue, setRadioValue}) => {
   return (
     <Container>
       <Row>
-      <Breadcrumb>
-      <Breadcrumb.Item href="/e-commerce">E-commerce</Breadcrumb.Item>
-      <Breadcrumb.Item active>{localStorage.petSection}</Breadcrumb.Item>
-      </Breadcrumb>      
+      <span style={{ fontWeight: 'bold' }}>{localStorage.petSection}</span>           
       </Row>
+      <br />
       <Row>
         <Col>
           <ButtonGroup vertical>
@@ -36,8 +33,8 @@ const SelectSection = ({ radioValue, setRadioValue}) => {
                 name="radio"
                 value={radio.value}
                 variant="outline-primary"
-                checked={radioValue === radio.value}
-                onChange={(e) => setRadioValue(e.target.value)}
+                checked={radioPetValue === radio.value}
+                onChange={(e) => setRadioPetValue(e.target.value)}
               >
                 {radio.name}
               </ToggleButton>
@@ -47,25 +44,25 @@ const SelectSection = ({ radioValue, setRadioValue}) => {
       </Row>
       <Row>
         <div>
-          {radioValue === "Cani"  && selectSection("Cani") }
+          {radioPetValue === "Cani"  && selectSection("Cani") }
         </div>
         <div>
-          {radioValue === "Gatti"  && selectSection("Gatti")}
+          {radioPetValue === "Gatti"  && selectSection("Gatti")}
         </div>
         <div>
-          {radioValue === "Volatili" && selectSection("Volatili")}
-        </div>
-
-        <div>
-          {radioValue === "Pesci" && selectSection("Pesci")}
+          {radioPetValue === "Volatili" && selectSection("Volatili")}
         </div>
 
         <div>
-            {radioValue === "Tartarughe" && selectSection("Tartarughe")}
+          {radioPetValue === "Pesci" && selectSection("Pesci")}
         </div>
 
         <div>
-          {radioValue === "Roditori" && selectSection("Roditori")}
+            {radioPetValue === "Tartarughe" && selectSection("Tartarughe")}
+        </div>
+
+        <div>
+          {radioPetValue === "Roditori" && selectSection("Roditori")}
         </div>
 
         

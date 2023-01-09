@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { getProducts as listProducts } from "../../redux/actions/productActions"
 
 
-const SectionScreen = ({radioValue}) => {
+const SectionScreen = ({radioPetValue, keyProduct}) => {
 
     const dispatch = useDispatch();
     const getProducts = useSelector((state) => state.getProducts);
@@ -18,14 +18,12 @@ const SectionScreen = ({radioValue}) => {
     const [productsSec, setProductSec] = useState(products)
 
     useEffect(() => {
-      setProductSec(products.filter(p => p.pet.name === localStorage.petSection))      
-    }, [radioValue, loading]);
+      setProductSec(products.filter(p => (p.pet.name === localStorage.petSection && p.section.name === keyProduct)))      
+    }, [radioPetValue, keyProduct, loading]);
     
     return(
         <div className="homescreen__products">
-          {loading ? (
-            <h2>Loading...</h2>
-          ) : error ? (
+          { error ? (
             <h2>{error}</h2>
           ) : (
             productsSec.map((product) => (

@@ -29,7 +29,7 @@ const Navbar = ({click}) => {
                     <Link className="navbar-brand" to={'/services'}> Services </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="cart_link" to={'/cart'}> 
+                    <Link className="navbar-brand" to={'/cart'}> 
                         <i className="fas fa-shopping-cart"></i>
                         <span>
                             Cart 

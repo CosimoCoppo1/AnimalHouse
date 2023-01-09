@@ -10,6 +10,7 @@ import ECommerce from './components/e-commerce/ECommerce'
 import CartScreen from './components/cart/CartScreen'
 import ProductScreen from './components/e-commerce/ProductScreen'
 import ServiceScreen from './components/services/ServiceScreen'
+import LocationServiceScreen from '../src/components/services/LocationServiceScreen'
 import Community from './components/blog/Community'
 
 import Auth from './components/auth/Auth'
@@ -35,6 +36,7 @@ const App = () => {
           <Route exact path="/products/:id" element={<ProductScreen/>} />
           <Route exact path="/cart" element={<CartScreen/>} />
           <Route exact path="/services" element={<ServiceScreen />} />
+          <Route exact path="/services-location/:id" element={<LocationServiceScreen/>} />
           <Route exact path="/community" element={<Community />} />  
           <Route exact path="/auth" element={<Auth />} />
           <Route exact path="/login" element={<Login />}  />

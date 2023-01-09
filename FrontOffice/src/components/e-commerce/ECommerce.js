@@ -1,20 +1,22 @@
 import React from 'react'
-import SearchProduct from './SearchProduct';
-import SelectSection from './SelectSection';
-import { useRef, useState, useEffect } from "react";
+import PetSection from './PetSection';
+import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SectionScreen from './SectionScreen';
+import FooterBasic from '../footers/FooterBasic'
+import ProductSection from './ProductSection';
+
 
 
 const ECommerce = () => { 
 
-    const searchProduct = useRef("");
-    const [radioValue, setRadioValue] = useState(null);
+    const [keyProduct, setKeyProduct] = useState('Prodotti alimentari');
+    const [radioPetValue, setRadioPetValue] = useState(null);
 
     useEffect(() => {
       if(!localStorage.petSection){
         localStorage.setItem("petSection", "Cani")
-        setRadioValue("cani")
+        setRadioPetValue("cani")
       }
       
     }, []);        
@@ -23,20 +25,24 @@ const ECommerce = () => {
       <div className="homescreen">
 
         <Row md={2}>
-          <Container>
-            <SearchProduct searchProduct={searchProduct} />        
+          <Container> 
+            <ProductSection keyProduct={keyProduct} setKeyProduct={setKeyProduct} />      
           </Container>
         </Row>
 
         <Container fluid>
           <Row>
+
             <Col md={2} style={{ paddingBottom: "100%"}}>
-              <SelectSection radioValue={radioValue} setRadioValue={setRadioValue} />						
+              <PetSection radioPetValue={radioPetValue} setRadioPetValue={setRadioPetValue} />						
             </Col>
 
             <Col >	
-                <SectionScreen radioValue={radioValue}/>		              		
+                <SectionScreen radioPetValue={radioPetValue} keyProduct={keyProduct}/>		              		
             </Col>
+          </Row>
+          <Row>
+            <FooterBasic />            
           </Row>
         </Container>
 

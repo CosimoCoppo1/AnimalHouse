@@ -60,6 +60,26 @@ router.get('/', async (req, res) => {
     }    
 });
 
+router.get('/to-book/:id', async (req, res) => {
+	try {
+
+		const services  = await Bookable_service.find({'location': req.params.id})
+			.populate('pet')
+			.populate('location')
+			.populate('service')
+			.lean();
+
+		if(services == null)
+            return res.status(404).json({message: 'Cannot find services by id'})  
+
+		res.status(200).json(services);
+	}
+	catch (err) {
+		res.status(400).json({message: err.message});
+	}    
+});
+	
+
 router.post('/new', async (req, res) => {
 
 		if ('pet' in req.body) {

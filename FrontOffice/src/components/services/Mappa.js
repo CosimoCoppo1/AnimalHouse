@@ -42,8 +42,8 @@ const Mappa = () => {
             <br /> 
             {location.address} 
             <br />    
-            <Link to={`/`}>
-              View
+            <Link to={`/services-location/${location._id}`}>
+              Servizi in sede
             </Link>     
           </Popup>
         </Marker>
@@ -52,20 +52,20 @@ const Mappa = () => {
   }
 
   return ( 
-        <MapContainer
-          center={position}
-          zoom={5}
-          scrollWheelZoom={true}
-          style={{width: '50vw', height: '50vh' }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
+          <MapContainer
+            center={position}
+            zoom={5}
+            scrollWheelZoom={true}
+            style={{width: '50vw', height: '50vh' }}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
 
-          <MarkerList />
+            <MarkerList />
 
-        </MapContainer>
+          </MapContainer>
       ) 
  
 

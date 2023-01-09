@@ -87,17 +87,6 @@ body, html, .App, #root, .auth-wrapper, .home {
   margin-left: 8px;
 }
 
-.cart_link {
-  background: #333;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.cart_link:hover {
-  background: #ade651;
-  color: #f4f4f4;
-}
-
 .cartlogo_badge {
   width: 30 px;
   height: 30 px;
