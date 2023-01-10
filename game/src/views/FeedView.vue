@@ -1,13 +1,13 @@
 <template>
-<div>
-  <div id="bag" :class="{ burst: this.endend }"></div>
-  <div id="bag-health">
-    <div :style="{ width: this.health + '%' }"></div>
-  </div>
-  <div id="controls">
-    <button @click="feed()" v-show="!this.endend">Feed</button>
-    <button @click="restart()">Restart</button>
-  </div>
+  <div>
+    <div id="bag" :class="{ burst: this.endend }"></div>
+    <div id="bag-health">
+      <div :style="{ width: this.health + '%' }"></div>
+    </div>
+    <div id="controls">
+      <button @click="feed()" v-show="!this.endend">Feed</button>
+      <button @click="restart()">Restart</button>
+    </div>
   </div>
 </template>
 

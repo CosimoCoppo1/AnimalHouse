@@ -1,28 +1,28 @@
 <template>
-<div>
-  <div
-    v-if="this.status === 'beginning'"
-    class="height-100 d-flex justify-content-center align-items-center"
-  >
-    <StartComponent @start-game="startGame" />
+  <div>
+    <div
+      v-if="this.status === 'beginning'"
+      class="height-100 d-flex justify-content-center align-items-center"
+    >
+      <StartComponent @start-game="startGame" />
+    </div>
+    <div
+      v-if="this.status === 'gaming'"
+      class="height-100 d-flex justify-content-center align-items-center"
+    >
+      <GameComponent :size="this.size" @stop-game="stopGame" />
+    </div>
+    <div
+      v-if="this.status === 'stopping'"
+      class="height-100 d-flex justify-content-center align-items-center"
+    >
+      <PlayAgainComponent
+        :score="this.score"
+        :record="this.record"
+        @play-again="playAgain"
+      />
+    </div>
   </div>
-  <div
-    v-if="this.status === 'gaming'"
-    class="height-100 d-flex justify-content-center align-items-center"
-  >
-    <GameComponent :size="this.size" @stop-game="stopGame" />
-  </div>
-  <div
-    v-if="this.status === 'stopping'"
-    class="height-100 d-flex justify-content-center align-items-center"
-  >
-    <PlayAgainComponent
-      :score="this.score"
-      :record="this.record"
-      @play-again="playAgain"
-    />
-  </div>
-</div>
 </template>
 
 <script>

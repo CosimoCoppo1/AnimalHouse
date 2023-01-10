@@ -1,20 +1,20 @@
 <template>
-<div>
-  <h1>Peek-a-Vue</h1>
-  <section class="game-board">
-    <CardComponent
-      v-for="(card, index) in cardList"
-      :key="`card-${index}`"
-      :value="card.value"
-      :visible="card.visible"
-      :position="card.position"
-      :matched="card.matched"
-      @select-card="flipCard"
-    />
-  </section>
-  <h2>{{ status }}</h2>
-  <button @click="restartGame">restart game</button>
-</div>
+  <div>
+    <h1>Peek-a-Vue</h1>
+    <section class="game-board">
+      <CardComponent
+        v-for="(card, index) in cardList"
+        :key="`card-${index}`"
+        :value="card.value"
+        :visible="card.visible"
+        :position="card.position"
+        :matched="card.matched"
+        @select-card="flipCard"
+      />
+    </section>
+    <h2>{{ status }}</h2>
+    <button @click="restartGame">restart game</button>
+  </div>
 </template>
 
 <script>

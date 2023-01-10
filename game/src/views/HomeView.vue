@@ -1,172 +1,186 @@
 <template>
-<div>
-  <div class="header">
-    <div class="logo">
-      <img src="../assets/logo.png" alt="" style="width: 30%" />
-    </div>
-    <ul class="menu" :class="{ 'menu--open': this.openMenu }">
-      <li><a href="">Home</a></li>
-      <li><a href="">Single</a></li>
-      <li><a href="">Contact</a></li>
-    </ul>
-    <div class="cta">
-      <a href="" class="button">Contatti</a>
-    </div>
-    <div class="hamburger" @click="open()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </div>
-
-  <div class="hero">
-    <div class="hero__content">
-      <p class="intro-text">Intro text</p>
-      <h1 class="big-text">Titolo della mia pagina Web</h1>
-      <a href="" class="button">Discover more</a>
-    </div>
-    <video autoplay muted loop id="video-back">
-      <source src="../assets/video-back.mp4" type="video/mp4" />
-    </video>
-  </div>
-
-  <div class="poster mt-3">
-    <div class="poster__img">
-      <img src="../assets/bg-video.jpg" alt="" />
-    </div>
-    <div class="poster__content">
-      <h3 class="big-text">Titolo della mia poster</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid
-        ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        obcaecat cupiditat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
-      </p>
-      <a href="" class="button">Call to action</a>
-    </div>
-  </div>
-
-  <div class="bg-cover mt-3">
-    <div class="bg-cover__title">
-      <h3 class="big-text tw">Titolo del mio blocco cover</h3>
-    </div>
-    <div class="bg-cover__text">
-      <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-      <p class="tw">
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid
-        ex ea commodi consequatur.
-      </p>
-
-      <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-      <p class="tw">
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid
-        ex ea commodi consequatur.
-      </p>
-
-      <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-      <p class="tw">
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid
-        ex ea commodi consequatur.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid mt-3">
-    <div class="col">
-      <div class="big-text">
-        <h3 class="big-text">
-          Lorem ispums <br />
-          sia maet
-        </h3>
+  <div>
+    <div class="header">
+      <div class="logo">
+        <img src="../assets/logo.png" alt="" style="width: 30%" />
+      </div>
+      <ul class="menu" :class="{ 'menu--open': this.openMenu }">
+        <li><a href="">Home</a></li>
+        <li><a href="">Single</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+      <div class="cta">
+        <a href="" class="button">Contatti</a>
+      </div>
+      <div class="hamburger" @click="open()">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
-    <div class="col">
-      <p class="mt-2">Lorem ipsum dolor sit amet, consectetur adipisci elit</p>
-    </div>
-  </div>
 
-  <div class="panel-blue mt-3">
-    <div class="grid panel-blue">
-      <div class="col panel-blue__dots">
-        <div class="dot">Text</div>
-        <div class="dot">Text</div>
-        <div class="dot">Text</div>
-        <div class="dot">Text</div>
+    <div class="hero">
+      <div class="hero__content">
+        <p class="intro-text">Intro text</p>
+        <h1 class="big-text">Titolo della mia pagina Web</h1>
+        <a href="" class="button">Discover more</a>
       </div>
-      <div class="col panel-blue__text">
-        <div class="grid">
-          <div class="col">
-            <h3 class="big-text tw">Lorem ispums</h3>
-          </div>
-          <div class="col">
-            <p class="tw mt-2">
-              Lorem ipsum dolor sit amet, consectetur adipisci elit
-            </p>
+      <video autoplay muted loop id="video-back">
+        <source src="../assets/video-back.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="poster mt-3">
+      <div class="poster__img">
+        <img src="../assets/bg-video.jpg" alt="" />
+      </div>
+      <div class="poster__content">
+        <h3 class="big-text">Titolo della mia poster</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+          aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint obcaecat cupiditat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum
+        </p>
+        <a href="" class="button">Call to action</a>
+      </div>
+    </div>
+
+    <div class="bg-cover mt-3">
+      <div class="bg-cover__title">
+        <h3 class="big-text tw">Titolo del mio blocco cover</h3>
+      </div>
+      <div class="bg-cover__text">
+        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
+        <p class="tw">
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+          aliquid ex ea commodi consequatur.
+        </p>
+
+        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
+        <p class="tw">
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+          aliquid ex ea commodi consequatur.
+        </p>
+
+        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
+        <p class="tw">
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+          aliquid ex ea commodi consequatur.
+        </p>
+      </div>
+    </div>
+
+    <div class="grid mt-3">
+      <div class="col">
+        <div class="big-text">
+          <h3 class="big-text">
+            Lorem ispums <br />
+            sia maet
+          </h3>
+        </div>
+      </div>
+      <div class="col">
+        <p class="mt-2">
+          Lorem ipsum dolor sit amet, consectetur adipisci elit
+        </p>
+      </div>
+    </div>
+
+    <div class="panel-blue mt-3">
+      <div class="grid panel-blue">
+        <div class="col panel-blue__dots">
+          <div class="dot">Text</div>
+          <div class="dot">Text</div>
+          <div class="dot">Text</div>
+          <div class="dot">Text</div>
+        </div>
+        <div class="col panel-blue__text">
+          <div class="grid">
+            <div class="col">
+              <h3 class="big-text tw">Lorem ispums</h3>
+            </div>
+            <div class="col">
+              <p class="tw mt-2">
+                Lorem ipsum dolor sit amet, consectetur adipisci elit
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="poster mt-3">
-    <div class="poster__content">
-      <h3 class="big-text">Titolo della mia poster</h3>
+    <div class="poster mt-3">
+      <div class="poster__content">
+        <h3 class="big-text">Titolo della mia poster</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
+          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
+          aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in
+          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+          sint obcaecat cupiditat non proident, sunt in culpa qui officia
+          deserunt mollit anim id est laborum
+        </p>
+        <a href="" class="button">Call to action</a>
+      </div>
+      <div class="poster__img">
+        <img src="../assets/bg-video.jpg" alt="" />
+      </div>
+    </div>
+
+    <div class="content">
+      <h3>Lorem</h3>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-        tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut aliquid
-        ex ea commodi consequatur. Duis aute irure reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        obcaecat cupiditat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum
       </p>
-      <a href="" class="button">Call to action</a>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
+      </p>
     </div>
-    <div class="poster__img">
-      <img src="../assets/bg-video.jpg" alt="" />
-    </div>
-  </div>
 
-  <div class="content">
-    <h3>Lorem</h3>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod</p>
+    <footer class="footer mt-1">
+      <div class="grid">
+        <div class="col">
+          <h4 class="normal-text tw">Lorem ipsums</h4>
+          <p>Lorem ipsums Lorem ipsums</p>
+        </div>
+        <div class="col">
+          <h4 class="normal-text tw">Lorem ipsums</h4>
+          <p>Lorem ipsums Lorem ipsums</p>
+        </div>
+        <div class="col">
+          <h4 class="normal-text tw">Lorem ipsums</h4>
+          <p>Lorem ipsums Lorem ipsums</p>
+        </div>
+        <div class="col">
+          <h4 class="normal-text tw">Lorem ipsums</h4>
+          <p>Lorem ipsums Lorem ipsums</p>
+        </div>
+      </div>
+    </footer>
   </div>
-
-  <footer class="footer mt-1">
-    <div class="grid">
-      <div class="col">
-        <h4 class="normal-text tw">Lorem ipsums</h4>
-        <p>Lorem ipsums Lorem ipsums</p>
-      </div>
-      <div class="col">
-        <h4 class="normal-text tw">Lorem ipsums</h4>
-        <p>Lorem ipsums Lorem ipsums</p>
-      </div>
-      <div class="col">
-        <h4 class="normal-text tw">Lorem ipsums</h4>
-        <p>Lorem ipsums Lorem ipsums</p>
-      </div>
-      <div class="col">
-        <h4 class="normal-text tw">Lorem ipsums</h4>
-        <p>Lorem ipsums Lorem ipsums</p>
-      </div>
-    </div>
-  </footer>
-</div>
 </template>
 
 <script>

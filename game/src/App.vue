@@ -1,16 +1,16 @@
 <template>
-<div>
-  <HomeView />
-  <nav>
-    <router-link to="/feed">Feed</router-link> |
-    <router-link to="/rockpaperscissor">R, P, S</router-link> |
-    <router-link to="/scramble">Scramble</router-link> |
-    <router-link to="/peek">Peek</router-link> |
-    <router-link to="/quiz">Quiz</router-link> |
-    <router-link to="/puzzle">Puzzle</router-link>
-  </nav>
-  <router-view />
-</div>
+  <div>
+    <HomeView />
+    <nav>
+      <router-link to="/feed">Feed</router-link> |
+      <router-link to="/rockpaperscissor">R, P, S</router-link> |
+      <router-link to="/scramble">Scramble</router-link> |
+      <router-link to="/peek">Peek</router-link> |
+      <router-link to="/quiz">Quiz</router-link> |
+      <router-link to="/puzzle">Puzzle</router-link>
+    </nav>
+    <router-view />
+  </div>
 </template>
 
 <script>
