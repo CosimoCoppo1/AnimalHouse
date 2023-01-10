@@ -25,7 +25,7 @@ const PostShare = ({setShared}) => {
     e.preventDefault();
     
     const newPost = {
-      userId: localStorage.userName,
+      user: localStorage.userId,
       desc: desc.current.value,
     };
 

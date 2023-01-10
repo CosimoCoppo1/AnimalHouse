@@ -14,7 +14,7 @@ const Post = ({ data }) => {
     <div className="Post">
 
       <h4>
-        <span> {data.userId} </span>
+        <span> {data.user.username} </span>
       </h4>
 
       <img
