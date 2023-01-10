@@ -66,7 +66,8 @@ const deletePost = async (req, res) => {
 // Get posts
 const getPosts = async (req, res) => {
   try {
-    const posts = await PostModel.find({});
+  	console.log('get all posts');
+    const posts = await PostModel.find({}).populate('user');
     res.status(200).json(
       posts.sort((a, b) => {
         return new Date(b.createdAt) - new Date(a.createdAt);

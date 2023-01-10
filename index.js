@@ -11,7 +11,8 @@ const errorHandler = require('./middleware/error')
 global.rootDir = __dirname
 
 app.use(express.static(path.join(global.rootDir, 'public')))
-app.use(express.static(path.join(global.rootDir, 'FrontOffice/build')))
+//app.use(express.static(path.join(global.rootDir, 'FrontOffice/build')))
+app.use(express.static(path.join(global.rootDir, 'game/dist')))
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(cors())
