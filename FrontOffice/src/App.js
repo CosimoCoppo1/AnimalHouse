@@ -7,14 +7,15 @@ import SideDrawer from './components/SideDrawer'
 import Backdrop from './components/Backdrop'
 import Home from './components/Home'
 import ECommerce from './components/e-commerce/ECommerce'
-import CartScreen from './components/e-commerce/CartScreen'
+import CartScreen from './components/cart/CartScreen'
 import ProductScreen from './components/e-commerce/ProductScreen'
-import Services from './components/Services'
+import ServiceScreen from './components/services/ServiceScreen'
+import LocationServiceScreen from '../src/components/services/LocationServiceScreen'
+import Community from './components/blog/Community'
 
+import Auth from './components/auth/Auth'
 import Login from './components/auth/Login'
 import SignUp from './components/auth/SignUp'
-import ForgotPassword from './components/auth/ForgotPassword'
-import ResetPassword from './components/auth/ResetPassword'
 
 
 
@@ -26,7 +27,7 @@ const App = () => {
   return (
     <Router>
       <div className="App">
-        <Navbar click={() => setSideToggle(true)}/> 
+        <Navbar click={() => setSideToggle(true)} /> 
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
         <Backdrop show={sideToggle} click={() => setSideToggle(false)}/>       
         <Routes>
@@ -34,11 +35,12 @@ const App = () => {
           <Route exact path="/e-commerce" element={<ECommerce />} />
           <Route exact path="/products/:id" element={<ProductScreen/>} />
           <Route exact path="/cart" element={<CartScreen/>} />
-          <Route exact path="/services" element={<Services />} />   
-          <Route exact path="/login" element={<Login />} />
-          <Route exact path="/register" element={<SignUp />} />
-          <Route exact path="/forgotpassword" element={<ForgotPassword />} />
-          <Route exact path="/resetpassword/:resetToken" element={<ResetPassword />} />
+          <Route exact path="/services" element={<ServiceScreen />} />
+          <Route exact path="/services-location/:id" element={<LocationServiceScreen/>} />
+          <Route exact path="/community" element={<Community />} />  
+          <Route exact path="/auth" element={<Auth />} />
+          <Route exact path="/login" element={<Login />}  />
+          <Route exact path="/register" element={<SignUp />}  />
         </Routes>
       </div>
     </Router> 

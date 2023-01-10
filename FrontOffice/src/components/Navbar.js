@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from "react-redux";
+import Company from '../img/company.png'
 
 
 const Navbar = ({click}) => {
@@ -9,18 +9,18 @@ const Navbar = ({click}) => {
 
   const getCartCount = () => {
     return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
-  };
+  };  
 
   return (
     <div>
         <nav className="navbar">
             <div className="navbar_logo">
-                <h2>Animal House</h2>
+                <img src={Company} width="60" height="45" className="d-inline-block align-top" alt="" />
             </div>            
        
             <ul className="navbar_links">
                 <li className="nav-item">
-                    <Link className="navbar-brand" to={'/'}> HOME </Link>
+                    <Link className="navbar-brand" to={'/'}> Home </Link>
                 </li>
                 <li className="nav-item">
                     <Link className="navbar-brand" to={'/e-commerce'}> E-commerce </Link>
@@ -29,7 +29,7 @@ const Navbar = ({click}) => {
                     <Link className="navbar-brand" to={'/services'}> Services </Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="cart_link" to={'/cart'}> 
+                    <Link className="navbar-brand" to={'/cart'}> 
                         <i className="fas fa-shopping-cart"></i>
                         <span>
                             Cart 
@@ -37,12 +37,15 @@ const Navbar = ({click}) => {
                         </span>    
                     </Link>
                 </li>  
-                <li className="nav-auth">
-                    <Link className="navbar-brand" to={'/login'}> Login </Link>
-                </li>
-                <li className="nav-auth">
-                    <Link className="navbar-brand" to={'/register'}> Sign up </Link>
-                </li>              
+                <li className="nav-item">
+                    <Link className="navbar-brand" to={'/community'}> Community </Link>
+                </li> 
+                <li className="nav-item">
+                    <Link className="navbar-brand" to={'/auth'}>
+                        <i className="fa-sharp fa-solid fa-user"></i>
+                        <span> {localStorage.userName ?? "Accedi" }</span>
+                    </Link>
+                </li>            
             </ul>
             
             <div className="auth_menu" onClick={click}>

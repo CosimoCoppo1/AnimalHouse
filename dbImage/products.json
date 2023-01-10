@@ -38,6 +38,16 @@
 		"image": "http://www.site.it/image",
 		"alt": "Crema anti pulci",
 		"pieces_left": 10
+	},
+	{
+		"pet": "Pesci",
+		"section": "Prodotti alimentari",
+		"title": "Mangime",
+		"price": 14.50,
+		"description": "Mangime buono",
+		"image": "http://www.site.it/image",
+		"alt": "Mangime",
+		"pieces_left": 11
 	}
 
 ]

@@ -1,18 +1,22 @@
 [
 	{ 
 		"city": "Bologna",
-		"address": "via indipendenza 5"
+		"address": "via Indipendenza 5",
+		"coordinates": [44.49548023844587, 11.342760569311064]
 	},
 	{
-		"city": "Bologna",
-		"address": "via Marconi 7"
+		"city": "Milano",
+		"address": "via Tortona 37",
+		"coordinates": [45.45014078898269, 9.157600428836114]
 	},
 	{
 		"city": "Ancona",
-		"address": "via del corso 1"
+		"address": "via Marconi 131",
+		"coordinates": [43.61085939731237, 13.503642337056375]
 	},
 	{
 		"city": "Cagliari",
-		"address": "viale Italia 10"
+		"address": "viale Italia 10",
+		"coordinates": [39.24670177657696, 9.1294746]
 	}
 ]

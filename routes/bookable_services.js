@@ -4,6 +4,7 @@ const Pet      = require('../models/pet')
 const Location = require('../models/location')
 const Service  = require('../models/service')
 const Bookable_service = require('../models/bookable_service')
+const Reservation = require('../models/reservation')
 
 
 router.get('/', async (req, res) => {
@@ -58,6 +59,26 @@ router.get('/', async (req, res) => {
         res.status(400).json({message: err.message});
     }    
 });
+
+router.get('/to-book/:id', async (req, res) => {
+	try {
+
+		const services  = await Bookable_service.find({'location': req.params.id})
+			.populate('pet')
+			.populate('location')
+			.populate('service')
+			.lean();
+
+		if(services == null)
+            return res.status(404).json({message: 'Cannot find services by id'})  
+
+		res.status(200).json(services);
+	}
+	catch (err) {
+		res.status(400).json({message: err.message});
+	}    
+});
+	
 
 router.post('/new', async (req, res) => {
 
@@ -125,5 +146,63 @@ router.delete('/:id/', async (req, res) => {
 		res.status(400).json({ 'message': err.message });
 	}
 });
+
+router.post('/reservation', async (req, res) => {
+	let reservationResult = false
+	let serviceR = {}
+
+
+    try{		
+		const serviceToBook = await Bookable_service.findById(req.body.bookable_service)
+		
+		if(serviceToBook.reservation_left >= req.body.qty){
+
+			//riserva possibile
+			try{
+				serviceR = new Reservation(req.body)
+				await serviceR.save();		
+			}catch (error){
+				console.log(error)
+			}
+			
+			serviceToBook.reservation_left -= req.body.qty
+			await serviceToBook.save()
+			
+			reservationResult = true
+
+			res.json({reservationResult, serviceR})
+		}else{
+			//quantità riserva non disponibile
+			res.json({reservationResult, serviceR})
+		}
+
+    }catch (err){
+        res.status(400).json({ 'message': err.message });
+    }
+
+})
+
+router.get('/reservation', async (req, res) => {
+	
+	try{
+
+		const recerveces = await Reservation.find({})
+			.populate({
+				path: 'bookable_service',
+				populate: [{
+					path: 'service',
+					model: 'service'
+				}, {
+					path: 'location',
+					model: 'location'
+				}]
+			})
+			.lean();
+			
+		res.json(recerveces)
+	}catch(err){
+		res.status(400).json({ 'message': err.message });
+	}   
+})
 
 module.exports = router

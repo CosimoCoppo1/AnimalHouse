@@ -13,7 +13,11 @@ const serviceSchema = new mongoose.Schema({
 	'description': {
 		type: String,
 		required: true
-	}
+	},
+    'image': {
+        type: String,
+        required: true
+    }
 });
 
 serviceSchema.index({ name: 1, pet: 1 }, { unique: true });

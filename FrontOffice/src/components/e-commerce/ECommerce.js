@@ -1,42 +1,52 @@
 import React from 'react'
-import Product from './Product'
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { getProducts as listProducts } from "../../redux/actions/productActions"
+import PetSection from './PetSection';
+import { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import SectionScreen from './SectionScreen';
+import FooterBasic from '../footers/FooterBasic'
+import ProductSection from './ProductSection';
+
 
 
 const ECommerce = () => { 
-  
-    const dispatch = useDispatch();
 
-    const getProducts = useSelector((state) => state.getProducts);
-    const { products, loading, error } = getProducts;
+    const [keyProduct, setKeyProduct] = useState('Prodotti alimentari');
+    const [radioPetValue, setRadioPetValue] = useState(null);
 
     useEffect(() => {
-      dispatch(listProducts());
-    }, [dispatch]);
+      if(!localStorage.petSection){
+        localStorage.setItem("petSection", "Cani")
+        setRadioPetValue("cani")
+      }
+      
+    }, []);        
 
     return ( 
       <div className="homescreen">
-        <h2 className="homescreen__title">Latest Products</h2>
-        <div className="homescreen__products">
-          {loading ? (
-            <h2>Loading...</h2>
-          ) : error ? (
-            <h2>{error}</h2>
-          ) : (
-            products.map((product) => (
-              <Product
-                key={product._id}
-                title={product.title}
-                description={product.description}
-                price={product.price}
-                image={product.image}
-                productId={product._id}
-              />
-            ))
-          )}
-        </div>
+
+        <Row md={2}>
+          <Container> 
+            <ProductSection keyProduct={keyProduct} setKeyProduct={setKeyProduct} />      
+          </Container>
+        </Row>
+
+        <Container fluid>
+          <Row>
+
+            <Col md={2} style={{ paddingBottom: "100%"}}>
+              <PetSection radioPetValue={radioPetValue} setRadioPetValue={setRadioPetValue} />						
+            </Col>
+
+            <Col >	
+                <SectionScreen radioPetValue={radioPetValue} keyProduct={keyProduct}/>		              		
+            </Col>
+          </Row>
+          <Row>
+            <FooterBasic />            
+          </Row>
+        </Container>
+
+
       </div>     
     )  
 }

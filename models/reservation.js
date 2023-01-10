@@ -5,14 +5,14 @@ const reservationSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    'user_id': {
+    'user': {
         type: mongoose.Schema.Types.ObjectId,
-		ref: 'user',
+		ref: 'User',
         required: true
     },
-	'service_id': {
+	'bookable_service': {
 		type: mongoose.Schema.Types.ObjectId,
-		ref: 'bookable_service',
+		ref: 'Bookable_service',
 		required: true
 	}    
 },

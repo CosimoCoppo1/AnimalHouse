@@ -24,6 +24,7 @@ const PostShare = ({setShared}) => {
     e.preventDefault();
     
     const newPost = {
+      userId: localStorage.userName,
       desc: desc.current.value,
     };
 
@@ -35,14 +36,20 @@ const PostShare = ({setShared}) => {
       newPost.image = fileName;
       try {
        
-        uploadImage(data);
+        uploadImage(data)
+
+        if(newPost.desc == ""){
+          newPost.desc = " "
+        }
 
       } catch (err) {
         console.log(err);
       }
     }
-    uploadPost(newPost);
+
     
+    uploadPost(newPost);
+
     setShared(true)
     
     resetShare();
