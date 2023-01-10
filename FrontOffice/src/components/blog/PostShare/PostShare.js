@@ -3,12 +3,13 @@ import "./PostShare.css";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { uploadImage, uploadPost } from "../ActionsPost/UploadAction";
+import apiUrl from '../../../config'
 
 const PostShare = ({setShared}) => {
   const [image, setImage] = useState(null);
   const imageRef = useRef();
   const desc = useRef();
-  const serverPublic = "http://localhost:8000/images/";
+  const serverPublic = `http://${apiUrl}/images/`;
 
   // handle Image Change
   const onImageChange = (event) => {

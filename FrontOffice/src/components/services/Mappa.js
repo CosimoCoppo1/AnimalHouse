@@ -4,6 +4,7 @@ import axios from 'axios'
 import { Link } from "react-router-dom"
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import apiUrl from '../../config'
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
@@ -19,7 +20,7 @@ const Mappa = () => {
 
   const getLocations = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/locations')
+      const { data } = await axios.get(`http://${apiUrl}/locations`)
       setShopLocations(data) 
     } catch (error) {
       console.log(error);
