@@ -4,7 +4,8 @@ const postSchema = mongoose.Schema(
 	{
 		
 		userId: { 
-			type: String
+			type: String,
+			required: true
 		},
 		'desc': {
 			type: String, 
