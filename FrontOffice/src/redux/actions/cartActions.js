@@ -1,8 +1,9 @@
 import * as actionTypes from "../constants/cartConstants";
 import axios from "axios";
+import apiUrl from '../../config'
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/products/front/${id}`);
+  const { data } = await axios.get(`http://${apiUrl}/products/front/${id}`);
 
   dispatch({
     type: actionTypes.ADD_TO_CART,
@@ -31,7 +32,7 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 export const buyFromCart = () => async (dispatch, getState) => {
   const cartItemsToBuy = JSON.parse(localStorage.getItem("cart"));
     
-  const {data} = await axios.post(`/products/buy-from-cart`, {cartItemsToBuy}) 
+  const {data} = await axios.post(`http://${apiUrl}/products/buy-from-cart`, {cartItemsToBuy}) 
   
   localStorage.setItem("cartMsg", data.msg)
 

@@ -7,6 +7,7 @@ import Filters from "./Filters.js";
 import Mappa from "./Mappa.js";
 import BookService from './BookService'
 import ServiceCarousel from "./ServiceCarousel.js";
+import apiUrl from '../../config'
 
 
 const ServiceScreen = () => {
@@ -16,7 +17,7 @@ const ServiceScreen = () => {
 
   const getServices = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/services')
+      const { data } = await axios.get(`http://${apiUrl}/services`)
       setServices(data) 
     } catch (error) {
       console.log(error);
@@ -25,7 +26,7 @@ const ServiceScreen = () => {
   
   const getBookableServices = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/bookable_services')
+      const { data } = await axios.get(`http://${apiUrl}/bookable_services`)
       setBookableServices(data.filter(s => s.reservation_left > 0)) 
     } catch (error) {
       console.log(error);
