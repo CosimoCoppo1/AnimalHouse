@@ -51,9 +51,10 @@ let dbPopulate = async function()
 
 	await BookableServicePopulate(petsMap, locationsMap, servicesMap);
 
-	await userPopulate();
+	let userMap = {};
+	userMap = await userPopulate();
 	await adminPopulate();
-	await postPopulate();
+	await postPopulate(userMap);
 }
 
 async function petPopulate()
@@ -175,6 +176,7 @@ async function BookableServicePopulate(petsMap, locationsMap, servicesMap)
 
 async function userPopulate()
 {
+	let userMap = {};
 	let users = await fs.readFile(
 		path.join(global.rootDir, 'dbImage/users.json'), 
 		'utf8');
@@ -184,7 +186,11 @@ async function userPopulate()
 	for (let i = 0; i < users.length; i++) {
 		const u = new User(users[i]);
 		await u.save();
+
+		userMap[u.email] = u._id;
 	}
+
+	return userMap;
 }
 
 async function adminPopulate()
@@ -201,7 +207,7 @@ async function adminPopulate()
 	}
 }
 
-async function postPopulate()
+async function postPopulate(userMap)
 {
 	let posts = await fs.readFile(
 		path.join(global.rootDir, 'dbImage/posts.json'), 
@@ -210,6 +216,7 @@ async function postPopulate()
 	posts = JSON.parse(posts);
 
 	for (let i = 0; i < posts.length; i++) {
+		posts[i].userId = userMap[posts[i].userId];
 		const p = new Post(posts[i]);
 		await p.save();
 	}

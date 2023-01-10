@@ -30,6 +30,7 @@ const bookable_serviceSchema = new mongoose.Schema({
 	},
     'pet_size': {
         type: String,
+		required: true
     }
 })
 
