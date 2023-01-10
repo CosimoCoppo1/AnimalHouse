@@ -216,7 +216,7 @@ async function postPopulate(userMap)
 	posts = JSON.parse(posts);
 
 	for (let i = 0; i < posts.length; i++) {
-		posts[i].userId = userMap[posts[i].userId];
+		posts[i].user = userMap[posts[i].user];
 		const p = new Post(posts[i]);
 		await p.save();
 	}
