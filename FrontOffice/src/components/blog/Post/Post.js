@@ -3,6 +3,9 @@ import "./Post.css";
 import Comment from "../../../img/comment.png";
 import Share from "../../../img/share.png";
 import Heart from "../../../img/like.png";
+import apiUrl from '../../../config'
+
+
 
 
 const Post = ({ data }) => {   
@@ -15,7 +18,7 @@ const Post = ({ data }) => {
       </h4>
 
       <img
-        src={data.image ? "http://localhost:8000/images/" + data.image : ""}
+        src={data.image ? `http://${apiUrl}/images/` + data.image : ""}
         alt=""
       />
 

@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import apiUrl from '../../config'
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -28,7 +29,7 @@ const SignUp = () => {
 
     try {
       
-      const { data } = await axios.post("/auth/user/register", {username, email, password}, config);
+      const { data } = await axios.post(`http://${apiUrl}/auth/user/register`, {username, email, password}, config);
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userName", data.username);
       localStorage.setItem("userId", data.userId);

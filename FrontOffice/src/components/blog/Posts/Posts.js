@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Post from "../Post/Post";
 import axios from 'axios'
 import "./Posts.css";
+import apiUrl from '../../../config'
 
 const Posts = ({shared, setShared}) => {
   const [posts, setposts] = useState(null)
@@ -9,7 +10,7 @@ const Posts = ({shared, setShared}) => {
 
   const getPosts = async () => {
     try {
-      const { data } = await axios.get('http://localhost:8000/posts')
+      const { data } = await axios.get(`http://${apiUrl}/posts`)
       setposts(data) 
     } catch (error) {
       console.log(error);

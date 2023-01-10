@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Reservation from "./Reservation";
-
+import apiUrl from '../../config'
 
 const MyReservations = () => {
 
@@ -10,7 +10,7 @@ const MyReservations = () => {
     const getReservations = async () => {
         if(localStorage.userId){
             try {
-                const { data } = await axios.get('http://localhost:8000/bookable_services/reservation')
+                const { data } = await axios.get(`http://${apiUrl}/bookable_services/reservation`)
                 setReservs(data.filter(r => localStorage.userId === r.user)) 
             } catch (error) {
                 console.log(error);

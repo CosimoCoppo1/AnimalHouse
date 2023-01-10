@@ -2,6 +2,7 @@ import axios from "axios";
 import BookService from './BookService'
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import apiUrl from '../../config'
 
 const LocationServiceScreen = () => {
 
@@ -11,7 +12,7 @@ const LocationServiceScreen = () => {
 
     const getServicesByLocation = async (id) => {
         try {
-            const { data } = await axios.get(`http://localhost:8000/bookable_services/to-book/${id}`);
+            const { data } = await axios.get(`http://${apiUrl}/bookable_services/to-book/${id}`);
             setServices(data.filter(s => s.reservation_left > 0)) 
         } catch (error) {
             console.log(error);

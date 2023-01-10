@@ -2,6 +2,7 @@ import { useState} from "react";
 import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import apiUrl from '../../config'
 
 const BookService = ({servizio, date, orario}) => {
     const [qty, setQty] = useState(1);
@@ -13,7 +14,7 @@ const BookService = ({servizio, date, orario}) => {
             const user=localStorage.getItem("userId") 
 
             try {
-                const {data} = await axios.post("http://localhost:8000/bookable_services/reservation", {qty, user ,bookable_service})            
+                const {data} = await axios.post(`http://${apiUrl}/bookable_services/reservation`, {qty, user ,bookable_service})            
                 console.log(data)
                 if(data.reservationResult){
                     alert("Service reserved succesfully")
