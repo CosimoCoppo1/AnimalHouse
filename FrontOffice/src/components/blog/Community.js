@@ -1,7 +1,7 @@
 import React from 'react'
 import PostSide from "./PostSide/PostSide"
 import { Container, Row, Col } from "react-bootstrap";
-import MyReservations from '../services/MyReservations';
+
 
 
 const Community = () => {
@@ -25,14 +25,8 @@ const Community = () => {
 			    </Row>
                 <br />
                 <Row>
-                    <Col>
-                        <Row>
-                            <h4 className="text-center">LEADERBOARD GAME</h4>
-                        </Row>
-                        <Row>
-                            <h4 className="text-center">MY RESERVATIONS</h4>
-                            <MyReservations />
-                        </Row>
+                    <Col>                        
+                        <h4 className="text-center">LEADERBOARD GAME</h4>                        
                     </Col>
                     <Col>
                         <h4 className="text-center">BLOG POSTS</h4>

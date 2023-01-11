@@ -4,9 +4,10 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const Filters = ({tofilter}) => {
 	
-    const [service, setService] = useState("All");
+    const [service, setService] = useState("Tutti");
 	function Service() {
-		return (          
+		return (  
+			        
             <Form.Group controlId="formSelect">
                 <Form.Label>Select Service</Form.Label>
                 <Form.Control
@@ -26,7 +27,7 @@ const Filters = ({tofilter}) => {
 		);
 	}
 
-    const [location, setLocation] = useState("All");
+    const [location, setLocation] = useState("Tutti");
 	function Location() {
 		return (          
             <Form.Group controlId="formSelect">
@@ -69,16 +70,7 @@ const Filters = ({tofilter}) => {
 
 	return (
 		<Container>
-			<Form
-				onSubmit={(e) =>
-					tofilter(
-						e,
-						service,
-                        location,
-						selectDate
-					)
-				}
-			>
+			<Form>
 				<Row>
 					<Col bsPrefix="col">
 						<Service />
@@ -99,7 +91,16 @@ const Filters = ({tofilter}) => {
 				<br/>
 				<Row className="text-center" style={{ paddingBottom: "1rem" }}>
 					<Col>
-						<Button type="submit" className="w-100">
+						<Button 
+							onClick={(e) =>
+								tofilter(
+									e,
+									service,
+									location,
+									selectDate,
+									setSelectDate
+								)} 
+							className="w-100">
 							Cerca
 						</Button>
 					</Col>

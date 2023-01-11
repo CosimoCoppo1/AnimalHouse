@@ -40,17 +40,30 @@ const ServiceScreen = () => {
   }, []);
 
 
-  const handleSubmit = ( service, location, selectDate) => {
+  const handleSubmit = (e, service, location, selectDate, setSelectDate) => {
+
 		let ss = bookableServices
+    console.log("bookable_service: " + ss)
     
-    if(service !== "Tutti")
+    if(service !== "Tutti"){
       ss = ss.filter((t) => t.service.name === service)
-    if(location !== "Tutti")
+      console.log("filtraggio service="+ service + ":" + ss)
+    }
+      
+    if(location !== "Tutti"){
       ss = ss.filter((t) => t.location.city === location)
-    // if(selectDate !== undefined)
-    //   ss = ss.filter((t) => t.day.split("T")[0] === selectDate)
+      console.log("filtraggio location="+ location + ":" + ss)
+    }
+      
+    if(selectDate !== undefined){
+      ss = ss.filter((t) => t.day.split("T")[0] === selectDate)
+      console.log("filtraggio date="+ selectDate + ":" + ss)
+      setSelectDate(undefined)
+    }      
 
     setSearchedServices(ss)		
+
+    window.location.href = "/services#searched"
 	}
 	
 
@@ -84,7 +97,7 @@ const ServiceScreen = () => {
                 <Mappa />
               </div>
             </Row>
-            <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Row id="searched" style={{ justifyContent: 'center', alignItems: 'center' }}>
                 {
                   searchedServices === null ? (
                   <div></div>
@@ -92,25 +105,26 @@ const ServiceScreen = () => {
                   <h2>Nessun servizio disponibile trovato</h2>
                 ) : (
                   <div>
-                  <h2>Servizi disponibili trovati:</h2>
-                  {
-                    searchedServices.map((servizio) => {
+                    <h2>Servizi disponibili trovati:</h2>
+                    {
+                      searchedServices.map((servizio) => {
 
-                      let time = servizio.day;
-                      time = time.split("T");
-                      let date = time[0];
-                      let orario = time[1].split(".")[0];
-      
-                      return <BookService servizio={servizio} date={date} orario={orario}/>
-                    })
-                  }
+                        let time = servizio.day;
+                        time = time.split("T");
+                        let date = time[0];
+                        let orario = time[1].split(".")[0];
+        
+                        return <BookService servizio={servizio} date={date} orario={orario}/>
+                      })
+                    }
+                    <br/>
                   </div>         
                         
                 )
               }            
             </Row>
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <h2 className="text-center"> Servizi prenotabili </h2>
+              <h2 className="text-center"> Tutti i servizi prenotabili </h2>
               <div style={{width: '50vw', height: '60vh' }}>
                 { 
                   bookableServices.length === 0 ? (

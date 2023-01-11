@@ -22,6 +22,12 @@
 		"pet": "Gatti",
 		"description": "Veterinario specializzato in gatti",
 		"image": "http://www.site.it/image"
+	},
+	{
+		"name": "Veterinario",
+		"pet": "Pesci",
+		"description": "Veterinario specializzato in pesci",
+		"image": "http://www.site.it/image"
 	}
 
 ]

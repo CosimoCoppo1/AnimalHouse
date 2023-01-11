@@ -3,6 +3,8 @@ import { useState} from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import apiUrl from '../../config'
+import ProfilePage from './ProfilePage'
+import Button from 'react-bootstrap/Button';
 
 
 const Login = () => {
@@ -90,12 +92,18 @@ const Login = () => {
         </form>
       </div>
     :
-      <div>
+      <div className="homescreen">
         <div style={{background: "green", color: "white"}}>
           <h3>You are logged in</h3>
         </div>
 
-        <button onClick={() => logoutHandler()}>Logout</button>
+        <Button variant="primary" onClick={() => logoutHandler()}>Logout</Button>
+
+        <br />
+
+        <ProfilePage />
+
+
       </div>
   );
 };
