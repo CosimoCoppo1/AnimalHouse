@@ -18,7 +18,7 @@ const Post = ({ data }) => {
       </h4>
 
       <img
-        src={data.image ? `http://${apiUrl}/images/` + data.image : ""}
+        src={data.image ? `http://${apiUrl}/images/post/` + data.image : ""}
         alt=""
       />
 
