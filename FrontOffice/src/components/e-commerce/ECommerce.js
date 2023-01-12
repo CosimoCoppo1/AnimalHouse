@@ -3,7 +3,7 @@ import PetSection from './PetSection';
 import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SectionScreen from './SectionScreen';
-import FooterBasic from '../footers/FooterBasic'
+import FooterBasic from '../FooterBasic'
 import ProductSection from './ProductSection';
 
 

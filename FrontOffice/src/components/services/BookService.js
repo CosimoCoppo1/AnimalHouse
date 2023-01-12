@@ -41,11 +41,15 @@ const BookService = ({servizio, date, orario}) => {
             <Card.Body>
             <Card.Title>Animale</Card.Title>
             <Card.Text>
-                {servizio.pet.name}
+                {servizio.pet.name} 
+            </Card.Text>
+            <Card.Title>Taglia</Card.Title>
+            <Card.Text>
+                {servizio.pet_size}
             </Card.Text>
             <Card.Title>Data e Ora</Card.Title>
             <Card.Text>
-                {date} at {orario}
+                {date} alle {orario.split(":")[0]}:{orario.split(":")[1]}
             </Card.Text>
             <Card.Title>Sede</Card.Title>
             <Card.Text>

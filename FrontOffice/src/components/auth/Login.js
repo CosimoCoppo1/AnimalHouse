@@ -4,7 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import apiUrl from '../../config'
 import ProfilePage from './ProfilePage'
-import Button from 'react-bootstrap/Button';
+import "./Login.css"
+
 
 
 const Login = () => {
@@ -62,13 +63,7 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password:
-              <Link to="/forgotpassword" 
-              className="login-screen__forgotpassword"
-              tabIndex={4}
-              >
-                  Forgot Password?
-              </Link>          
+            <label htmlFor="password">Password:   
             </label>
             <input
               type="password"
@@ -92,12 +87,9 @@ const Login = () => {
         </form>
       </div>
     :
-      <div className="homescreen">
-        <div style={{background: "green", color: "white"}}>
-          <h3>You are logged in</h3>
-        </div>
+      <div className="homescreen">        
 
-        <Button variant="primary" onClick={() => logoutHandler()}>Logout</Button>
+        <button type="button" class="btn btn-secondary" style={{width: "10%"}}onClick={() => logoutHandler()}>Logout</button>
 
         <br />
 
