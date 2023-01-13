@@ -24,6 +24,7 @@ app.use('/services', require('./routes/services'))
 app.use('/sections', require('./routes/sections'))
 app.use('/users', require('./routes/users'))
 app.use('/bookable_services', require('./routes/bookable_services'))
+app.use('/questions', require('./routes/questions'))
 app.use('/backoffice/services', require('./tpl-script/backoffice-service'))
 app.use('/backoffice/ecommerce', require('./tpl-script/backoffice-ecommerce'))
 

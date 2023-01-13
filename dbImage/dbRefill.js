@@ -6,6 +6,7 @@ const Product = require('../models/product')
 const Service  = require('../models/service')
 const Location = require('../models/location')
 const Bookable = require('../models/bookable_service')
+const Question = require('../models/question')
 const User    = require('../models/user')
 const Admin   = require('../models/admin')
 const Post    = require('../models/postModel')
@@ -23,6 +24,7 @@ let dbPopulate = async function()
 	await User.deleteMany();
 	await Admin.deleteMany();
 	await Post.deleteMany();
+	await Question.deleteMany();
 
 	/* https://mongoosejs.com/docs/api.html#model_Model-syncIndexes */
 	await Pet.syncIndexes();
@@ -34,6 +36,7 @@ let dbPopulate = async function()
 	await User.syncIndexes();
 	await Admin.syncIndexes();
 	await Post.syncIndexes();
+	await Question.syncIndexes();
 
 	let petsMap = {};
 	petsMap = await petPopulate();
@@ -55,6 +58,7 @@ let dbPopulate = async function()
 	userMap = await userPopulate();
 	await adminPopulate();
 	await postPopulate(userMap);
+	await questionPopulate();
 }
 
 async function petPopulate()
@@ -219,6 +223,20 @@ async function postPopulate(userMap)
 		posts[i].user = userMap[posts[i].user];
 		const p = new Post(posts[i]);
 		await p.save();
+	}
+}
+
+async function questionPopulate()
+{
+	let questions = await fs.readFile(
+		path.join(global.rootDir, 'dbImage/questions.json'), 
+		'utf8');
+
+	questions = JSON.parse(questions);
+
+	for (let i = 0; i < questions.length; i++) {
+		const q = new Question(questions[i]);
+		await q.save();
 	}
 }
 
