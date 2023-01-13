@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
 		let dbQuery = {};
 		if ('section' in req.query) dbQuery['section'] = req.query.section;
 		if ('id' in req.query) dbQuery['_id'] = req.query.id;
+		if ('pet' in req.query) dbQuery['pet'] = req.query.pet;
 
 		const products = await Product.find(dbQuery)
 			.populate('pet')
