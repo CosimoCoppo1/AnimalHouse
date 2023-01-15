@@ -10,7 +10,11 @@ router.get('/', async (req, res) => {
 		if ('category' in req.query) dbQuery['category'] = req.query.category;
 		if ('qty' in req.query) qty = req.query.qty;
 
-		const questions = await Question.find(dbQuery).limit(qty).lean();
+		const questions = await Question.aggregate([
+			{ $match: dbQuery },
+			{ $sample: { size: qty } }
+		]);
+
 		res.status(200).json(questions);
 	}
 	catch (err) {
