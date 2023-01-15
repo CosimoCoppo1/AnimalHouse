@@ -1,0 +1,22 @@
+[
+	{
+		"game": "quiz",
+		"user": "marco.arnautovic@unibo.it",
+		"bestScore": "10"
+	},
+	{
+		"game": "quiz",
+		"user": "joe.biden@unibo.it",
+		"bestScore": "10"
+	},
+	{
+		"game": "quiz",
+		"user": "orietta.berti@unibo.it",
+		"bestScore": "7"
+	},
+	{
+		"game": "quiz",
+		"user": "sofi.mecontrote@unibo.it",
+		"bestScore": "5"
+	}
+]
