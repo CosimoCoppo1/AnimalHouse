@@ -11,6 +11,7 @@ const User    = require('../models/user')
 const Admin   = require('../models/admin')
 const Post    = require('../models/postModel')
 const Score   = require('../models/gamescore')
+const UserPet = require('../models/userPet')
 const fs      = require('fs').promises;
 const path    = require('path');
 
@@ -27,6 +28,7 @@ let dbPopulate = async function()
 	await Post.deleteMany();
 	await Question.deleteMany();
 	await Score.deleteMany();
+	await UserPet.deleteMany();
 
 	/* https://mongoosejs.com/docs/api.html#model_Model-syncIndexes */
 	await Pet.syncIndexes();
@@ -40,6 +42,7 @@ let dbPopulate = async function()
 	await Post.syncIndexes();
 	await Question.syncIndexes();
 	await Score.syncIndexes();
+	await UserPet.syncIndexes();
 
 	let petsMap = {};
 	petsMap = await petPopulate();
@@ -63,6 +66,7 @@ let dbPopulate = async function()
 	await postPopulate(userMap);
 	await questionPopulate();
 	await gamescorePopulate(userMap);
+	await userPetPopulate(userMap, petsMap);
 }
 
 async function petPopulate()
@@ -256,6 +260,22 @@ async function gamescorePopulate(userMap)
 		scores[i].user = userMap[scores[i].user];
 		const s = new Score(scores[i]);
 		await s.save();
+	}
+}
+
+async function userPetPopulate(userMap, petMap)
+{
+	let userPets = await fs.readFile(
+		path.join(global.rootDir, 'dbImage/userPets.json'), 
+		'utf8');
+
+	userPets = JSON.parse(userPets);
+
+	for (let i = 0; i < userPets.length; i++) {
+		userPets[i].user = userMap[userPets[i].user];
+		userPets[i].pet  = petMap[userPets[i].pet];
+		const up = new UserPet(userPets[i]);
+		await up.save();
 	}
 }
 
