@@ -151,56 +151,129 @@ router.post('/reservation', async (req, res) => {
 	let reservationResult = false
 	let serviceR = {}
 
+    try {		
 
-    try{		
-		const serviceToBook = await Bookable_service.findById(req.body.bookable_service)
-		
-		if(serviceToBook.reservation_left >= req.body.qty){
-
-			//riserva possibile
-			try{
-				serviceR = new Reservation(req.body)
-				await serviceR.save();		
-			}catch (error){
-				console.log(error)
-			}
-			
-			serviceToBook.reservation_left -= req.body.qty
-			await serviceToBook.save()
-			
-			reservationResult = true
-
-			res.json({reservationResult, serviceR})
-		}else{
-			//quantità riserva non disponibile
-			res.json({reservationResult, serviceR})
+		if (!('bookable_service' in req.body)) {
+			throw new Error('"bookable_service" field is required in body request');
 		}
 
-    }catch (err){
+		const serviceToBook = await Bookable_service.findById(req.body.bookable_service);
+
+		if (serviceToBook === null) {
+			throw new Error(`A bookable_service with id: ${req.body.bookable_service} not exist`);
+		}
+		
+		if(serviceToBook.reservation_left >= req.body.qty) {
+
+			serviceR = new Reservation(req.body);
+			await serviceR.save();		
+			
+			serviceToBook.reservation_left -= req.body.qty;
+			await serviceToBook.save();
+			
+			reservationResult = true;
+
+			res.json({reservationResult, serviceR});
+
+		} 
+		else {
+			res.json({reservationResult, serviceR});
+		}
+
+    } 
+	catch (err){
         res.status(400).json({ 'message': err.message });
     }
 
-})
+});
 
 router.get('/reservation', async (req, res) => {
 	
-	try{
 
-		const recerveces = await Reservation.find({})
+	let bookable_dbQuery = {}
+	let reservation_dbQuery = {}
+
+	if ('pet' in req.query) {
+		bookable_dbQuery['pet'] = req.query.pet;
+	}
+	if ('location' in req.query) {
+		bookable_dbQuery['location'] = req.query.location;
+	}
+	if ('service' in req.query) {
+		bookable_dbQuery['service'] = req.query.service;
+	}
+
+	try {
+
+		if ('pet' in req.query || 'location' in req.query || 'service' in req.query) {
+
+			const bs  = await Bookable_service.find(bookable_dbQuery).lean();
+			let bs_ids = [];
+
+			for (let i = 0; i < bs.length; i++) {
+				bs_ids.push(bs[i]._id);
+			}
+
+			reservation_dbQuery['bookable_service'] = { $in: bs_ids };
+		}
+
+		if ('user' in req.query) {
+			reservation_dbQuery['user'] = req.query.user;
+		}
+
+		console.log(reservation_dbQuery);
+
+
+		const recerveces = await Reservation.find(reservation_dbQuery)
 			.populate({
 				path: 'bookable_service',
-				populate: [{
+				populate: [
+				{
 					path: 'service',
 					model: 'service'
-				}, {
+				}, 
+				{
 					path: 'location',
 					model: 'location'
-				}]
+				},
+				{
+					path: 'pet',
+					model: 'pet'
+				}
+				]
 			})
 			.lean();
+
+		recerveces.sort((x, y) => {
+
+			let cmp;
+			x = x.bookable_service;
+			y = y.bookable_service;
+
+			cmp = x.pet.name.localeCompare(y.pet.name);
+			if (cmp !== 0)  return cmp;
+
+			cmp = `${x.location.city} - ${x.location.address}`
+				.localeCompare(`${y.location.city} - ${y.location.address}`);
+			if (cmp !== 0)  return cmp; 
+
+			cmp = x.service.name.localeCompare(y.service.name);
+			if (cmp !== 0)  return cmp;
+  
+			cmp = x.day.toString().localeCompare(y.day);
+			if (cmp !== 0)  return cmp;
+
+			if (x.price > y.price) return 1;
+
+			else return 0;
+
+		});
+
 			
 		res.json(recerveces)
-	}catch(err){
+
+	}
+	catch(err) {
 		res.status(400).json({ 'message': err.message });
 	}   
 })

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Ecommerce</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 			function getAndShowPetSections()
 			{
 				const pet = $('#pet-select > option:checked').attr('value');
-				$.getJSON(`http://site212225.tw.cs.unibo.it/sections?pet=${pet}`, 
+				$.getJSON(`/sections?pet=${pet}`, 
 					function (sections)
 					{
 						const sel = $('#section-select');
@@ -28,7 +28,7 @@
 
 			function getAndShowPetSelect()
 			{
-				$.getJSON('http://site212225.tw.cs.unibo.it/pets', 
+				$.getJSON('/pets', 
 					function (pets)
 					{
 						const sel = $('#pet-select');
@@ -66,7 +66,7 @@
 					'description': description
 				};
 
-				$.post(`http://site212225.tw.cs.unibo.it/${f.attr('action')}`, productData)
+				$.post(`/${f.attr('action')}`, productData)
 				.then((res) => {
 					alert('Prodotto creato con successo');
 				})

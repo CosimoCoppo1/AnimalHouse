@@ -1,0 +1,25 @@
+[
+	{
+		"user": "marco.arnautovic@unibo.it",
+		"pet": "Cani",
+		"petName": "Maria Teresa",
+		"desc": "È un bel cane"
+	},
+	{
+		"user": "joe.biden@unibo.it",
+		"pet": "Cani",
+		"petName": "Antonia Trifena",
+		"desc": "Abbaia sempre ai vicini"
+	},
+	{
+		"user": "marco.arnautovic@unibo.it",
+		"pet": "Gatti",
+		"petName": "Guglielmino"
+	},
+	{
+		"user": "orietta.berti@unibo.it",
+		"pet": "Tartarughe",
+		"petName": "Michelangelo",
+		"desc": "È un ninja"
+	}
+]

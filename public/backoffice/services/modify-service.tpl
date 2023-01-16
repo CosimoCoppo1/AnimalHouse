@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Servizi in negozio</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 			function show_pet_services_select()
 			{
 				const pet = $('#pet-select > option:checked').attr('value');
-				$.getJSON(`http://site212225.tw.cs.unibo.it/services?pet=${pet}`, 
+				$.getJSON(`/services?pet=${pet}`, 
 					function (services)
 					{
 						const sel = $('#service-select');
@@ -58,7 +58,7 @@
 					'day': utcDate
 				};
 
-				$.post(`http://site212225.tw.cs.unibo.it/${f.attr('action')}`, serviceData)
+				$.post(`/${f.attr('action')}`, serviceData)
 				.then((res) => {
 					alert('Aggionamento avvenuto con successo');
 				})

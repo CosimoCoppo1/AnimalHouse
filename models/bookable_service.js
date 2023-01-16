@@ -32,6 +32,8 @@ const bookable_serviceSchema = new mongoose.Schema({
         type: String,
 		required: true
     }
-})
+});
+
+bookable_serviceSchema.index({ pet: 1, location: 1, service: 1, day: 1}, { unique: true });
 
 module.exports = mongoose.model('Bookable_service', bookable_serviceSchema)
