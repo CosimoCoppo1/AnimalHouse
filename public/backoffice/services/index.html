@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Servizi in negozio</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		
@@ -46,7 +46,7 @@
 		function show_pet_services_select()
 		{
 			const pet = $('input[type="radio"][name="pet"]:checked').attr('value');
-			$.getJSON(`http://site212225.tw.cs.unibo.it/services?pet=${pet}`, 
+			$.getJSON(`/services?pet=${pet}`, 
 				function (services)
 				{
 					const sel = $('#service-select');
@@ -82,7 +82,7 @@
 			const l = $('#location-select option:selected').attr('value');
 			const s = $('#service-select option:selected').attr('value');
 
-			let uri = `http://site212225.tw.cs.unibo.it/bookable_services?pet=${p}`;
+			let uri = `/bookable_services?pet=${p}`;
 			if (l !== 'All') uri += `&location=${l}`;
 			if (s !== 'All') uri += `&service=${s}`;
 			$.getJSON(uri, (services) => { showSearchResult(services);});
@@ -169,7 +169,7 @@
 
 		function deleteBookableService(id)
 		{	$.ajax({
-					'url': `http://site212225.tw.cs.unibo.it/bookable_services/${id}`,
+					'url': `/bookable_services/${id}`,
 					'method': 'DELETE'
 			})
 			.then((res) => {
@@ -183,8 +183,8 @@
 		
 			
 		$(document).ready(() => {
-			$.getJSON('http://site212225.tw.cs.unibo.it/pets', (pets) => { showPetsRadio(pets); });
-		 	$.getJSON('http://site212225.tw.cs.unibo.it/locations', (locations) => { showLocationsSelect(locations); });
+			$.getJSON('/pets', (pets) => { showPetsRadio(pets); });
+		 	$.getJSON('/locations', (locations) => { showLocationsSelect(locations); });
 			
 
 			$('#search-form').submit((event) => {

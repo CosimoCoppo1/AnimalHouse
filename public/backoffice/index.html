@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Backoffice</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		
@@ -14,7 +14,7 @@
 			function login()
 			{
 				const form = $('#login-form');
-				const action = 'http://site212225.tw.cs.unibo.it/auth/admin/login';
+				const action = '/auth/admin/login';
 
 				const email    = $('#email').val();
 				const password = $('#password').val();
@@ -25,7 +25,7 @@
 
 				$.post(action, adminData)
 				.then((res) => {
-					const home = 'http://site212225.tw.cs.unibo.it/backoffice/home.html';
+					const home = '/backoffice/home.html';
 					$(location).attr('href', home);
 				})
 				.catch((err) => {

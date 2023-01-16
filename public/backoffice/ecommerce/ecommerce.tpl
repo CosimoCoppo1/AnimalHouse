@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Ecommerce</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		 <script src="bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
@@ -75,7 +75,7 @@
 										</div>
 										<div class="card-body">
 											<p class="card-text">{{this.description}}.</p>
-											<a href="http://site212225.tw.cs.unibo.it/backoffice/ecommerce/products.html?section={{this._id}}" class="stretched-link">Vedi</a>
+											<a href="/backoffice/ecommerce/products.html?section={{this._id}}" class="stretched-link">Vedi</a>
 										</div>
 									</div>
 								</div>

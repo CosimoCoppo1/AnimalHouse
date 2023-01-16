@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Ecommerce</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
@@ -11,7 +11,7 @@
 		<script>
 			function getAndShowPetSections(petId, defaultSectionId)
 			{
-				$.getJSON(`http://site212225.tw.cs.unibo.it/sections?pet=${petId}`, 
+				$.getJSON(`/sections?pet=${petId}`, 
 					function (sections)
 					{
 						const sel = $('#section-select');
@@ -35,7 +35,7 @@
 
 			function getAndShowPetSelect(defaultPetId)
 			{
-				$.getJSON('http://site212225.tw.cs.unibo.it/pets', 
+				$.getJSON('/pets', 
 					function (pets)
 					{
 						const sel = $('#pet-select');
@@ -89,7 +89,7 @@
 					'description': description
 				};
 
-				$.post(`http://site212225.tw.cs.unibo.it/products/${productId}/modify`, productData)
+				$.post(`/products/${productId}/modify`, productData)
 				.then((res) => {
 					alert('Prodotto modificato con successo');
 				})
@@ -101,7 +101,7 @@
 
 			let productId = getUrlParameter('id');
 			$(document).ready(() => {
-				$.getJSON(`http://site212225.tw.cs.unibo.it/products?id=${productId}`,
+				$.getJSON(`/products?id=${productId}`,
 					function (product) {
 						initForm(product[0]);
 						getAndShowPetSelect(product[0].pet._id);

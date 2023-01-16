@@ -3,12 +3,14 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Ecommerce</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
 		<script src="jquery-3.6.0.js"></script>
 		<script>
+
+			
 
 			function createNewUser()
 			{
@@ -22,7 +24,7 @@
 					'password': password
 				};
 
-				$.post(`http://site212225.tw.cs.unibo.it/auth/user/register`, userData)
+				$.post(`/auth/user/register`, userData)
 				.then((res) => {
 					$('#res-success').modal('show');					
 				})

@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<base href="http://site212225.tw.cs.unibo.it/">
+		<base href="http://localhost:8000/">
 		<title>Ecommerce</title>
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
@@ -22,7 +22,7 @@
 
 				console.log(userData);
 
-				$.post(`http://site212225.tw.cs.unibo.it/users/${userId}/modify`, userData)
+				$.post(`/users/${userId}/modify`, userData)
 				.then((res) => {
 					alert('Dati dell\'utente modificati con successo');
 				})
@@ -52,7 +52,7 @@
 			let userId = getUrlParameter('id');
 			$(document).ready(() => {
 
-				$.getJSON(`http://site212225.tw.cs.unibo.it/users?id=${userId}`,
+				$.getJSON(`/users?id=${userId}`,
 					function (users) {
 						if (users.length > 0) initForm(users[0]);
 						else userIdError();
