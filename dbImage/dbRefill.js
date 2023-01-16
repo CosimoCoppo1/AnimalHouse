@@ -12,6 +12,7 @@ const Admin   = require('../models/admin')
 const Post    = require('../models/postModel')
 const Score   = require('../models/gamescore')
 const UserPet = require('../models/userPet')
+const Reservation = require('../models/reservation')
 const fs      = require('fs').promises;
 const path    = require('path');
 
@@ -29,6 +30,7 @@ let dbPopulate = async function()
 	await Question.deleteMany();
 	await Score.deleteMany();
 	await UserPet.deleteMany();
+	await Reservation.deleteMany();
 
 	/* https://mongoosejs.com/docs/api.html#model_Model-syncIndexes */
 	await Pet.syncIndexes();
@@ -43,6 +45,7 @@ let dbPopulate = async function()
 	await Question.syncIndexes();
 	await Score.syncIndexes();
 	await UserPet.syncIndexes();
+	await Reservation.syncIndexes();
 
 	let petsMap = {};
 	petsMap = await petPopulate();
@@ -58,7 +61,8 @@ let dbPopulate = async function()
 	let servicesMap = {};
 	servicesMap = await servicesPopulate(petsMap);
 
-	await BookableServicePopulate(petsMap, locationsMap, servicesMap);
+	let bookableServicesMap = {};
+	bookableServicesMap = await BookableServicePopulate(petsMap, locationsMap, servicesMap);
 
 	let userMap = {};
 	userMap = await userPopulate();
@@ -67,6 +71,8 @@ let dbPopulate = async function()
 	await questionPopulate();
 	await gamescorePopulate(userMap);
 	await userPetPopulate(userMap, petsMap);
+
+	await reservationPopulate(userMap, bookableServicesMap);
 }
 
 async function petPopulate()
@@ -170,6 +176,7 @@ async function servicesPopulate(petsMap)
 
 async function BookableServicePopulate(petsMap, locationsMap, servicesMap)
 {
+	let bookableServicesMap = {};
 	let bookable_services = await fs.readFile(
 		path.join(global.rootDir, 'dbImage/bookable_services.json'), 
 		'utf8');
@@ -177,13 +184,20 @@ async function BookableServicePopulate(petsMap, locationsMap, servicesMap)
 	bookable_services = JSON.parse(bookable_services);
 
 	for (let i = 0; i < bookable_services.length; i++) {
+
+		let key = `${bookable_services[i].pet}-${bookable_services[i].location}-${bookable_services[i].service}-${bookable_services[i].day}`;
+	
 		bookable_services[i].pet = petsMap[bookable_services[i].pet];
 		bookable_services[i].location = locationsMap[bookable_services[i].location];
 		bookable_services[i].service = servicesMap[bookable_services[i].service];
 
 		const b = new Bookable(bookable_services[i]);
 		const bnew = await b.save();
+
+		bookableServicesMap[key] = bnew._id;
 	}
+
+	return bookableServicesMap;
 }
 
 async function userPopulate()
@@ -276,6 +290,22 @@ async function userPetPopulate(userMap, petMap)
 		userPets[i].pet  = petMap[userPets[i].pet];
 		const up = new UserPet(userPets[i]);
 		await up.save();
+	}
+}
+
+async function reservationPopulate(userMap, bookableServicesMap)
+{
+	let reservations = await fs.readFile(
+		path.join(global.rootDir, 'dbImage/reservations.json'), 
+		'utf8');
+
+	reservations = JSON.parse(reservations);
+
+	for (let i = 0; i < reservations.length; i++) {
+		reservations[i].user = userMap[reservations[i].user];
+		reservations[i].bookable_service = bookableServicesMap[reservations[i].bookable_service];
+		const r = new Reservation(reservations[i]);
+		await r.save();
 	}
 }
 

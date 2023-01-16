@@ -1,0 +1,22 @@
+[
+	{
+		"bookable_service": "Cani-Bologna-via Indipendenza 5-Toilettatura-Cani-2023-02-20T10:30:00Z",
+		"user": "marco.arnautovic@unibo.it",
+		"qty": 1
+	},
+	{
+		"bookable_service": "Cani-Bologna-via Indipendenza 5-Toilettatura-Cani-2023-02-20T10:30:00Z",
+		"user": "joe.biden@unibo.it",
+		"qty": 1
+	},
+	{
+		"bookable_service": "Cani-Milano-via Tortona 37-Dog sitter-Cani-2023-02-02T08:30:00Z",
+		"user": "orietta.berti@unibo.it",
+		"qty": 2
+	},
+	{
+		"bookable_service": "Pesci-Cagliari-viale Italia 10-Veterinario-Pesci-2023-01-23T14:30:00Z",
+		"user": "sofi.mecontrote@unibo.it",
+		"qty": 3
+	}
+]

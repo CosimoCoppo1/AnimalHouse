@@ -151,36 +151,41 @@ router.post('/reservation', async (req, res) => {
 	let reservationResult = false
 	let serviceR = {}
 
+    try {		
 
-    try{		
-		const serviceToBook = await Bookable_service.findById(req.body.bookable_service)
-		
-		if(serviceToBook.reservation_left >= req.body.qty){
-
-			//riserva possibile
-			try{
-				serviceR = new Reservation(req.body)
-				await serviceR.save();		
-			}catch (error){
-				console.log(error)
-			}
-			
-			serviceToBook.reservation_left -= req.body.qty
-			await serviceToBook.save()
-			
-			reservationResult = true
-
-			res.json({reservationResult, serviceR})
-		}else{
-			//quantità riserva non disponibile
-			res.json({reservationResult, serviceR})
+		if (!('bookable_service' in req.body)) {
+			throw new Error('"bookable_service" field is required in body request');
 		}
 
-    }catch (err){
+		const serviceToBook = await Bookable_service.findById(req.body.bookable_service);
+
+		if (serviceToBook === null) {
+			throw new Error(`A bookable_service with id: ${req.body.bookable_service} not exist`);
+		}
+		
+		if(serviceToBook.reservation_left >= req.body.qty) {
+
+			serviceR = new Reservation(req.body);
+			await serviceR.save();		
+			
+			serviceToBook.reservation_left -= req.body.qty;
+			await serviceToBook.save();
+			
+			reservationResult = true;
+
+			res.json({reservationResult, serviceR});
+
+		} 
+		else {
+			res.json({reservationResult, serviceR});
+		}
+
+    } 
+	catch (err){
         res.status(400).json({ 'message': err.message });
     }
 
-})
+});
 
 router.get('/reservation', async (req, res) => {
 	
