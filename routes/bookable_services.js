@@ -242,6 +242,7 @@ router.get('/reservation', async (req, res) => {
 				}
 				]
 			})
+			.populate('user')
 			.lean();
 
 		recerveces.sort((x, y) => {
@@ -277,5 +278,16 @@ router.get('/reservation', async (req, res) => {
 		res.status(400).json({ 'message': err.message });
 	}   
 })
+
+router.delete('/reservation/:id/', async (req, res) => {
+	
+	try {
+		await Reservation.deleteOne({ _id: req.params.id });
+		res.status(200).end();
+	}
+	catch (err) {
+		res.status(400).json({ 'message': err.message });
+	}
+});
 
 module.exports = router
