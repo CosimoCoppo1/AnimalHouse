@@ -142,7 +142,8 @@ function showSearchResult(results)
 						</p>
 						<p>Posti disponibili: <span class="text-black fw-bold">${results[i].reservation_left}</span></p>
 						<div class="d-flex justify-content-end">
-							<a role="button" class="btn btn-outline-success" href="backoffice/services/${results[i]._id}/modify"><span class="fw-bold">Modifica</span></a>
+							<a role="button" class="btn btn-outline-success" href="backoffice/services/reserve.html?id=${results[i]._id}"><span class="fw-bold">Prenota</span></a>
+							<a role="button" class="ms-2 btn btn-outline-success" href="backoffice/services/${results[i]._id}/modify"><span class="fw-bold">Modifica</span></a>
 							<button class="ms-2 btn btn-outline-danger" onclick="deleteBookableService('${results[i]._id}')"><span class="fw-bold">Elimina</span></button>
 						</div>
 					</div>

@@ -21,6 +21,9 @@ router.get('/', async (req, res) => {
 		if ('service' in req.query) {
 			dbQuery['service'] = req.query.service;
 		}
+		if ('id' in req.query) {
+			dbQuery['_id'] = req.query.id;
+		}
 
         const s  = await Bookable_service.find(dbQuery)
 			.populate('pet')
