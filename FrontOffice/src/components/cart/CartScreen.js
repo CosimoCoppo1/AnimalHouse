@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Cart from './Cart'
 import { addToCart, removeFromCart, buyFromCart} from "../../redux/actions/cartActions";
-
+import swal from 'sweetalert';
 
 const CartScreen = () => {
   const dispatch = useDispatch();
@@ -31,8 +31,17 @@ const CartScreen = () => {
 
   const checkoutHandler = () => {
     dispatch(buyFromCart()) 
+    let result = localStorage.getItem("cartResult")
     let msg = localStorage.getItem("cartMsg")
-    alert(msg)
+    if(result==0){
+      swal({title: msg, icon: "success"})
+    }else{
+      swal({title: msg, icon: "warning"})
+    } 
+
+    localStorage.removeItem("cartResult")
+    localStorage.removeItem("cartMsg")
+       
   };
 
 
@@ -71,5 +80,6 @@ const CartScreen = () => {
     </>    
   )
 }
+
 
 export default CartScreen

@@ -97,7 +97,7 @@ router.post('/buy-from-cart', async (req, res) =>{
 		for (let item of cartItemsToBuy){
 			let itemInDb = await Product.findById(item.product)		
 			if(item.qty > itemInDb.pieces_left){
-				msg.push(`Of product ${item.title} there are ${itemInDb.pieces_left} pieces left \n`)
+				msg.push(`Del prodotto ${item.title} sono disponibili ${itemInDb.pieces_left} pezzi \n`)
 			}
 		}
 
@@ -111,10 +111,10 @@ router.post('/buy-from-cart', async (req, res) =>{
 
 
 		if(msg.length == 0){
-			msg.push("Products purchased succesfully!")
+			msg.push("Prodotti acquistati con successo!")
 			res.json({result: 0, msg})
 		}else{
-			msg.push("\n Please, change your selections")
+			msg.push("\n Perfavore, modificare il numero dei prodotti selezionati in base alle disponibilità. \n Grazie")
 			res.json({result: 1, msg})
 		}
 

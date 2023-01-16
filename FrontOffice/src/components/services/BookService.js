@@ -3,6 +3,8 @@ import axios from "axios";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import apiUrl from '../../config'
+import swal from 'sweetalert';
+
 
 const BookService = ({servizio, date, orario}) => {
     const [qty, setQty] = useState(1);
@@ -15,12 +17,12 @@ const BookService = ({servizio, date, orario}) => {
 
             try {
                 const {data} = await axios.post(`http://${apiUrl}/bookable_services/reservation`, {qty, user ,bookable_service})            
-                console.log(data)
+                console.log( data)
                 if(data.reservationResult){
-                    alert("Service reserved succesfully")
+                    swal({title: "Prenotazione servizio avvenuta con successo!", icon: "success"})
                     window.location.href = "/services"
                 }else{
-                    alert("We are sorry but an error occurred during the booking")
+                    swal({title: "Siamo spiacenti ma è avvenuto un errore durante la prenotazione", icon: "error"})
                 }
                     
 
@@ -28,8 +30,8 @@ const BookService = ({servizio, date, orario}) => {
                 console.log(error);
             }
 
-        }else{            
-            alert("You need to login before booking")
+        }else{  
+            swal({title: "Login necessario per effettuare la prenotazione", icon: "info"})          
         }
         
     }

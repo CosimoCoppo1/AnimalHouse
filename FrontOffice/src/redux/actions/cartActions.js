@@ -35,6 +35,7 @@ export const buyFromCart = () => async (dispatch, getState) => {
   const {data} = await axios.post(`http://${apiUrl}/products/buy-from-cart`, {cartItemsToBuy}) 
   
   localStorage.setItem("cartMsg", data.msg)
+  localStorage.setItem("cartResult", data.result)
 
   dispatch({
     type: actionTypes.BUY_THE_CART,
