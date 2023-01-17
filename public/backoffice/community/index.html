@@ -36,13 +36,13 @@
 					let strTime = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
 
 					innerHTML += ` 
-						<div class="row justify-content-center py-3">
+						<div id="${posts[i]._id}" class="row justify-content-center py-3">
 							<div class="card shadow bg-secondary" style="--bs-bg-opacity: .03; width: 45rem;">
 								<div class="card-body">
 									<div class="d-flex justify-content-between">
 										<div>
-											<h2 class="card-title h5">Username</h2>
-											<h3 class="card-subtitle mb-2 text-muted h6">Email</h3>
+											<h2 class="card-title h5">${posts[i].user.username}</h2>
+											<h3 class="card-subtitle mb-2 text-muted h6">${posts[i].user.email}</h3>
 										</div>
 										<div>
 											${strDate} - <span>${strTime}</span>
@@ -71,7 +71,7 @@
 						</div>`;
 				}
 
-				p.html(innerHTML);
+				p.html(p.html() + innerHTML);
 
 			}
 
@@ -82,15 +82,30 @@
 					'method': 'DELETE'
 				})
 				.then((res) => {
-					$.getJSON('/posts', (posts) => { showPosts(posts); });
+					$(`#${id}`).remove();
 				})
 				.catch((err) => {
 					alert('Errore, eliminazione fallita');
 				});
 			}
+
+			let before = (new Date(Date.now())).toISOString();
+			function getPosts()
+			{
+				$.getJSON(`/posts?qty=1&before=${before}`, (posts) => { 
+					if (posts.length === 0) {
+						alert('Hai raggiunto l\'ultimo post');
+						$('#carica-altro').prop('disabled', true);
+
+						return;
+					}
+					before = posts[posts.length - 1].createdAt;
+					showPosts(posts); 
+				});
+			}
 			
 			$(document).ready(() => {
-				$.getJSON('/posts', (posts) => { showPosts(posts); });
+				getPosts();
 			});
 
 		</script>
@@ -150,7 +165,7 @@
 			</div>
 
 			<div class="row justify-content-center mt-3">
-				<button role="button" class="btn btn-outline-secondary" style="width: 50rem;">
+				<button role="button" id="carica-altro" onclick="getPosts()" class="btn btn-outline-secondary" style="width: 50rem;">
 					<div class="d-inline-flex p-2">
 						<span class="fs-5">Carica altri post</span> 
 						<span class="ps-2"><img src="backoffice/img/add-32.png" alt=""></span>

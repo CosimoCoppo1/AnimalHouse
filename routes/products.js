@@ -26,7 +26,7 @@ router.get('/', async (req, res) => {
 		res.status(200).json(products);
 	}
 	catch (err) {
-        res.status(404).json({message: err.message});
+        res.status(400).json({message: err.message});
 	}
 	
 });
