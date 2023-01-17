@@ -29,6 +29,9 @@ router.get('/', async (req, res) => {
 		let dbQuery = {};
 		if ('id' in req.query) dbQuery['_id'] = req.query.id;
 		if ('email' in req.query) dbQuery['email'] = req.query.email;
+		if ('username' in req.query) {
+			dbQuery['username'] = { $regex: new RegExp(req.query.username), $options: 'i' };
+		}
 
         const userList = await User.find(dbQuery).lean();
 		/* La password non viene restiuta da mongo,
