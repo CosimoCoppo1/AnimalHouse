@@ -51,22 +51,31 @@
 				const title = $('#title').val();
 				const price = $('#price').val();
 				const pieces_left = $('#pieces-left').val();
-				const image = $('#img').val();
+				const image = $('#product-image')[0].files[0];
 				const alt = $('#alt').val();
 				const description = $('#description').val();
 
-				const productData = {
-					'pet': pet,
-					'section': section,
-					'title': title,
-					'price': price,
-					'pieces_left': pieces_left,
-					'image': image,
-					'alt': alt,
-					'description': description
-				};
 
-				$.post(`/${f.attr('action')}`, productData)
+				let productData = new FormData();
+				productData.append('pet', pet);
+				productData.append('section', section);
+				productData.append('title', title);
+				productData.append('price', price);
+				productData.append('pieces_left', pieces_left);
+				productData.append('product-image', image); 
+				productData.append('alt', alt);
+				productData.append('description', description);
+
+
+				$.ajax({
+					url: `/${f.attr('action')}`,
+					data: productData,
+					cache: false,
+					contentType: false,
+					processData: false,
+					method: 'POST',
+					type: 'POST', // For jQuery < 1.9
+				})
 				.then((res) => {
 					alert('Prodotto creato con successo');
 				})
@@ -177,8 +186,8 @@
 						</div>
 
 						<div class="col-md-6">
-							<label class="form-label" for="img">Url immagine:</label>
-							<input type="text" id="img" class="form-control" required>
+							<label class="form-label" for="product-image">Carica un'immagine:</label>
+							<input type="file" id="product-image" name="product-image" accept="image/png, image/jpeg" class="form-control" required>
 						</div>
 
 						<div class="col-md-6">

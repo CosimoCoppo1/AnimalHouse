@@ -9,6 +9,7 @@ const errorHandler = require('./middleware/error')
 
 
 global.rootDir = __dirname
+global.baseUrl = 'localhost:8000/'
 
 app.use(express.static(path.join(global.rootDir, 'public')))
 app.use(express.urlencoded({ extended: true}))
