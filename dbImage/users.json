@@ -2,23 +2,25 @@
 	{
 		"username": "Marko Arnautovic",
 		"email": "marco.arnautovic@unibo.it",
-		"password": "123456"
+		"password": "123456",
+		"role": "normal"
 	},
 	{
 		"username": "Joe Biden",
 		"email": "joe.biden@unibo.it",
-		"password": "qwerty"
+		"password": "qwerty",
+		"role": "normal"
 	},
-{
+	{
 		"username": "Orietta Berti",
 		"email": "orietta.berti@unibo.it",
-		"password": "password"
+		"password": "password",
+		"role": "normal"
 	},
-{
+	{
 		"username": "SofìMeControTe Official",
 		"email": "sofi.mecontrote@unibo.it",
-		"password": "987654"
+		"password": "987654",
+		"role": "normal"
 	}
-
-
 ]

@@ -26,7 +26,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
 
     try {
-		let dbQuery = {};
+		let dbQuery = { 'role': 'normal' };
 		if ('id' in req.query) dbQuery['_id'] = req.query.id;
 		if ('email' in req.query) dbQuery['email'] = req.query.email;
 		if ('username' in req.query) {

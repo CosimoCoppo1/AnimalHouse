@@ -33,7 +33,6 @@ app.use('/backoffice/ecommerce', require('./tpl-script/backoffice-ecommerce'))
 
 
 app.use('/auth/user/', require('./routes/auth'))
-app.use('/auth/admin/', require('./routes/adminAuth'))
 app.use('/images', express.static('images'));
 app.use('/posts', require('./routes/PostRoute.js'))
 app.use('/upload', require('./routes/UploadRoute.js'))
