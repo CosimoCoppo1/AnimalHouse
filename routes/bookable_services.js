@@ -224,9 +224,6 @@ router.get('/reservation', async (req, res) => {
 			reservation_dbQuery['user'] = req.query.user;
 		}
 
-		console.log(reservation_dbQuery);
-
-
 		const recerveces = await Reservation.find(reservation_dbQuery)
 			.populate({
 				path: 'bookable_service',
