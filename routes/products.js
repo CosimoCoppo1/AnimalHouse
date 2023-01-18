@@ -137,7 +137,22 @@ router.post('/:id/modify', upload.single('product-image'), async (req, res) => {
 router.delete('/:id', async (req, res) => {
     try{
 
-        await Product.findByIdAndDelete(req.params.id);
+        const product_deleted = await Product.findByIdAndDelete(req.params.id).lean();
+
+		if (product_deleted === null) {
+			throw new Error(`The product with id ${req.params.id} dosen't exitst`);
+		}
+
+		const imagePath = path.join(
+			global.rootDir, 
+			'public/images/ecommerce/products/', 
+			path.basename(product_deleted.image)
+		);
+
+		if (fs.existsSync(imagePath)) {
+			fs.unlinkSync(imagePath);
+		}
+
 		res.status(200).end();
 
     }catch(err) {
