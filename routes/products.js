@@ -53,7 +53,7 @@ router.post('/new', upload.single('product-image'), async (req, res) => {
 			'title': req.body.title,
 			'price': req.body.price,
 			'description': req.body.description,
-			'image': 'http://' + path.join(global.baseUrl, '/images/products/', new_file_name),
+			'image': 'http://' + path.join(global.baseUrl, '/images/ecommerce/products/', new_file_name),
 			'alt': req.body.alt,
 			'pieces_left': req.body.pieces_left
 		};
@@ -61,7 +61,7 @@ router.post('/new', upload.single('product-image'), async (req, res) => {
     	const p = new Product(product);
 
 		fs.writeFileSync(
-			path.join(global.rootDir, 'public/images/products/', new_file_name), 
+			path.join(global.rootDir, 'public/images/ecommerce/products/', new_file_name), 
 			req.file.buffer
 		);
 
@@ -101,10 +101,10 @@ router.post('/:id/modify', upload.single('product-image'), async (req, res) => {
 			const uniquePrefix = Date.now() + '-' + Math.round(Math.random() * 1E9);
 			const new_file_name = uniquePrefix + '-' + req.file.originalname;
 
-			req.body['image'] = 'http://' + path.join(global.baseUrl, '/images/products/', new_file_name);
+			req.body['image'] = 'http://' + path.join(global.baseUrl, '/images/ecommerce/products/', new_file_name);
 			const imagePath = path.join(
 				global.rootDir, 
-				'public/images/products/', 
+				'public/images/ecommerce/products/', 
 				path.basename(old_product[0].image)
 			);
 
@@ -113,7 +113,7 @@ router.post('/:id/modify', upload.single('product-image'), async (req, res) => {
 			}
 
 			fs.writeFileSync(
-				path.join(global.rootDir, 'public/images/products/', new_file_name), 
+				path.join(global.rootDir, 'public/images/ecommerce/products/', new_file_name), 
 				req.file.buffer
 			);
 		}

@@ -83,7 +83,10 @@ function createHtmlPost(post)
 					<div class="card-body">
 						<div class="d-flex justify-content-between">
 							<div>
-								<h2 class="card-title h5">${post.user.username}</h2>
+								<div class="d-flex">
+									<h2 class="card-title h5">${post.user.username}</h2>
+									${post.user.role === 'admin' ?'<span class="px-1">-</span> <h2 class="card-title h5 text-danger fw-bold">Admin</h2>' : ''}
+								</div>
 								<h3 class="card-subtitle mb-2 text-muted h6">${post.user.email}</h3>
 							</div>
 							<div>
