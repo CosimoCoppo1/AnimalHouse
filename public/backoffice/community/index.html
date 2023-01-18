@@ -66,7 +66,7 @@
 					<form autocomplete="off" id="new-post" class="border border-success p-3" style="border-radius: 25px; width: 55rem;">
 						<h2>Scrivi un nuovo post.</h2>
 						<div class="mb-3">
-							<label for="post-text" class="form-label" required>
+							<label for="post-text" class="form-label">
 								Inserisci il testo del post 
 							</label>
 							<textarea  id="post-text" class="form-control" required></textarea>
@@ -84,7 +84,7 @@
 			</div>
 
 
-			<div id="posts" class="container">
+			<div role="region" aria-live="polite" id="posts" class="container">
 			</div>
 
 			<div class="row justify-content-center mt-3">

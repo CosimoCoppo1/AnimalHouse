@@ -20,16 +20,18 @@ function showUsers(users)
 
 	for (let i = 0; i < users.length; i++) {
 		innerHTML += `
-			<article class="py-3">
+			<article id="article-${users[i]._id}" class="py-3">
 				<div class="border border-dark border-1 bg-secondary p-1 px-2 d-flex justify-content-between" style="--bs-bg-opacity: .15;">
 					<div>
 						<span class="fw-bold">Id:</span> ${users[i]._id} 
 					</div>
 					<div>
-						<a role="button" href="backoffice/users/modifyUser.html?id=${users[i]._id}" class="btn p-0" aria-label="Modifica utente corrente">
+						<a role="button" href="backoffice/users/modifyUser.html?id=${users[i]._id}" class="btn btn-outline-success btn-sm py-0" aria-label="Modifica utente ${users[i].email}">
+							Modifica
 							<img src="backoffice/img/icons8-edit-32.png" height="16" alt="Modifica utente corrente">
 						</a>
-						<button type="button" onclick="deleteUser('${users[i]._id}')" class="btn p-0" aria-label="Elimina utente corrente">
+						<button role="button" onclick="deleteUser('${users[i]._id}')" class="btn btn-outline-danger btn-sm py-0" aria-label="Elimina utente ${users[i].email}">
+							Elimina
 							<img src="backoffice/img/trash-9-32.png" height="16" alt="">
 						</button>
 					</div>
@@ -53,7 +55,7 @@ function deleteUser(userId)
 		'method': 'DELETE',
 	})
 	.then((res) => {
-		$.getJSON('/users', (users) => { showUsers(users); });
+		$(`#article-${userId}`).remove();
 	})
 	.catch((err) => {
 		console.error(err);
