@@ -690,6 +690,14 @@ body, html, .App, #root, .auth-wrapper, .home {
   display: none;
 }
 
+/* My Profile Page */
+
+.MyAnimals{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 
 
 

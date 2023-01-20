@@ -20,7 +20,8 @@ const BookService = ({servizio, date, orario}) => {
                 console.log( data)
                 if(data.reservationResult){
                     swal({title: "Prenotazione servizio avvenuta con successo!", icon: "success"})
-                    window.location.href = "/services"
+                    .then(() => {window.location.href = "/services"})
+        
                 }else{
                     swal({title: "Siamo spiacenti ma è avvenuto un errore durante la prenotazione", icon: "error"})
                 }

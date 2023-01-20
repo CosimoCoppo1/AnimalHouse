@@ -1,5 +1,6 @@
 import React from 'react'
 import PostSide from "./PostSide/PostSide"
+import Leaderboard from "./Leaderboard"
 import { Container, Row, Col } from "react-bootstrap";
 
 
@@ -26,7 +27,8 @@ const Community = () => {
                 <br />
                 <Row>
                     <Col>                        
-                        <h4 className="text-center">LEADERBOARD GAME</h4>                        
+                        <h4 className="text-center">LEADERBOARD GAME</h4>   
+                        <Leaderboard />                     
                     </Col>
                     <Col>
                         <h4 className="text-center">BLOG POSTS</h4>

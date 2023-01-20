@@ -1,18 +1,22 @@
 const express = require('express')
 const router  = express.Router()
 const Score   = require('../models/gamescore')
+const User = require('../models/user')
 
 router.get('/game/:game', async (req, res) => {
 	
 	try {
-		let dbQuery = {};
+		let dbQuery = {};  
 		let top = 10;
 
 		const scores = await Score.aggregate([
 			{ $match: { game: req.params.game  } },
 			{ $sort: { bestScore: -1 } },
 			{ $limit: top }
-		]);
+		])
+
+		//scores = await User.populate(scores, {path: 'user'});
+
 		res.status(200).json(scores);
 	}
 	catch (err) {

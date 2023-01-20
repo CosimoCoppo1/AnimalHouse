@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const User     = require('./user')
 
 const scoreSchema = new mongoose.Schema({
-    game: {
-        type: String,
+    game: { 
+        type: String, 
         required: true
     },
     bestScore: {

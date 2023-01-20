@@ -1,10 +1,12 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import MyReservations from '../services/MyReservations';
-
+import MyAnimals from '../blog/MyAnimals';
 
 
 const ProfilePage = () => {
+
+
   return (
     <Container>
     <Row style={{marginLeft:"5rem", marginTop:"2rem", marginRight:"5rem"}} className="text-center rounded bg-secondary bg-opacity-10 shadow p-2">
@@ -24,10 +26,12 @@ const ProfilePage = () => {
             </Row>
         </Col>
         <Col>
-            <h4 className="text-center">MY ANIMALS</h4>
+                
+                <h4 className="text-center">MY ANIMALS</h4>
+                <MyAnimals />          
         </Col>
-    </Row>           
-
+    </Row>    
+    
     </Container>    
   )
 }
