@@ -25,8 +25,11 @@ const userSchema = new mongoose.Schema({
         select: false 
 		//il campo 'password' non viene selezionato con una User.find
     },
-    resetPasswordToken: String,
-    resetPasswordExpire: Date,
+	role: {
+		type: String,
+		enum: ['normal', 'admin'],
+		required: true
+	}
 })
 
 //pre saving function
@@ -49,16 +52,5 @@ userSchema.methods.getSignedJwtToken = function () {
     expiresIn: config.JWT_EXPIRE,
   });
 };
-
-userSchema.methods.getResetPasswordToken = function () {
-  const resetToken = crypto.randomBytes(20).toString("hex");
-
-  this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
-
-  this.resetPasswordExpire = Date.now() + 10 * (60 * 1000); // 10 min
-
-  return resetToken;
-};
-
 
 module.exports = mongoose.model('User', userSchema)

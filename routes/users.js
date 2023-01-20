@@ -1,6 +1,10 @@
 const express = require('express')
 const router  = express.Router()
 const User    = require('../models/user')
+const UserPet = require('../models/userPet')
+const Score   = require('../models/gamescore')
+const Post    = require('../models/postModel')
+const Reservation = require('../models/reservation')
 
 router.post('/:id/modify', async (req, res) => {
 	try {
@@ -14,7 +18,15 @@ router.post('/:id/modify', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
 	try {
-        await User.findByIdAndDelete(req.params.id);
+		const id = req.params.id;
+        await User.findByIdAndDelete(id);
+
+        await Score.deleteMany({ 'user': id });
+        await Post.deleteMany({ 'user': id });
+        await Reservation.deleteMany({ 'user': id });
+        await UserPet.deleteMany({ 'user': id });
+
+
 		res.status(200).end();
 	}
 	catch (err) {
@@ -26,7 +38,7 @@ router.delete('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
 
     try {
-		let dbQuery = {};
+		let dbQuery = { 'role': 'normal' };
 		if ('id' in req.query) dbQuery['_id'] = req.query.id;
 		if ('email' in req.query) dbQuery['email'] = req.query.email;
 		if ('username' in req.query) {

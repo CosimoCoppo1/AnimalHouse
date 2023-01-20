@@ -30,6 +30,9 @@
 
 				$.post(`bookable_services/reservation`, reservation)
 				.then((res) => {
+					if (!res.reservationResult) {
+						throw new Error('Prenotazione fallita');
+					}
 					alert('Prenotazione effettuata con successo');
 				})
 				.catch((err) => {

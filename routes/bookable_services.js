@@ -143,6 +143,7 @@ router.delete('/:id/', async (req, res) => {
 	
 	try {
 		await Bookable_service.deleteOne({ _id: req.params.id });
+		await Reservation.deleteMany({ bookable_service: req.params.id });
 		res.status(200).end();
 	}
 	catch (err) {
@@ -224,9 +225,6 @@ router.get('/reservation', async (req, res) => {
 			reservation_dbQuery['user'] = req.query.user;
 		}
 
-		console.log(reservation_dbQuery);
-
-
 		const recerveces = await Reservation.find(reservation_dbQuery)
 			.populate({
 				path: 'bookable_service',
@@ -285,6 +283,17 @@ router.get('/reservation', async (req, res) => {
 router.delete('/reservation/:id/', async (req, res) => {
 	
 	try {
+		const reservation = await Reservation.find({ _id: req.params.id });
+
+		if (reservation.length === 0) {
+			throw new Error(`The reservation with id ${req.params.id} doesn't exitst`);
+		}
+
+		const bs = await Bookable_service.find({ '_id': reservation[0].bookable_service });
+
+		bs[0].reservation_left += reservation[0].qty;
+		await bs[0].save();
+
 		await Reservation.deleteOne({ _id: req.params.id });
 		res.status(200).end();
 	}
