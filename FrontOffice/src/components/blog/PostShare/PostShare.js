@@ -3,13 +3,12 @@ import "./PostShare.css";
 import { UilScenery } from "@iconscout/react-unicons";
 import { UilTimes } from "@iconscout/react-unicons";
 import { uploadImage, uploadPost } from "../ActionsPost/UploadAction";
-import apiUrl from '../../../config'
+import defaultProfile from "./defaultProfile.png"
 
 const PostShare = ({setShared}) => {
   const [image, setImage] = useState(null);
   const imageRef = useRef();
   const desc = useRef();
-  const serverPublic = `http://${apiUrl}/images/`;
 
   // handle Image Change
   const onImageChange = (event) => {
@@ -39,7 +38,7 @@ const PostShare = ({setShared}) => {
        
         uploadImage(data)
 
-        if(newPost.desc == ""){
+        if(newPost.desc === ""){
           newPost.desc = " "
         }
 
@@ -66,7 +65,7 @@ const PostShare = ({setShared}) => {
   return (
     <div className="PostShare">
       <img
-        src={ serverPublic + "defaultProfile.png"}
+        src={defaultProfile }
         alt="Profile"
       />
       <div>

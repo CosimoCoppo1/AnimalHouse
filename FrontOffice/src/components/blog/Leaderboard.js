@@ -35,7 +35,7 @@ const Leaderboard = () => {
                             className="text-center mx-auto"
                         >
                             <Card.Body>
-                                <Card.Title>{id + 1}{") "}{score.user.username}{"      "}{score.bestScore}</Card.Title>                                
+                                <Card.Title>{score.user.username}{"           "}{score.bestScore}</Card.Title>                                
                             </Card.Body>
                         </Card>                        
                       );
