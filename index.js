@@ -13,6 +13,16 @@ global.rootDir = __dirname
 global.baseUrl = 'localhost:8000/'
 
 app.use(express.static(path.join(global.rootDir, 'public')))
+
+/* reload page error, see: https://create-react-app.dev/docs/deployment/ */
+app.get('/game/*', (req, res) => {
+   res.sendFile(path.join(__dirname, 'public/game/', 'index.html'));
+});
+
+app.get('/frontoffice/*', (req, res) => {
+   res.sendFile(path.join(__dirname, 'public/frontoffice/', 'index.html'));
+});
+
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(cors())
