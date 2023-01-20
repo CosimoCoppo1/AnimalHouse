@@ -40,20 +40,6 @@ app.use('/upload', require('./routes/UploadRoute.js'))
 app.use(errorHandler)
 
 
-// set static folder
-app.use(express.static('FrontOffice/build'))
-//load index.html file in modo che ogni richiesta ricevuta sia gestita da index.html
-app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'FrontOffice', 'build', 'index.html'))
-})
-
-app.use(express.static('Game/dist'))
-//load index.html file in modo che ogni richiesta ricevuta sia gestita da index.html
-
-
-//app.use(express.static(path.join(global.rootDir, 'game/dist')))
-
-
 const dbRefill = require('./dbImage/dbRefill.js');
 app.listen(8000, async () => {
 	console.log('Server Started\n')

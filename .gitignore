@@ -1,4 +1,6 @@
 node_modules/
 public/images/
+public/game/
+public/frontoffice/
 package-lock.json
 *.swp
