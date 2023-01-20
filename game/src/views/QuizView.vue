@@ -64,6 +64,9 @@
               <button class="button-style" @click="resetQuiz()">
                 Play again
               </button>
+              <button class="button-style" @click="sendResults()">
+                Send Results
+              </button>
             </div>
           </div>
         </div>
@@ -133,6 +136,7 @@ export default {
       this.correctAnswers = 0;
       this.wrongAnswers = 0;
     },
+    sendResults() {},
   },
 };
 </script>

@@ -1,23 +1,15 @@
 <template>
   <div>
-    <HomeView />
-    <nav>
-      <router-link to="/feed">Feed</router-link> |
-      <router-link to="/rockpaperscissor">R, P, S</router-link> |
-      <router-link to="/scramble">Scramble</router-link> |
-      <router-link to="/peek">Peek</router-link> |
-      <router-link to="/quiz">Quiz</router-link> |
-      <router-link to="/puzzle">Puzzle</router-link>
-    </nav>
+    <NavbarComponent />
     <router-view />
   </div>
 </template>
 
 <script>
-import HomeView from "../src/views/HomeView.vue";
+import NavbarComponent from "../src/components/NavbarComponent.vue";
 
 export default {
-  components: { HomeView },
+  components: { NavbarComponent },
 };
 </script>
 
@@ -28,27 +20,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 16px;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  color: #000;
-  padding-bottom: 30px;
-}
-
-p {
-  line-height: 28px;
-  color: #666;
-  font-weight: 300;
 }
 
 .big-text {
@@ -74,14 +45,6 @@ p {
   font-weight: bold;
 }
 
-.button {
-  padding: 18px 20px;
-  background: #316bff;
-  color: #fff;
-  display: inline-block;
-  border-radius: 4px;
-}
-
 @media (max-width: 768px) {
   .big-text {
     font-size: 40px;
@@ -94,10 +57,12 @@ p {
   max-width: 1350px;
   padding: 0 30px;
   margin: 0 auto;
+  /* border: 1px solid red; */
 }
 
 .grid .col {
   width: 100%;
+  /* border: 1px solid red; */
 }
 
 @media (max-width: 768px) {
@@ -107,22 +72,6 @@ p {
 }
 
 /* helpers */
-.mt-1 {
-  margin-top: 50px;
-}
-
-.mt-2 {
-  margin-top: 100px;
-}
-
-.mt-3 {
-  margin-top: 150px;
-}
-
-.tw {
-  color: rgb(13, 47, 199);
-}
-
 *,
 *:before,
 *:after {
