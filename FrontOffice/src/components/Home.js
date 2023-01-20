@@ -110,7 +110,7 @@ const Home = () => {
                             <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
                                 <h2 className='mb-3'>Condividi con la community AnimalHouse interessi ed info riguardanti i toui animali!</h2>
-                                <a className='btn btn-outline-light btn-lg' href='/community' role='button'>
+                                <a className='btn btn-outline-light btn-lg' href='/frontoffice/community' role='button'>
                                 Blog
                                 </a>           
                             </div>
