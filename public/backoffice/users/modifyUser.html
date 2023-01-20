@@ -14,20 +14,23 @@
 			{
 				const username = $('#username').val();
 				const email = $('#email').val();
-
+				const password = $('#password').val();
+				
 				const userData = {
 					'username': username,
-					'email': email
+					'email': email,
 				};
 
-				console.log(userData);
+				if (password !== '') {
+					userData['password'] = password;
+				}
 
 				$.post(`/users/${userId}/modify`, userData)
 				.then((res) => {
-					alert('Dati dell\'utente modificati con successo');
+					$('#res-success').modal('show');					
 				})
 				.catch((err) => {
-					alert('Modifica dati dell\'utente fallita');
+					$('#res-fail').modal('show');					
 				});
 
 			}
@@ -79,8 +82,6 @@
     			}
 			}
 		</script>
-	</head>
-
 	<body>
 		<header>
 			<div class="container-fluid">
@@ -128,8 +129,8 @@
 		<main class="my-5">
 			<div id="userId-erorr" class="container">
 
-				<h2>Modifica dati dell'utente</h2>
 				<form id="user-form" autocomplete="off" class="border border-success p-3" style="border-radius: 25px;">
+					<h2>Modifica dati dell'utente.</h2>
 					<div class="row g-2 g-md-3">
 
 						<div class="col-12">
@@ -141,6 +142,10 @@
 							<label class="form-label" for="email">Email:</label>
 							<input type="email" id="email" class="form-control">
 						</div>
+						<div class="col-md-12">
+							<label class="form-label" for="password">Password</label>
+							<input type="password" id="password" minlength="6" class="form-control">
+						</div>
 
 					</div>
 
@@ -150,6 +155,49 @@
 				</form>
 			</div>
 		</main>
+		<!-- MODAL success -->
+			<div id="res-success" class="modal" tabindex="-1" role="alert">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title h4">Modifica utente</h2>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p>Utente modificato con <span class="text-success">successo</span>.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+							<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END modal success -->
+
+			<!-- MODAL fail -->
+			<div id="res-fail" class="modal" tabindex="-1" role="alert">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title h4">Modifica utente</h2>
+							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<div class="modal-body">
+							<p>Modifica utente <span class="text-danger">fallita</span>.</p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
+							<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END modal fail -->
+
+
+
+
 		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">
 			<div class="container-fluid py-5">
 				<p class="text-center">Questa è una frase finale per riempire lo spazio del footer</p>

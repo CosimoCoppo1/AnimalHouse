@@ -8,7 +8,6 @@ const Location = require('../models/location')
 const Bookable = require('../models/bookable_service')
 const Question = require('../models/question')
 const User    = require('../models/user')
-const Admin   = require('../models/admin')
 const Post    = require('../models/postModel')
 const Score   = require('../models/gamescore')
 const UserPet = require('../models/userPet')
@@ -25,7 +24,6 @@ let dbPopulate = async function()
 	await Service.deleteMany();
 	await Bookable.deleteMany();
 	await User.deleteMany();
-	await Admin.deleteMany();
 	await Post.deleteMany();
 	await Question.deleteMany();
 	await Score.deleteMany();
@@ -40,7 +38,6 @@ let dbPopulate = async function()
 	await Service.syncIndexes();
 	await Bookable.syncIndexes();
 	await User.syncIndexes();
-	await Admin.syncIndexes();
 	await Post.syncIndexes();
 	await Question.syncIndexes();
 	await Score.syncIndexes();
@@ -228,7 +225,7 @@ async function adminPopulate()
 	admins = JSON.parse(admins);
 
 	for (let i = 0; i < admins.length; i++) {
-		const a = new Admin(admins[i]);
+		const a = new User(admins[i]);
 		await a.save();
 	}
 }

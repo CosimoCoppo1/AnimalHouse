@@ -4,11 +4,13 @@ const mongoose = require('mongoose')
 const config   = require('./config/database')
 const cors     = require('cors')
 const path     = require('path')
+const fs       = require('fs')
 
 const errorHandler = require('./middleware/error')
 
 
 global.rootDir = __dirname
+global.baseUrl = 'localhost:8000/'
 
 app.use(express.static(path.join(global.rootDir, 'public')))
 app.use(express.urlencoded({ extended: true}))
@@ -32,7 +34,6 @@ app.use('/backoffice/ecommerce', require('./tpl-script/backoffice-ecommerce'))
 
 
 app.use('/auth/user/', require('./routes/auth'))
-app.use('/auth/admin/', require('./routes/adminAuth'))
 app.use('/images', express.static('images'));
 app.use('/posts', require('./routes/PostRoute.js'))
 app.use('/upload', require('./routes/UploadRoute.js'))
@@ -60,24 +61,24 @@ app.listen(8000, async () => {
 	await mongoose.connect(config.database)
 	await dbRefill.dbPopulate();
 
-	/*
-	const pets = await Pet.find({}).lean();	
-	const sections = await Section.find({}).lean();	
-	const products = await Product.find({}).lean();	
+	const postDir = path.join(global.rootDir, 'public/images/post');
+	fs.readdirSync(postDir)
+	.forEach(file => {
+		const file_path = path.join(postDir, file);
+		const file_stats = fs.statSync(file_path);
+		if (file_stats.isFile()) {
+			fs.unlinkSync(file_path);
+		}
+	});
 
-	console.log('pets', pets);
-	console.log('sections', sections);
-	console.log('products', products);
-	*/
-
-	/*
-	const locations = await Location.find({}).lean();	
-	const services = await Service.find({}).lean();	
-	const bookable_services = await Bookable.find({}).lean();	
-
-	console.log('locations', locations);
-	console.log('services', services);
-	console.log('bookable_services', bookable_services);
-	*/
-
+	const productDir = path.join(global.rootDir, 'public/images/ecommerce/products');
+	fs.readdirSync(productDir)
+	.forEach(file => {
+		const file_path = path.join(productDir, file);
+		const file_stats = fs.statSync(file_path);
+		if (file_stats.isFile()) {
+			fs.unlinkSync(file_path);
+		}
+	});
+	
 });

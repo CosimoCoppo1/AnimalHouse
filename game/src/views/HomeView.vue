@@ -1,35 +1,5 @@
 <template>
   <div>
-    <div class="header">
-      <div class="logo">
-        <img src="../assets/logo.png" alt="" style="width: 30%" />
-      </div>
-      <ul class="menu" :class="{ 'menu--open': this.openMenu }">
-        <li><a href="">Home</a></li>
-        <li><a href="">Single</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-      <div class="cta">
-        <a href="" class="button">Contatti</a>
-      </div>
-      <div class="hamburger" @click="open()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-
-    <div class="hero">
-      <div class="hero__content">
-        <p class="intro-text">Intro text</p>
-        <h1 class="big-text">Titolo della mia pagina Web</h1>
-        <a href="" class="button">Discover more</a>
-      </div>
-      <video autoplay muted loop id="video-back">
-        <source src="../assets/video-back.mp4" type="video/mp4" />
-      </video>
-    </div>
-
     <div class="poster mt-3">
       <div class="poster__img">
         <img src="../assets/bg-video.jpg" alt="" />
@@ -97,14 +67,14 @@
     </div>
 
     <div class="panel-blue mt-3">
-      <div class="grid panel-blue">
+      <div class="grid panel-blue" style="border: 6px solid green">
         <div class="col panel-blue__dots">
           <div class="dot">Text</div>
           <div class="dot">Text</div>
           <div class="dot">Text</div>
           <div class="dot">Text</div>
         </div>
-        <div class="col panel-blue__text">
+        <div class="col panel-blue__text" style="border: 4px solid yellow">
           <div class="grid">
             <div class="col">
               <h3 class="big-text tw">Lorem ispums</h3>
@@ -201,96 +171,12 @@ export default {
 </script>
 
 <style>
-/* header */
-.header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 30px;
-  display: flex;
-  max-width: 1350px;
-  z-index: 10;
-}
-
-.logo {
-  z-index: 1;
-}
-
-.menu {
-  width: 100%;
-  z-index: 0;
-  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
-}
-
-.menu li {
-  display: inline-block;
-}
-
-.menu li a {
-  color: green;
-  padding: 15px;
-  display: block;
-}
-
-.hamburger {
-  display: none;
-}
-
-.menu--open {
-  right: 0;
-}
-
-@media (max-width: 768px) {
-  .cta {
-    display: none;
-  }
-
-  .menu {
-    position: absolute;
-    top: 0;
-    right: -100%;
-    background: black;
-    height: 100vh;
-    padding-top: 80px;
-  }
-
-  .menu li {
-    display: block;
-  }
-
-  .menu li a {
-    padding: 15px 30px;
-    font-size: 20px;
-  }
-
-  .hamburger {
-    display: block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 40px;
-    right: 30px;
-  }
-
-  .hamburger span {
-    background: #000;
-    height: 3px;
-    width: 100%;
-    display: block;
-    margin-bottom: 5px;
-  }
-}
-
-/* hero */
 .hero {
   height: 100vh;
   position: relative;
   display: flex;
   width: 100%;
   align-items: center;
-  background: url("../assets/bg-video.jpg") no-repeat center center;
   background-size: cover;
   overflow: hidden;
 }
@@ -335,7 +221,6 @@ export default {
   z-index: 0;
   bottom: 0;
 }
-
 /* poster */
 .poster {
   display: flex;
