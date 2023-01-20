@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "proxy": "http://127.0.0.1:8000",
   "private": true,
+  "homepage": "/frontoffice/",
   "dependencies": {
     "@iconscout/react-unicons": "^1.1.6",
     "@testing-library/jest-dom": "^5.16.5",
@@ -30,7 +31,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && mv ./build/ frontoffice/ && mv ./frontoffice/ ../public/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

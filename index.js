@@ -13,6 +13,16 @@ global.rootDir = __dirname
 global.baseUrl = 'localhost:8000/'
 
 app.use(express.static(path.join(global.rootDir, 'public')))
+
+/* reload page error, see: https://create-react-app.dev/docs/deployment/ */
+app.get('/game/*', (req, res) => {
+   res.sendFile(path.join(__dirname, 'public/game/', 'index.html'));
+});
+
+app.get('/frontoffice/*', (req, res) => {
+   res.sendFile(path.join(__dirname, 'public/frontoffice/', 'index.html'));
+});
+
 app.use(express.urlencoded({ extended: true}))
 app.use(express.json())
 app.use(cors())
@@ -38,20 +48,6 @@ app.use('/images', express.static('images'));
 app.use('/posts', require('./routes/PostRoute.js'))
 app.use('/upload', require('./routes/UploadRoute.js'))
 app.use(errorHandler)
-
-
-// set static folder
-app.use(express.static('FrontOffice/build'))
-//load index.html file in modo che ogni richiesta ricevuta sia gestita da index.html
-app.get('*', (req, res) => {
-	res.sendFile(path.resolve(__dirname, 'FrontOffice', 'build', 'index.html'))
-})
-
-app.use(express.static('Game/dist'))
-//load index.html file in modo che ogni richiesta ricevuta sia gestita da index.html
-
-
-//app.use(express.static(path.join(global.rootDir, 'game/dist')))
 
 
 const dbRefill = require('./dbImage/dbRefill.js');

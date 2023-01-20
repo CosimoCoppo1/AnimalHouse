@@ -25,7 +25,7 @@ const App = () => {
   const [sideToggle, setSideToggle] = useState(false)
   
   return (
-    <Router>
+    <Router basename={'frontoffice'}>
       <div className="App">
         <Navbar click={() => setSideToggle(true)} /> 
         <SideDrawer show={sideToggle} click={() => setSideToggle(false)}/>
