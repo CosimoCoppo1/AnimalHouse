@@ -138,7 +138,7 @@
             Mettiti alla prova indovinando età, alimentazione e habitat di ogni
             specie!<br />
             Scopri se sei un vero esperto sul regno animale giocando al nostro
-            <router-link :to="{ path: '/quiz' }"
+            <router-link :to="{ path: '/giochi/quiz' }"
               ><button
                 type="button"
                 class="btn btn-warning"
@@ -201,9 +201,11 @@
                   <i class="bi bi-globe-americas"></i> Habitat:
                   {{ category.habitat }}
                 </p>
-                <button type="button" class="btn btn-success">
-                  Vai al quiz!
-                </button>
+                <router-link :to="{ path: '/giochi/quiz' }">
+                  <button type="button" class="btn btn-success">
+                    Vai al quiz!
+                  </button>
+                </router-link>
               </div>
             </div>
           </div>
@@ -989,15 +991,5 @@ https://www.youtube.com/watch?v=jVhwJgLOoGw
 -->
 
 <!--
-<blockquote>
-          <p>
-            Fino a quando non hai amato un animale, una parte della tua anima
-            sarà sempre senza luce.
-          </p>
-          <footer>Anatole France —</footer>
-        </blockquote>
-
-
-
 cancella colibrì, tracce animali
 -->
