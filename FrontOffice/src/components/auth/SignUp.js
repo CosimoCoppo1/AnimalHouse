@@ -34,7 +34,7 @@ const SignUp = () => {
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userName", data.username);
       localStorage.setItem("userId", data.userId);
-      window.location.href = "/e-commerce"
+      window.location.href = "/frontoffice/e-commerce"
       
 
     } catch (error) {

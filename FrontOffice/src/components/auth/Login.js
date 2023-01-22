@@ -27,7 +27,7 @@ const Login = () => {
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userName", data.username);
       localStorage.setItem("userId", data.userId);
-      window.location.href = "/e-commerce"               
+      window.location.href = "/frontoffice/e-commerce"               
 
     } catch (error) {
       setError(error.response.data.error);
@@ -39,7 +39,7 @@ const Login = () => {
     localStorage.removeItem("authToken")
     localStorage.removeItem("userName")
     localStorage.removeItem("userId")  
-    window.location.href = "/"
+    window.location.href = "/frontoffice"
   }
 
 
@@ -89,7 +89,7 @@ const Login = () => {
     :
       <div className="homescreen">        
 
-        <button type="button" class="btn btn-secondary" style={{width: "10%"}}onClick={() => logoutHandler()}>Logout</button>
+        <button type="button" class="btn btn-secondary" style={{width: "100px"}}onClick={() => logoutHandler()}>Logout</button>
 
         <br />
 

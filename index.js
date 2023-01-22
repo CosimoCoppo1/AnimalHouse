@@ -12,6 +12,7 @@ const errorHandler = require('./middleware/error')
 global.rootDir = __dirname
 global.baseUrl = 'localhost:8000/'
 
+app.use('/frontoffice', express.static(path.join(global.rootDir, 'FrontOffice/build')))
 app.use(express.static(path.join(global.rootDir, 'public')))
 
 /* reload page error, see: https://create-react-app.dev/docs/deployment/ */
@@ -20,7 +21,7 @@ app.get('/game/*', (req, res) => {
 });
 
 app.get('/frontoffice/*', (req, res) => {
-   res.sendFile(path.join(__dirname, 'public/frontoffice/', 'index.html'));
+   res.sendFile(path.join(__dirname, 'FrontOffice/build/', 'index.html'));
 });
 
 app.use(express.urlencoded({ extended: true}))

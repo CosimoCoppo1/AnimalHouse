@@ -26,13 +26,13 @@ const Community = () => {
 			    </Row>
                 <br />
                 <Row>
-                    <Col>                        
-                        <h4 className="text-center">LEADERBOARD GAME</h4>   
-                        <Leaderboard />                     
-                    </Col>
                     <Col>
-                        <h4 className="text-center">BLOG POSTS</h4>
+                        <p className="text-center  fs-1">BLOG POSTS</p>   
                         <PostSide /> 
+                    </Col>
+                    <Col>    
+                        <p className="text-center  fs-1">LEADERBOARD QUIZ</p>   
+                        <Leaderboard />                     
                     </Col>
                 </Row>           
             </Container>                           
