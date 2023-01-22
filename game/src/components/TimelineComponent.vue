@@ -1,17 +1,21 @@
 <template>
-  <div class="container">
+  <div class="container-fluid" style="margin-top: 80px">
     <ul class="timeline" v-for="(step, index) in this.steps" :key="index">
-      <li :class="index % 2 != 0 ? 'timeline__inverted' : ''">
+      <li
+        class="timeline__list"
+        :class="index % 2 != 0 ? 'timeline__inverted' : ''"
+      >
         <div class="timeline__image">
           <img
-            class="rounded-circle img-fluid"
-            :src="`${image}`"
+            class="rounded-circle"
+            style="width: 100%; height: 100%"
+            :src="require(`@/assets/about/${step.img}`)"
             :alt="step.alt"
           />
         </div>
         <div class="timeline__panel">
           <div class="timeline__content">
-            <h4>{{ step.year }}</h4>
+            <h4 class="date">{{ step.year }}</h4>
             <h4 class="subheading">{{ step.intro }}</h4>
           </div>
           <div class="timeline__body">
@@ -20,6 +24,16 @@
         </div>
       </li>
     </ul>
+    <div class="text-center">
+      <a href="#">
+        <button class="btn btn-danger" type="button">
+          Unisciti alla squadra!
+        </button>
+      </a>
+      <p class="mt-2 comment">
+        Diventa <b>membro</b> della comunità Animal House!
+      </p>
+    </div>
   </div>
 </template>
 
@@ -28,36 +42,30 @@ export default {
   name: "TimelineComponent",
   data() {
     return {
-      image: [
-        "../assets/bg-video.jpg",
-        "../assets/bg-video.jpg",
-        "../assets/bg-video.jpg",
-        "../assets/bg-video.jpg",
-      ],
       steps: [
         {
+          img: "story1.jpg",
           alt: "..",
-          year: "2018-2019",
+          year: "2020",
           intro: "Una birra tra amici",
-          description: "bla bla",
+          description:
+            "Quando ci vediamo per una birra? L'appuntamento veniva sempre rimandato, anche per le innumerevoli visite dal veterinaro e al pet store. Ci siamo chiesti: perchè non riunire in una unica struttura tutto ciò che interessa il benessere dei nostri amici animali?",
         },
         {
+          img: "story2.jpg",
           alt: "..",
-          year: "2019-2020",
+          year: "2022",
           intro: "Il progetto",
-          description: "bla bla",
+          description:
+            "L'idea imprenditoriale iniziale, diventata poi la nostra missione, aveva qualcosa di rivoluzionario: fornire servizi e prodotti di alta qualità che permettessero d'intensificare il legame di fiducia e amore tra pet parent e pet.",
         },
         {
+          img: "story3.jpg",
           alt: "..",
-          year: "2020-2023",
-          intro: "Il sogno",
-          description: "bla bla",
-        },
-        {
-          alt: "..",
-          year: "",
-          intro: "",
-          description: "bla bla",
+          year: "2023",
+          intro: "Il sogno che si avvera",
+          description:
+            "Diffondiamo la passione e l'amore per la cura degli animali, stando dalla parte di chi ama i propri pet. Contiamo diverse sedi in Italia e siamo incoraggiati a crescere ancora, diffondendo consapevolezza e curiosità a tutte le generazioni.",
         },
       ],
     };
@@ -66,131 +74,121 @@ export default {
 </script>
 
 <style>
+/* timeline section */
 .timeline {
   position: relative;
   padding: 0;
   list-style: none;
 }
+
 .timeline:before {
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 40px;
+  left: 50%;
   width: 2px;
   margin-left: -1.5px;
   content: "";
   background-color: #e9ecef;
 }
-.timeline > li {
+
+.timeline__list {
   position: relative;
-  min-height: 50px;
-  margin-bottom: 50px;
+  min-height: 100px;
+  margin-bottom: 100px;
 }
-.timeline > li:after,
-.timeline > li:before {
+
+.timeline__list:after,
+.timeline__list:before {
   display: table;
   content: " ";
 }
-.timeline > li:after {
+
+.timeline__list:after {
   clear: both;
 }
-.timeline > li .timeline__panel {
+
+.timeline__panel {
   position: relative;
-  float: right;
-  width: 100%;
-  padding: 0 20px 0 100px;
-  text-align: left;
+  float: left;
+  width: 41%;
+  padding: 0 20px 20px 30px;
+  text-align: right;
 }
-.timeline > li .timeline__panel:before {
+
+.timeline__panel:before,
+.timeline__panel:before {
   right: auto;
   left: -15px;
   border-right-width: 15px;
   border-left-width: 0;
 }
-.timeline > li .timeline__panel:after {
-  right: auto;
-  left: -14px;
-  border-right-width: 14px;
-  border-left-width: 0;
-}
-.timeline > li .timeline__image {
+
+.timeline__image {
   position: absolute;
   z-index: 100;
-  left: 0;
-  width: 80px;
-  height: 80px;
-  margin-left: 0;
+  left: 50%;
+  top: -10%;
+  width: 100px;
+  height: 100px;
+  margin-left: -50px;
   text-align: center;
   color: #fff;
   border: 7px solid #e9ecef;
   border-radius: 100%;
-  background-color: #fed136;
+  background-color: #f84444;
 }
-.timeline > li .timeline__image h4 {
-  font-size: 10px;
-  line-height: 14px;
-  margin-top: 12px;
-}
-.timeline > li.timeline__inverted > .timeline__panel {
+
+.timeline__inverted > .timeline__panel {
   float: right;
-  padding: 0 20px 0 100px;
+  padding: 0 30px 20px 20px;
   text-align: left;
 }
-.timeline > li.timeline__inverted > .timeline__panel:before {
+
+.timeline__inverted > .timeline__panel:before,
+.timeline__inverted > .timeline__panel:after {
   right: auto;
   left: -15px;
   border-right-width: 15px;
   border-left-width: 0;
 }
-.timeline > li.timeline__inverted > .timeline__panel:after {
-  right: auto;
-  left: -14px;
-  border-right-width: 14px;
-  border-left-width: 0;
-}
-.timeline > li:last-child {
+
+.timeline__list:last-child {
   margin-bottom: 0;
 }
-.timeline .timeline__content h4 {
+
+.timeline__content h4 {
   margin-top: 0;
-  color: inherit;
+  font-size: 22px;
 }
-.timeline .timeline__content h4.subheading {
-  text-transform: none;
+
+.date {
+  color: #f84444;
+  font-weight: italic;
 }
-.timeline .timeline__body > p,
-.timeline .timeline__body > ul {
+
+.subheading {
+  font-weight: bold;
+}
+.timeline__body p {
   margin-bottom: 0;
 }
-@media (min-width: 768px) {
-  .timeline:before {
-    left: 50%;
-  }
-  .timeline > li {
-    min-height: 100px;
-    margin-bottom: 100px;
-  }
-  .timeline > li .timeline__panel {
-    float: left;
-    width: 41%;
-    padding: 0 20px 20px 30px;
+
+.comment {
+  font-size: 22px;
+}
+
+@media (max-width: 768px) {
+  .timeline__inverted > .timeline__panel {
     text-align: right;
   }
-  .timeline > li .timeline__image {
-    left: 50%;
-    width: 100px;
-    height: 100px;
-    margin-left: -50px;
-  }
-  .timeline > li .timeline__image h4 {
-    font-size: 13px;
-    line-height: 18px;
-    margin-top: 16px;
-  }
-  .timeline > li.timeline__inverted > .timeline__panel {
-    float: right;
-    padding: 0 30px 20px 20px;
+
+  .timeline__panel {
     text-align: left;
+  }
+
+  .comment {
+    font-size: 17px;
   }
 }
 </style>

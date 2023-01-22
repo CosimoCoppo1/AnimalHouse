@@ -47,39 +47,39 @@ const routes = [
       import(/* webpackChunkName: "contatti" */ "../views/ContactsView.vue"),
   },
   {
-    path: "/feed",
+    path: "/giochi/feed",
     name: "feed",
     component: () =>
       import(/* webpackChunkName: "feed" */ "../views/FeedView.vue"),
   },
   {
-    path: "/puzzle",
+    path: "/giochi/puzzle",
     name: "puzzle",
     component: () =>
       import(/* webpackChunkName: "puzzle" */ "../views/PuzzleView.vue"),
   },
   {
-    path: "/rockpaperscissor",
-    name: "rockpaperscissor",
+    path: "/giochi/morra-cinese",
+    name: "Morra cinese",
     component: () =>
       import(
-        /* webpackChunkName: "rockpaperscissor" */ "../views/RockPaperScissorView.vue"
+        /* webpackChunkName: "morra-cinese" */ "../views/RockPaperScissorView.vue"
       ),
   },
   {
-    path: "/scramble",
+    path: "/giochi/scramble",
     name: "scramble",
     component: () =>
       import(/* webpackChunkName: "scrumble" */ "../views/ScrambleView.vue"),
   },
   {
-    path: "/peek",
+    path: "/giochi/peek",
     name: "peek",
     component: () =>
       import(/* webpackChunkName: "lab" */ "../views/PeekView.vue"),
   },
   {
-    path: "/quiz",
+    path: "/giochi/quiz",
     name: "quiz",
     component: () =>
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
@@ -97,8 +97,8 @@ const routes = [
       import(/* webpackChunkName: "signup" */ "../views/SignupView.vue"),
   },
   {
-    path: "/curiosity",
-    name: "curiosity",
+    path: "/giochi/informazioni-curiose",
+    name: "Informazioni curiose",
     component: () =>
       import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),
   },
