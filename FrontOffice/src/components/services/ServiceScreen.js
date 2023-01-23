@@ -43,27 +43,23 @@ const ServiceScreen = () => {
   const handleSubmit = (e, service, location, selectDate, setSelectDate) => {
 
 		let ss = bookableServices
-    console.log("bookable_service: " + ss)
     
     if(service !== "Tutti"){
       ss = ss.filter((t) => t.service.name === service)
-      console.log("filtraggio service="+ service + ":" + ss)
     }
       
     if(location !== "Tutti"){
       ss = ss.filter((t) => t.location.city === location)
-      console.log("filtraggio location="+ location + ":" + ss)
     }
       
     if(selectDate !== undefined){
       ss = ss.filter((t) => t.day.split("T")[0] === selectDate)
-      console.log("filtraggio date="+ selectDate + ":" + ss)
       setSelectDate(undefined)
     }      
 
     setSearchedServices(ss)		
 
-    window.location.href = "/services#searched"
+    window.location.href = "/frontoffice/services#searched"
 	}
 	
 

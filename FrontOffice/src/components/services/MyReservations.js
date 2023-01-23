@@ -12,7 +12,7 @@ const MyReservations = () => {
             try {
                 const { data } = await axios.get(`http://${apiUrl}/bookable_services/reservation`)
                 let today = new Date().toJSON()
-                setReservs(data.filter(r => localStorage.userId === r.user && r.bookable_service.day.split("T")[0] >= today.split("T")[0] )) 
+                setReservs(data.filter(r => localStorage.userId === r.user._id && r.bookable_service.day.split("T")[0] >= today.split("T")[0] )) 
             } catch (error) {
                 console.log(error);
             }

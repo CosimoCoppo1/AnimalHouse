@@ -38,7 +38,7 @@ const Home = () => {
                             <div className='text-white'>
                                 <h1 className='mb-3'>Un oceano di croccantini..</h1>
                                 <h2 className='mb-3'>Vieni a scoprire i nostri prodotti!</h2>
-                                <a className='btn btn-outline-light btn-lg' href='/e-commerce' role='button'>
+                                <a className='btn btn-outline-light btn-lg' href='/frontoffice/e-commerce' role='button'>
                                 Prodotti
                                 </a>
                             </div>
@@ -57,7 +57,7 @@ const Home = () => {
                             <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
                                 <h1 className='mb-3'>Ogni tipo di servizio dedicato ai nostri amati animali</h1>
-                                <a className='btn btn-outline-light btn-lg' href='/services' role='button'>
+                                <a className='btn btn-outline-light btn-lg' href='/frontoffice/services' role='button'>
                                 Servizi
                                 </a>           
                             </div>
@@ -110,7 +110,7 @@ const Home = () => {
                             <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
                                 <h2 className='mb-3'>Condividi con la community AnimalHouse interessi ed info riguardanti i toui animali!</h2>
-                                <a className='btn btn-outline-light btn-lg' href='/community' role='button'>
+                                <a className='btn btn-outline-light btn-lg' href='/frontoffice/community' role='button'>
                                 Blog
                                 </a>           
                             </div>
