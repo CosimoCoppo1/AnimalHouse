@@ -1,16 +1,94 @@
 <template>
   <div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="container">
+    <!-- hero section -->
+    <div class="hero">
+      <div class="hero__content">
+        <p class="intro-text">che fame da lupi!</p>
+        <h1 class="big-text">Negozio online</h1>
+      </div>
+      <video autoplay muted loop class="hero__video">
+        <source src="../assets/shop/bg__hero.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- page-intro section -->
+    <div class="grid page-intro my-5">
+      <div class="col">
+        <p>
+          Benvenuti nella sezione <b>negozio</b> di Animal House! Amate i vostri
+          animali domestici... e dimostratelo dandogli solamente prodotti di
+          <b>prima qualità</b>, come quelli che trovate a questa pagina.<br />Il
+          vostro animale domestico merita il <b>meglio</b>.
+        </p>
+      </div>
+    </div>
+
+    <!--descrition section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="description__title big-text">
+          Scopri i prodotti per cani, gatti e tanto altro!
+        </h3>
+        <p class="description__text">
+          <b>Affidatevi a chi ci mette il cuore</b>: ci impegnamo a fornirvi i
+          migliori prodotti per animali domestici. Ti offriamo un'esperienza di
+          acquisto eccellente poichè la soddisfzione dei nostri clienti è molto
+          importante per noi.<br />Abbiamo la combinazione perfetta tra i
+          migliori prodotti e la nostra semplice pratica di acquisto: passa
+          all'area
+          <a href="#"
+            ><button type="button" class="btn btn-success">VIP</button></a
+          >
+          per effettuare istantaniamente gli ordini .<br />
+        </p>
+        <p class="mt-1 description__title">
+          Ci assicureremo che riceviate il vostro ordine con piena
+          soddisfazione!
+        </p>
+      </div>
+    </div>
+
+    <!-- poster section -->
+    <div
+      class="poster container"
+      v-for="(pet, index) in this.pets"
+      :key="index"
+    >
+      <div class="poster__content">
+        <h3 class="poster__title">{{ pet.name }}</h3>
+        <p>{{ this.posters[index].description }}</p>
+        <button
+          @click="this.getPetSections(`${index}`, `${pet._id}`)"
+          :style="this.whatPet(`${index}`) != '' ? 'display: none' : ''"
+        >
+          Sezioni dedicate:
+        </button>
+        <span v-if="this.whatPet(`${index}`) != ''">
+          <div v-for="section in this.whatPet(`${index}`)" :key="section">
+            <p>{{ section.name }}</p>
+          </div>
+        </span>
+        <a href="#">
+          <button type="button" class="btn btn-success">
+            Inizia gli acquisti!
+          </button>
+        </a>
+      </div>
+      <div class="poster__img">
+        <img
+          :src="require(`@/assets/shop/${this.posters[index].img}`)"
+          alt=".."
+        />
+      </div>
+    </div>
+    <!--
+            acquista con fiducia.
+
+      Ci impegnamo per la soddsfazione dle cliente. date un'occhiata alle fantastiche recenzsioni su nostri prodotti.
+      
+      #feelgood
+    -->
+    <!-- <div class="container">
       <div
         class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
         align="center"
@@ -31,42 +109,10 @@
           </div>
         </div>
       </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <!-- cani -->
-    <!-- <div>
-      <p>Name: {{ this.pets[0].name }}</p>
-      <button
-        @click="this.getPetProduct(0, this.pets[0]._id)"
-        :style="this.Cani != '' ? 'display: none' : ''"
-      >
-        Prodotti cane
-      </button>
-      <span v-if="this.Cani != ''">
-        <div v-for="singleProduct in this.Cani" :key="singleProduct">
-          <p>{{ singleProduct.title }}</p>
-          <p>{{ singleProduct.description }}</p>
-          <p>{{ singleProduct.price }}</p>
-        </div>
-      </span>
     </div> -->
+    <!-- cani -->
     <!-- pesci -->
-    <!-- <div>
+    <!--<div>
       <p>Name: {{ this.pets[3].name }}</p>
       <button
         @click="this.getPetProduct(3, this.pets[3]._id)"
@@ -81,7 +127,22 @@
           <p>{{ singleProduct.price }}</p>
         </div>
       </span>
-    </div> -->
+    </div>-->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -99,41 +160,74 @@ export default {
   name: "ShopView",
   data() {
     return {
-      pets: [],
-      products: [
+      posters: [
         {
-          title: "Cuccia ciambella pelosa",
-          price: "31.90",
-          description:
-            "Ciambella pelosa morbida rosa perfetta per il riposo quotidiano del tuo cane.",
-          image: "accessoricane1.png",
-          alt: "Cuccia a ciambella pelosa",
+          description: "questo  è un tenero cucciolo",
+          img: "pet0.jpg",
         },
         {
-          title: "Peluche scoiattolo striato",
-          price: "4.20",
-          description:
-            "Il peluce con squittio è l'accessorio perfetto per divertirti a lungo con Fido.",
-          image: "accessoricane2.png",
-          alt: "Peluche scoiattolo",
+          description: "questo  è un tenero cucciolo",
+          img: "pet1.jpg",
         },
         {
-          title: "Guinzaglio per addestramento rosso",
-          price: "12.99",
-          description:
-            "Guinzaglio educativo regolabile su 3 lunghezze per addestramento.",
-          image: "accessoricane3.png",
-          alt: "Guinzaglio per addestramento rosso",
+          description: "questo  è un tenero cucciolo",
+          img: "pet2.jpg",
         },
         {
-          title: "Ciotola doppia in acciaio",
-          price: "14.89",
-          description:
-            "Ciotola doppia dal fondo antiscivolo per evitare che il cane sbrodoli sul pavimento di casa.",
-          image: "accessoricane4.png",
-          alt: "Ciotola doppia in acciaio",
+          description: "questo  è un tenero cucciolo",
+          img: "pet3.jpg",
+        },
+        {
+          description: "questo  è un tenero cucciolo",
+          img: "pet4.jpg",
+        },
+        {
+          description: "questo  è un tenero cucciolo",
+          img: "pet5.jpg",
         },
       ],
+      pets: [],
+      // products: [
+      //   {
+      //     title: "Cuccia ciambella pelosa",
+      //     price: "31.90",
+      //     description:
+      //       "Ciambella pelosa morbida rosa perfetta per il riposo quotidiano del tuo cane.",
+      //     image: "accessoricane1.png",
+      //     alt: "Cuccia a ciambella pelosa",
+      //   },
+      //   {
+      //     title: "Peluche scoiattolo striato",
+      //     price: "4.20",
+      //     description:
+      //       "Il peluce con squittio è l'accessorio perfetto per divertirti a lungo con Fido.",
+      //     image: "accessoricane2.png",
+      //     alt: "Peluche scoiattolo",
+      //   },
+      //   {
+      //     title: "Guinzaglio per addestramento rosso",
+      //     price: "12.99",
+      //     description:
+      //       "Guinzaglio educativo regolabile su 3 lunghezze per addestramento.",
+      //     image: "accessoricane3.png",
+      //     alt: "Guinzaglio per addestramento rosso",
+      //   },
+      //   {
+      //     title: "Ciotola doppia in acciaio",
+      //     price: "14.89",
+      //     description:
+      //       "Ciotola doppia dal fondo antiscivolo per evitare che il cane sbrodoli sul pavimento di casa.",
+      //     image: "accessoricane4.png",
+      //     alt: "Ciotola doppia in acciaio",
+      //   },
+      // ],
+      pet0: [],
+      pet1: [],
+      pet2: [],
+      pet3: [],
+      pet4: [],
+      pet5: [],
+      products: [],
       colors: [
         "#e3427d",
         "#469374",
@@ -149,8 +243,45 @@ export default {
       axios
         .get("http://localhost:8000/pets")
         .then((response) => (this.pets = response.data));
-
-      this.load = true;
+    },
+    getProducts() {
+      axios
+        .get("http://localhost:8000/products")
+        .then((response) => (this.products = response.data));
+    },
+    getPetSections(index, petId) {
+      axios
+        .get(`http://localhost:8000/sections?pet=${petId}`)
+        .then((response) => {
+          if (index == 0) {
+            this.pet0 = response.data;
+          } else if (index == 1) {
+            this.pet1 = response.data;
+          } else if (index == 2) {
+            this.pet2 = response.data;
+          } else if (index == 3) {
+            this.pet3 = response.data;
+          } else if (index == 4) {
+            this.pet4 = response.data;
+          } else {
+            this.pet5 = response.data;
+          }
+        });
+    },
+    whatPet(index) {
+      if (index == 0) {
+        return this.pet0;
+      } else if (index == 1) {
+        return this.pet1;
+      } else if (index == 2) {
+        return this.pet2;
+      } else if (index == 3) {
+        return this.pet3;
+      } else if (index == 4) {
+        return this.pet4;
+      } else {
+        return this.pet5;
+      }
     },
     changeColor(index) {
       for (let i = 0; i <= 5; i++) {
@@ -162,11 +293,34 @@ export default {
   },
   created: function () {
     this.getPets();
+    this.getProducts();
   },
 };
 </script>
 
 <style>
+.btn {
+  color: #fff;
+  border: 1px solid black;
+  background-color: #5e5e5e;
+}
+
+/* hero section */
+.hero {
+  height: 38vh;
+}
+
+.hero__content h1,
+.hero__content p {
+  color: #17df53;
+}
+
+/* description section */
+.description__title,
+.link {
+  color: #17df53;
+}
+
 /* card section */
 .card {
   width: 20rem;
@@ -174,5 +328,47 @@ export default {
   border-bottom-right-radius: 20px;
   margin: 20px;
   background-color: #bdd5ea;
+}
+
+/* poster section */
+.poster {
+  display: flex;
+  height: 70vh;
+  width: 100%;
+  align-items: center;
+}
+
+.poster__title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #17df53;
+}
+
+.poster__img {
+  width: 65%;
+  height: 100%;
+}
+
+.poster__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.poster__content {
+  width: 35%;
+  padding: 50px;
+}
+
+@media (max-width: 768px) {
+  .poster {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .poster__img,
+  .poster__content {
+    width: 100%;
+  }
 }
 </style>

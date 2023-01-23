@@ -255,6 +255,12 @@ export default {
 </script>
 
 <style>
+.btn {
+  background-color: #460aa7;
+  color: #fff;
+  border: 1px solid black;
+}
+
 /* hero section */
 .hero {
   height: 38vh;

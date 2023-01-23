@@ -208,7 +208,7 @@
     </div>
 
     <!-- description section -->
-    <div class="grid" id="staff">
+    <div class="grid mt-3" id="staff">
       <div class="col">
         <h3 class="description__title big-text">Lo staff</h3>
         <p class="description__text">
@@ -249,7 +249,7 @@
     <!-- description section -->
     <div class="grid">
       <div class="col">
-        <p>
+        <p class="description__text">
           Conosci meglio le menti e i cuori di Animal House passando per la
           pagina
           <router-link :to="{ path: '/chi-siamo' }">
