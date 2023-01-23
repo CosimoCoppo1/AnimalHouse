@@ -27,10 +27,6 @@ const productSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-	alt: {
-		type: String,
-		required: true
-	},
     pieces_left: {
         type: Number,
         required: true
@@ -38,3 +34,10 @@ const productSchema = new mongoose.Schema({
 })
 
 module.exports = mongoose.model('Product', productSchema)
+
+/*
+alt: {
+		type: String,
+		required: true
+	},
+*/
