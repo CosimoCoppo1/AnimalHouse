@@ -21,7 +21,9 @@
         </p>
       </div>
     </div>
-    <div class="grid mt-5">
+
+    <!--description section -->
+    <div class="grid">
       <div class="col">
         <p class="description__text">
           Animal House è una nuova ma importante realtà nel settore
@@ -35,7 +37,7 @@
       </div>
     </div>
 
-    <!-- actions section -->
+    <!-- card section -->
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 actions mb-5">
       <div v-for="(action, index) in this.actions" :key="index" class="col">
         <div class="card-container mx-auto mt-5">
@@ -57,6 +59,8 @@
         </div>
       </div>
     </div>
+
+    <!-- description section -->
     <div class="grid">
       <div class="col">
         <p class="description__text">
@@ -70,21 +74,22 @@
       </div>
     </div>
 
-    <!-- location section -->
-    <div class="accordion container" id="accordionExample">
-      <div class="grid">
-        <div class="col">
-          <h3 class="description__title big-text">Dove trovarci</h3>
-          <p class="description__text">
-            Clicca l'icona relativa alla sede per conoscere i servizi specifici
-            offerti in ogni punto vendita Animal House.<br />Per conoscere le
-            date disponibili, i prezzi e prenotare subito un appuntamento,
-            contattaci secondo le modalità sopra indicate o passa alla sezione
-            servizi nell'applicazione tramite questo
-            <a href="#" class="link">link</a>.
-          </p>
-        </div>
+    <!-- description section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="description__title big-text">Dove trovarci</h3>
+        <p class="description__text">
+          Clicca l'icona relativa alla sede per conoscere i servizi specifici
+          offerti in ogni punto vendita Animal House.<br />Per conoscere le date
+          disponibili, i prezzi e prenotare subito un appuntamento, contattaci
+          secondo le modalità sopra indicate o passa alla sezione servizi
+          nell'applicazione tramite questo <a href="#" class="link">link</a>.
+        </p>
       </div>
+    </div>
+
+    <!-- accordion section -->
+    <div class="accordion container" id="accordionExample">
       <div
         class="accordion-item"
         v-for="(location, index) in this.locations"
@@ -124,17 +129,19 @@
       </div>
     </div>
 
+    <!-- description section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="description__title big-text">Domande più frequenti</h3>
+        <p class="description__text mb-4">
+          Una raccolta di domande e risposte che possono aiutarti ad avere una
+          serena navigazione sul sito.
+        </p>
+      </div>
+    </div>
+
     <!-- faqs section -->
     <div class="container">
-      <div class="grid">
-        <div class="col">
-          <h3 class="description__title big-text">Domande più frequenti</h3>
-          <p class="description__text mb-4">
-            Una raccolta di domande e risposte che possono aiutarti ad avere una
-            serena navigazione sul sito.
-          </p>
-        </div>
-      </div>
       <div
         class="faqs__container"
         v-for="(faq, index) in this.faqs"
@@ -249,6 +256,10 @@ export default {
 
 <style>
 /* hero section */
+.hero {
+  height: 38vh;
+}
+
 .hero__content h1,
 .hero__content p {
   color: #460aa7;
