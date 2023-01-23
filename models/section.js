@@ -14,10 +14,6 @@ const sectionSchema = new mongoose.Schema({
 		type: String,
 		required: true
 	},	
-	alt: {
-		type: String,
-		required: true
-	},
 	description: {
 		type: String,
 		required: true
@@ -27,3 +23,10 @@ const sectionSchema = new mongoose.Schema({
 sectionSchema.index({ pet: 1, name: 1 }, { unique: true });
 
 module.exports = mongoose.model('section', sectionSchema)
+
+/*
+alt: {
+		type: String,
+		required: true
+	},
+*/

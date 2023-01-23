@@ -1,30 +1,218 @@
 [
 	{
-		"pet": "Cani",
-		"name": "Prodotti alimentari",
-		"img": "http://localhost:8000/images/ecommerce/sections/dog-food.png",
-		"alt": "alt",
-		"description": "Alimenti secchi e umidi, snack e biscotti per una dieta salutare"
+		"pet": "Roditori",
+		"name": "Mangime",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/207245/In-The-Nature-alimento-per-conigli-nani-cuccioli-800g.jpg?v=1760836477",
+		"alt": "",
+		"description": "Alimenti per una dieta sana ed equilibrata"
+	},
+	{
+		"pet": "Roditori",
+		"name": "Fieno",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/261978/fieno-oxbow-western-timothy.jpg?v=1760836235",
+		"alt": "",
+		"description": "Fieno per la dieta di ogni roditore"
+	},
+	{
+		"pet": "Roditori",
+		"name": "Igiene e antiparassitari",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/269637/advantage-spot-on-gatto-piu-4kg.jpg?v=1760836166",
+		"alt": "",
+		"description": "Tutto per la salute, igiene e pulizia dei roditori"
+	},
+	{
+		"pet": "Roditori",
+		"name": "Distributori e dispenser",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/267662/mangiatoia-per-il-fieno-natural-living.jpg?v=1758935454",
+		"alt": "",
+		"description": "Regola e mantieni sempre piena la ciotola dell'acqua e del cibo"
+	},
+	{
+		"pet": "Roditori",
+		"name": "Gabbie",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/254415/gabbia-zolux-rody-3-trio-blu-criceti.jpg?v=1760862981",
+		"alt": "",
+		"description": "Un luogo sicuro e completo per tutti i tipi di roditori"
+	},
+	{
+		"pet": "Roditori",
+		"name": "Giochi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/255344/ferplast-gioco-roditore-ruota-baloon-medium.jpg?v=1760836303",
+		"alt": "",
+		"description": "Fai divertire e divertiti insieme con tanti giochi diversi"
 	},
 	{
 		"pet": "Cani",
-		"name": "Prodotti sanitari",
-		"img": "http://localhost:8000/images/ecommerce/sections/health-dog.png",
-		"alt": "alt",
+		"name": "Mangimi secchi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=1760874931",
+		"alt": "",
+		"description": "Alimenti secchi per una dieta sana ed equilibrata"
+	},
+	{
+		"pet": "Cani",
+		"name": "Mangimi umidi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/257893/pollo-800.jpg?v=1760861596",
+		"alt": "",
+		"description": "Alimenti umidi per una dieta sana ed equilibrata"
+	},
+	{
+		"pet": "Cani",
+		"name": "Cucce",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/227146/pet-around-you-outdoor-cane-materasso-blu.jpg?v=1760870137",
+		"alt": "",
+		"description": "Un luogo sicuro e accogliente per il tuo cane"
+	},
+	{
+		"pet": "Cani",
+		"name": "Antiparassitari e igiene",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/212429/http---www.cliffi.com-assets-uploads-prodotti-zoom-5b18f6b723e3f.png?v=1760836360",
+		"alt": "",
 		"description": "Antiparassitari, igiene e cura per le esigenze del tuo cane"
 	},
 	{
+		"pet": "Cani",
+		"name": "Giochi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/223666/geo-cane-frisbee-tornado.jpg?v=1760490963",
+		"alt": "",
+		"description": "Fai divertire e divertiti insieme con tanti giochi diversi"
+	},
+	{
 		"pet": "Gatti",
-		"name": "Prodotti alimentari",
-		"img": "http://localhost:8000/images/ecommerce/sections/cat-food.png",
-		"alt": "alt",
-		"description": "Alimenti secchi e umidi per ogni gusto e dieta equilibrata"
+		"name": "Secco",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/248409/royal-canin-veterinary-diet-gatto-urinary-s-o.jpg?v=1760875475",
+		"alt": "",
+		"description": "Alimenti secchi per una dieta sana ed equilibrata"
+	},
+	{
+		"pet": "Gatti",
+		"name": "Umido",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/266561/felix-le-ghiottonerie-multipack-80x85g.jpg?v=1760875910",
+		"alt": "",
+		"description": "Alimenti umidi per una dieta sana ed equilibrata"
+	},{
+		"pet": "Gatti",
+		"name": "Sabbie",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/266561/felix-le-ghiottonerie-multipack-80x85g.jpg?v=1760875910",
+		"alt": "",
+		"description": "Tutto per la lettiera del tuo gattto"
+	},
+	{
+		"pet": "Gatti",
+		"name": "Antiparassitari",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/206637/Frontline-Combo-Spot-On-Gatto-e-Furetto-6-pipette.png?v=1760865562",
+		"alt": "",
+		"description": "Tutto per la salute, igiene e pulizia del tuo gatto"
+	},
+	{
+		"pet": "Gatti",
+		"name": "Giochi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/267665/gioco-per-uccelli-in-legno-con-pietra-lavica.jpg?v=1760867995",
+		"alt": "",
+		"description": "Fai divertire e divertiti insieme al tuo gatto con tanti giochi diversi"
+	},
+	{
+		"pet": "Gatti",
+		"name": "Cucce",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/226709/ferplast-cane-siesta-deluxe-grigio.jpg?v=1760868862",
+		"alt": "",
+		"description": "Un luogo sicuro e accogliente per il tuo gatto"
+	},
+	{
+		"pet": "Gatti",
+		"name": "Trasporto",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/227428/croci-gipsy-cane-trasportino-small.jpg?v=1760836304",
+		"alt": "",
+		"description": "Sposta in sicurezza e serenità il tuo gatto"
+	},
+	{
+		"pet": "Uccelli",
+		"name": "Mangime",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/252525/Gran_Mix_CANARINI.jpg?v=1760875958",
+		"alt": "",
+		"description": "Alimenti per una dieta sana ed equilibrata"
+	},
+	{
+		"pet": "Uccelli",
+		"name": "Snack",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/207248/In-The-Nature-canarini-stick-miele-e-banana-60g.jpg?v=1760836425",
+		"alt": "",
+		"description": "Premietti da becchettare."
+	},
+	{
+		"pet": "Uccelli",
+		"name": "Giochi",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/267665/gioco-per-uccelli-in-legno-con-pietra-lavica.jpg?v=1760867995",
+		"alt": "",
+		"description": "Fai divertire e divertiti insieme con tanti giochi diversi"
+	},
+	{
+		"pet": "Uccelli",
+		"name": "Gabbie",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/231899/voliera-nota-nera.jpg?v=1760855364",
+		"alt": "",
+		"description": "Un luogo sicuro e accogliente per ogni volatile"
+	},
+	{
+		"pet": "Uccelli",
+		"name": "Antiparassitari e igiene",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/221594/ocean-fresh-air-kg-1.jpg?v=1760836170",
+		"alt": "",
+		"description": "Tutto per la salute, igiene e pulizia di qualunque tipo di uccello"
 	},
 	{
 		"pet": "Pesci",
-		"name": "Prodotti alimentari",
-		"img": "http://localhost:8000/images/ecommerce/sections/fish-food.png",
-		"alt": "alt",
+		"name": "Mangime",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/272711/tetramin-flakes.jpg?v=1760641316",
+		"alt": "",
 		"description": "Alimenti per ogni tipo e dimensione di pesci"
+	},
+	{
+		"pet": "Pesci",
+		"name": "Acquari",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/254395/aquaart-dicsovery-line-led-antracite--1-.jpg?v=1760749904",
+		"alt": "",
+		"description": "Un luogo spazioso e sicuro per i tuoi pesci"
+	},
+	{
+		"pet": "Pesci",
+		"name": "Cura acqua",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/272744/tetra-easycrystal-filterpack-carbone-250-300.jpg?v=1760641325",
+		"alt": "",
+		"description": "Tutto per l'igiene e pulizia dell'acquario"
+	},
+	{
+		"pet": "Pesci",
+		"name": "Accessori acquario",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/222186/sabbia-bianca-fine-kg-5-mm-01-07.jpg?v=1760867839",
+		"alt": "",
+		"description": "Decorazioni, sabbie e rocce per ogni acquario"
+	},
+	{
+		"pet": "Tartarughe",
+		"name": "Mangime",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/225115/expecial-tartarughe-bastoncini.jpg?v=1760663587",
+		"alt": "",
+		"description": "Alimenti per una dieta sana ed equilibrata delle tue tartarughe"
+	},
+	{
+		"pet": "Tartarughe",
+		"name": "Tartarughiere",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/271564/AMTRA-TARTARUGHIERA-GIGLIO-60-CM.60X30.jpg?v=1760663652",
+		"alt": "",
+		"description": "Un luogo sicuro e accogliente per le tue tartarughe"
+	},
+	{
+		"pet": "Tartarughe",
+		"name": "Integratori",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/222236/croci-tartarughe-tugamin.jpg?v=1760663401",
+		"alt": "",
+		"description": "Integratori per il benessere delle tue tartarughe"
+	},
+	{
+		"pet": "Tartarughe",
+		"name": "Accessori",
+		"img": "https://arcaplanet.vtexassets.com/arquivos/ids/253266/ferplast-abbeveratoio-drinky--2-.png?v=1760863678",
+		"alt": "",
+		"description": "Accessori di vario tipo per le tartarughe"
 	}
 ]
