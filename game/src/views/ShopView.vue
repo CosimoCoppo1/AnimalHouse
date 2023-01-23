@@ -51,11 +51,11 @@
     <!-- poster section -->
     <div
       class="poster container"
-      v-for="(pet, index) in this.pets"
+      v-for="(animal, index) in this.pets"
       :key="index"
     >
       <div class="poster__content">
-        <h3 class="poster__title">{{ pet.name }}</h3>
+        <h3 class="poster__title">{{ animal.name }}</h3>
         <p>{{ this.posters[index].description }}</p>
         <button
           @click="this.getPetSections(`${index}`, `${pet._id}`)"
@@ -75,12 +75,72 @@
         </a>
       </div>
       <div class="poster__img">
-        <img
+        <!-- <img
           :src="require(`@/assets/shop/${this.posters[index].img}`)"
           alt=".."
-        />
+        /> -->
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../assets/bg-video.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
+
+    <div v-for="product in this.products" :key="product">
+      <div class="card" v-if="`${animal.name}` == `${product.pet.name}`">
+        <img :src="product.img" alt=".." />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <h6 class="text-muted">{{ product.price }}€</h6>
+          <p class="card-text">{{ product.description }}</p>
+          <a href="#">
+            <button type="button" class="btn btn-success border">
+              Compra!
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div v-for="animal in this.pets" :key="animal">
+      <p>{{ animal.name }}</p>
+      <div v-for="product in this.products" :key="product">
+        <p v-if="`${animal.name}` == `${product.pet.name}`">
+          {{ product.title }}, {{ product.price }}, {{ product.description }}
+        </p>
+        <br />
+      </div>
+    </div>
+
     <!--
             acquista con fiducia.
 
@@ -162,7 +222,7 @@ export default {
     return {
       posters: [
         {
-          description: "questo  è un tenero cucciolo",
+          description: "questo è un tenero cucciolo",
           img: "pet0.jpg",
         },
         {
@@ -187,40 +247,6 @@ export default {
         },
       ],
       pets: [],
-      // products: [
-      //   {
-      //     title: "Cuccia ciambella pelosa",
-      //     price: "31.90",
-      //     description:
-      //       "Ciambella pelosa morbida rosa perfetta per il riposo quotidiano del tuo cane.",
-      //     image: "accessoricane1.png",
-      //     alt: "Cuccia a ciambella pelosa",
-      //   },
-      //   {
-      //     title: "Peluche scoiattolo striato",
-      //     price: "4.20",
-      //     description:
-      //       "Il peluce con squittio è l'accessorio perfetto per divertirti a lungo con Fido.",
-      //     image: "accessoricane2.png",
-      //     alt: "Peluche scoiattolo",
-      //   },
-      //   {
-      //     title: "Guinzaglio per addestramento rosso",
-      //     price: "12.99",
-      //     description:
-      //       "Guinzaglio educativo regolabile su 3 lunghezze per addestramento.",
-      //     image: "accessoricane3.png",
-      //     alt: "Guinzaglio per addestramento rosso",
-      //   },
-      //   {
-      //     title: "Ciotola doppia in acciaio",
-      //     price: "14.89",
-      //     description:
-      //       "Ciotola doppia dal fondo antiscivolo per evitare che il cane sbrodoli sul pavimento di casa.",
-      //     image: "accessoricane4.png",
-      //     alt: "Ciotola doppia in acciaio",
-      //   },
-      // ],
       pet0: [],
       pet1: [],
       pet2: [],
