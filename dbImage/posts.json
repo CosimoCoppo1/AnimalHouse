@@ -12,5 +12,44 @@
 		"user": "joe.biden@unibo.it",
 		"desc": "catJAM",
 		"image": "defaultPost/vibingcatttt.jpg"
+	},
+	{
+		"user": "bruno@unibo.it",
+		"desc": "Iscritto ricambi?"
+	},
+	{
+		"user": "sergio.mattarella@unibo.it",
+		"desc": "Care concittadine e cari concittadini, auguri di buon anno!",
+		"image": "defaultPost/Meme-Mattarella10.jpg"
+	},
+	{
+		"user": "joe.biden@unibo.it",
+		"desc": "Hello sergio!"
+	},
+	{
+		"user": "marco.arnautovic@unibo.it",
+		"desc": "My president :O",
+		"image": "defaultPost/kkona.png"
+	},
+	{
+		"user": "orietta.berti@unibo.it",
+		"desc": "Vado a sbancare sanremo!"
+	},
+	{
+		"user": "joe.biden@unibo.it",
+		"desc": "2 @orietta.berti"
+	},
+	{
+		"user": "bruno@unibo.it",
+		"desc": "pepeLaugh TeaTime",
+		"image": "defaultPost/pepelaugh.jpg"
+	},
+	{
+		"user": "joe.biden@unibo.it",
+		"desc": "Ciao, dove posso trovare la sezione ecommrce?"
+	},
+	{
+		"user": "root@unibo.it",
+		"desc": "Ciao joe, guarda in alto a destra dello schermo"
 	}
 ]

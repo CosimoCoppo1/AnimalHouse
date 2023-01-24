@@ -64,8 +64,8 @@
 						<div class="row row-cols-1 row-cols-xl-4 g-4">
 							{{#each this.sections}}
 								<div class="col">
-									<div class="card h-100">
-										<div class="row m-3">
+									<div class="card shadow h-100 border border-1 border-opacity-50">
+										<div class="row m-3 mb-0">
 											<div class="col-5">
 												<img src="{{this.img}}" alt="{{this.alt}}" class="img-fluid">
 											</div>

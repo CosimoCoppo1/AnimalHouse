@@ -159,7 +159,7 @@ function deletePost(id)
 let before = (new Date(Date.now())).toISOString();
 function getPosts()
 {
-	$.getJSON(`/posts?qty=1&before=${before}`, (posts) => { 
+	$.getJSON(`/posts?qty=3&before=${before}`, (posts) => { 
 		if (posts.length === 0) {
 			alert('Hai raggiunto l\'ultimo post');
 			$('#carica-altro').prop('disabled', true);

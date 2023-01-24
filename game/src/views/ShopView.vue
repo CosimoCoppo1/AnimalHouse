@@ -1,80 +1,180 @@
 <template>
   <div>
+    <!-- hero section -->
     <div class="hero">
       <div class="hero__content">
-        <p class="intro-text">la sapevi questa?</p>
-        <h1 class="big-text">curiosità sul mondo animale</h1>
-        <!-- <a href="" class="button">Discover more</a> -->
+        <p class="intro-text">che fame da lupi!</p>
+        <h1 class="big-text">Negozio online</h1>
       </div>
-      <video autoplay muted loop id="video-back">
-        <source src="../assets/home/bg-video.mp4" type="video/mp4" />
+      <video autoplay muted loop class="hero__video">
+        <source src="../assets/shop/bg__hero.mp4" type="video/mp4" />
       </video>
     </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-      <div v-for="(product, index) in this.products" :key="index" class="col">
-        <div class="card" style="width: 18rem">
-          <img src="../assets/bg-video.jpg" class="card-image-top" />
-          <div class="card-body">
-            <h5
-              class="card-title"
-              :style="{
-                color: this.changeColor(`${index}`),
-              }"
-            >
-              {{ product.title }}
-            </h5>
-            <p class="card-text">{{ product.description }}</p>
-            <p class="card-text">{{ product.price }}</p>
-            <button type="button" class="btn btn-success">Compra!</button>
+
+    <!-- page-intro section -->
+    <div class="grid page-intro my-5">
+      <div class="col">
+        <p>
+          Benvenuti nella sezione <b>negozio</b> di Animal House! Amate i vostri
+          animali domestici... e dimostratelo dandogli solamente prodotti di
+          <b>prima qualità</b>, come quelli che trovate a questa pagina.<br />Il
+          vostro animale domestico merita il <b>meglio</b>.
+        </p>
+      </div>
+    </div>
+
+    <!--descrition section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="description__title big-text">
+          Scopri i prodotti per cani, gatti e tanto altro!
+        </h3>
+        <p class="description__text">
+          <b>Affidatevi a chi ci mette il cuore</b>: ci impegnamo a fornirvi i
+          migliori prodotti per animali domestici. Ti offriamo un'esperienza di
+          acquisto eccellente poichè la soddisfzione dei nostri clienti è molto
+          importante per noi.<br />Abbiamo la combinazione perfetta tra i
+          migliori prodotti e la nostra semplice pratica di acquisto: passa
+          all'area
+          <a href="#"
+            ><button type="button" class="btn btn-success">VIP</button></a
+          >
+          per effettuare istantaniamente gli ordini .<br />
+        </p>
+        <p class="mt-1 description__title">
+          Ci assicureremo che riceviate il vostro ordine con piena
+          soddisfazione!
+        </p>
+      </div>
+    </div>
+
+    <!-- poster section -->
+    <!--
+    <div
+      class="poster container"
+      v-for="(animal, index) in this.pets"
+      :key="index"
+    >
+      <div class="poster__content">
+        <h3 class="poster__title">{{ animal.name }}</h3>
+        <p>{{ this.posters[index].description }}</p>
+        <button
+          @click="this.getPetSections(`${index}`, `${pet._id}`)"
+          :style="this.whatPet(`${index}`) != '' ? 'display: none' : ''"
+        >
+          Sezioni dedicate:
+        </button>
+        <span v-if="this.whatPet(`${index}`) != ''">
+          <div v-for="section in this.whatPet(`${index}`)" :key="section">
+            <p>{{ section.name }}</p>
+          </div>
+        </span>
+        <a href="#">
+          <button type="button" class="btn btn-success">
+            Inizia gli acquisti!
+          </button>
+        </a>
+      </div>
+      <div class="poster__img">
+         <img
+          :src="require(`@/assets/shop/${this.posters[index].img}`)"
+          alt=".."
+        /> 
+        <div
+          id="carouselExampleControls"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="../assets/bg-video.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleControls"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div v-for="product in this.products" :key="product">
+      <div class="card" v-if="`${animal.name}` == `${product.pet.name}`">
+        <img :src="product.img" alt=".." />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <h6 class="text-muted">{{ product.price }}€</h6>
+          <p class="card-text">{{ product.description }}</p>
+          <a href="#">
+            <button type="button" class="btn btn-success border">
+              Compra!
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+
+    <div v-for="animal in this.pets" :key="animal">
+      <p>{{ animal.name }}</p>
+      <div v-for="product in this.products" :key="product">
+        <p v-if="`${animal.name}` == `${product.pet.name}`">
+          {{ product.title }}, {{ product.price }}, {{ product.description }}
+        </p>
+        <br />
+      </div>
+    </div>
+	-->
+
+    <!--
+            acquista con fiducia.
+
+      Ci impegnamo per la soddsfazione dle cliente. date un'occhiata alle fantastiche recenzsioni su nostri prodotti.
+      
+      #feelgood
+    -->
+    <!-- <div class="container">
+      <div
+        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
+        align="center"
+      >
+        <div v-for="(product, index) in this.products" :key="index" class="col">
+          <div class="card">
+            <img src="../assets/shop/accessoricane1.png" alt=".." />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.title }}</h5>
+              <h6 class="text-muted">{{ product.price }}€</h6>
+              <p class="card-text">{{ product.description }}</p>
+              <a href="#">
+                <button type="button" class="btn btn-success border">
+                  Compra!
+                </button></a
+              >
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+    </div> -->
     <!-- cani -->
-    <div>
-      <p>Name: {{ this.pets[0].name }}</p>
-      <button
-        @click="this.getPetProduct(0, this.pets[0]._id)"
-        :style="this.Cani != '' ? 'display: none' : ''"
-      >
-        Prodotti cane
-      </button>
-      <span v-if="this.Cani != ''">
-        <div v-for="singleProduct in this.Cani" :key="singleProduct">
-          <p>{{ singleProduct.title }}</p>
-          <p>{{ singleProduct.description }}</p>
-          <p>{{ singleProduct.price }}</p>
-        </div>
-      </span>
-    </div>
     <!-- pesci -->
-    <div>
+    <!--<div>
       <p>Name: {{ this.pets[3].name }}</p>
       <button
         @click="this.getPetProduct(3, this.pets[3]._id)"
@@ -89,7 +189,22 @@
           <p>{{ singleProduct.price }}</p>
         </div>
       </span>
-    </div>
+    </div>-->
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
     <br />
     <br />
     <br />
@@ -108,212 +223,117 @@ export default {
   data() {
     return {
       pets: [],
-      products: [],
-      Cani: [],
-      Gatti: [],
-      Volatili: [],
-      Pesci: [],
-      Tartarughe: [],
-      Roditori: [],
-      colors: [
-        "#e3427d",
-        "#469374",
-        "#9341b3",
-        "#177bb5",
-        "#e68653",
-        "#c4331c",
-      ],
+      sections: {},
+      products: {},
     };
   },
   methods: {
-    getPets() {
-      axios
-        .get("http://localhost:8000/pets")
-        .then((response) => (this.pets = response.data));
-
-      this.load = true;
+    async getPets() {
+      let response = await axios.get("http://localhost:8000/pets");
+      this.pets = response.data;
+      console.log(this.pets);
     },
-    getProducts() {
-      axios
-        .get("http://localhost:8000/products")
-        .then((response) => (this.products = response.data));
+    async getPetSections() {
+      for (let pet of this.pets) {
+        let response = await axios.get(
+          `http://localhost:8000/sections?pet=${pet._id}`
+        );
+        this.sections[pet._id] = response.data;
+      }
+      console.log(this.sections);
     },
-    getPetProduct(index, id) {
-      axios.get(`http://localhost:8000/products?pet=${id}`).then((response) => {
-        if (index == 0) {
-          this.Cani = response.data;
-        } else if (index == 1) {
-          this.Gatti = response.data;
-        } else if (index == 2) {
-          this.Volatili = response.data;
-        } else if (index == 3) {
-          this.Pesci = response.data;
-        } else if (index == 4) {
-          this.Tartarughe = response.data;
-        } else if (index == 5) {
-          this.Roditori = response.data;
-        }
-      });
-    },
-    changeColor(index) {
-      for (let i = 0; i <= 5; i++) {
-        if (index % 5 == i) {
-          return this.colors[i];
+    async getProductsSection() {
+      for (let keyValue of Object.entries(this.sections)) {
+        let petSections = keyValue[1];
+        for (let section of petSections) {
+          let response = await axios.get(
+            `http://localhost:8000/products?section=${section._id}`
+          );
+          this.products[section._id] = response.data;
         }
       }
+      console.log(this.products);
     },
   },
-  created: function () {
-    this.getPets();
-    this.getProducts();
+  created: async function () {
+    await this.getPets();
+    await this.getPetSections();
+    await this.getProductsSection();
   },
 };
 </script>
 
 <style>
-/* hero */
+.btn {
+  color: #fff;
+  border: 1px solid black;
+  background-color: #5e5e5e;
+}
+
+/* hero section */
 .hero {
   height: 38vh;
-  position: relative;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.hero:after {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.4;
-}
-
-.hero__content {
-  width: 100%;
-  max-width: 1350px;
-  margin: 0 auto;
-  padding: 30px;
-  z-index: 1;
-  position: relative;
 }
 
 .hero__content h1,
 .hero__content p {
-  color: yellow;
+  color: #17df53;
 }
 
-.hero--small {
-  height: 450px;
-  text-align: center;
+/* description section */
+.description__title,
+.link {
+  color: #17df53;
 }
 
-#video-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 0;
-  bottom: 0;
-}
-
-.card-title {
-  text-align: center;
-  margin: 15px auto;
-  font-weight: 900;
-  font-size: 25px;
-}
-/*
-.card-container {
-  width: 18rem;
-  perspective: 200rem;
-  position: relative;
-  height: 389px;
-}
-
+/* card section */
 .card {
-  position: absolute;
-  height: 100%;
+  width: 20rem;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin: 20px;
+  background-color: #bdd5ea;
+}
+
+/* poster section */
+.poster {
+  display: flex;
+  height: 70vh;
   width: 100%;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 20px;
+  align-items: center;
 }
 
-.card-body button {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  color: #fff;
-  font-size: 14px;
-  border: none;
-  background-color: #2c3e50;
-}
-*/
-.card-body {
-  position: relative;
+.poster__title {
+  font-size: 38px;
+  font-weight: bold;
+  color: #17df53;
 }
 
-.card-body button {
-  color: #fff;
-  font-size: 14px;
-  border: none;
-  background-color: #2c3e50;
+.poster__img {
+  width: 65%;
+  height: 100%;
+}
+
+.poster__img img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.poster__content {
+  width: 35%;
+  padding: 50px;
+}
+
+@media (max-width: 768px) {
+  .poster {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  .poster__img,
+  .poster__content {
+    width: 100%;
+  }
 }
 </style>
-
-<!--
-data() {
-    return {
-      pets: [],
-      products: [],
-      caniProducts: [],
-      gattiProducts: [],
-      volatiliProducts: [],
-      pesciProducts: [],
-      tartarugheProducts: [],
-      roditoriProducts: [],
-    };
-  },
-  created() {
-    axios.get("http://localhost:8000/pets").then((response) => {
-      this.pets = response.data[0];
-    });
-
-    this.getProductByName();
-  },
-  methods: {
-    getProductByName() {
-      let cats = [
-        "63c27570b282c008201f503b",
-        "Gatti",
-        "Volatili",
-        "Pesci",
-        "Tartarughe",
-        "Roditori",
-      ];
-      console.log("THIS WILL ALWAYS BE AN EMPTY ARRAY", this.pets);
-      console.log(cats);
-
-      for (let cat of cats) {
-        if (cat == "63c27570b282c008201f503b") {
-          axios
-            .get(`http://localhost:8000/products?pet=${cat}`)
-            .then((res) => (this.caniProducts = res.data));
-          console.log(0, this.caniProducts);
-        }
-      }
-    },
-  },
-  watch: {
-    pets(newVal) {
-      console.log("THIS WILL HAVE DATA WHEN operaciones IS POPULATED", newVal);
-      this.pets = newVal;
-    },
-  },
--->

@@ -29,7 +29,7 @@
       </div>
     </div>
 
-    <!-- keyword section -->
+    <!-- description section -->
     <div class="grid">
       <div class="col">
         <h3 class="keyword__title">In questa pagina</h3>
@@ -40,44 +40,28 @@
         </p>
       </div>
     </div>
+
+    <!-- keyword section -->
     <div class="grid keyword mb-5">
-      <div class="grid">
+      <div class="grid" v-for="(keyword, index) in this.keywords" :key="index">
         <div class="col">
           <a
             type="button"
             class="btn keyword__button"
-            href="#card"
-            style="background: #9341b3"
+            :href="`${keyword.direct}`"
+            :style="{
+              'background-color': this.changeColor(`${index}`),
+            }"
           >
-            <img src="../assets/curiosity/button1.png" alt="" />
+            <img :src="require(`@/assets/curiosity/${keyword.img}`)" alt=".." />
           </a>
-          <h4 style="color: #9341b3">conoscenza</h4>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="col">
-          <a
-            type="button"
-            class="btn keyword__button"
-            href="#card"
-            style="background: #177bb5"
+          <h4
+            :style="{
+              color: this.changeColor(`${index}`),
+            }"
           >
-            <img src="../assets/curiosity/button2.png" alt="" />
-          </a>
-          <h4 style="color: #177bb5">aneddoti</h4>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="col">
-          <a
-            type="button"
-            class="btn keyword__button"
-            href="#gallery"
-            style="background: #469374"
-          >
-            <img src="../assets/curiosity/button3.png" alt="" />
-          </a>
-          <h4 style="color: #469374">divertimento</h4>
+            {{ keyword.title }}
+          </h4>
         </div>
       </div>
     </div>
@@ -129,42 +113,44 @@
       </div>
     </div>
 
+    <!-- description section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="description__title big-text">Gira la carta!</h3>
+        <p class="description__text">
+          Mettiti alla prova indovinando età, alimentazione e habitat di ogni
+          specie!<br />
+          Scopri se sei un vero esperto sul regno animale giocando al nostro
+          <router-link :to="{ path: '/giochi/quiz' }"
+            ><button
+              type="button"
+              class="btn btn-warning"
+              style="border: 1px solid black"
+            >
+              quiz
+            </button></router-link
+          >
+          oppure accedi a quiz dedicati tramite il bottone sul retro della
+          carta.
+        </p>
+        <p class="small card__collaboration-desc">
+          — Idea nata in collaborazione con
+          <abbr title="World Wide Fund for Nature">WWF</abbr>, l'organizzazione
+          internazionale a tutela dell'ambiente e degli animali.<br />Scopri di
+          più al sito
+          <a
+            href="https://www.pandaclub.ch/it/home"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="card__collaboration"
+            >Panda Club</a
+          >.
+        </p>
+      </div>
+    </div>
+
     <!-- card section -->
     <div class="container-fluid" id="card" style="margin-bottom: 80px">
-      <div class="grid">
-        <div class="col">
-          <h3 class="card__title big-text">Gira la carta!</h3>
-          <p class="card__intro">
-            Mettiti alla prova indovinando età, alimentazione e habitat di ogni
-            specie!<br />
-            Scopri se sei un vero esperto sul regno animale giocando al nostro
-            <router-link :to="{ path: '/giochi/quiz' }"
-              ><button
-                type="button"
-                class="btn btn-warning"
-                style="border: 1px solid black"
-              >
-                quiz
-              </button></router-link
-            >
-            oppure accedi a quiz dedicati tramite il bottone sul retro della
-            carta.
-          </p>
-          <p class="small card__collaboration-desc">
-            — Idea nata in collaborazione con
-            <abbr title="World Wide Fund for Nature">WWF</abbr>,
-            l'organizzazione internazionale a tutela dell'ambiente e degli
-            animali.<br />Scopri di più al sito
-            <a
-              href="https://www.pandaclub.ch/it/home"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="card__collaboration"
-              >Panda Club</a
-            >.
-          </p>
-        </div>
-      </div>
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
         <div
           v-for="(category, index) in this.categories"
@@ -213,42 +199,25 @@
       </div>
     </div>
 
-    <!-- video gallery section -->
-    <div class="video__container" id="gallery">
-      <div class="grid">
-        <div class="col">
-          <h3 class="big-text video__title">Simpatici video di animali!</h3>
-        </div>
-      </div>
-      <div class="grid">
-        <div class="col">
-          <p class="video__intro">
-            Ecco alcuni video di animali che ti strapperanno un sorriso!
-          </p>
-        </div>
-      </div>
-      <div class="video__list">
-        <div class="video">
-          <video src="../assets/curiosity/gallery1.mp4" muted controls />
-        </div>
-        <div class="video">
-          <video src="../assets/curiosity/gallery2.mp4" muted controls />
-        </div>
-        <div class="video">
-          <video src="../assets/curiosity/gallery3.mp4" muted controls />
-        </div>
+    <!-- description section -->
+    <div class="grid">
+      <div class="col">
+        <h3 class="big-text description__title">Simpatici video di animali!</h3>
+        <p class="description__text">
+          Ecco alcuni video di animali che ti strapperanno un sorriso!
+        </p>
       </div>
     </div>
-    <div class="video__container">
+
+    <!-- video-gallery section -->
+    <div class="video__container" id="gallery">
       <div class="video__list">
-        <div class="video">
-          <video src="../assets/curiosity/gallery4.mp4" muted controls />
-        </div>
-        <div class="video">
-          <video src="../assets/curiosity/gallery5.mp4" muted controls />
-        </div>
-        <div class="video">
-          <video src="../assets/curiosity/gallery6.mp4" muted controls />
+        <div class="video" v-for="(video, index) in this.videos" :key="index">
+          <video
+            :src="require(`@/assets/curiosity/${video.source}`)"
+            muted
+            controls
+          />
         </div>
       </div>
     </div>
@@ -260,6 +229,19 @@ export default {
   name: "CuriosityView",
   data() {
     return {
+      keywords: [
+        { direct: "#card", img: "button1.png", title: "conoscenza" },
+        { direct: "#card", img: "button2.png", title: "aneddoti" },
+        { direct: "#gallery", img: "button3.png", title: "divertimento" },
+      ],
+      videos: [
+        { source: "gallery1.mp4", alt: ".." },
+        { source: "gallery2.mp4", alt: ".." },
+        { source: "gallery3.mp4", alt: ".." },
+        { source: "gallery4.mp4", alt: ".." },
+        { source: "gallery5.mp4", alt: ".." },
+        { source: "gallery6.mp4", alt: ".." },
+      ],
       categories: [
         {
           name: "Animali australiani",
@@ -662,20 +644,20 @@ export default {
         },
       ],
       colors: [
-        "#e3427d",
-        "#f0c808",
         "#469374",
-        "#9341b3",
         "#19abff",
-        "#e68653",
+        "#9341b3",
+        "#e3427d",
         "#c4331c",
+        "#e68653",
+        "#f0c808",
       ],
     };
   },
   methods: {
     changeColor(index) {
       for (let i = 0; i <= 6; i++) {
-        if (index % 6 == i) {
+        if (index % 7 == i) {
           return this.colors[i];
         }
       }
@@ -688,68 +670,11 @@ export default {
 /* hero section */
 .hero {
   height: 38vh;
-  position: relative;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-size: cover;
-  overflow: hidden;
-  box-shadow: rgba(133, 126, 126, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.hero:after {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.4;
-}
-
-.hero__content {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 30px;
-  z-index: 1;
-  position: relative;
 }
 
 .hero__content h1,
 .hero__content p {
   color: #ffd60a;
-}
-
-.hero__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 0;
-  bottom: 0;
-}
-
-/* page-intro section */
-.page-intro {
-  text-align: center;
-  font-size: 22px;
-  font-style: italic;
-  color: #0000008c;
-}
-
-@media (max-width: 768px) {
-  .page-intro {
-    font-size: 19px;
-    text-align: justify;
-  }
 }
 
 /* keyword section */
@@ -851,14 +776,8 @@ export default {
 }
 
 /* card section */
-.card__title {
-  text-align: center;
+.description__title {
   color: #ffd60a;
-}
-
-.card__intro {
-  text-align: center;
-  font-size: 22px;
 }
 
 .card__collaboration-desc {
@@ -945,17 +864,6 @@ export default {
   position: relative;
   margin-bottom: 50px;
   width: 100%;
-}
-
-.video__title {
-  text-align: center;
-  color: #ffd60a;
-}
-
-.video__intro {
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 20px;
 }
 
 .video__container .video__list {

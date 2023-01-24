@@ -1,5 +1,11 @@
 [
 	{
+		"username": "root",
+		"email": "root@unibo.it",
+		"password": "123456",
+		"role": "admin"
+	},
+	{
 		"username": "Marko Arnautovic",
 		"email": "marco.arnautovic@unibo.it",
 		"password": "123456",
@@ -21,6 +27,30 @@
 		"username": "SofìMeControTe Official",
 		"email": "sofi.mecontrote@unibo.it",
 		"password": "987654",
+		"role": "normal"
+	},
+	{
+		"username": "Bruno",
+		"email": "bruno@unibo.it",
+		"password": "123456",
+		"role": "normal"
+	},
+	{
+		"username": "Mario Draghi",
+		"email": "mario.draghi@unibo.it",
+		"password": "qwerty",
+		"role": "normal"
+	},
+	{
+		"username": "Giorgia Meloni",
+		"email": "giorgia.meloni@unibo.it",
+		"password": "password",
+		"role": "normal"
+	},
+	{
+		"username": "Sergio Mattarella",
+		"email": "sergio.mattarella@unibo.it",
+		"password": "123456",
 		"role": "normal"
 	}
 ]

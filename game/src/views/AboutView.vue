@@ -64,27 +64,33 @@
       </div>
     </div>
 
-    <!-- client section -->
+    <!-- image-gallery section -->
     <div class="container-fluid">
       <div class="row">
-        <div class="col-md-6" align="right">
+        <div
+          class="col-md-6"
+          v-for="(client, index) in this.clients"
+          :key="index"
+          :align="`${client.position}`"
+        >
           <div class="image__container">
-            <img src="../assets/about/gallery1.jpg" alt="..." class="image" />
-            <router-link type="button" class="btn" :to="{ path: '/negozio' }"
-              >negozio</router-link
-            >
-          </div>
-        </div>
-        <div class="col-md-6" align="left">
-          <div class="image__container">
-            <img src="../assets/about/gallery2.jpg" alt="..." class="image" />
-            <router-link type="button" class="btn" :to="{ path: '/servizi' }"
-              >servizi</router-link
+            <img
+              :src="require(`@/assets/about/${client.img}`)"
+              class="image"
+              alt=".."
+            />
+            <router-link
+              type="button"
+              class="btn"
+              :to="{ path: `${client.link}` }"
+              >{{ client.direct }}</router-link
             >
           </div>
         </div>
       </div>
     </div>
+
+    <!-- description section -->
     <div class="grid mb-5">
       <div class="col">
         <p class="description__text">
@@ -99,7 +105,7 @@
       </div>
     </div>
 
-    <!-- team section -->
+    <!-- bubble section -->
     <div class="container-fluid">
       <h3 class="description__title big-text">Come nasce Animal House?</h3>
       <div class="row">
@@ -108,7 +114,7 @@
           v-for="(member, index) in this.members"
           :key="index"
         >
-          <div class="team-member">
+          <div class="bubble-member">
             <img
               class="mx-auto rounded-circle"
               :src="require(`@/assets/about/${member.img}`)"
@@ -120,6 +126,8 @@
         </div>
       </div>
     </div>
+
+    <!-- description section -->
     <div class="grid py-0">
       <div class="col">
         <p class="description__text mb-5 text-center">
@@ -189,6 +197,20 @@ export default {
   components: { TimelineComponent },
   data() {
     return {
+      clients: [
+        {
+          position: "right",
+          img: "gallery1.jpg",
+          link: "/negozio",
+          direct: "negozio",
+        },
+        {
+          position: "left",
+          img: "gallery2.jpg",
+          link: "/servizi",
+          direct: "servizi",
+        },
+      ],
       members: [
         {
           name: "Cosimo Coppolaro",
@@ -213,41 +235,15 @@ export default {
 </script>
 
 <style>
+.btn {
+  background-color: #f84444;
+  color: #fff;
+  border: 1px solid black;
+}
+
 /* hero section */
 .hero {
   height: 38vh;
-  position: relative;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-size: cover;
-  overflow: hidden;
-  box-shadow: rgba(133, 126, 126, 0.17) 0px -23px 25px 0px inset,
-    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
-    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
-    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-}
-
-.hero:after {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.4;
-}
-
-.hero__content {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 30px;
-  z-index: 1;
-  position: relative;
 }
 
 .hero__content h1,
@@ -255,57 +251,23 @@ export default {
   color: #f84444;
 }
 
-.hero__video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 0;
-  bottom: 0;
-}
-
-/* page-intro section */
-.page-intro {
-  text-align: center;
-  font-size: 22px;
-  font-style: italic;
-  color: #0000008c;
-}
-
-@media (max-width: 768px) {
-  .page-intro {
-    font-size: 19px;
-    text-align: justify;
-  }
-}
-
 /* poster section */
 .poster {
-  display: flex;
   height: 80vh;
-  width: 100%;
-  align-items: center;
-  margin-bottom: 80px;
   background: url("../assets/curiosity/bg__poster.png") no-repeat center center;
 }
 
 .poster__img {
   width: 55%;
-  height: 100%;
 }
 
 .poster__img video {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
   border-radius: 20px;
 }
 
 .poster__content {
   width: 45%;
   padding: 20px;
-  text-align: left;
   font-size: 20px;
 }
 
@@ -317,12 +279,7 @@ export default {
 
 @media (max-width: 768px) {
   .poster {
-    flex-wrap: wrap;
     height: 100%;
-  }
-
-  .poster__content p {
-    text-align: justify;
   }
 
   .poster__content h3 {
@@ -336,75 +293,27 @@ export default {
 }
 
 /* description section */
-.description__title {
-  color: #f84444;
-  text-align: center;
-  margin-top: 30px;
-}
-
-.description__text {
-  font-size: 22px;
-  text-align: center;
-}
-
+.description__title,
 .link {
   color: #f84444;
 }
 
-@media (max-width: 768px) {
-  .description__text {
-    font-size: 17px;
-    text-align: justify;
-  }
-}
-
 /* client section */
-.image__container {
-  position: relative;
-}
-
 .image {
-  display: block;
-  width: 70%;
-  height: 70%;
-  margin-bottom: 20px;
   border-radius: 20px;
-}
-
-.image__container .btn {
-  position: absolute;
-  cursor: pointer;
-  border-radius: 5px;
-  background-color: #0000008c;
-  color: #fff;
-  font-weight: bold;
-  text-transform: uppercase;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 18px;
 }
 
 .image__container .btn:hover {
   background-color: #f84444;
 }
 
-/* team section */
-.team-member {
-  margin-bottom: 50px;
-  text-align: center;
-}
-.team-member img {
-  width: 225px;
-  height: 225px;
-  border: 7px solid #fff;
-}
-.team-member h4 {
+/* bubble section */
+.bubble-member h4 {
   margin-top: 25px;
   margin-bottom: 0;
   font-weight: bold;
 }
-.team-member p {
+.bubble-member p {
   margin-top: 0;
 }
 

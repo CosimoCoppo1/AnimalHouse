@@ -24,7 +24,7 @@ export default {
 
 /* hero section */
 .hero {
-  height: 38vh;
+  /* height: 38vh; */
   position: relative;
   display: flex;
   width: 100%;
@@ -110,7 +110,6 @@ export default {
   align-items: center;
   margin-top: 20px;
   margin-bottom: 80px;
-  /* background: url("../assets/curiosity/bg__poster.png") no-repeat center center; */
 }
 
 .poster__img {
@@ -127,15 +126,15 @@ export default {
 .poster__content {
   /* width: 35%; */
   /* padding: 50px; */
-  margin-left: 10px;
+  /* margin-left: 10px; */
   text-align: left;
-  font-size: 17px;
+  /* font-size: 17px; */
 }
 
 @media (max-width: 768px) {
   .poster {
     flex-wrap: wrap;
-    height: auto;
+    /* height: auto; */
   }
 
   .poster__content {
@@ -146,6 +145,44 @@ export default {
   .poster__content {
     width: 100%;
   }
+}
+
+/* image-gallery section */
+.image__container {
+  position: relative;
+}
+
+.image {
+  display: block;
+  width: 70%;
+  height: 70%;
+  margin-bottom: 20px;
+}
+
+.image__container .btn {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #0000008c;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* bubble section */
+.bubble-member {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.bubble-member img {
+  width: 225px;
+  height: 225px;
+  border: 7px solid #fff;
 }
 
 /* helpers */

@@ -67,10 +67,10 @@ const routes = [
       ),
   },
   {
-    path: "/giochi/scramble",
-    name: "scramble",
+    path: "/giochi/scarabeo",
+    name: "scarabeo",
     component: () =>
-      import(/* webpackChunkName: "scrumble" */ "../views/ScrambleView.vue"),
+      import(/* webpackChunkName: "scarabeo" */ "../views/ScrabbleView.vue"),
   },
   {
     path: "/giochi/peek",
