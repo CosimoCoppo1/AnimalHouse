@@ -49,6 +49,7 @@
     </div>
 
     <!-- poster section -->
+    <!--
     <div
       class="poster container"
       v-for="(animal, index) in this.pets"
@@ -75,10 +76,10 @@
         </a>
       </div>
       <div class="poster__img">
-        <!-- <img
+         <img
           :src="require(`@/assets/shop/${this.posters[index].img}`)"
           alt=".."
-        /> -->
+        /> 
         <div
           id="carouselExampleControls"
           class="carousel slide"
@@ -140,6 +141,7 @@
         <br />
       </div>
     </div>
+	-->
 
     <!--
             acquista con fiducia.
@@ -220,106 +222,43 @@ export default {
   name: "ShopView",
   data() {
     return {
-      posters: [
-        {
-          description: "questo è un tenero cucciolo",
-          img: "pet0.jpg",
-        },
-        {
-          description: "questo  è un tenero cucciolo",
-          img: "pet1.jpg",
-        },
-        {
-          description: "questo  è un tenero cucciolo",
-          img: "pet2.jpg",
-        },
-        {
-          description: "questo  è un tenero cucciolo",
-          img: "pet3.jpg",
-        },
-        {
-          description: "questo  è un tenero cucciolo",
-          img: "pet4.jpg",
-        },
-        {
-          description: "questo  è un tenero cucciolo",
-          img: "pet5.jpg",
-        },
-      ],
       pets: [],
-      pet0: [],
-      pet1: [],
-      pet2: [],
-      pet3: [],
-      pet4: [],
-      pet5: [],
-      products: [],
-      colors: [
-        "#e3427d",
-        "#469374",
-        "#9341b3",
-        "#177bb5",
-        "#e68653",
-        "#c4331c",
-      ],
+      sections: {},
+      products: {},
     };
   },
   methods: {
-    getPets() {
-      axios
-        .get("http://localhost:8000/pets")
-        .then((response) => (this.pets = response.data));
+    async getPets() {
+      let response = await axios.get("http://localhost:8000/pets");
+      this.pets = response.data;
+      console.log(this.pets);
     },
-    getProducts() {
-      axios
-        .get("http://localhost:8000/products")
-        .then((response) => (this.products = response.data));
-    },
-    getPetSections(index, petId) {
-      axios
-        .get(`http://localhost:8000/sections?pet=${petId}`)
-        .then((response) => {
-          if (index == 0) {
-            this.pet0 = response.data;
-          } else if (index == 1) {
-            this.pet1 = response.data;
-          } else if (index == 2) {
-            this.pet2 = response.data;
-          } else if (index == 3) {
-            this.pet3 = response.data;
-          } else if (index == 4) {
-            this.pet4 = response.data;
-          } else {
-            this.pet5 = response.data;
-          }
-        });
-    },
-    whatPet(index) {
-      if (index == 0) {
-        return this.pet0;
-      } else if (index == 1) {
-        return this.pet1;
-      } else if (index == 2) {
-        return this.pet2;
-      } else if (index == 3) {
-        return this.pet3;
-      } else if (index == 4) {
-        return this.pet4;
-      } else {
-        return this.pet5;
+    async getPetSections() {
+      for (let pet of this.pets) {
+        let response = await axios.get(
+          `http://localhost:8000/sections?pet=${pet._id}`
+        );
+        this.sections[pet._id] = response.data;
       }
+      console.log(this.sections);
     },
-    changeColor(index) {
-      for (let i = 0; i <= 5; i++) {
-        if (index % 5 == i) {
-          return this.colors[i];
+    async getProductsSection() {
+      for (let keyValue of Object.entries(this.sections)) {
+        let petSections = keyValue[1];
+        for (let section of petSections) {
+          let response = await axios.get(
+            `http://localhost:8000/products?section=${section._id}`
+          );
+          this.products[section._id] = response.data;
         }
       }
+      console.log(this.products);
     },
   },
-  created: function () {
-    this.getPets();
-    this.getProducts();
+  created: async function () {
+    await this.getPets();
+    await this.getPetSections();
+    await this.getProductsSection();
   },
 };
 </script>
