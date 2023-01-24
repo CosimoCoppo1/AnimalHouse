@@ -14,8 +14,8 @@ const ServiceCarousel = ({services}) => {
                     alt="servizi animali"
                     />
                     <Carousel.Caption>
-                    <h4>{s.name}</h4>
-                    <p>{s.description}</p>
+                      <h4>{s.name}</h4>
+                      <p>{s.description}</p>
                     </Carousel.Caption>
                     </Carousel.Item>  
                 )

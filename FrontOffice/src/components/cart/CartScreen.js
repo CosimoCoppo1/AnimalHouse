@@ -33,7 +33,7 @@ const CartScreen = () => {
     dispatch(buyFromCart()) 
     let result = localStorage.getItem("cartResult")
     let msg = localStorage.getItem("cartMsg")
-    if(result==0){
+    if(result === 0){
       swal({title: msg, icon: "success"})
     }else{
       swal({title: msg, icon: "warning"})
@@ -52,7 +52,7 @@ const CartScreen = () => {
                 <h2>Shopping Cart</h2>
                 {cartItems.length === 0 ? (                                    
                     <div>
-                      Your Cart Is Empty <Link to="/e-commerce">Go Back</Link>
+                      Il tuo carrello è vuoto <Link to="/e-commerce">Vai indietro</Link>
                     </div>
                   ) : (
                     cartItems.map((item) => (
@@ -67,12 +67,12 @@ const CartScreen = () => {
             </div>
             <div className="cartscreen__right">
                 <div className="cartscreen__info">
-                    <p>Subtotal ({getCartCount()}) items</p>
+                    <p>Articoli ({getCartCount()}) selezionati</p>
                     <p>${getCartSubTotal()}</p>
                 </div>
                 <div>
                     <button onClick={() => checkoutHandler()} disabled={cartItems.length === 0}>
-                      Proceed To Checkout                    
+                      Termina e Paga                    
                     </button>
                 </div>
             </div>

@@ -26,7 +26,6 @@ const Post = ({ data }) => {
         <img
           src={ Heart}
           alt=""
-          style={{ cursor: "pointer" }}
         />
         <img src={Comment} alt="" />
         <img src={Share} alt="" />

@@ -2,6 +2,8 @@ import React from 'react'
 import PostSide from "./PostSide/PostSide"
 import Leaderboard from "./Leaderboard"
 import { Container, Row, Col } from "react-bootstrap";
+import Footer from '../FooterBasic';
+
 
 
 
@@ -17,9 +19,9 @@ const Community = () => {
                     <Col>
                         <p className=" fs-5">Accedi alla nostra community e condividi curiosità ed informazioni sugli animali. 
                                             Puoi inoltre accedere ai punteggi ottenuti giocando con la nostra app <a target="_blank" href="/game">GAME</a>.
-                                            In questa sezione puoi inoltre vedere le prenotazioni che hai effettuato dei nostri <a target="_blank" href="/services">servizi</a>. 
+                                            In questa sezione puoi inoltre vedere le prenotazioni che hai effettuato dei nostri <a href="/frontoffice/services">servizi</a>. 
                                             <br/>
-                                            Quindi <a target="_blank" href="/register">registrati</a> se non lo hai già fatto oppure <a target="_blank" href="/login">accedi</a> al tuo account per usufruire di queste funzionalità!
+                                            Quindi <a href="/frontoffice/register">registrati</a> se non lo hai già fatto oppure <a href="/frontoffice/login">accedi</a> al tuo account per usufruire di queste funzionalità!
                                              
                         </p>
                     </Col>
@@ -34,7 +36,11 @@ const Community = () => {
                         <p className="text-center  fs-1">LEADERBOARD QUIZ</p>   
                         <Leaderboard />                     
                     </Col>
-                </Row>           
+                </Row>  
+                <br /> 
+                <Row>
+                    <Footer />            
+                </Row>        
             </Container>                           
         </div>
     )
