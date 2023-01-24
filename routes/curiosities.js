@@ -1,24 +1,24 @@
 const express = require('express')
 const router  = express.Router()
-const Question = require('../models/question')
+const Curiosity = require('../models/curiosity')
 
 router.get('/', async (req, res) => {
 	
 	try {
 		let dbQuery = {};
 		let qty = 10;
-		if ('category' in req.query) dbQuery['category'] = req.query.category;
+		if ('name' in req.query) dbQuery['name'] = req.query.name;
 		if ('qty' in req.query) qty = parseInt(req.query.qty);
 
-		const questions = await Question.aggregate([
+		const curiosities = await Curiosity.aggregate([
 			{ $match: dbQuery },
 			{ $sample: { size: qty } }
 		]);
 
-		res.status(200).json(questions);
+		res.status(200).json(curiosities);
 	}
 	catch (err) {
-        res.status(404).json({message: err.message});
+        res.status(400).json({message: err.message});
 	}
 	
 });
