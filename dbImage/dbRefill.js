@@ -165,6 +165,7 @@ async function servicesPopulate(petsMap)
 	for (let i = 0; i < services.length; i++) {
 		const petName = services[i].pet;
 		services[i].pet = petsMap[petName];
+		services[i].image = 'http://' + path.join( global.baseUrl, '/images/services/', services[i].image);
 		const s = new Service(services[i]);
 		const snew = await s.save();
 

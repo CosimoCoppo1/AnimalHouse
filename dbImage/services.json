@@ -3,31 +3,38 @@
 		"name": "Toilettatura",
 		"pet": "Cani",
 		"description": "Rimozione del pelo in eccesso",
-		"image": "http://www.site.it/image"
+		"image": "toilettatura-cani.jpeg"
 	},
 	{
 		"name": "Dog sitter",
 		"pet": "Cani",
 		"description": "Ci prendiamo cura del tuo cane",
-		"image": "http://www.site.it/image"
+		"image": "dog-sitter.jpg"
 	},
 	{
 		"name": "Veterinario",
 		"pet": "Cani",
 		"description": "Veterinario specializzato in cani",
-		"image": "http://www.site.it/image"
+		"image": "vet-dog.jpg"
 	},
 	{
 		"name": "Veterinario",
 		"pet": "Gatti",
 		"description": "Veterinario specializzato in gatti",
-		"image": "http://www.site.it/image"
+		"image": "vet-cat.jpeg"
+	},
+
+	{
+		"name": "Veterinario",
+		"pet": "Roditori",
+		"description": "Veterinario specializzato in roditori",
+		"image": "vet-roditori.jpg"
 	},
 	{
 		"name": "Veterinario",
 		"pet": "Pesci",
 		"description": "Veterinario specializzato in pesci",
-		"image": "http://www.site.it/image"
+		"image": "vet-fish.jpg"
 	}
 
 ]
