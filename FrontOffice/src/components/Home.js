@@ -73,7 +73,7 @@ const Home = () => {
             <br />
             <Row>
                 <Col>                
-                    <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)' }}>
+                    <div className='mask' style={{ backgroundColor: 'rgba(0, 128, 0, 0.9)'}}>
                     <div className='d-flex justify-content-center align-items-center h-100'>
                     <div className='text-white'>
                         <p className="fs-3  text-center">
