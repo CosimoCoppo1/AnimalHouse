@@ -36,7 +36,7 @@
           importante per noi.<br />Abbiamo la combinazione perfetta tra i
           migliori prodotti e la nostra semplice pratica di acquisto: passa
           all'area
-          <a href="#"
+          <a href="http://localhost:8000/frontoffice/e-commerce"
             ><button type="button" class="btn btn-success">VIP</button></a
           >
           per effettuare istantaniamente gli ordini .<br />
@@ -48,50 +48,55 @@
       </div>
     </div>
 
-    <!-- poster section -->
-    <!--
-    <div
-      class="poster container"
-      v-for="(animal, index) in this.pets"
-      :key="index"
-    >
+    <!-- carousel section -->
+    <div class="poster container" v-for="pet in this.pets" :key="pet">
+      <div class="poster__img">
+        <h2>ciao</h2>
+      </div>
       <div class="poster__content">
-        <h3 class="poster__title">{{ animal.name }}</h3>
-        <p>{{ this.posters[index].description }}</p>
-        <button
-          @click="this.getPetSections(`${index}`, `${pet._id}`)"
-          :style="this.whatPet(`${index}`) != '' ? 'display: none' : ''"
-        >
-          Sezioni dedicate:
-        </button>
-        <span v-if="this.whatPet(`${index}`) != ''">
-          <div v-for="section in this.whatPet(`${index}`)" :key="section">
-            <p>{{ section.name }}</p>
-          </div>
-        </span>
-        <a href="#">
-          <button type="button" class="btn btn-success">
-            Inizia gli acquisti!
-          </button>
+        <h3 class="poster__title">{{ pet.name }}</h3>
+        <p class="description__text">Vedi le sezioni dedicate:</p>
+        <div v-for="section in this.sections[pet._id]" :key="section">
+          {{ section.name }}
+        </div>
+        <a href="http://localhost:8000/frontoffice/e-commerce">
+          <button type="button" class="btn btn-success">Vai al negozio!</button>
         </a>
       </div>
-      <div class="poster__img">
-         <img
-          :src="require(`@/assets/shop/${this.posters[index].img}`)"
-          alt=".."
-        /> 
+    </div>
+
+    <div v-for="pet in this.pets" :key="pet">
+      {{ pet.name }}
+      <div v-for="section in this.sections[pet._id]" :key="section">
+        <button>{{ section.name }}</button>
         <div
           id="carouselExampleControls"
-          class="carousel slide"
-          data-bs-ride="carousel"
+          class="carousel slide carousel-dark"
+          data-interval="false"
         >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img
-                src="../assets/bg-video.jpg"
-                class="d-block w-100"
-                alt="..."
-              />
+          <div
+            class="carousel-inner"
+            v-for="(product, index) in this.products[section._id]"
+            :key="index"
+          >
+            <div class="carousel-item" :class="index == 0 ? 'active' : ''">
+              <!-- inizio card -->
+              <div class="card">
+                <img
+                  src="../assets/about/team2.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{ product.title }}</h5>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+              <!-- fine card -->
             </div>
           </div>
           <button
@@ -116,102 +121,31 @@
       </div>
     </div>
 
-    <div v-for="product in this.products" :key="product">
-      <div class="card" v-if="`${animal.name}` == `${product.pet.name}`">
-        <img :src="product.img" alt=".." />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.title }}</h5>
-          <h6 class="text-muted">{{ product.price }}€</h6>
-          <p class="card-text">{{ product.description }}</p>
-          <a href="#">
-            <button type="button" class="btn btn-success border">
-              Compra!
-            </button></a
+    <!-- prova -->
+    <div v-for="pet in this.pets" :key="pet">
+      {{ pet.name }}
+      <div class="input-group">
+        <select class="form-select" v-model="this.showSection[pet._id]">
+          <option
+            v-for="(section, index) in this.sections[pet._id]"
+            :key="index"
+            :value="index"
           >
-        </div>
+            {{ section.name }}
+          </option>
+        </select>
       </div>
-    </div>
-
-    <div v-for="animal in this.pets" :key="animal">
-      <p>{{ animal.name }}</p>
-      <div v-for="product in this.products" :key="product">
-        <p v-if="`${animal.name}` == `${product.pet.name}`">
-          {{ product.title }}, {{ product.price }}, {{ product.description }}
-        </p>
-        <br />
-      </div>
-    </div>
-	-->
-
-    <!--
-            acquista con fiducia.
-
-      Ci impegnamo per la soddsfazione dle cliente. date un'occhiata alle fantastiche recenzsioni su nostri prodotti.
-      
-      #feelgood
-    -->
-    <!-- <div class="container">
+      <p>value: {{ this.sections[pet._id][this.showSection[pet._id]].name }}</p>
       <div
-        class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4"
-        align="center"
+        v-for="product in this.products[
+          this.sections[pet._id][this.showSection[pet._id]]._id
+        ]"
+        :key="product"
       >
-        <div v-for="(product, index) in this.products" :key="index" class="col">
-          <div class="card">
-            <img src="../assets/shop/accessoricane1.png" alt=".." />
-            <div class="card-body">
-              <h5 class="card-title">{{ product.title }}</h5>
-              <h6 class="text-muted">{{ product.price }}€</h6>
-              <p class="card-text">{{ product.description }}</p>
-              <a href="#">
-                <button type="button" class="btn btn-success border">
-                  Compra!
-                </button></a
-              >
-            </div>
-          </div>
-        </div>
+        {{ product.title }}
       </div>
-    </div> -->
-    <!-- cani -->
-    <!-- pesci -->
-    <!--<div>
-      <p>Name: {{ this.pets[3].name }}</p>
-      <button
-        @click="this.getPetProduct(3, this.pets[3]._id)"
-        :style="this.Pesci != '' ? 'display: none' : ''"
-      >
-        Prodotti pesci
-      </button>
-      <span v-if="this.Pesci != ''">
-        <div v-for="singleProduct in this.Pesci" :key="singleProduct">
-          <p>{{ singleProduct.title }}</p>
-          <p>{{ singleProduct.description }}</p>
-          <p>{{ singleProduct.price }}</p>
-        </div>
-      </span>
-    </div>-->
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
+      <hr />
+    </div>
   </div>
 </template>
 
@@ -223,6 +157,7 @@ export default {
   data() {
     return {
       pets: [],
+      showSection: {},
       sections: {},
       products: {},
     };
@@ -231,7 +166,10 @@ export default {
     async getPets() {
       let response = await axios.get("http://localhost:8000/pets");
       this.pets = response.data;
-      console.log(this.pets);
+      for (let pet of this.pets) {
+        this.showSection[pet._id] = 0;
+      }
+      console.log(this.showSection);
     },
     async getPetSections() {
       for (let pet of this.pets) {
@@ -240,7 +178,6 @@ export default {
         );
         this.sections[pet._id] = response.data;
       }
-      console.log(this.sections);
     },
     async getProductsSection() {
       for (let keyValue of Object.entries(this.sections)) {
@@ -252,7 +189,10 @@ export default {
           this.products[section._id] = response.data;
         }
       }
-      console.log(this.products);
+    },
+    changeSection(petId, index) {
+      console.log("indice", index);
+      console.log("sezione", this.showSection[`${petId}`]);
     },
   },
   created: async function () {
@@ -337,3 +277,19 @@ export default {
   }
 }
 </style>
+
+<!-- <div v-for="pet in this.pets" :key="pet">
+      {{ pet.name }}
+      <div v-for="section in this.sections[pet._id]" :key="section">
+        {{ section.name }}
+      </div>
+      <hr />
+    </div> -->
+
+<!-- <div v-for="pet in this.pets" :key="pet">
+      <div v-for="section in this.sections[pet._id]" :key="section">
+        <div v-for="product in this.products[section._id]" :key="product">
+          {{ product.title }}
+        </div>
+      </div>
+</div> -->

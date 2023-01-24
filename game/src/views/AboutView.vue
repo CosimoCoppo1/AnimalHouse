@@ -97,7 +97,7 @@
           Vuoi accedere al negozio per <b>acquistare</b> tutti i nostri prodotti
           e prenotare una <b>consulenza immediata</b> per il tuo animale?<br />Passa
           all'area
-          <a href="#">
+          <a href="http://localhost:8000/frontoffice/services">
             <button class="btn btn-danger" type="button">VIP</button>
           </a>
           di Animal House!

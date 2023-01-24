@@ -25,7 +25,7 @@
       </li>
     </ul>
     <div class="text-center">
-      <a href="#">
+      <a href="http://localhost:8000/frontoffice/">
         <button class="btn btn-danger" type="button">
           Unisciti alla squadra!
         </button>

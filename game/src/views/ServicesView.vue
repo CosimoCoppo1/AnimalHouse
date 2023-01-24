@@ -43,7 +43,7 @@
     <div class="container-fluid image-gallery">
       <div class="row">
         <div
-          class="col-md-4"
+          class="col-md-12 col-lg-4"
           v-for="(client, index) in this.clients"
           :key="index"
           :align="`${client.position}`"
@@ -75,7 +75,7 @@
           avvaliamo inoltre della collaborazione di specialisti nelle varie
           discipline.
         </p>
-        <p>
+        <p class="description__text">
           Per conoscere i servizi specifici per sede passa alla sezione
           <router-link :to="{ path: '/contatti' }">
             <button type="button" class="btn btn-info">
@@ -101,7 +101,7 @@
     <!-- alert section -->
     <div class="container alert alert-info" role="alert">
       Prenota subito un appuntamento passando all'area
-      <a href="#">VIP</a> di Animal House.
+      <a href="http://localhost:8000/frontoffice/">VIP</a> di Animal House.
     </div>
 
     <!-- description section -->
@@ -132,21 +132,14 @@
       :key="index"
     >
       <div class="poster__img">
-        <img
-          :src="
-            require(`@/assets/services/${this.serviceInformation[index].img}`)
-          "
-          alt=".."
-        />
-        <!-- <img :src="service.image" alt="..." /> -->
+        <img :src="service.image" alt="..." />
       </div>
       <div class="poster__content">
         <h3 class="poster__title">{{ service.name }}</h3>
-        <p>{{ this.serviceInformation[index].action }}</p>
         <p class="option">
           <i class="bi bi-caret-right-fill"></i>{{ service.description }}
         </p>
-        <a href="#">
+        <a href="http://localhost:8000/frontoffice/services">
           <button type="button" class="btn btn-info">
             Prenota un colloquio adesso!
           </button>
@@ -218,7 +211,7 @@
           professionisti del settore.<br />Ciò è possibile grazie ad un
           controllo <b>attento</b> ed accurato.
         </p>
-        <p class="mt-2">
+        <p class="description__text mt-2">
           Ci basiamo sul lavoro di squadra!<br />Ecco i nostri dottori di
           <b>spicco</b>!
         </p>
@@ -288,33 +281,6 @@ export default {
           img: "gallery3.jpg",
           link: "#staff",
           direct: "lo staff",
-        },
-      ],
-      serviceInformation: [
-        {
-          img: "serv0.jpg",
-          action:
-            "I servizi di toilettatura ad Animal House consistono in una lunga serie di processi fondamentali per il benessere dei vostri amici animali; nello specifico questi sono i servizi compresi in una seduta sotto appuntamento nelle nostre sedi:",
-        },
-        {
-          img: "serv1.jpg",
-          action:
-            "Offrire il massimo del benessere al tuo cane è una priorità, specialmente nelle situazioni in cui non puoi essere presente. Il servizio di dog sitter ad Animal House conta di un personale che, oltre ad essere composto da veri amanti degli animali, è estremamente qualificato e professionale, capace di entrare subito in sintonia con il tuo cane e pronto a risolvere qualsiasi eventuale problematica comportamentale.",
-        },
-        {
-          img: "serv2.jpg",
-          action:
-            "Affidarsi ad uno studio veterinario e ad un medico competente, e soprattutto empatico, è un fattore determinante per il benessere del tuo animale, offrendogli una qualità di vita migliore. Il servizio ad Animal House comprende:",
-        },
-        {
-          img: "serv3.jpg",
-          action:
-            "La visita veterinaria è di solito un evento stressante per il tuo gatto? Dopo la prima visita da Animal House siamo certi che il tuo pet non accuserà più queste difficoltà, sapendo di essere in mani delicate e amiche. Vieni nei nostri centri per usufruire di:",
-        },
-        {
-          img: "serv4.jpg",
-          action:
-            "Non solo cani e gatti, ma anche i nostri amici acquatici hanno diritto ad una cura e una attenzione altrettanto di qualità. Ecco i servizi di Animal House per veterinaria pesci:",
         },
       ],
       members: [
