@@ -63,7 +63,6 @@ let dbPopulate = async function()
 
 	let userMap = {};
 	userMap = await userPopulate();
-	await adminPopulate();
 	await postPopulate(userMap);
 	await questionPopulate();
 	await gamescorePopulate(userMap);
@@ -216,19 +215,6 @@ async function userPopulate()
 	return userMap;
 }
 
-async function adminPopulate()
-{
-	let admins = await fs.readFile(
-		path.join(global.rootDir, 'dbImage/admins.json'), 
-		'utf8');
-
-	admins = JSON.parse(admins);
-
-	for (let i = 0; i < admins.length; i++) {
-		const a = new User(admins[i]);
-		await a.save();
-	}
-}
 
 async function postPopulate(userMap)
 {
