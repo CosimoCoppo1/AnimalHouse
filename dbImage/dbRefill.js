@@ -7,6 +7,7 @@ const Service  = require('../models/service')
 const Location = require('../models/location')
 const Bookable = require('../models/bookable_service')
 const Question = require('../models/question')
+const Curiosity = require('../models/curiosity')
 const User    = require('../models/user')
 const Post    = require('../models/postModel')
 const Score   = require('../models/gamescore')
@@ -26,6 +27,7 @@ let dbPopulate = async function()
 	await User.deleteMany();
 	await Post.deleteMany();
 	await Question.deleteMany();
+	await Curiosity.deleteMany();
 	await Score.deleteMany();
 	await UserPet.deleteMany();
 	await Reservation.deleteMany();
@@ -40,6 +42,7 @@ let dbPopulate = async function()
 	await User.syncIndexes();
 	await Post.syncIndexes();
 	await Question.syncIndexes();
+	await Curiosity.syncIndexes();
 	await Score.syncIndexes();
 	await UserPet.syncIndexes();
 	await Reservation.syncIndexes();
@@ -65,6 +68,7 @@ let dbPopulate = async function()
 	userMap = await userPopulate();
 	await postPopulate(userMap);
 	await questionPopulate();
+	await curiosityPopulate();
 	await gamescorePopulate(userMap);
 	await userPetPopulate(userMap, petsMap);
 
@@ -242,6 +246,20 @@ async function questionPopulate()
 	for (let i = 0; i < questions.length; i++) {
 		const q = new Question(questions[i]);
 		await q.save();
+	}
+}
+
+async function curiosityPopulate()
+{
+	let curiosities = await fs.readFile(
+		path.join(global.rootDir, 'dbImage/curiosities.json'), 
+		'utf8');
+
+	curiosities = JSON.parse(curiosities);
+
+	for (let i = 0; i < curiosities.length; i++) {
+		const c = new Curiosity(curiosities[i]);
+		await c.save();
 	}
 }
 
