@@ -7,7 +7,7 @@ import "./PostSide.css";
 const PostSide = () => {
   const [shared, setShared] = useState(false)
   return (
-    <div className="PostSide">
+    <div className="PostSide mx-auto">
       {localStorage.authToken && <PostShare setShared={setShared}/>}
       {!localStorage.authToken && <h6> Please <Link to="/login">login</Link> to share your post </h6>}
       <Posts shared={shared} setShared={setShared}/>

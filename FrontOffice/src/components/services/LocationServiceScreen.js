@@ -28,7 +28,7 @@ const LocationServiceScreen = () => {
         
             <p className="text-center fs-1">Servizi disponibili nella sede selezionata</p>
 
-            <div className='Posts'>  
+            <div className="mx-auto" style={{width: '50vw', height: '60vh' }}>  
                 { services.length === 0 ? (
                     <h4>Siamo spiacenti ma non sono al momento disponibili servizi prenotabili in questa sede</h4>
                   ) :(

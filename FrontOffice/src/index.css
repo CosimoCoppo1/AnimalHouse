@@ -697,6 +697,32 @@ body, html, .App, #root, .auth-wrapper, .home {
     gap: 1rem;
 }
 
+/* Leaderboard */
+
+.board{
+  height: 150vh;
+}
+
+/* Services */
+
+.service__screen {
+  max-width: 1200px;
+  margin: 1rem auto;
+}
+
+.service__filters {
+  background: #b3eab3;
+  border-radius: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 10rem;
+  margin-bottom: 1rem;
+}
+
+.bookable__service{
+  width: 50vw;
+  height: 60vh;
+}
+
 
 
 

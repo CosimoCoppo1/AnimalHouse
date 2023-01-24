@@ -10,13 +10,13 @@ import ProductSection from './ProductSection';
 
 const ECommerce = () => { 
 
-    const [keyProduct, setKeyProduct] = useState('Prodotti alimentari');
+    const [keyProduct, setKeyProduct] = useState(null);
     const [radioPetValue, setRadioPetValue] = useState(null);
 
     useEffect(() => {
       if(!localStorage.petSection){
         localStorage.setItem("petSection", "Cani")
-        setRadioPetValue("cani")
+        setRadioPetValue("Cani")
       }
       
     }, []);        
@@ -26,7 +26,8 @@ const ECommerce = () => {
 
         <Row md={2}>
           <Container> 
-            <ProductSection keyProduct={keyProduct} setKeyProduct={setKeyProduct} />      
+            <PetSection radioPetValue={radioPetValue} setRadioPetValue={setRadioPetValue} />	 
+            <br/>    
           </Container>
         </Row>
 
@@ -34,7 +35,7 @@ const ECommerce = () => {
           <Row>
 
             <Col md={2} style={{ paddingBottom: "100%"}}>
-              <PetSection radioPetValue={radioPetValue} setRadioPetValue={setRadioPetValue} />						
+              <ProductSection keyProduct={keyProduct} setKeyProduct={setKeyProduct} />               					
             </Col>
 
             <Col >	

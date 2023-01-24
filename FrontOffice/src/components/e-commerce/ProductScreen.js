@@ -40,24 +40,24 @@ const ProductScreen = () => {
                     </div>
                     <div className="left__info">
                         <p className="left__name">{product.title}</p>
-                        <p>Price: ${product.price}</p>
-                        <p>Description: {product.description}</p>
+                        <p>Prezzo: ${product.price}</p>
+                        <p>Descrizione: {product.description}</p>
                     </div>
                 </div>
                 <div className="productscreen__right">
                     <div className="right__info">
                         <p>
-                            Price:
+                            Prezzo:
                             <span>${product.price}</span>
                         </p>
                         <p>
-                            Status:
+                            Stato:
                             <span>
-                                {product.pieces_left > 0 ? "In Stock" : "Out of Stock"}
+                                {product.pieces_left > 0 ? "Disponibile" : "Esaurito"}
                             </span>
                         </p>
                         <p>
-                            Qty
+                            Quantità
                             <span>
                                 {(product.pieces_left > 0) ? (
                                     <select value={qty} onChange={(e) => setQty(e.target.value)}>
@@ -75,7 +75,7 @@ const ProductScreen = () => {
                         </p>
                         <p>
                             <button type="button" onClick={addToCartHandler} disabled={product.pieces_left === 0}>
-                            Add To Cart
+                            Aggiungi al carrello
                             </button>
                         </p>
                     </div>                

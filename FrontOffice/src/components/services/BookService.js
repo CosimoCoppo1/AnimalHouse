@@ -39,7 +39,7 @@ const BookService = ({servizio, date, orario}) => {
 
 
     return (
-        <Card className="text-center">
+        <Card className="text-center mx-auto" style={{maxWidth: '50vw'}}>
             <Card.Header>{servizio.service.name}</Card.Header>
             <Card.Body>
             <Card.Title>Animale</Card.Title>
@@ -74,7 +74,7 @@ const BookService = ({servizio, date, orario}) => {
             </Card.Text>
             <Button variant="primary" onClick={bookingHandler}>Book</Button>
             </Card.Body>
-            <Card.Footer className="text-muted">{servizio.reservation_left} reservation left</Card.Footer>
+            <Card.Footer className="text-muted">Prenotazioni rimanenti: {servizio.reservation_left}</Card.Footer>
         </Card>
     );
 }

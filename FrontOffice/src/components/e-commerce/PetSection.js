@@ -6,7 +6,7 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
     const radios = [
         { name: "Cani", value: "Cani" },
         { name: "Gatti", value: "Gatti" },
-        { name: "Volatili", value: "Volatili" },
+        { name: "Uccelli", value: "Uccelli" },
         { name: "Pesci", value: "Pesci" },
         { name: "Tartarughe", value: "Tartarughe" },
         { name: "Roditori", value: "Roditori" }
@@ -19,12 +19,10 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
   return (
     <Container>
       <Row>
-      <span style={{ fontWeight: 'bold' }}>{localStorage.petSection}</span>           
-      </Row>
-      <br />
-      <Row>
-        <Col>
-          <ButtonGroup vertical>
+        <div>
+          <span style={{ fontWeight: 'bold' }}>{localStorage.petSection}</span>
+        </div>
+          <ButtonGroup>
             {radios.map((radio, idx) => (
               <ToggleButton
                 key={idx}
@@ -40,7 +38,6 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
               </ToggleButton>
             ))}
           </ButtonGroup>
-        </Col>
       </Row>
       <Row>
         <div>
@@ -50,7 +47,7 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
           {radioPetValue === "Gatti"  && selectSection("Gatti")}
         </div>
         <div>
-          {radioPetValue === "Volatili" && selectSection("Volatili")}
+          {radioPetValue === "Uccelli" && selectSection("Uccelli")}
         </div>
 
         <div>

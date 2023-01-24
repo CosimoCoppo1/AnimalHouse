@@ -4,6 +4,8 @@
     background-color: var(--cardColor);
     padding: 1rem;
     border-radius: 1rem;
+    border: 1px solid rgb(71, 138, 54);
+    margin-bottom: 1rem;
 }
 
 

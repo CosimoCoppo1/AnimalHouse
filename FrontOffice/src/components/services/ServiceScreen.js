@@ -7,6 +7,7 @@ import Filters from "./Filters.js";
 import Mappa from "./Mappa.js";
 import BookService from './BookService'
 import ServiceCarousel from "./ServiceCarousel.js";
+import FooterBasic from "../FooterBasic.js";
 import apiUrl from '../../config'
 
 
@@ -64,13 +65,11 @@ const ServiceScreen = () => {
 	
 
   return (
-    <div className="homescreen">
-			<Container fluid>
+			<Container className="service__screen" fluid>
 				<Row>
-
 					<Col
-						md={3}
-						style={{ paddingBottom: "100%", backgroundColor: "#ced4da" }}
+						md={3} 
+            className="service__filters"
 					>
 						<Filters tofilter={handleSubmit} />
 					</Col>
@@ -101,7 +100,7 @@ const ServiceScreen = () => {
                   <h2>Nessun servizio disponibile trovato</h2>
                 ) : (
                   <div>
-                    <h2>Servizi disponibili trovati:</h2>
+                    <h2 className="text-center">Servizi disponibili trovati:</h2>
                     {
                       searchedServices.map((servizio) => {
 
@@ -119,12 +118,12 @@ const ServiceScreen = () => {
                 )
               }            
             </Row>
-            <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
+            <Row style={{ justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
               <h2 className="text-center"> Tutti i servizi prenotabili </h2>
-              <div style={{width: '50vw', height: '60vh' }}>
+              <div >
                 { 
                   bookableServices.length === 0 ? (
-                    <h4>No bookable service available</h4>
+                    <h4>Nessun servizio prenotabile disponibile</h4>
                   ) :(
                     bookableServices.map((servizio) => {
 
@@ -142,10 +141,11 @@ const ServiceScreen = () => {
 
 					</Col>
 				</Row>
+        <Row>
+            <FooterBasic />            
+          </Row>
 			</Container>
-      </div>
-		
-  )
+ )
 }
 
 export default ServiceScreen
