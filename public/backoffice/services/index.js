@@ -1,16 +1,4 @@
-
-function invertArrow(btn)
-{
-	/*
-	const text = btn.innerText;
-	console.log(btn);
-	console.log(text);
-
-	if (text === '▼') btn.inenrText = ▲;
-	else if (text === '▲') btn.inenrText = ▼;
-	*/
-}
-
+import { customAlert } from '../customAlert.js'
 
 function showPetsRadio(pets)
 {
@@ -47,7 +35,6 @@ function show_pet_services_select()
 			sel.html(innerHTML);
 		});
 }
-
 
 function showLocationsSelect(locations)
 {
@@ -111,22 +98,21 @@ function showSearchResult(results)
 						<h3 class="fs-4 mb-0 h4">${results[i].service.name}</h3> 
 						<div>sede: <span class="fs-5">${results[i].location.city}</span></div>
 					</div>
-					<div class="d-flex justify-content-between">
-						<div class="d-flex flex-column">
-							<span class="fs-4 text-success fw-bold" style="margin-bottom: -10px;">${strTime}</span>
-							<span>${strDate}</span> 
-						</div>
-						<div>
-							<span class="fs-4 text-danger fw-bold">${results[i].price} €</span>
-							<span>
-								<button class="btn btn-sm" type="button" onclick="invertArrow(this)"
+					<div class="d-flex justify-content-between" >
+						<div class="fs-4 text-success fw-bold">${strTime}</div>
+						<div class="d-flex gap-2">
+							<div class="fs-4 text-danger fw-bold">${results[i].price} €</div>
+
+							<div class="d-flex align-items-center">
+								<button class="btn btn-sm btn-outline-secondary py-0" type="button" id="buttonMoreInfo-${i}"
 									data-bs-toggle="collapse" data-bs-target="#collapseMoreInfo-${i}" 
 									aria-expanded="false" aria-controls="collapseMoreInfo-${i}">
-										&#9660
+										più info
 								</button>
-							</span>
+							</div>
 						</div>
 					</div>
+					<div style="margin-top: -10px;">${strDate}</div> 
 				</div>
 				<div class="collapse" id="collapseMoreInfo-${i}">
 					<div class="border-top bg-secondary p-3" style="--bs-bg-opacity: .10;">
@@ -144,7 +130,7 @@ function showSearchResult(results)
 						<div class="d-flex justify-content-end">
 							<a role="button" class="btn btn-outline-success" href="backoffice/services/reserve.html?id=${results[i]._id}"><span class="fw-bold">Prenota</span></a>
 							<a role="button" class="ms-2 btn btn-outline-success" href="backoffice/services/${results[i]._id}/modify"><span class="fw-bold">Modifica</span></a>
-							<button class="ms-2 btn btn-outline-danger" onclick="deleteBookableService('${results[i]._id}')"><span class="fw-bold">Elimina</span></button>
+							<button class="ms-2 btn btn-outline-danger" id="delete-${results[i]._id}"><span class="fw-bold">Elimina</span></button>
 						</div>
 					</div>
 				</div>
@@ -152,12 +138,17 @@ function showSearchResult(results)
 	}
 
 	
-
 	r.html(innerHTML);
+
+	for (let i = 0; i < results.length; i++) {
+		$(`#delete-${results[i]._id}`).click({ 'id': `${results[i]._id}` }, deleteBookableService);
+	}
 }
 
-function deleteBookableService(id)
-{	$.ajax({
+function deleteBookableService(event)
+{	
+	let id = event.data.id;
+	$.ajax({
 			'url': `/bookable_services/${id}`,
 			'method': 'DELETE'
 	})
@@ -165,7 +156,11 @@ function deleteBookableService(id)
 		getBookable_service();
 	})
 	.catch((err) => {
-		alert('Errore, eliminazione fallita');
+		customAlert(
+			'Servizi prenotabili',
+			'Eliminazione servizio prenotabile <span class="text-danger">fallita</span>',
+			'backoffice/services/'
+		);
 	});
 
 }

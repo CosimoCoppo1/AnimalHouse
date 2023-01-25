@@ -1,14 +1,4 @@
-function invertArrow(btn)
-{
-	/*
-	const text = btn.innerText;
-	console.log(btn);
-	console.log(text);
-
-	if (text === '▼') btn.inenrText = ▲;
-	else if (text === '▲') btn.inenrText = ▼;
-	*/
-}
+import { customAlert } from '../customAlert.js'
 
 function show_pet(pets)
 {
@@ -75,7 +65,11 @@ async function getReservation()
 		let user = await $.getJSON(`users?email=${u}`);
 
 		if (user.length === 0) {
-			alert(`L'email ${u} non esiste`);
+			customAlert(
+				'Servizi prenotati',
+				`L'email ${u} non <span class="text-danger">esiste</span>`,
+				undefined
+			);
 			return;
 		}
 
@@ -140,19 +134,18 @@ function showSearchResult(results)
 							<span class="fs-4 text-success fw-bold" style="margin-bottom: -10px;">${strTime}</span>
 							<span>${strDate}</span> 
 						</div>
-						<div class="d-flex flex-row justify-content-between gap-3">
+						<div class="d-flex flex-column flex-md-row justify-content-between gap-1 gap-md-3">
 							<div class="d-flex flex-column">
 								<span class="fs-5 text-danger fw-bold text-lg-center" style="margin-bottom: -10px;">${results[i].user.username}</span>
 								<span class="text-lg-center">${results[i].user.email}</span>
 							</div>
-							<div>
-								<button class="btn btn-sm" type="button" onclick="invertArrow(this)"
+							<div class="d-flex justify-content-end align-items-center">
+								<button class="btn btn-sm btn-outline-secondary py-0" type="button" id="buttonMoreInfo-${i}"
 									data-bs-toggle="collapse" data-bs-target="#collapseMoreInfo-${i}" 
 									aria-expanded="false" aria-controls="collapseMoreInfo-${i}">
-										&#9660
+										più info
 								</button>
 							</div>
-							</span>
 						</div>
 					</div>
 				</div>
@@ -191,7 +184,11 @@ function delete_reservation(id)
 		getReservation();
 	})
 	.catch((err) => {
-		alert('Errore, eliminazione fallita');
+		customAlert(
+			'Servizi prenotati',
+			'Errore, eliminazione <span class="text-danger">fallita</span>',
+			undefined
+		);
 	});
 
 }

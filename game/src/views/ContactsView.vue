@@ -53,7 +53,7 @@
             </div>
             <div class="card__body">
               <h5>{{ action.type }}</h5>
-              <p>{{ action.description }}</p>
+              <p v-html="action.description"></p>
             </div>
           </div>
         </div>
@@ -66,7 +66,7 @@
         <p class="description__text">
           Non perdere i <b>benefici</b> dell'essere un membro della comunità
           Animal House!<br />Con un click passa alla sezione
-          <a href="#">
+          <a href="http://localhost:8000/frontoffice/">
             <button class="btn btn-warning border" type="button">VIP</button>
           </a>
           e siamo <b>sicuri</b> che rimarrai soddisfatto della scelta!
@@ -83,7 +83,10 @@
           offerti in ogni punto vendita Animal House.<br />Per conoscere le date
           disponibili, i prezzi e prenotare subito un appuntamento, contattaci
           secondo le modalità sopra indicate o passa alla sezione servizi
-          nell'applicazione tramite questo <a href="#" class="link">link</a>.
+          nell'applicazione tramite questo
+          <a href="http://localhost:8000/frontoffice/services" class="link"
+            >link</a
+          >.
         </p>
       </div>
     </div>
@@ -179,7 +182,7 @@ export default {
         {
           type: "Chatta",
           description:
-            "Vuoi entrare in contatto con i membri della community Animal House? Accedi all'area VIP per usufruire del servizio.",
+            "Vuoi entrare in contatto con i membri della <a href='http://localhost:8000/frontoffice/community' style='color: #e0acd5'>community</a> Animal House? Accedi all'area VIP per usufruire del servizio.",
           img: "icon3.png",
         },
       ],

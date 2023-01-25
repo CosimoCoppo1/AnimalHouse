@@ -759,7 +759,7 @@ export default {
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .poster {
     flex-wrap: wrap;
     height: auto;
