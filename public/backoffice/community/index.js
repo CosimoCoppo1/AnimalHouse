@@ -1,3 +1,5 @@
+import { customAlert } from '../customAlert.js'
+
 async function sendPost() {
 	
 	const text = $('#post-text').val();
@@ -152,7 +154,12 @@ function deletePost(id)
 		$(`#${id}`).remove();
 	})
 	.catch((err) => {
-		alert('Errore, eliminazione fallita');
+		customAlert(
+			'Post della community',
+			'Errore, eliminazione fallita',
+			undefined
+
+		);
 	});
 }
 
@@ -161,7 +168,11 @@ function getPosts()
 {
 	$.getJSON(`/posts?qty=3&before=${before}`, (posts) => { 
 		if (posts.length === 0) {
-			alert('Hai raggiunto l\'ultimo post');
+			customAlert(
+				'Post della community',
+				'Hai raggiunto l\'ultimo post',
+				undefined
+			);
 			$('#carica-altro').prop('disabled', true);
 
 			return;
@@ -177,6 +188,8 @@ $(document).ready(() => {
 		sendPost();
 		return false;
 	});
+
+	$('#carica-altro').click(getPosts);
 
 	getPosts();
 });

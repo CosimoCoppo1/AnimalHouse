@@ -8,43 +8,7 @@
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
 		<script src="jquery-3.6.0.js"></script>
-		<script>
-
-			
-
-			function createNewUser()
-			{
-				const username = $('#username').val();
-				const email = $('#email').val();
-				const password = $('#password').val();
-
-				const userData = {
-					'username': username,
-					'email': email,
-					'password': password
-				};
-
-				$.post(`/auth/user/register`, userData)
-				.then((res) => {
-					$('#res-success').modal('show');					
-				})
-				.catch((err) => {
-					$('#res-fail').modal('show');					
-				});
-
-			}
-
-			$(document).ready(() => {
-
-				$('#user-form').submit((event) => {
-					createNewUser();
-					return false;
-				});
-
-			});
-				
-			
-		</script>
+		<script type="module" src="backoffice/users/newUser.js"></script>
 	</head>
 
 	<body>
@@ -118,48 +82,6 @@
 						<button type="submit" class="btn btn-success">Registra</button>
 					</div>
 				</form>
-
-				<!-- MODAL success -->
-				<div id="res-success" class="modal" tabindex="-1" role="alert">
-					<div class="modal-dialog">
-						<div class="modal-content">
-					  		<div class="modal-header">
-								<h2 class="modal-title h4">Registrazione nuovo utente</h2>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					  		</div>
-					  		<div class="modal-body">
-								<p>Utente registrato con <span class="text-success">successo</span>.</p>
-					  		</div>
-					  		<div class="modal-footer">
-								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
-								<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
-					  		</div>
-						</div>
-				  	</div>
-				</div>
-				<!-- END modal success -->
-
-				<!-- MODAL fail -->
-				<div id="res-fail" class="modal" tabindex="-1" role="alert">
-					<div class="modal-dialog">
-						<div class="modal-content">
-					  		<div class="modal-header">
-								<h2 class="modal-title h4">Registrazione nuovo utente</h2>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					  		</div>
-					  		<div class="modal-body">
-								<p>Registrazione utente <span class="text-danger">fallita</span>.</p>
-					  		</div>
-					  		<div class="modal-footer">
-								<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
-								<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
-					  		</div>
-						</div>
-				  	</div>
-				</div>
-				<!-- END modal fail -->
-
-
 			</div>
 		</main>
 		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">
