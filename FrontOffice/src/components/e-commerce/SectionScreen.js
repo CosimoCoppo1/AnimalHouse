@@ -23,7 +23,6 @@ const SectionScreen = ({radioPetValue, keyProduct}) => {
 
     useEffect(() => { 
       if(keyProduct != null){
-        console.log(productsSec[0])
         setProductSec(products.filter(p => (p.pet.name === localStorage.petSection ) && (p.section.name === keyProduct ) ))
       }    
     }, [keyProduct]);

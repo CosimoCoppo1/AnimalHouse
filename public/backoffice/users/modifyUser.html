@@ -8,80 +8,7 @@
 		<link rel="stylesheet" href="bootstrap-5.2.0-dist/css/bootstrap.min.css">
 		<script type="application/javascript" src="/bootstrap-5.2.0-dist/js/bootstrap.min.js"></script>
 		<script src="jquery-3.6.0.js"></script>
-		<script>
-
-			function modifyUser(userId)
-			{
-				const username = $('#username').val();
-				const email = $('#email').val();
-				const password = $('#password').val();
-				
-				const userData = {
-					'username': username,
-					'email': email,
-				};
-
-				if (password !== '') {
-					userData['password'] = password;
-				}
-
-				$.post(`/users/${userId}/modify`, userData)
-				.then((res) => {
-					$('#res-success').modal('show');					
-				})
-				.catch((err) => {
-					$('#res-fail').modal('show');					
-				});
-
-			}
-
-			function initForm(user)
-			{
-				$('#username').val(user.username);
-				$('#email').val(user.email);
-			}
-
-			function userIdErorr(userId)
-			{
-				let innerHTML = `
-				<h3 class="fw-bold text-secondary text-center">Nessun risultato...</h3>
-				<p class="text-secondary text-center">
-					Non esiste nessun utente registrato con id: ${userId}.
-				</p>`;
-
-				$('#userId-error').html(innerHTML);
-			}
-
-			let userId = getUrlParameter('id');
-			$(document).ready(() => {
-
-				$.getJSON(`/users?id=${userId}`,
-					function (users) {
-						if (users.length > 0) initForm(users[0]);
-						else userIdError();
-					});
-				
-				$('#user-form').submit((event) => {
-					modifyUser(userId);
-					return false;
-				});
-
-			});
-				
-			function getUrlParameter(sParam)
-			{
-    			let sPageURL = window.location.search.substring(1);
-        		let sURLVariables = sPageURL.split('&');
-
-    			for (let i = 0; i < sURLVariables.length; i++) {
-        			let sParameterName = sURLVariables[i].split('=');
-
-        			if (sParameterName[0] === sParam) {
-						return sParameterName[1];
-        			}
-    			}
-			}
-		</script>
+		<script type="module" src="backoffice/users/modifyUser.js"></script>
 	<body>
 		<header>
 			<div class="container-fluid">
@@ -155,49 +82,6 @@
 				</form>
 			</div>
 		</main>
-		<!-- MODAL success -->
-			<div id="res-success" class="modal" tabindex="-1" role="alert">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2 class="modal-title h4">Modifica utente</h2>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<p>Utente modificato con <span class="text-success">successo</span>.</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
-							<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END modal success -->
-
-			<!-- MODAL fail -->
-			<div id="res-fail" class="modal" tabindex="-1" role="alert">
-				<div class="modal-dialog">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h2 class="modal-title h4">Modifica utente</h2>
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						</div>
-						<div class="modal-body">
-							<p>Modifica utente <span class="text-danger">fallita</span>.</p>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Chiudi</button>
-							<a href="backoffice/users/" role="button" class="btn border border-success border-2 btn-outline-success">Pagina precedente</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<!-- END modal fail -->
-
-
-
-
 		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">
 			<div class="container-fluid py-5">
 				<p class="text-center">Questa è una frase finale per riempire lo spazio del footer</p>

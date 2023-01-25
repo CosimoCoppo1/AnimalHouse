@@ -58,10 +58,10 @@
 							<h3 class="mt-0 h5">${products[i].title}</h3>
 							<span class="pe-1">prezzo: ${products[i].price}</span> <span>pezzi rimanenti: ${products[i].pieces_left}</span>
 							<div class="row">
-								<p class="col-12 col-md-9 m-0">
+								<div class="col-12 col-md-9 m-0">
 									Descrizione: <br>
-									${products[i].description}
-								</p>
+									<p>${products[i].description}</p>
+								</div>
 								<div class="pt-2 pt-md-0 col-md-3">
 									<a role="button" class="btn btn-outline-success btn-sm" href="/backoffice/ecommerce/modifyProduct.html?id=${products[i]._id}">Modifica</a>
 									<button class="btn btn-outline-danger btn-sm" onclick="deleteProduct('${products[i]._id}')">
