@@ -1,5 +1,4 @@
 import Carousel from 'react-bootstrap/Carousel';
-import Toilettatura from "../../img/toilettatura.jpg"
 
 const ServiceCarousel = ({services}) => {
   return (
@@ -10,7 +9,7 @@ const ServiceCarousel = ({services}) => {
                     <Carousel.Item>
                     <img
                     className="d-block w-100"
-                    src={Toilettatura}
+                    src={s.image}
                     alt="servizi animali"
                     />
                     <Carousel.Caption>
