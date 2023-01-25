@@ -48,24 +48,7 @@
       </div>
     </div>
 
-    <!-- carousel section -->
-    <div class="poster container" v-for="pet in this.pets" :key="pet">
-      <div class="poster__img">
-        <h2>ciao</h2>
-      </div>
-      <div class="poster__content">
-        <h3 class="poster__title">{{ pet.name }}</h3>
-        <p class="description__text">Vedi le sezioni dedicate:</p>
-        <div v-for="section in this.sections[pet._id]" :key="section">
-          {{ section.name }}
-        </div>
-        <a href="http://localhost:8000/frontoffice/e-commerce">
-          <button type="button" class="btn btn-success">Vai al negozio!</button>
-        </a>
-      </div>
-    </div>
-
-    <div v-for="pet in this.pets" :key="pet">
+    <!-- <div v-for="pet in this.pets" :key="pet">
       {{ pet.name }}
       <div v-for="section in this.sections[pet._id]" :key="section">
         <button>{{ section.name }}</button>
@@ -80,10 +63,10 @@
             :key="index"
           >
             <div class="carousel-item" :class="index == 0 ? 'active' : ''">
-              <!-- inizio card -->
+              inizio card
               <div class="card">
                 <img
-                  src="../assets/about/team2.jpg"
+                  :src="product.image"
                   class="card-img-top"
                   alt="..."
                 />
@@ -96,7 +79,7 @@
                   <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
-              <!-- fine card -->
+              fine card
             </div>
           </div>
           <button
@@ -117,6 +100,122 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
           </button>
+        </div>
+      </div>
+    </div> -->
+
+    <!-- carousel section -->
+    <div
+      class="container mt-5"
+      style="border: 1px solid red"
+      v-for="pet in this.pets"
+      :key="pet"
+    >
+      <div
+        class="row justify-content-between mb-5"
+        style="border: 1px solid blue"
+      >
+        <div
+          class="col-12 col-lg-6 text-center"
+          style="border: 1px solid yellow"
+        >
+          <!-- <div class="card">
+            <img class="card-img-top" src="../assets/about/team1.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+          <!-- inizio carousel -->
+          <div
+            :id="`carouselControls${pet._id}`"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div
+                class="carousel-item"
+                v-for="(product, index) in this.products[
+                  this.sections[pet._id][this.showSection[pet._id]]._id
+                ]"
+                :key="index"
+                :class="index == this.showProduct[pet._id] ? 'active' : ''"
+              >
+                <!-- inizio card -->
+                <div class="card">
+                  <img :src="product.image" alt=".." />
+                  <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <p class="card-text">
+                      Some quick example text to build on the card title and
+                      make up the bulk of the card's content.
+                    </p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div>
+                <!-- fine card -->
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              :href="`#carouselControls${pet._id}`"
+              role="button"
+              data-slide="prev"
+              @click="this.goPrev(`${pet._id}`)"
+            >
+              <span
+                class="carousel-control-prev-icon bg-dark"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only"></span>
+            </a>
+            <a
+              class="carousel-control-next"
+              :href="`#carouselControls${pet._id}`"
+              role="button"
+              data-slide="next"
+              @click="this.goNext(`${pet._id}`)"
+            >
+              <span
+                class="carousel-control-next-icon bg-dark"
+                aria-hidden="true"
+              ></span>
+              <span class="sr-only"></span>
+            </a>
+          </div>
+          <!-- fine carousel -->
+        </div>
+        <div class="col-12 col-lg-4 p-5" style="border: 1px solid yellow">
+          <h4 class="fw-bold">Prodotti per {{ pet.name }}</h4>
+          <p>
+            Scegli la categoria prodotti dal menù a tendina e visualizza i
+            prodotti nel catalogo!<br />Per accedere al carrello e acquistare
+            passa alla sezione
+            <a href="http://localhost:8000/frontoffice/e-commerce">
+              <button type="button" class="btn btn-success fw-bold">
+                VIP
+              </button></a
+            >
+            di Animal House ora.
+          </p>
+          <div class="input-group mt-3">
+            <select
+              class="form-select fw-bold"
+              v-model="this.showSection[pet._id]"
+            >
+              <option
+                v-for="(section, index) in this.sections[pet._id]"
+                :key="index"
+                :value="index"
+              >
+                {{ section.name }}
+              </option>
+            </select>
+          </div>
         </div>
       </div>
     </div>
@@ -158,6 +257,7 @@ export default {
     return {
       pets: [],
       showSection: {},
+      showProduct: {},
       sections: {},
       products: {},
     };
@@ -168,6 +268,7 @@ export default {
       this.pets = response.data;
       for (let pet of this.pets) {
         this.showSection[pet._id] = 0;
+        this.showProduct[pet._id] = 0;
       }
       console.log(this.showSection);
     },
@@ -190,9 +291,11 @@ export default {
         }
       }
     },
-    changeSection(petId, index) {
-      console.log("indice", index);
-      console.log("sezione", this.showSection[`${petId}`]);
+    goPrev(petId) {
+      this.showProduct[petId]--;
+    },
+    goNext(petId) {
+      this.showProduct[petId]++;
     },
   },
   created: async function () {
@@ -208,6 +311,7 @@ export default {
   color: #fff;
   border: 1px solid black;
   background-color: #5e5e5e;
+  font-size: 13px;
 }
 
 /* hero section */
@@ -227,55 +331,52 @@ export default {
 }
 
 /* card section */
+/* .card-container {
+  width: 18rem;
+  perspective: 200rem;
+  position: relative;
+  height: 360px;
+}
+
 .card {
-  width: 20rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin: 20px;
-  background-color: #bdd5ea;
-}
-
-/* poster section */
-.poster {
-  display: flex;
-  height: 70vh;
-  width: 100%;
-  align-items: center;
-}
-
-.poster__title {
-  font-size: 38px;
-  font-weight: bold;
-  color: #17df53;
-}
-
-.poster__img {
-  width: 65%;
+  transition: all 0.9s;
+  position: absolute;
   height: 100%;
-}
-
-.poster__img img {
-  object-fit: cover;
   width: 100%;
-  height: 100%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 20px;
 }
 
-.poster__content {
-  width: 35%;
-  padding: 50px;
+.card__image {
+  text-align: center;
+  margin-top: 40px;
+  border-radius: 0%;
+  padding: 5px;
 }
 
-@media (max-width: 768px) {
-  .poster {
-    flex-wrap: wrap;
-    height: auto;
-  }
-
-  .poster__img,
-  .poster__content {
-    width: 100%;
-  }
+.card__image img {
+  border-radius: 100%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  text-align: center;
+  border: 2px solid black;
 }
+
+.card__image img:hover {
+  scale: 1.05;
+}
+
+.card__body h5 {
+  text-align: center;
+  margin: 15px auto;
+  font-weight: 900;
+  font-size: 25px;
+}
+
+.card__body p {
+  margin: auto 25px;
+} */
 </style>
 
 <!-- <div v-for="pet in this.pets" :key="pet">
