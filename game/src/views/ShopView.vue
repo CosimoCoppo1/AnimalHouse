@@ -81,7 +81,11 @@
                       <h5 class="card-title">{{ product.title }}</h5>
                       <h6 class="text-muted">{{ product.price }}€</h6>
                       <p class="card-text" v-html="product.description"></p>
-                      <a href="#" class="btn btn-success">Compra!</a>
+                      <a
+                        href="http://localhost:8000/frontoffice/e-commerce"
+                        class="btn btn-success"
+                        >Compra!</a
+                      >
                     </div>
                   </div>
                 </div>
