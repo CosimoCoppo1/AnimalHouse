@@ -85,24 +85,11 @@ export default {
     // domande: 50, risposta multipla
     // ogni tipo di difficoltà, categoria animali
     generateQuizQuestions() {
-      axios
-        .get("https://opentdb.com/api.php?amount=50&category=27&type=multiple")
-        .then((response) => {
-          this.gameQuestions = response.data.results;
-          this.clean(this.gameQuestions);
-          this.initGame();
-        });
-    },
-    // elimina domande con parole accentate
-    clean(questions) {
-      for (let i = 0; i < questions.length; i++) {
-        if (
-          questions[i].question.includes("&") ||
-          questions[i].correct_answer.includes("&")
-        ) {
-          questions.splice(i, 1);
-        }
-      }
+      axios.get("http://localhost:8000/curiosities?qty=20").then((response) => {
+        this.gameQuestions = response.data;
+        console.log(this.gameQuestions);
+        this.initGame();
+      });
     },
     // crea box del turno domanda-risposta scarabeo
     // Math.random(): restituisce 0 <= x < 1
@@ -115,7 +102,7 @@ export default {
           Math.floor(Math.random() * this.gameQuestions.length)
         ];
       // split per ogni lettera della risposta
-      let splittedAnswer = randomQuestion.correct_answer.split("");
+      let splittedAnswer = randomQuestion.name.split("");
       // randomizza l'ordine delle lettere nella risposta
       for (let i = 0; i < splittedAnswer.length; i++) {
         let j = Math.floor(Math.random() * (i + 1));
@@ -126,8 +113,8 @@ export default {
       // join("") concatena le lettere in splittedAnswer
       // memorizza domanda-risposta nelle variabili di gioco
       this.scrabble.textAnswer = splittedAnswer.join("");
-      this.scrabble.textQuestion = randomQuestion.question;
-      this.correctAnswer = randomQuestion.correct_answer.toLowerCase();
+      this.scrabble.textQuestion = randomQuestion.alimentazione;
+      this.correctAnswer = randomQuestion.name.toLowerCase();
       // impostata massima lunghezza di inserimento caratteri per
       // l'utente, pari alla lunghezza della risposta del turno
       this.maxLength = this.correctAnswer.length;

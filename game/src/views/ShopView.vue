@@ -48,89 +48,15 @@
       </div>
     </div>
 
-    <!-- <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        <button>{{ section.name }}</button>
-        <div
-          id="carouselExampleControls"
-          class="carousel slide carousel-dark"
-          data-interval="false"
-        >
-          <div
-            class="carousel-inner"
-            v-for="(product, index) in this.products[section._id]"
-            :key="index"
-          >
-            <div class="carousel-item" :class="index == 0 ? 'active' : ''">
-              inizio card
-              <div class="card">
-                <img
-                  :src="product.image"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{{ product.title }}</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              fine card
-            </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </div> -->
-
     <!-- carousel section -->
     <div
       class="container mt-5"
-      style="border: 1px solid red"
+      style="width: 70%"
       v-for="pet in this.pets"
       :key="pet"
     >
-      <div
-        class="row justify-content-between mb-5"
-        style="border: 1px solid blue"
-      >
-        <div
-          class="col-12 col-lg-6 text-center"
-          style="border: 1px solid yellow"
-        >
-          <!-- <div class="card">
-            <img class="card-img-top" src="../assets/about/team1.jpg" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div> -->
-          <!-- inizio carousel -->
+      <div class="row justify-content-between mb-5">
+        <div class="col-12 col-lg-6 text-center" style="height: 500px">
           <div
             :id="`carouselControls${pet._id}`"
             class="carousel slide"
@@ -146,15 +72,17 @@
                 :class="index == this.showProduct[pet._id] ? 'active' : ''"
               >
                 <!-- inizio card -->
-                <div class="card">
-                  <img :src="product.image" alt=".." />
-                  <div class="card-body">
-                    <h5 class="card-title">{{ product.title }}</h5>
-                    <p class="card-text">
-                      Some quick example text to build on the card title and
-                      make up the bulk of the card's content.
-                    </p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="card-container">
+                  <div class="card">
+                    <div class="card__image">
+                      <img :src="product.image" alt=".." />
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">{{ product.title }}</h5>
+                      <h6 class="text-muted">{{ product.price }}€</h6>
+                      <p class="card-text" v-html="product.description"></p>
+                      <a href="#" class="btn btn-success">Compra!</a>
+                    </div>
                   </div>
                 </div>
                 <!-- fine card -->
@@ -189,7 +117,7 @@
           </div>
           <!-- fine carousel -->
         </div>
-        <div class="col-12 col-lg-4 p-5" style="border: 1px solid yellow">
+        <div class="col-12 col-lg-4 p-5">
           <h4 class="fw-bold">Prodotti per {{ pet.name }}</h4>
           <p>
             Scegli la categoria prodotti dal menù a tendina e visualizza i
@@ -206,6 +134,7 @@
             <select
               class="form-select fw-bold"
               v-model="this.showSection[pet._id]"
+              @click="this.showProduct[pet._id] = 0"
             >
               <option
                 v-for="(section, index) in this.sections[pet._id]"
@@ -218,32 +147,6 @@
           </div>
         </div>
       </div>
-    </div>
-
-    <!-- prova -->
-    <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div class="input-group">
-        <select class="form-select" v-model="this.showSection[pet._id]">
-          <option
-            v-for="(section, index) in this.sections[pet._id]"
-            :key="index"
-            :value="index"
-          >
-            {{ section.name }}
-          </option>
-        </select>
-      </div>
-      <p>value: {{ this.sections[pet._id][this.showSection[pet._id]].name }}</p>
-      <div
-        v-for="product in this.products[
-          this.sections[pet._id][this.showSection[pet._id]]._id
-        ]"
-        :key="product"
-      >
-        {{ product.title }}
-      </div>
-      <hr />
     </div>
   </div>
 </template>
@@ -291,11 +194,21 @@ export default {
         }
       }
     },
+    maxSectionProduct(petId) {
+      return this.products[this.sections[petId][this.showSection[petId]]._id]
+        .length;
+    },
     goPrev(petId) {
-      this.showProduct[petId]--;
+      if (this.showProduct[petId] != 0) {
+        this.showProduct[petId]--;
+      }
     },
     goNext(petId) {
-      this.showProduct[petId]++;
+      let maxProducts = this.maxSectionProduct(petId);
+      console.log(maxProducts);
+      if (this.showProduct[petId] < maxProducts - 1) {
+        this.showProduct[petId]++;
+      }
     },
   },
   created: async function () {
@@ -310,7 +223,7 @@ export default {
 .btn {
   color: #fff;
   border: 1px solid black;
-  background-color: #5e5e5e;
+  background-color: #7bd197;
   font-size: 13px;
 }
 
@@ -331,66 +244,52 @@ export default {
 }
 
 /* card section */
-/* .card-container {
-  width: 18rem;
-  perspective: 200rem;
-  position: relative;
-  height: 360px;
+.card-container {
+  height: 450px;
+  width: 80%;
+}
+
+.card-title {
+  color: #17df53;
+  font-style: bold;
+  font-size: 18px;
 }
 
 .card {
-  transition: all 0.9s;
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  left: 12.5%;
+  border: 1.5px solid;
+  height: 440px;
+}
+
+.card-body {
   border-radius: 20px;
 }
 
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 350px;
+  height: 40px;
+  text-overflow: ellipsis;
+}
+
 .card__image {
-  text-align: center;
-  margin-top: 40px;
-  border-radius: 0%;
-  padding: 5px;
+  height: 250px;
 }
 
 .card__image img {
-  border-radius: 100%;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
-    rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  text-align: center;
-  border: 2px solid black;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.card__image img:hover {
-  scale: 1.05;
-}
+@media (max-width: 768px) {
+  .card-container {
+    width: 100%;
+  }
 
-.card__body h5 {
-  text-align: center;
-  margin: 15px auto;
-  font-weight: 900;
-  font-size: 25px;
+  .card {
+    left: 0%;
+  }
 }
-
-.card__body p {
-  margin: auto 25px;
-} */
 </style>
-
-<!-- <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        {{ section.name }}
-      </div>
-      <hr />
-    </div> -->
-
-<!-- <div v-for="pet in this.pets" :key="pet">
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        <div v-for="product in this.products[section._id]" :key="product">
-          {{ product.title }}
-        </div>
-      </div>
-</div> -->

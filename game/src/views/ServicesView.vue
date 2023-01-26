@@ -351,7 +351,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn {
   background-color: #94bbb8;
   color: #fff;
@@ -456,6 +456,10 @@ export default {
   .poster__img,
   .poster__content {
     width: 100%;
+  }
+
+  .poster__title {
+    font-size: 40px;
   }
 }
 

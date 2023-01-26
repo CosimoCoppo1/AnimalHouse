@@ -283,7 +283,7 @@ export default {
   }
 
   .poster__content h3 {
-    font-size: 38px;
+    font-size: 33px;
   }
 
   .poster__img,

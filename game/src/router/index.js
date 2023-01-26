@@ -85,28 +85,31 @@ const routes = [
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
   },
   {
-    path: "/accedi",
-    name: "Accedi",
-    component: () =>
-      import(/* webpackChunkName: "accedi" */ "../views/LoginView.vue"),
-  },
-  {
-    path: "/signup",
-    name: "signup",
-    component: () =>
-      import(/* webpackChunkName: "signup" */ "../views/SignupView.vue"),
-  },
-  {
     path: "/giochi/informazioni-curiose",
     name: "Informazioni curiose",
     component: () =>
       import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),
+  },
+  {
+    path: "/prova",
+    name: "prova",
+    component: () =>
+      import(
+        /* webpackChunkName: "prova" */ "../components/SignInUpComponent.vue"
+      ),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory("/game/"),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { left: 0, top: 0 };
+    }
+  },
 });
 
 export default router;
