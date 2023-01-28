@@ -97,7 +97,7 @@ export default {
     return {
       selectedAnswer: "",
       index: -1,
-      count: 3,
+      count: 10,
       correctAnswers: 0,
       wrongAnswers: 0,
       questions: [],
@@ -108,7 +108,6 @@ export default {
       axios
         .get("http://localhost:8000/questions")
         .then((response) => (this.questions = response.data));
-      this.count = 10;
     },
     initGame() {
       this.index++;
@@ -152,7 +151,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .quiz-container {
   display: flex;
   justify-content: center;

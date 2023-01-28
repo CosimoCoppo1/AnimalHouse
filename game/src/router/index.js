@@ -47,18 +47,6 @@ const routes = [
       import(/* webpackChunkName: "contatti" */ "../views/ContactsView.vue"),
   },
   {
-    path: "/giochi/feed",
-    name: "feed",
-    component: () =>
-      import(/* webpackChunkName: "feed" */ "../views/FeedView.vue"),
-  },
-  {
-    path: "/giochi/puzzle",
-    name: "puzzle",
-    component: () =>
-      import(/* webpackChunkName: "puzzle" */ "../views/PuzzleView.vue"),
-  },
-  {
     path: "/giochi/morra-cinese",
     name: "Morra cinese",
     component: () =>
@@ -73,10 +61,10 @@ const routes = [
       import(/* webpackChunkName: "scarabeo" */ "../views/ScrabbleView.vue"),
   },
   {
-    path: "/giochi/peek",
-    name: "peek",
+    path: "/giochi/memory",
+    name: "Memory",
     component: () =>
-      import(/* webpackChunkName: "lab" */ "../views/PeekView.vue"),
+      import(/* webpackChunkName: "memory" */ "../views/MemoryView.vue"),
   },
   {
     path: "/giochi/quiz",
@@ -97,6 +85,12 @@ const routes = [
       import(
         /* webpackChunkName: "prova" */ "../components/SignInUpComponent.vue"
       ),
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: () =>
+      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
   },
 ];
 

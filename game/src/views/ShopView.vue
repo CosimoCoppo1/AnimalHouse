@@ -82,7 +82,7 @@
                       <h6 class="text-muted">{{ product.price }}€</h6>
                       <p class="card-text" v-html="product.description"></p>
                       <a
-                        href="http://localhost:8000/frontoffice/e-commerce"
+                        :href="`http://localhost:8000/frontoffice/products/${product._id}`"
                         class="btn btn-success"
                         >Compra!</a
                       >
@@ -177,7 +177,6 @@ export default {
         this.showSection[pet._id] = 0;
         this.showProduct[pet._id] = 0;
       }
-      console.log(this.showSection);
     },
     async getPetSections() {
       for (let pet of this.pets) {
@@ -223,7 +222,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn {
   color: #fff;
   border: 1px solid black;

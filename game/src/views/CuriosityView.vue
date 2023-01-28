@@ -240,9 +240,6 @@ export default {
         { source: "gallery1.mp4", alt: ".." },
         { source: "gallery2.mp4", alt: ".." },
         { source: "gallery3.mp4", alt: ".." },
-        { source: "gallery4.mp4", alt: ".." },
-        { source: "gallery5.mp4", alt: ".." },
-        { source: "gallery6.mp4", alt: ".." },
       ],
       categories: [],
       colors: [
@@ -276,7 +273,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* hero section */
 .hero {
   height: 38vh;
@@ -503,11 +500,3 @@ export default {
   transform: scale(1.03);
 }
 </style>
-
-<!--
-https://www.youtube.com/watch?v=jVhwJgLOoGw
--->
-
-<!--
-cancella colibrì, tracce animali
--->

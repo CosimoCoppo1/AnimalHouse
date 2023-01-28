@@ -118,9 +118,9 @@
           <b>booking</b> specificamente progettata per il mondo pet, a cui si
           possono rivolgere sia chi ha dedicato il proprio lavoro agli animali,
           sia per chi ne fa richiesta.<br />Basterà
-          <a href="#"><b>iscriverti</b></a> gratuitamente come membro della
-          comunità, per registrare il proprio pet in un network con innumerevoli
-          servizi.
+          <a href="http://localhost:8000/frontoffice/"><b>iscriverti</b></a>
+          gratuitamente come membro della comunità, per registrare il proprio
+          pet in un network con innumerevoli servizi.
         </p>
       </div>
     </div>

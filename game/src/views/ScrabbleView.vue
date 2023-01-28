@@ -1,18 +1,41 @@
 <template>
   <div class="body">
     <div class="container">
-      <h2>Gioca a scarabeo!</h2>
-      <div class="content">
+      <h3>Gioca a scarabeo!</h3>
+      <div v-if="this.index == -1" class="content">
+        <div class="details">
+          <p>
+            Benvenuto al gioco <b>scarabeo</b> di Animal House!<br />
+            Il gioco consiste nell'indovinare l'animale a cui corrisponde
+            l'alimentazione o l'habitat indicato. Ti diamo la possibilità di
+            scegliere su che campo metterti in gioco!
+          </p>
+          <p>
+            Passa alla sezione
+            <router-link
+              class="link"
+              :to="{ path: '/giochi/informazioni-curiose' }"
+            >
+              curiosità</router-link
+            >
+            se non ti senti ancora pronto, oppure inizia subito cliccando un
+            bottone!
+          </p>
+          <div class="buttons">
+            <button class="feed-choice" type="button" @click="initFeed()">
+              Alimentazione!
+            </button>
+            <button class="habitat-choice" type="button" @click="initHabitat()">
+              Habitat!
+            </button>
+          </div>
+        </div>
+      </div>
+      <div v-else-if="this.index == 0" class="content">
         <p class="word">{{ this.scrabble.textAnswer }}</p>
         <div class="details">
-          <p class="time">
-            Tempo rimasto:
-            <span
-              ><b>{{ this.timerCount }}</b
-              >s</span
-            >
-          </p>
-          <p class="hint">
+          <p>
+            <i>{{ this.choice }}</i> :
             <span>{{ this.scrabble.textQuestion }}</span>
           </p>
         </div>
@@ -20,19 +43,41 @@
           v-model="userAnswer"
           :maxlength="this.maxLength"
           type="text"
-          placeholder="Enter a valid word"
+          placeholder="Riordina le lettere e indovina l'animale..."
         />
         <div class="buttons">
-          <button class="refresh-word" @click="refreshGame()">
-            Refresh Word
+          <button type="button" class="refresh-word" @click="refreshGame()">
+            Cambia parola
           </button>
-          <button class="check-word" @click="checkUserWord()">
-            Check Word
+          <button type="button" class="check-word" @click="checkUserWord()">
+            Verifica parola
           </button>
         </div>
-        <p>
+        <div class="buttons">
+          <button type="button" class="final" @click="stopGame()">
+            Smetti di giocare...
+          </button>
+        </div>
+        <p class="message">
           <span v-if="this.timerMessage != 0">{{ this.message }}</span>
         </p>
+      </div>
+      <div v-else class="content">
+        <div class="details">
+          <p>Gioco terminato.<br />Dai uno sguardo al tuo punteggio:</p>
+          <span><b class="link">Punti</b> {{ this.points }}</span
+          >, <span><b class="link">Malus</b> {{ this.malus }}</span>
+          <p class="mt-2">
+            Hai quindi totalizzato un punteggio di:
+            {{ this.finalPoints }}!<br />
+            Inizia una nuova partita cliccando il pulsante!
+          </p>
+          <div class="buttons">
+            <button class="feed-choice" type="button" @click="restartGame()">
+              Rigioca!
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -52,23 +97,15 @@ export default {
       message: "",
       point: 0,
       maxLength: 0,
-      timerCount: 30,
       timerMessage: 0,
+      choice: "",
+      index: -1,
+      points: 0,
+      malus: 0,
+      finalPoints: 0,
     };
   },
   watch: {
-    timerCount: {
-      handler(value) {
-        if (value > 0) {
-          setTimeout(() => {
-            this.timerCount--;
-          }, 1000);
-        } else {
-          this.stopGame();
-        }
-      },
-      immediate: true,
-    },
     timerMessage: {
       handler(value) {
         if (value > 0) {
@@ -81,15 +118,20 @@ export default {
     },
   },
   methods: {
-    // API url "https://opentdb.com/api_config.php"
-    // domande: 50, risposta multipla
-    // ogni tipo di difficoltà, categoria animali
     generateQuizQuestions() {
-      axios.get("http://localhost:8000/curiosities?qty=20").then((response) => {
+      axios.get("http://localhost:8000/curiosities?qty=50").then((response) => {
         this.gameQuestions = response.data;
-        console.log(this.gameQuestions);
-        this.initGame();
       });
+    },
+    initFeed() {
+      this.choice = "Alimentazione";
+      this.index = 0;
+      this.initGame();
+    },
+    initHabitat() {
+      this.choice = "Habitat";
+      this.index = 0;
+      this.initGame();
     },
     // crea box del turno domanda-risposta scarabeo
     // Math.random(): restituisce 0 <= x < 1
@@ -113,7 +155,11 @@ export default {
       // join("") concatena le lettere in splittedAnswer
       // memorizza domanda-risposta nelle variabili di gioco
       this.scrabble.textAnswer = splittedAnswer.join("");
-      this.scrabble.textQuestion = randomQuestion.alimentazione;
+      if (this.choice == "Alimentazione") {
+        this.scrabble.textQuestion = randomQuestion.alimentazione;
+      } else {
+        this.scrabble.textQuestion = randomQuestion.habitat;
+      }
       this.correctAnswer = randomQuestion.name.toLowerCase();
       // impostata massima lunghezza di inserimento caratteri per
       // l'utente, pari alla lunghezza della risposta del turno
@@ -125,7 +171,7 @@ export default {
       this.scrabble.textQuestion = "";
       this.userAnswer = "";
       this.correctAnswer = "";
-      this.timerCount = 30;
+      this.malus += 2;
       this.initGame();
     },
     // confronta risposta dell'utente con risposta corretta
@@ -138,17 +184,21 @@ export default {
         this.message = "Non è la risposta corretta... Riprova!";
         this.userAnswer = "";
         this.timerMessage = 2;
+        this.malus++;
       } else {
+        this.points++;
         this.refreshGame();
       }
     },
-    // termina il turno corrente e ne genera uno nuovo
     stopGame() {
-      this.userAnswer = "";
-      this.message =
-        "Spiacente... Il tempo è terminato. Passa alla nuovo turno!";
-      this.timerMessage = 2;
-      this.refreshGame();
+      this.finalPoints = this.points * 3 - this.malus;
+      this.index = 2;
+    },
+    restartGame() {
+      this.index = -1;
+      this.points = 0;
+      this.malus = 0;
+      this.finalPoints = 0;
     },
   },
   created() {
@@ -157,26 +207,28 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #5372f0;
+  background: url("../assets/bg__gallery.png") no-repeat center center;
+  background-size: 740px;
 }
 
 .container {
-  width: 450px;
-  border-radius: 7px;
+  width: 500px;
+  border-radius: 20px;
   background: #fff;
 }
 
-.container h2 {
-  font-size: 25px;
-  font-weight: 500;
-  padding: 18px 25px;
+.container h3 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 25px 25px;
   border-bottom: 1px solid #ccc;
+  text-align: center;
 }
 
 .container .content {
@@ -184,30 +236,26 @@ export default {
 }
 
 .content .word {
-  font-size: 33px;
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: bold;
   text-align: center;
-  letter-spacing: 24px;
-  margin-right: -24px;
+  letter-spacing: 20px;
   text-transform: uppercase;
-}
-
-.content .details {
-  margin: 25px 0 20px;
 }
 
 .details p {
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.details p b {
-  font-weight: 500;
+.link {
+  text-decoration: none;
+  color: #ff5bff;
 }
 
 .content input {
-  width: 80%;
-  height: 60px;
+  width: 100%;
+  height: 50px;
   outline: none;
   font-size: 18px;
   padding: 0 16px;
@@ -222,21 +270,39 @@ export default {
 }
 
 .buttons button {
-  border: none;
   outline: none;
   color: #fff;
   cursor: pointer;
   padding: 15px 0;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 5px;
   width: calc(100% / 2 - 8px);
 }
 
 .buttons .refresh-word {
-  background: #6c757d;
+  background: #7f9ab3;
 }
 
 .buttons .check-word {
   background: #5372f0;
+}
+
+.buttons .feed-choice {
+  background: #f08fd3;
+}
+
+.buttons .habitat-choice {
+  background: #ff5bff;
+}
+
+.final {
+  background: #f54e4e;
+}
+
+.message {
+  margin: 10px auto;
+  text-align: center;
+  font-weight: bold;
+  color: red;
 }
 </style>
