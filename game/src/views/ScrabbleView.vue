@@ -12,10 +12,7 @@
           </p>
           <p>
             Passa alla sezione
-            <router-link
-              class="link"
-              :to="{ path: '/giochi/informazioni-curiose' }"
-            >
+            <router-link class="link" :to="{ path: '/informazioni-curiose' }">
               curiosità</router-link
             >
             se non ti senti ancora pronto, oppure inizia subito cliccando un

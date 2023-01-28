@@ -4,7 +4,41 @@
       <div class="title-container">
         <h1 class="title">Simple Quiz</h1>
         <div class="question-container">
-          <div v-if="this.index < this.count">
+          <div v-if="this.index == -1" class="details">
+            <p>
+              Benvenuto nella sezione <b>quiz</b> di Animal House!<br />
+              Gioca con il nostro splendido quiz a tema animale cliccando il
+              pulsante
+              <i>Inizia!</i>
+            </p>
+            <p>
+              Tante domande su tutte le specie animali: scegli la categoria su
+              cui giocare dal menù a tendina!
+            </p>
+            <div class="input-group mt-3">
+              <select
+                class="form-select fw-bold"
+                required
+                name="animal category"
+                v-model="this.chooseCategory"
+              >
+                <option
+                  v-for="(category, index) in this.categories"
+                  :key="index"
+                  :value="index"
+                >
+                  {{ category }}
+                </option>
+              </select>
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn init" @click="initGame()">
+                Inizia!
+              </button>
+            </div>
+          </div>
+          <!-- domande -->
+          <div v-else-if="this.index < this.count">
             <p class="question">{{ this.questions[this.index].question }}</p>
             <label
               :for="key"
@@ -81,7 +115,7 @@ export default {
   data() {
     return {
       selectedAnswer: "",
-      index: 0,
+      index: -1,
       count: 3,
       correctAnswers: 0,
       wrongAnswers: 0,
@@ -104,9 +138,66 @@ export default {
           correctAnswer: "b",
         },
       ],
+      chooseCategory: 0,
+      categories: [
+        "Tutti",
+        "Animali australiani",
+        "Animali delle Galapagos",
+        "Aquila Reale",
+        "Bombo",
+        "Bonobo",
+        "Camaleonte",
+        "Castoro",
+        "Cervo",
+        "Cetacei",
+        "Coccinella",
+        "Coccodrillo",
+        "Coralli",
+        "Dugongo",
+        "Elefante",
+        "Farfalle",
+        "Foche, otarie e trichechi",
+        "Formica",
+        "Giaguaro",
+        "Gipeto barbuto",
+        "Giraffa",
+        "Gorilla",
+        "Lemuri",
+        "Leone",
+        "Leopardo",
+        "Lepri e conigli",
+        "Lince",
+        "Lupo",
+        "Marmotta",
+        "Meduse",
+        "Okapi",
+        "Orango",
+        "Orso bruno",
+        "Orso polare",
+        "Panda Gigante",
+        "Panda Rosso",
+        "Pangolino",
+        "Pernice bianca",
+        "Pesci",
+        "Pinguini",
+        "Pipistrelli",
+        "Polpi, seppie e calamari",
+        "Ragni",
+        "Rane, rospi e raganelle",
+        "Rapaci notturni",
+        "Riccio",
+        "Rinoceronte",
+        "Serpenti",
+        "Squalo",
+        "Tigre",
+        "Volpe artica",
+      ],
     };
   },
   methods: {
+    initGame() {
+      this.index = 0;
+    },
     answered(e) {
       this.selectedAnswer = e.target.value;
       if (this.selectedAnswer === this.questions[this.index].correctAnswer) {
@@ -142,7 +233,34 @@ export default {
 </script>
 
 <style>
+.details p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.buttons button {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  width: calc(100% / 2 - 8px);
+}
+
+.buttons .init {
+  background: #5896cf;
+  border: 1px solid black;
+}
+
 .quiz {
+  background: url("../assets/quiz/bg__poster.jpg") no-repeat center center;
   background-color: #f3f4f6;
   color: #374151;
   -webkit-font-smoothing: antialiased;
@@ -236,11 +354,6 @@ export default {
   padding-bottom: 0.5rem;
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-
-.results-title {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 
 .results-points {

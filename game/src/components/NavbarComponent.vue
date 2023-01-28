@@ -49,6 +49,7 @@ export default {
         "Servizi",
         "Negozio",
         "Giochi",
+        "Informazioni curiose",
         "Dati personali",
         "Chi siamo",
         "Contatti",

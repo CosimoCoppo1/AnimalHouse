@@ -73,7 +73,7 @@ const routes = [
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
   },
   {
-    path: "/giochi/informazioni-curiose",
+    path: "/informazioni-curiose",
     name: "Informazioni curiose",
     component: () =>
       import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),

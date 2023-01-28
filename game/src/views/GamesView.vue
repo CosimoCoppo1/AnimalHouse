@@ -69,13 +69,6 @@ export default {
     return {
       games: [
         {
-          img: "gallery1.png",
-          link: "/giochi/informazioni-curiose",
-          direct: "curiosità",
-          description:
-            "La sapevi questa? Tante curiosità dal mondo animale. Clicca il bottone per scoprirle tutte!",
-        },
-        {
           img: "gallery2.png",
           link: "/giochi/memory",
           direct: "memory",

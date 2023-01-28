@@ -187,11 +187,6 @@
                   <i class="bi bi-globe-americas"></i> Habitat:
                   {{ category.habitat }}
                 </p>
-                <router-link :to="{ path: '/giochi/quiz' }">
-                  <button type="button" class="btn btn-success">
-                    Vai al quiz!
-                  </button>
-                </router-link>
               </div>
             </div>
           </div>
@@ -447,16 +442,6 @@ export default {
   margin: 15px auto;
   font-weight: 900;
   font-size: 25px;
-}
-
-.card-body button {
-  position: fixed;
-  right: 15px;
-  bottom: 15px;
-  color: #fff;
-  font-size: 14px;
-  border: none;
-  background-color: #2c3e50;
 }
 
 @media (max-width: 768px) {
