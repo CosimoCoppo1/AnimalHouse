@@ -2,21 +2,29 @@
   <div class="quiz">
     <div class="quiz-container">
       <div class="title-container">
-        <h1 class="title">Simple Quiz</h1>
+        <h1 class="title">
+          <span lang="en" xml:lang="en">Quiz Animal House</span>
+        </h1>
         <div class="question-container">
           <div v-if="this.index == -1" class="details">
             <p>
-              Benvenuto nella sezione <b>quiz</b> di Animal House!<br />
-              Gioca con il nostro splendido quiz a tema animale cliccando il
-              pulsante
+              Benvenuto nella sezione <b lang="en" xml:lang="en">quiz</b> di
+              <span lang="en" xml:lang="en">Animal House</span>!<br />
+              Gioca con il nostro splendido
+              <span lang="en" xml:lang="en">quiz</span> a tema animale cliccando
+              il pulsante
               <i>Inizia!</i>
             </p>
             <p>
-              Tante domande su tutte le specie animali: scegli la categoria su
-              cui giocare dal menù a tendina!
+              Tante domande su tutte le specie animali: scegli la
+              <em>categoria</em> su cui giocare dal menù a tendina!
             </p>
+            <label for="choose-category">
+              Scegli la categoria su cui giocare:</label
+            >
             <div class="input-group mt-3">
               <select
+                id="choose-category"
                 class="form-select fw-bold"
                 required
                 name="animal category"
@@ -38,68 +46,64 @@
             </div>
           </div>
           <!-- domande -->
-          <div v-else-if="this.index < this.count">
-            <p class="question">{{ this.questions[this.index].question }}</p>
-            <label
-              :for="key"
-              class="options-container"
+          <main v-else-if="this.index < this.count">
+            <!-- inizio box domande -->
+            <h2
+              class="question"
+              v-html="this.questions[this.index].question"
+            ></h2>
+            <button
+              class="options-container border border-black py-2 px-3 mt-3"
               v-for="(answer, key) in this.questions[this.index].answers"
               :key="answer"
+              @click="this.answered(key)"
               :class="
                 this.selectedAnswer === ''
                   ? 'option-selected'
-                  : `option-${selectClass(key, this.index)}`
+                  : `option-${this.selectClass(key, this.index)}`
               "
             >
-              <input
-                type="radio"
-                :id="key"
-                class="single-option"
-                :value="key"
-                @change="answered($event)"
-                :disabled="this.selectedAnswer !== ''"
-              />
-              {{ answer }}
-            </label>
-            <div class="button-section">
+              <span v-html="answer"></span>
+            </button>
+            <!-- fine box domande -->
+            <div class="buttons">
               <button
-                class="button-style"
+                class="btn init"
                 v-show="
                   this.selectedAnswer !== '' && this.index < this.count - 1
                 "
                 @click="nextQuestion()"
               >
-                Next &gt;
+                Prossima domanda!
               </button>
               <button
-                class="button-style"
+                class="btn send"
                 v-show="
                   this.selectedAnswer !== '' && this.index === this.count - 1
                 "
                 @click="showResults()"
               >
-                Finish &gt;
+                Termina il <span lang="en" xml:lang="en">quiz</span>!
               </button>
             </div>
-          </div>
-          <div v-else class="results-title">
-            Results:
-            <div class="results-points">
-              <p>
-                Correct Answers:
-                <span class="correct-answers">{{ this.correctAnswers }}</span>
-              </p>
-              <p>
-                Wrong Answers:
-                <span class="wrong-answers">{{ this.wrongAnswers }}</span>
-              </p>
-            </div>
-            <div class="restart-section">
-              <button class="button-style" @click="resetQuiz()">
-                Play again
+          </main>
+          <!-- risultati -->
+          <div v-else class="details">
+            <p>Gioco terminato.<br />Dai uno sguardo al tuo punteggio:</p>
+            <span
+              ><b class="link">Risposte corrette: </b>
+              {{ this.correctAnswers }}</span
+            >,
+            <span
+              ><b class="link">Risposte errate: </b>
+              {{ this.wrongAnswers }}</span
+            >
+            <div class="buttons">
+              <button class="btn init" type="button" @click="resetQuiz()">
+                Rigioca!
               </button>
-              <button class="button-style" @click="sendResults()">
-                Send Results
+              <button class="btn send" type="button" @click="sendResults()">
+                Invia risultati!
               </button>
             </div>
           </div>
@@ -110,34 +114,18 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "QuizView",
   data() {
     return {
       selectedAnswer: "",
       index: -1,
-      count: 3,
+      count: 0,
       correctAnswers: 0,
       wrongAnswers: 0,
-      questions: [
-        {
-          question:
-            "Rolex is a company that specializes in what type of product?",
-          answers: { a: "Bags", b: "Watches", c: "Shoes", d: "Laptops" },
-          correctAnswer: "b",
-        },
-        {
-          question: "When did Facebook launch?",
-          answers: { a: "2005", b: "2008", c: "2003", d: "2004" },
-          correctAnswer: "d",
-        },
-        {
-          question:
-            "Albert Einstein had trouble with mathematics when he was in school",
-          answers: { a: "True", b: "False" },
-          correctAnswer: "b",
-        },
-      ],
+      questions: [],
       chooseCategory: 0,
       categories: [
         "Tutti",
@@ -196,10 +184,28 @@ export default {
   },
   methods: {
     initGame() {
+      if (this.chooseCategory == 0) {
+        axios
+          .get("http://localhost:8000/questions")
+          .then((response) => (this.questions = response.data));
+        this.count = 10;
+      } else {
+        axios
+          .get(
+            `http://localhost:8000/questions?category=${
+              this.categories[this.chooseCategory]
+            }`
+          )
+          .then((response) => {
+            this.questions = response.data;
+            this.count = this.questions.length;
+          });
+      }
+      console.log(this.questions);
       this.index = 0;
     },
-    answered(e) {
-      this.selectedAnswer = e.target.value;
+    answered(key) {
+      this.selectedAnswer = key;
       if (this.selectedAnswer === this.questions[this.index].correctAnswer) {
         this.correctAnswers++;
       } else {
@@ -207,6 +213,7 @@ export default {
       }
     },
     selectClass(key, num) {
+      console.log(key, num);
       if (key === this.questions[num].correctAnswer) {
         return "correct";
       }
@@ -222,7 +229,8 @@ export default {
       this.index++;
     },
     resetQuiz() {
-      this.index = 0;
+      this.chooseCategory = 0;
+      this.index = -1;
       this.selectedAnswer = "";
       this.correctAnswers = 0;
       this.wrongAnswers = 0;
@@ -233,6 +241,11 @@ export default {
 </script>
 
 <style>
+.link {
+  text-decoration: none;
+  color: #4338ca;
+}
+
 .details p {
   font-size: 18px;
   margin-bottom: 20px;
@@ -255,7 +268,12 @@ export default {
 }
 
 .buttons .init {
-  background: #5896cf;
+  background: #285b8a;
+  border: 1px solid black;
+}
+
+.buttons .send {
+  background: #0e65b6;
   border: 1px solid black;
 }
 
@@ -299,32 +317,20 @@ export default {
 }
 
 .question {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .options-container {
   display: block;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  margin-top: 1rem;
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  border-radius: 0.5rem;
-  border-color: #d1d5db;
-  border-style: solid;
-}
-
-.single-option {
-  display: none;
+  text-align: left;
+  font-size: 17px;
+  border-radius: 8px;
+  min-width: 480px;
 }
 
 .option-selected:hover {
   background-color: #f3f4f6;
-
   cursor: pointer;
 }
 
@@ -334,51 +340,5 @@ export default {
 
 .option-incorrect {
   background-color: #fecaca;
-}
-
-.button-section {
-  display: flow-root;
-  margin-top: 1.5rem;
-}
-
-.button-style {
-  float: right;
-  background-color: #4f46e5;
-  color: #ffffff;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-  font-weight: 700;
-  letter-spacing: 0.025em;
-  border-radius: 9999px;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-
-.results-points {
-  display: flex;
-  margin-top: 1.5rem;
-  margin-left: 1rem;
-  justify-content: flex-start;
-}
-
-.correct-answers {
-  color: #047857;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.wrong-answers {
-  color: #b91c1c;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  font-weight: 700;
-}
-
-.restart-section {
-  display: flow-root;
-  margin-top: 1.5rem;
 }
 </style>

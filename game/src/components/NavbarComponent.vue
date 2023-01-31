@@ -1,5 +1,9 @@
 <template>
-  <nav class="navbar fixed-top navbar-expand-md" id="page-top">
+  <nav
+    class="navbar fixed-top navbar-expand-md"
+    id="page-top"
+    data-bs-theme="dark"
+  >
     <div class="container-fluid">
       <a class="navbar-brand" @click="this.scrollToTop()">
         <!-- <img src="../assets/logo.png" alt="" style="width: 20%" /> -->
@@ -71,8 +75,12 @@ export default {
 /* navbar */
 .navbar {
   transition: background-color 250ms ease-in;
-  background-color: #deefb7;
+  background-color: #dfffff;
   cursor: pointer;
+}
+
+.active {
+  color: #006eec;
 }
 
 .navbar-toggler-icon {

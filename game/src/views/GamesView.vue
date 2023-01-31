@@ -1,40 +1,49 @@
 <template>
   <div>
     <!-- hero section -->
-    <div class="hero">
+    <section class="hero">
       <div class="hero__content">
-        <p class="intro-text">pronto a vincere?</p>
-        <h1 class="big-text">Sezione giochi Animal House</h1>
+        <h1 class="intro-text">pronto a vincere?</h1>
+        <h2 class="big-text">
+          Sezione giochi <span lang="en" xml:lang="en">Animal House</span>
+        </h2>
       </div>
-      <video autoplay muted loop class="hero__video">
+      <video autoplay muted loop class="hero__video" alt="">
         <source src="../assets/games/bg__hero.mp4" type="video/mp4" />
       </video>
-    </div>
+    </section>
 
     <!-- page-intro section -->
-    <div class="grid page-intro my-5">
+    <section class="grid page-intro my-5">
       <div class="col">
         <p>
-          Pensavi di aver già visto tutto dal sito Animal House? Invece
-          <b>no!</b><br />
-          Benvenuto nella sezione giochi, pensata appositamente per voi, i
-          nostri curiosi e amabili clienti. Dopo un acquisto al nostro
-          <router-link :to="{ path: '/negozio' }" class="link"
+          <em>Pensavi</em> di aver già visto tutto dal sito
+          <span lang="en" xml:lang="en">Animal House</span>? Invece <b>no!</b
+          ><br />
+          Benvenuto nella <em>sezione giochi</em>, pensata appositamente per
+          voi, i nostri curiosi e amabili clienti. Dopo un acquisto al nostro
+          <router-link
+            :to="{ path: '/negozio' }"
+            class="btn btn-warning"
+            role="button"
             >negozio</router-link
           >
           e una consulenza dai nostri
-          <router-link :to="{ path: '/servizi' }" class="link"
+          <router-link
+            :to="{ path: '/servizi' }"
+            class="btn btn-warning"
+            role="button"
             >servizi</router-link
           >, divertiti nelle sezioni elencate in questa pagina.<br />Siamo
-          sicuri che non te ne pentirai!
+          sicuri che <em>non te ne pentirai</em>!
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- image-gallery section -->
-    <div class="container">
+    <main class="container">
       <div class="row">
-        <div
+        <ol
           class="col-md-6 my-4"
           align="center"
           v-for="(game, index) in this.games"
@@ -44,21 +53,23 @@
             <img
               :src="require(`@/assets/games/${game.img}`)"
               class="image"
-              alt=".."
+              alt=""
             />
             <router-link
-              type="button"
-              class="btn"
+              role="button"
+              class="btn btn-warning"
               :to="{ path: `${game.link}` }"
               >{{ game.direct }}</router-link
             >
           </div>
-          <p class="description__text px-2">
-            <i>{{ game.description }}</i>
-          </p>
-        </div>
+          <li>
+            <h3 class="description__text px-2">
+              <b>{{ game.description }}</b>
+            </h3>
+          </li>
+        </ol>
       </div>
-    </div>
+    </main>
   </div>
 </template>
 
@@ -72,29 +83,25 @@ export default {
           img: "gallery2.png",
           link: "/giochi/memory",
           direct: "memory",
-          description:
-            "Aiuta le coppie a ritrovarsi! Cerca di farlo nel minor numero di mosse possibile!",
+          description: "Aiuta le coppie a ritrovarsi!",
         },
         {
           img: "gallery3.png",
           link: "/giochi/quiz",
           direct: "quiz",
-          description:
-            "Sei una persona acculturata sul campo animale? Testa le tue capacità tramite il quiz di Animal House!",
+          description: "Sei acculturato sul campo animale?",
         },
         {
           img: "gallery4.png",
           link: "/giochi/morra-cinese",
           direct: "morra cinese",
-          description:
-            "Sasso, Carta, Forbice.... Ah, no? Rifacciamo: Elefante, Gatto, Topo!",
+          description: "Sasso, Carta, Forbice.... Ah, no?",
         },
         {
           img: "gallery5.png",
           link: "/giochi/scarabeo",
           direct: "scarabeo",
-          description:
-            "Indovina l'animale dall'habitat e dall'alimentazione partendo da questo simpatico gioco scarabeo!",
+          description: "Indovina l'animale da habitat e alimentazione!",
         },
       ],
     };
@@ -103,9 +110,10 @@ export default {
 </script>
 
 <style scoped>
-.link {
-  text-decoration: none;
-  color: #e100ff;
+.btn {
+  background-color: #830094;
+  color: #fff;
+  border: 1px solid #000;
 }
 
 /* hero section */
@@ -114,8 +122,8 @@ export default {
 }
 
 .hero__content h1,
-.hero__content p {
-  color: #e100ff;
+.hero__content h2 {
+  color: #830094;
 }
 
 /* image-gallery section */
@@ -124,6 +132,10 @@ export default {
 }
 
 .image__container .btn:hover {
-  background-color: #e100ff;
+  background-color: #830094;
+}
+
+li {
+  list-style-type: none;
 }
 </style>

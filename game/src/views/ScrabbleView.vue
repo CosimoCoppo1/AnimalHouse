@@ -1,14 +1,15 @@
 <template>
   <div class="body">
-    <div class="container">
-      <h3>Gioca a scarabeo!</h3>
+    <section class="container">
+      <h1>Gioca a scarabeo!</h1>
       <div v-if="this.index == -1" class="content">
-        <div class="details">
+        <section class="details">
           <p>
-            Benvenuto al gioco <b>scarabeo</b> di Animal House!<br />
-            Il gioco consiste nell'indovinare l'animale a cui corrisponde
-            l'alimentazione o l'habitat indicato. Ti diamo la possibilità di
-            scegliere su che campo metterti in gioco!
+            Benvenuto al gioco <b>scarabeo</b> di
+            <span lang="en" xml:lang="en">Animal House!</span><br />
+            Il gioco consiste nell'<em>indovinare</em> l'animale a cui
+            corrisponde l'alimentazione o l'habitat indicato. Ti diamo la
+            possibilità di <em>scegliere</em> su che campo metterti in gioco!
           </p>
           <p>
             Passa alla sezione
@@ -26,44 +27,50 @@
               Habitat!
             </button>
           </div>
-        </div>
+        </section>
       </div>
       <div v-else-if="this.index == 0" class="content">
-        <p class="word">{{ this.scrabble.textAnswer }}</p>
-        <div class="details">
-          <p>
-            <i>{{ this.choice }}</i> :
-            <span>{{ this.scrabble.textQuestion }}</span>
+        <main>
+          <h2 class="word">{{ this.scrabble.textAnswer }}</h2>
+          <div class="details">
+            <p>
+              <i>{{ this.choice }}</i> :
+              <span>{{ this.scrabble.textQuestion }}</span>
+            </p>
+          </div>
+          <label for="text-answer"
+            >Inserisci il testo dalle lettere mescolate:</label
+          >
+          <input
+            id="text-answer"
+            v-model="userAnswer"
+            :maxlength="this.maxLength"
+            type="text"
+            placeholder="Riordina le lettere e indovina l'animale..."
+          />
+          <div class="buttons">
+            <button type="button" class="refresh-word" @click="refreshGame()">
+              Cambia parola
+            </button>
+            <button type="button" class="check-word" @click="checkUserWord()">
+              Verifica parola
+            </button>
+          </div>
+          <div class="buttons">
+            <button type="button" class="final" @click="stopGame()">
+              Smetti di giocare...
+            </button>
+          </div>
+          <p class="message">
+            <span v-if="this.timerMessage != 0">{{ this.message }}</span>
           </p>
-        </div>
-        <input
-          v-model="userAnswer"
-          :maxlength="this.maxLength"
-          type="text"
-          placeholder="Riordina le lettere e indovina l'animale..."
-        />
-        <div class="buttons">
-          <button type="button" class="refresh-word" @click="refreshGame()">
-            Cambia parola
-          </button>
-          <button type="button" class="check-word" @click="checkUserWord()">
-            Verifica parola
-          </button>
-        </div>
-        <div class="buttons">
-          <button type="button" class="final" @click="stopGame()">
-            Smetti di giocare...
-          </button>
-        </div>
-        <p class="message">
-          <span v-if="this.timerMessage != 0">{{ this.message }}</span>
-        </p>
+        </main>
       </div>
       <div v-else class="content">
-        <div class="details">
+        <section class="details">
           <p>Gioco terminato.<br />Dai uno sguardo al tuo punteggio:</p>
-          <span><b class="link">Punti</b> {{ this.points }}</span
-          >, <span><b class="link">Malus</b> {{ this.malus }}</span>
+          <span><b class="link">Punti:</b> {{ this.points }}</span
+          >, <span><b class="link">Malus:</b> {{ this.malus }}</span>
           <p class="mt-2">
             Hai quindi totalizzato un punteggio di:
             {{ this.finalPoints }}!<br />
@@ -74,9 +81,9 @@
               Rigioca!
             </button>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -189,6 +196,9 @@ export default {
     },
     stopGame() {
       this.finalPoints = this.points * 3 - this.malus;
+      if (this.finalPoints < 0) {
+        this.finalPoints = 0;
+      }
       this.index = 2;
     },
     restartGame() {
@@ -220,7 +230,7 @@ export default {
   background: #fff;
 }
 
-.container h3 {
+.container h1 {
   font-size: 20px;
   font-weight: bold;
   padding: 25px 25px;
@@ -247,7 +257,7 @@ export default {
 
 .link {
   text-decoration: none;
-  color: #ff5bff;
+  color: #9e009e;
 }
 
 .content input {
@@ -277,23 +287,23 @@ export default {
 }
 
 .buttons .refresh-word {
-  background: #7f9ab3;
+  background: #41576c;
 }
 
 .buttons .check-word {
-  background: #5372f0;
+  background: #143ee6;
 }
 
 .buttons .feed-choice {
-  background: #f08fd3;
+  background: #9d1574;
 }
 
 .buttons .habitat-choice {
-  background: #ff5bff;
+  background: #9e009e;
 }
 
 .final {
-  background: #f54e4e;
+  background: #a40a0a;
 }
 
 .message {

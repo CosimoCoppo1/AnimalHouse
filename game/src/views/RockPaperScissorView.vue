@@ -1,20 +1,26 @@
 <template>
-  <div class="container">
-    <div class="grid" style="margin-top: 70px">
+  <div class="container rps">
+    <!-- description section -->
+    <section class="grid paragraph" style="margin-top: 70px">
       <div class="col">
-        <h3 class="description__title">Morra cinese?</h3>
+        <h1 class="description__title">Morra cinese?</h1>
         <p class="text">
           Sei sicuro di stare giocando alla vera morra cinese?<br />
-          Sorprendentemente <b>sì</b>! Divertiti a giocare alla
+          Sorprendentemente <b><em>sì</em></b
+          >! Divertiti a giocare alla
           <b>morra cinese</b>
-          a tema animale di Animal House. Dimentica il classico sasso, carta e
-          forbice e usa l'<b>elefante</b> per schiacciare il <b>gatto</b>, il
-          <b>gatto</b> per mangiare il <b>topo</b> e il <b>topo</b> per
-          spaventare l'<b>elefante</b>.
+          a tema animale di <span lang="en" xml:lang="en">Animal House</span>.
+          Dimentica il <em>classico</em> sasso, carta e forbice e usa l'<b
+            >elefante</b
+          >
+          per schiacciare il <b>gatto</b>, il <b>gatto</b> per mangiare il
+          <b>topo</b> e il <b>topo</b> per spaventare l'<b>elefante</b>.
         </p>
       </div>
-    </div>
-    <div class="row content">
+    </section>
+
+    <!-- points section -->
+    <section class="row content">
       <div class="d-flex felx-row">
         <div class="d-flex scores flex-row">
           <div
@@ -47,42 +53,51 @@
             <span class="text">, Punti totali accumulati: </span>
             <span
               class="score fw-bold"
-              :class="this.finalPoints < 0 ? 'text-danger' : 'text-warning'"
+              :class="this.finalPoints < 0 ? 'text-danger' : 'text-success'"
             >
               {{ this.finalPoints }}
             </span>
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
     <!-- reset area -->
     <div class="row">
-      <div class="col-md-6 mx-auto">
-        <div class="d-flex flex-row justify-content-between align-items-center">
-          <div class="options">
-            <div
+      <section class="col-md-6 mx-auto">
+        <main
+          class="d-flex flex-row justify-content-between align-items-center"
+        >
+          <section class="options">
+            <button
               class="r"
               :class="this.yourWeapon === 'Rock' ? 'checked' : ''"
               @click="chooseWeapon('Rock')"
-            ></div>
-            <div
+            >
+              <p hidden>clicca</p>
+            </button>
+            <button
               class="p"
               :class="this.yourWeapon === 'Paper' ? 'checked' : ''"
               @click="chooseWeapon('Paper')"
-            ></div>
-            <div
+            >
+              <p hidden>clicca</p>
+            </button>
+            <button
               class="s"
               :class="this.yourWeapon === 'Scissor' ? 'checked' : ''"
               @click="chooseWeapon('Scissor')"
-            ></div>
-          </div>
+            >
+              <p hidden>clicca</p>
+            </button>
+          </section>
           <div class="game">
-            <div class="chooseWeapon" v-if="!this.yourWeapon">
+            <button class="chooseWeapon" v-if="!this.yourWeapon">
               Scegli il tuo animale
-            </div>
-            <div class="fight" v-if="this.yourWeapon" @click="fight()">
+            </button>
+            <button class="fight" v-if="this.yourWeapon" @click="fight()">
               SFIDA!
-            </div>
+            </button>
             <div class="fighting" v-if="this.fighting">
               <div class="spinner-border text-danger" role="status">
                 <span class="sr-only"></span>
@@ -92,26 +107,28 @@
               {{ this.result }}
             </div>
           </div>
-          <div class="it">
+          <section class="it">
             <div v-show="this.computerWeapon === 'Rock'" class="r"></div>
             <div v-show="this.computerWeapon === 'Paper'" class="p"></div>
             <div v-show="this.computerWeapon === 'Scissor'" class="s"></div>
-          </div>
-        </div>
-        <div
+          </section>
+        </main>
+        <section
           class="d-flex flex-row justify-content-center text-center controls shadow rounded"
         >
           <div class="flex-fill">
-            <button type="button" class="btn btn-info">
+            <div class="btn btn-info border border-dark">
               Turno
-              <span class="badge badge-light">{{ this.totalRounds }}</span>
-            </button>
+              <span class="badge">{{ this.totalRounds }}</span>
+            </div>
           </div>
           <div class="flex-fill">
-            <button class="btn btn-warning" @click="reset()">Rigioca</button>
+            <button class="btn btn-warning border border-dark" @click="reset()">
+              Rigioca
+            </button>
           </div>
-        </div>
-      </div>
+        </section>
+      </section>
     </div>
   </div>
 </template>
@@ -231,7 +248,7 @@ export default {
   width: 70%;
 }
 
-.options div {
+.options button {
   background-color: #7186fd;
   background-position: center;
   background-repeat: no-repeat;
@@ -244,14 +261,15 @@ export default {
   transition: trasform 0.2s;
   transform: scale(1.02);
   width: 120px;
+  border: none;
 }
 
-.options div:hover {
+.options button:hover {
   background-color: #d1c79f;
   background-size: 65%;
 }
 
-.options div.r {
+.options button.r {
   background-image: url("../assets/rps/elefante.png"); /*rock */
   background-size: 50%;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -259,25 +277,25 @@ export default {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.options div.r:hover {
+.options button.r:hover {
   background-size: 55%;
 }
 
-.options div.p {
+.options button.p {
   background-image: url("../assets/rps/topo.png"); /*paper */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.options div.s {
+.options button.s {
   background-image: url("../assets/rps/gatto.png"); /*scissor */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.options div.checked {
+.options button.checked {
   background-color: #bfcca3;
   transform: scale(1.2);
 }
@@ -329,13 +347,17 @@ export default {
   z-index: 10;
 }
 
+.badge {
+  color: #000;
+}
+
 .game .chooseWeapon,
 .game .fight,
 .game .fighting,
 .game .result {
   align-items: center;
   background: #b4a9ff;
-  color: white;
+  color: #000;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -345,6 +367,7 @@ export default {
   top: 0;
   width: 100%;
   z-index: 2;
+  border: none;
 }
 
 .game .fight {

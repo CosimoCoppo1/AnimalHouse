@@ -1,221 +1,224 @@
 <template>
   <div>
     <!-- hero section -->
-    <div class="hero">
+    <section class="hero">
       <div class="hero__content">
-        <p class="intro-text">la sapevi questa?</p>
-        <h1 class="big-text">Curiosità sul mondo animale</h1>
+        <h1 class="intro-text">la sapevi questa?</h1>
+        <h2 class="big-text">Curiosità sul mondo animale</h2>
       </div>
-      <video autoplay muted loop class="hero__video">
+      <video autoplay muted loop class="hero__video" alt="">
         <source src="../assets/curiosity/bg__hero.mp4" type="video/mp4" />
       </video>
-    </div>
+    </section>
 
     <!-- page-intro section -->
-    <div class="grid page-intro my-5">
+    <section class="grid page-intro my-5">
       <div class="col">
         <p>
           Per chi ha voglia di osservarlo, il regno animale è una fonte
-          inesauribile di sorprese!<br />Oltre 5 milioni di specie lo popolano
-          e, con le loro più disparate forme, gli incredibili colori, le
-          sorprendenti strategie comportamentali e tanto altro, lo trasformano
-          in un vero e proprio pozzo delle meraviglie.
+          <em>inesauribile</em> di sorprese!<br />Oltre 5 milioni di specie lo
+          popolano e, con le loro più disparate forme, gli incredibili colori,
+          le sorprendenti strategie comportamentali e tanto altro, lo
+          trasformano in un vero e proprio pozzo delle meraviglie.
         </p>
         <p>
-          Noi di <b>Animal House</b> veniamo incontro a tutti gli amanti
-          curiosi: informazioni, aneddoti, stranezze e tanto altro, per
-          assicurarti una piacevole esperienza di navigazione.
+          Noi di <b lang="en" xml:lang="en">Animal House</b>
+          <em>veniamo incontro</em> a tutti gli amanti curiosi: informazioni,
+          aneddoti, stranezze e tanto altro, per assicurarti una piacevole
+          esperienza di navigazione.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid">
+    <section class="grid paragraph">
       <div class="col">
         <h3 class="keyword__title">In questa pagina</h3>
         <p class="keyword__text">
           Divertiti con i simpatici video sui nostri amici animali in fondo alla
           pagina e impara nuove cose consultando le carte bifronte. Accedi alle
-          aree di interesse con un click.
+          aree di interesse con un <span lang="en" xml:lang="en">click</span>.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- keyword section -->
-    <div class="grid keyword mb-5">
+    <section class="grid keyword mb-5">
       <div class="grid" v-for="(keyword, index) in this.keywords" :key="index">
-        <div class="col">
-          <a
-            type="button"
-            class="btn keyword__button"
-            :href="`${keyword.direct}`"
-            :style="{
-              'background-color': this.changeColor(`${index}`),
-            }"
-          >
-            <img :src="require(`@/assets/curiosity/${keyword.img}`)" alt=".." />
-          </a>
-          <h4
-            :style="{
-              color: this.changeColor(`${index}`),
-            }"
-          >
-            {{ keyword.title }}
-          </h4>
-        </div>
+        <menu class="col">
+          <li>
+            <a
+              role="button"
+              class="btn keyword__button"
+              :href="`${keyword.direct}`"
+              :style="{
+                'background-color': this.changeColor(`${index}`),
+              }"
+            >
+              <h4>{{ keyword.title }}</h4>
+            </a>
+          </li>
+        </menu>
       </div>
-    </div>
+    </section>
 
     <!-- poster section -->
-    <div class="poster">
-      <div class="poster__content">
+    <section class="poster">
+      <section class="poster__content">
         <p>
           <b>Solo istinto</b>? Macché. Gli animali hanno emozioni, sono
           intelligenti e sanno bene chi sono. E come comportarsi con gli
           altri.<br />
-          Animal House non ha mai pensato fosse diversamente: la nostra missione
-          continua ad essere quella di voler trasmettere comprensione e amore
-          per gli animali al maggior numero di persone possibile.<br />Ci siamo
-          molto divertiti a selezionare immagini, storie e aneddoti per te;
-          siamo sicuri che ne rimarrai soddisfatto!
+          <span lang="en" xml:lang="en">Animal House</span> non ha mai pensato
+          fosse diversamente: la nostra missione continua ad essere quella di
+          <em>voler trasmettere</em> comprensione e amore per gli animali al
+          maggior numero di persone possibile.<br />Ci siamo molto divertiti a
+          selezionare immagini, storie e aneddoti <em>per te</em>; siamo sicuri
+          che ne rimarrai soddisfatto!
         </p>
         <p>
           Per sapere di più sul nostro percorso e
           <b>ciò in cui crediamo</b> accedi all'area
-          <router-link :to="{ path: '/chi-siamo' }"
-            ><button
-              type="button"
-              class="btn btn-warning"
-              style="border: 1px solid black"
-            >
-              chi siamo
-            </button></router-link
+          <router-link
+            :to="{ path: '/chi-siamo' }"
+            role="button"
+            class="btn btn-success"
           >
+            chi siamo
+          </router-link>
           o scrivici agli indirizzi in descrizione forniti alla sezione
-          <router-link :to="{ path: '/contatti' }"
-            ><button
-              type="button"
-              style="border: 1px solid black"
-              class="btn btn-warning"
-            >
-              contatti
-            </button></router-link
+          <router-link
+            :to="{ path: '/contatti' }"
+            role="button"
+            class="btn btn-success"
+          >
+            contatti </router-link
           >.
         </p>
-      </div>
+      </section>
       <div class="poster__img">
-        <video autoplay muted loop>
+        <video autoplay muted loop alt="">
           <source
             src="../assets/curiosity/video__poster.mp4"
             type="video/mp4"
           />
         </video>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid">
-      <div class="col">
-        <h3 class="description__title big-text">Gira la carta!</h3>
-        <p class="description__text">
-          Mettiti alla prova indovinando età, alimentazione e habitat di ogni
-          specie!<br />
-          Scopri se sei un vero esperto sul regno animale giocando al nostro
-          <router-link :to="{ path: '/giochi/quiz' }"
-            ><button
-              type="button"
-              class="btn btn-warning"
-              style="border: 1px solid black"
+    <main>
+      <section class="grid paragraph">
+        <div class="col">
+          <h3 class="description__title big-text">Gira la carta!</h3>
+          <p class="description__text">
+            <em>Mettiti alla prova</em> indovinando età, alimentazione e habitat
+            di ogni specie!<br />
+            Scopri se sei un vero esperto sul regno animale giocando al nostro
+            <router-link
+              :to="{ path: '/giochi/quiz' }"
+              role="button"
+              class="btn btn-success"
             >
-              quiz
-            </button></router-link
-          >
-          oppure accedi a quiz dedicati tramite il bottone sul retro della
-          carta.
-        </p>
-        <p class="small card__collaboration-desc">
-          — Idea nata in collaborazione con
-          <abbr title="World Wide Fund for Nature">WWF</abbr>, l'organizzazione
-          internazionale a tutela dell'ambiente e degli animali.<br />Scopri di
-          più al sito
-          <a
-            href="https://www.pandaclub.ch/it/home"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="card__collaboration"
-            >Panda Club</a
-          >.
-        </p>
-      </div>
-    </div>
+              quiz </router-link
+            >.
+          </p>
+          <aside class="small card__collaboration-desc">
+            — Idea nata in collaborazione con
+            <abbr title="World Wide Fund for Nature">WWF</abbr>,
+            l'organizzazione internazionale a tutela dell'ambiente e degli
+            animali.<br />Scopri di più al sito
+            <a
+              href="https://www.pandaclub.ch/it/home"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="card__collaboration"
+              >Panda Club</a
+            >.
+          </aside>
+        </div>
+      </section>
 
-    <!-- card section -->
-    <div class="container-fluid" id="card" style="margin-bottom: 80px">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
-        <div
-          v-for="(category, index) in this.categories"
-          :key="category"
-          class="col"
-        >
-          <div class="card-container mx-auto mt-5">
-            <div class="card card-front">
-              <div class="card-body">
-                <h5
-                  class="card__name"
-                  :style="{
-                    color: this.changeColor(`${index}`),
-                    'border-color': this.changeColor(`${index}`),
-                  }"
-                >
-                  {{ category.name }}
-                </h5>
-                <p>{{ category.desc }}</p>
+      <!-- card section -->
+      <article class="container-fluid" id="card" style="margin-bottom: 80px">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+          <div
+            v-for="(category, index) in this.categories"
+            :key="category"
+            class="col"
+          >
+            <div class="card-container mx-auto mt-5">
+              <div class="card card-front">
+                <section class="card-body">
+                  <h4
+                    class="card__name"
+                    :style="{
+                      color: this.changeColor(`${index}`),
+                      'border-color': this.changeColor(`${index}`),
+                    }"
+                  >
+                    {{ category.name }}
+                  </h4>
+                  <p>{{ category.desc }}</p>
+                </section>
               </div>
-            </div>
-            <div class="card card-back">
-              <div
-                class="card-body"
-                :style="{ 'background-color': this.changeColor(`${index}`) }"
-              >
-                <h5 class="card__name">Carta d'identità</h5>
-                <p><i class="bi bi-balloon"></i> Età: {{ category.età }}</p>
-                <p>
-                  <i class="bi bi-egg"></i> Alimentazione:
-                  {{ category.alimentazione }}
-                </p>
-                <p>
-                  <i class="bi bi-globe-americas"></i> Habitat:
-                  {{ category.habitat }}
-                </p>
+              <div class="card card-back">
+                <div
+                  class="card-body"
+                  :style="{ 'background-color': this.changeColor(`${index}`) }"
+                >
+                  <h5 class="card__name">Carta d'identità</h5>
+                  <section>
+                    <p>
+                      <i class="bi bi-balloon"></i>
+                      Età :
+                      {{ category.età }}
+                    </p>
+
+                    <p>
+                      <i class="bi bi-egg"></i>
+
+                      Alimentazione :
+                      {{ category.alimentazione }}
+                    </p>
+                    <p>
+                      <i class="bi bi-globe-americas"></i>
+
+                      <span lang="en" xml:lang="en">Habitat</span> :
+                      {{ category.habitat }}
+                    </p>
+                  </section>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </main>
 
     <!-- description section -->
-    <div class="grid">
+    <section class="grid paragraph">
       <div class="col">
         <h3 class="big-text description__title">Simpatici video di animali!</h3>
         <p class="description__text">
           Ecco alcuni video di animali che ti strapperanno un sorriso!
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- video-gallery section -->
-    <div class="video__container" id="gallery">
+    <section class="video__container" id="gallery">
       <div class="video__list">
         <div class="video" v-for="(video, index) in this.videos" :key="index">
-          <video
-            :src="require(`@/assets/curiosity/${video.source}`)"
-            muted
-            controls
-          />
+          <video muted controls alt="">
+            <source
+              :src="require(`@/assets/curiosity/${video.source}`)"
+              type="video/mp4"
+            />
+          </video>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -237,21 +240,13 @@ export default {
         { source: "gallery3.mp4", alt: ".." },
       ],
       categories: [],
-      colors: [
-        "#469374",
-        "#19abff",
-        "#9341b3",
-        "#e3427d",
-        "#c4331c",
-        "#e68653",
-        "#f0c808",
-      ],
+      colors: ["#2E604C", "#005180", "#9341b3", "#a52252", "#c4331c"],
     };
   },
   methods: {
     changeColor(index) {
-      for (let i = 0; i <= 6; i++) {
-        if (index % 7 == i) {
+      for (let i = 0; i <= 4; i++) {
+        if (index % 5 == i) {
           return this.colors[i];
         }
       }
@@ -269,14 +264,20 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+  background-color: #1f6600;
+  color: #fff;
+  border: 1px solid black;
+}
+
 /* hero section */
 .hero {
   height: 38vh;
 }
 
 .hero__content h1,
-.hero__content p {
-  color: #ffd60a;
+.hero__content h2 {
+  color: #1f6600;
 }
 
 /* keyword section */
@@ -284,18 +285,23 @@ export default {
   text-align: center;
 }
 
+.keyword menu {
+  list-style-type: none;
+}
+
 .keyword__title {
-  color: #ffd60a;
+  color: #1f6600;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
 }
 
 .keyword__button {
-  border-radius: 100%;
+  border-radius: 50%;
   border: 0.5px solid #0000008c;
   padding: 15px;
   margin: 10px;
+  color: #fff;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
@@ -379,7 +385,7 @@ export default {
 
 /* card section */
 .description__title {
-  color: #ffd60a;
+  color: #1f6600;
 }
 
 .card__collaboration-desc {
@@ -420,6 +426,7 @@ export default {
 
 .card-back {
   transform: rotateY(180deg);
+  color: #fff;
 }
 
 .card-back .card-body {

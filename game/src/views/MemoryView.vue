@@ -1,13 +1,23 @@
 <template>
   <div>
-    <h3 class="description__title big-text">Memory di Animal House!</h3>
-    <p class="description__text">
-      Il cucciolo di animale cerca la compagna! Aiuta le coppie di specie a
-      trovare il loro simile.<br />Gioca tutte le volte che vuoi e affina la tua
-      tecnica dell'intuizione!
-    </p>
-    <div v-if="this.pregame == 0">
-      <section class="game-board">
+    <!-- description section -->
+    <section class="paragraph">
+      <h1 class="description__title big-text">
+        <span lang="en" xml:lang="en">Memory</span> di
+        <span lang="en" xml:lang="en">Animal House</span>!
+      </h1>
+      <p class="description__text">
+        Il cucciolo di animale cerca la compagna! Aiuta le coppie di specie a
+        <em>trovare</em> il loro simile.<br />Gioca tutte le volte che vuoi e
+        affina la tua tecnica dell'<em>intuizione</em>!
+      </p>
+    </section>
+    <section class="text-center">
+      <button class="btn my-3" type="button" @click="this.restartGame()">
+        Inizia a giocare
+      </button>
+      <h2 class="status">{{ status }}</h2>
+      <main class="game-board mb-2">
         <CardComponent
           v-for="(card, index) in cardList"
           :key="`card-${index}`"
@@ -17,16 +27,8 @@
           :matched="card.matched"
           @select-card="flipCard"
         />
-      </section>
-      <p class="status">{{ status }}</p>
-      <button class="btn" type="button" @click="restartGame()">Rigioca</button>
-    </div>
-    <!-- <div v-else>
-      <div class="buttons">
-        <button type="button" class="btn restart"></button>
-        <button type="button" class="btn "></button>
-      </div>
-    </div> -->
+      </main>
+    </section>
   </div>
 </template>
 
@@ -38,17 +40,12 @@ import CardComponent from "../components/CardComponent.vue";
 export default {
   name: "MemoryView",
   components: { CardComponent },
-  data() {
-    return {
-      pregame: 0,
-    };
-  },
   setup() {
     const cardList = ref([]);
     const userSelection = ref([]);
     const status = computed(() => {
       if (remainigPairs.value === 0) {
-        return "Player wins!";
+        return "HAI VINTO!";
       } else {
         return `Coppie mancanti: ${remainigPairs.value}`;
       }
@@ -139,7 +136,7 @@ export default {
             setTimeout(() => {
               cardList.value[cardOne.position].visible = false;
               cardList.value[cardTwo.position].visible = false;
-            }, 700);
+            }, 800);
           }
 
           userSelection.value.length = 0;
@@ -160,6 +157,12 @@ export default {
 </script>
 
 <style scoped>
+.btn {
+  border: 1px solid black;
+  color: #fff;
+  background-color: #03045e;
+}
+
 .description__title {
   margin-top: 70px;
   color: #03045e;
@@ -167,7 +170,7 @@ export default {
 
 .status {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
   text-align: center;
 }
 

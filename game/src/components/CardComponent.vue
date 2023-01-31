@@ -1,5 +1,5 @@
 <template>
-  <div class="card" @click="selectCard">
+  <button class="card" @click="selectCard">
     <div v-if="visible" class="card-face is-front">
       <img
         :src="require(`@/assets/memory/${value}.png`)"
@@ -7,8 +7,10 @@
         style="width: 90%"
       />
     </div>
-    <div v-else class="card-face is-back"></div>
-  </div>
+    <div v-else class="card-face is-back">
+      <span hidden>clicca</span>
+    </div>
+  </button>
 </template>
 
 <script>
@@ -47,6 +49,7 @@ export default {
 <style>
 .card {
   position: relative;
+  border: none;
 }
 
 .card-face {
