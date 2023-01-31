@@ -184,7 +184,7 @@ export default {
         {
           type: "Chiama",
           description:
-            "Per una risposta <em>IMMEDIATA</em> chiama al numero di ufficio <address>3295817284</address>Dal Lunedì al Venerdì dalle <time datetime='9:00'>9:00</time> alle <time datetime='17:00'>17:00</time>.",
+            "Per una risposta <em>IMMEDIATA</em> chiama al numero di ufficio <address>+39 3295817284</address>Dal Lunedì al Venerdì dalle <time datetime='9:00'>9:00</time> alle <time datetime='17:00'>17:00</time>.",
           img: "icon1.png",
         },
         {
