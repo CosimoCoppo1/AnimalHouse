@@ -1,0 +1,136 @@
+<template>
+  <div class="card-container mx-auto mt-5">
+    <div class="card">
+      <section class="card-body">
+        <h3 class="card__title">Registrazione</h3>
+        <hr />
+        <form @submit="postData" method="post">
+          <div class="form-group mt-4">
+            <label for="formUsernameR" class="small">
+              <b>Nome utente</b>
+            </label>
+            <input
+              type="text"
+              id="formUsernameR"
+              placeholder="Mario Rossi"
+              class="form-control"
+              name="signup username"
+              v-model="signup.username"
+            />
+          </div>
+          <div class="form-group mt-4">
+            <label for="formEmailR" class="small">
+              <b>Indirizzo <span lang="en" xml:lang="en">email</span></b>
+            </label>
+            <input
+              type="email"
+              id="formEmailR"
+              placeholder="posta@esempio.com"
+              class="form-control"
+              name="signup email"
+              v-model="signup.email"
+            />
+          </div>
+          <div class="form-group mt-4">
+            <label for="formPasswordR" class="small">
+              <b><span lang="en" xml:lang="en">Password</span></b>
+            </label>
+            <input
+              type="password"
+              id="formPasswordR"
+              class="form-control"
+              placeholder="......"
+              name="signup password"
+              v-model="signup.password"
+            />
+          </div>
+          <div class="buttons">
+            <button type="submit" class="btn btn-success">
+              Effettua la registrazione!
+            </button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "SignupComponent",
+  data() {
+    return {
+      signup: {
+        username: null,
+        email: null,
+        password: null,
+      },
+    };
+  },
+  methods: {
+    postData(e) {
+      console.warn(this.signup);
+      axios
+        .post("http://localhost:8000/auth/user/register", this.signup)
+        .then((response) => {
+          console.warn(response);
+        });
+      e.preventDefault();
+    },
+  },
+};
+</script>
+
+<style scoped>
+.card-container {
+  width: 30rem;
+  perspective: 200rem;
+  position: relative;
+  height: 450px;
+}
+
+.card {
+  transition: all 0.9s;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 20px;
+}
+
+.card-body {
+  border-radius: 20px;
+}
+
+.card__title {
+  color: #9e0089;
+  text-align: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    width: 18rem;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
+}
+
+.buttons button {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: auto;
+  border: 1px solid #000;
+  background-color: #9e0089;
+}
+</style>

@@ -83,7 +83,15 @@ const routes = [
     name: "prova",
     component: () =>
       import(
-        /* webpackChunkName: "prova" */ "../components/SignInUpComponent.vue"
+        /* webpackChunkName: "prova" */ "../components/LoginComponent.vue"
+      ),
+  },
+  {
+    path: "/prova1",
+    name: "prova1",
+    component: () =>
+      import(
+        /* webpackChunkName: "prova1" */ "../components/SignupComponent.vue"
       ),
   },
   {
