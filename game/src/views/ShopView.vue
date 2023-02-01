@@ -1,151 +1,180 @@
 <template>
   <div>
     <!-- hero section -->
-    <div class="hero">
+    <section class="hero">
       <div class="hero__content">
-        <p class="intro-text">che fame da lupi!</p>
-        <h1 class="big-text">Negozio online</h1>
+        <h1 class="intro-text">che fame da lupi!</h1>
+        <h2 class="big-text">Negozio online</h2>
       </div>
-      <video autoplay muted loop class="hero__video">
+      <video autoplay muted loop class="hero__video" alt="">
         <source src="../assets/shop/bg__hero.mp4" type="video/mp4" />
       </video>
-    </div>
+    </section>
 
     <!-- page-intro section -->
-    <div class="grid page-intro my-5">
+    <section class="grid page-intro my-5">
       <div class="col">
         <p>
-          Benvenuti nella sezione <b>negozio</b> di Animal House! Amate i vostri
-          animali domestici... e dimostratelo dandogli solamente prodotti di
-          <b>prima qualità</b>, come quelli che trovate a questa pagina.<br />Il
-          vostro animale domestico merita il <b>meglio</b>.
+          Benvenuti nella sezione <b>negozio</b> di
+          <span lang="en" xml:lang="en">Animal House</span>! Amate i vostri
+          animali domestici... e <em>dimostratelo</em> dandogli solamente
+          prodotti di <b>prima qualità</b>, come quelli che trovate a
+          <em>questa pagina</em>.<br />Il vostro animale domestico merita il
+          <b><em>meglio</em></b
+          >.
         </p>
       </div>
-    </div>
+    </section>
 
     <!--descrition section -->
-    <div class="grid">
-      <div class="col">
-        <h3 class="description__title big-text">
-          Scopri i prodotti per cani, gatti e tanto altro!
-        </h3>
-        <p class="description__text">
-          <b>Affidatevi a chi ci mette il cuore</b>: ci impegnamo a fornirvi i
-          migliori prodotti per animali domestici. Ti offriamo un'esperienza di
-          acquisto eccellente poichè la soddisfzione dei nostri clienti è molto
-          importante per noi.<br />Abbiamo la combinazione perfetta tra i
-          migliori prodotti e la nostra semplice pratica di acquisto: passa
-          all'area
-          <a href="http://localhost:8000/frontoffice/e-commerce"
-            ><button type="button" class="btn btn-success">VIP</button></a
-          >
-          per effettuare istantaniamente gli ordini .<br />
-        </p>
-        <p class="mt-1 description__title">
-          Ci assicureremo che riceviate il vostro ordine con piena
-          soddisfazione!
-        </p>
-      </div>
-    </div>
-
-    <!-- carousel section -->
-    <div class="poster container" v-for="pet in this.pets" :key="pet">
-      <div class="poster__img">
-        <h2>ciao</h2>
-      </div>
-      <div class="poster__content">
-        <h3 class="poster__title">{{ pet.name }}</h3>
-        <p class="description__text">Vedi le sezioni dedicate:</p>
-        <div v-for="section in this.sections[pet._id]" :key="section">
-          {{ section.name }}
+    <main>
+      <section class="grid">
+        <div class="col">
+          <h3 class="description__title big-text">
+            Scopri i prodotti per cani, gatti e tanto altro!
+          </h3>
+          <p class="description__text">
+            <b><em>Affidatevi</em> a chi ci mette il cuore</b>: ci impegnamo a
+            fornirvi i <em>migliori prodotti</em> per animali domestici. Ti
+            offriamo un'esperienza di acquisto eccellente poichè la
+            <em>soddisfazione</em> dei nostri clienti è molto importante per
+            noi.<br />Abbiamo la <em>combinazione perfetta</em> tra i migliori
+            prodotti e la nostra semplice pratica di acquisto: passa all'area
+            <a
+              href="http://localhost:8000/frontoffice/e-commerce"
+              role="button"
+              class="btn btn-success"
+              lang="en"
+              xml:lang="en"
+            >
+              VIP</a
+            >
+            per effettuare istantaneamente gli ordini .<br />
+          </p>
+          <p class="mt-1 description__title">
+            Ci assicureremo che riceviate il vostro ordine con piena
+            soddisfazione!
+          </p>
         </div>
-        <a href="http://localhost:8000/frontoffice/e-commerce">
-          <button type="button" class="btn btn-success">Vai al negozio!</button>
-        </a>
-      </div>
-    </div>
+      </section>
 
-    <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        <button>{{ section.name }}</button>
-        <div
-          id="carouselExampleControls"
-          class="carousel slide carousel-dark"
-          data-interval="false"
-        >
-          <div
-            class="carousel-inner"
-            v-for="(product, index) in this.products[section._id]"
-            :key="index"
-          >
-            <div class="carousel-item" :class="index == 0 ? 'active' : ''">
-              <!-- inizio card -->
-              <div class="card">
-                <img
-                  src="../assets/about/team2.jpg"
-                  class="card-img-top"
-                  alt="..."
-                />
-                <div class="card-body">
-                  <h5 class="card-title">{{ product.title }}</h5>
-                  <p class="card-text">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+      <!-- carousel section -->
+      <article
+        class="container mt-5"
+        style="width: 70%"
+        v-for="pet in this.pets"
+        :key="pet"
+      >
+        <div class="row justify-content-between mb-5">
+          <div class="col-12 col-lg-6 text-center" style="height: 500px">
+            <div
+              :id="`carouselControls${pet._id}`"
+              class="carousel slide"
+              data-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div
+                  class="carousel-item"
+                  v-for="(product, index) in this.products[
+                    this.sections[pet._id][this.showSection[pet._id]]._id
+                  ]"
+                  :key="index"
+                  :class="index == this.showProduct[pet._id] ? 'active' : ''"
+                >
+                  <!-- inizio card -->
+                  <section class="card-container">
+                    <div class="card">
+                      <div class="card__image">
+                        <img :src="product.image" alt="" />
+                      </div>
+                      <div class="card-body">
+                        <h4 class="card-title">{{ product.title }}</h4>
+                        <h5 class="text-muted">{{ product.price }}€</h5>
+                        <p class="card-text" v-html="product.description"></p>
+                        <a
+                          :href="`http://localhost:8000/frontoffice/products/${product._id}`"
+                          role="button"
+                          class="btn btn-success"
+                          >Compra!</a
+                        >
+                      </div>
+                    </div>
+                  </section>
+                  <!-- fine card -->
                 </div>
               </div>
-              <!-- fine card -->
+              <button
+                class="carousel-control-prev"
+                role="button"
+                :href="`#carouselControls${pet._id}`"
+                data-slide="prev"
+                @click="this.goPrev(`${pet._id}`)"
+              >
+                <span
+                  class="carousel-control-prev-icon bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only"></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                role="button"
+                :href="`#carouselControls${pet._id}`"
+                data-slide="next"
+                @click="this.goNext(`${pet._id}`)"
+              >
+                <span
+                  class="carousel-control-next-icon bg-dark"
+                  aria-hidden="true"
+                ></span>
+                <span class="sr-only"></span>
+              </button>
             </div>
+            <!-- fine carousel -->
           </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleControls"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
+          <section class="col-12 col-lg-4 p-5">
+            <h4 class="fw-bold">Prodotti per {{ pet.name }}</h4>
+            <p>
+              Per accedere al carrello e
+              <em>acquistare</em>
+              passa alla sezione
+              <a
+                href="http://localhost:8000/frontoffice/e-commerce"
+                role="button"
+                class="btn btn-success fw-bold"
+                lang="en"
+                xml:lang="en"
+              >
+                VIP
+              </a>
+              di <span lang="en" xml:lang="en">Animal House</span> ora.
+            </p>
+            <p>
+              <label :for="`select-category${pet.name}`"
+                >Scegli la categoria prodotti dal menù a tendina e visualizza i
+                prodotti nel catalogo!</label
+              >
+            </p>
+            <div class="input-group mt-3">
+              <select
+                :id="`select-category${pet.name}`"
+                class="form-select fw-bold"
+                v-model="this.showSection[pet._id]"
+                @click="this.showProduct[pet._id] = 0"
+              >
+                <option
+                  v-for="(section, index) in this.sections[pet._id]"
+                  :key="index"
+                  :value="index"
+                >
+                  {{ section.name }}
+                </option>
+              </select>
+            </div>
+          </section>
         </div>
-      </div>
-    </div>
-
-    <!-- prova -->
-    <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div class="input-group">
-        <select class="form-select" v-model="this.showSection[pet._id]">
-          <option
-            v-for="(section, index) in this.sections[pet._id]"
-            :key="index"
-            :value="index"
-          >
-            {{ section.name }}
-          </option>
-        </select>
-      </div>
-      <p>value: {{ this.sections[pet._id][this.showSection[pet._id]].name }}</p>
-      <div
-        v-for="product in this.products[
-          this.sections[pet._id][this.showSection[pet._id]]._id
-        ]"
-        :key="product"
-      >
-        {{ product.title }}
-      </div>
-      <hr />
-    </div>
+      </article>
+    </main>
   </div>
 </template>
 
@@ -158,6 +187,7 @@ export default {
     return {
       pets: [],
       showSection: {},
+      showProduct: {},
       sections: {},
       products: {},
     };
@@ -168,8 +198,8 @@ export default {
       this.pets = response.data;
       for (let pet of this.pets) {
         this.showSection[pet._id] = 0;
+        this.showProduct[pet._id] = 0;
       }
-      console.log(this.showSection);
     },
     async getPetSections() {
       for (let pet of this.pets) {
@@ -190,9 +220,21 @@ export default {
         }
       }
     },
-    changeSection(petId, index) {
-      console.log("indice", index);
-      console.log("sezione", this.showSection[`${petId}`]);
+    maxSectionProduct(petId) {
+      return this.products[this.sections[petId][this.showSection[petId]]._id]
+        .length;
+    },
+    goPrev(petId) {
+      if (this.showProduct[petId] != 0) {
+        this.showProduct[petId]--;
+      }
+    },
+    goNext(petId) {
+      let maxProducts = this.maxSectionProduct(petId);
+      console.log(maxProducts);
+      if (this.showProduct[petId] < maxProducts - 1) {
+        this.showProduct[petId]++;
+      }
     },
   },
   created: async function () {
@@ -203,11 +245,12 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn {
   color: #fff;
   border: 1px solid black;
-  background-color: #5e5e5e;
+  background-color: #5e00b6;
+  font-size: 13px;
 }
 
 /* hero section */
@@ -216,80 +259,63 @@ export default {
 }
 
 .hero__content h1,
-.hero__content p {
-  color: #17df53;
+.hero__content h2 {
+  color: #5e00b6;
 }
 
 /* description section */
 .description__title,
 .link {
-  color: #17df53;
+  color: #5e00b6;
 }
 
 /* card section */
+.card-container {
+  height: 450px;
+  width: 80%;
+}
+
+.card-title {
+  color: #5e00b6;
+  font-style: bold;
+  font-size: 18px;
+}
+
 .card {
-  width: 20rem;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  margin: 20px;
-  background-color: #bdd5ea;
+  left: 12.5%;
+  border: 1.5px solid;
+  height: 440px;
 }
 
-/* poster section */
-.poster {
-  display: flex;
-  height: 70vh;
-  width: 100%;
-  align-items: center;
+.card-body {
+  border-radius: 20px;
 }
 
-.poster__title {
-  font-size: 38px;
-  font-weight: bold;
-  color: #17df53;
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 350px;
+  height: 40px;
+  text-overflow: ellipsis;
 }
 
-.poster__img {
-  width: 65%;
-  height: 100%;
+.card__image {
+  height: 250px;
 }
 
-.poster__img img {
-  object-fit: cover;
+.card__image img {
   width: 100%;
   height: 100%;
-}
-
-.poster__content {
-  width: 35%;
-  padding: 50px;
+  object-fit: contain;
 }
 
 @media (max-width: 768px) {
-  .poster {
-    flex-wrap: wrap;
-    height: auto;
+  .card-container {
+    width: 100%;
   }
 
-  .poster__img,
-  .poster__content {
-    width: 100%;
+  .card {
+    left: 0%;
   }
 }
 </style>
-
-<!-- <div v-for="pet in this.pets" :key="pet">
-      {{ pet.name }}
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        {{ section.name }}
-      </div>
-      <hr />
-    </div> -->
-
-<!-- <div v-for="pet in this.pets" :key="pet">
-      <div v-for="section in this.sections[pet._id]" :key="section">
-        <div v-for="product in this.products[section._id]" :key="product">
-          {{ product.title }}
-        </div>
-      </div>
-</div> -->

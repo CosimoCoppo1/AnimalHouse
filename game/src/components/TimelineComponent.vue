@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid" style="margin-top: 80px">
+  <section class="container-fluid" style="margin-top: 80px">
     <ul class="timeline" v-for="(step, index) in this.steps" :key="index">
       <li
         class="timeline__list"
@@ -10,31 +10,36 @@
             class="rounded-circle"
             style="width: 100%; height: 100%"
             :src="require(`@/assets/about/${step.img}`)"
-            :alt="step.alt"
+            alt=""
           />
         </div>
         <div class="timeline__panel">
-          <div class="timeline__content">
-            <h4 class="date">{{ step.year }}</h4>
-            <h4 class="subheading">{{ step.intro }}</h4>
-          </div>
+          <hgroup>
+            <div class="timeline__content">
+              <h5 class="date">{{ step.year }}</h5>
+              <h5 class="subheading">{{ step.intro }}</h5>
+            </div>
+          </hgroup>
           <div class="timeline__body">
-            <p class="text-muted">{{ step.description }}</p>
+            <p class="text-muted" v-html="step.description"></p>
           </div>
         </div>
       </li>
     </ul>
     <div class="text-center">
-      <a href="http://localhost:8000/frontoffice/">
-        <button class="btn btn-danger" type="button">
-          Unisciti alla squadra!
-        </button>
+      <a
+        href="http://localhost:8000/frontoffice/"
+        class="btn btn-danger"
+        role="button"
+      >
+        Unisciti alla squadra!
       </a>
-      <p class="mt-2 comment">
-        Diventa <b>membro</b> della comunità Animal House!
-      </p>
+      <h4 class="mt-2 comment">
+        Diventa <b>membro</b> della comunità
+        <span lang="en" xml:lang="en">Animal House</span>!
+      </h4>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -45,27 +50,24 @@ export default {
       steps: [
         {
           img: "story1.jpg",
-          alt: "..",
           year: "2020",
           intro: "Una birra tra amici",
           description:
-            "Quando ci vediamo per una birra? L'appuntamento veniva sempre rimandato, anche per le innumerevoli visite dal veterinaro e al pet store. Ci siamo chiesti: perchè non riunire in una unica struttura tutto ciò che interessa il benessere dei nostri amici animali?",
+            "Quando ci vediamo per una birra? L'appuntamento veniva sempre rimandato, anche per le innumerevoli visite dal veterinaro e al <span lang='en' xml:lang='en'>pet store</span>. Ci siamo chiesti: perchè non <em>riunire</em> in una unica struttura tutto ciò che interessa il <em>benessere</em> dei nostri amici animali?",
         },
         {
           img: "story2.jpg",
-          alt: "..",
           year: "2022",
           intro: "Il progetto",
           description:
-            "L'idea imprenditoriale iniziale, diventata poi la nostra missione, aveva qualcosa di rivoluzionario: fornire servizi e prodotti di alta qualità che permettessero d'intensificare il legame di fiducia e amore tra pet parent e pet.",
+            "L'idea imprenditoriale iniziale, diventata poi la <em>nostra missione</em>, aveva qualcosa di rivoluzionario: fornire servizi e prodotti di alta qualità che permettessero d'intensificare il <em>legame</em> di fiducia e amore tra <span lang='en' xml:lang='en'>pet parent</span> e <span lang='en' xml:lang='en'>pet</span>.",
         },
         {
           img: "story3.jpg",
-          alt: "..",
           year: "2023",
           intro: "Il sogno che si avvera",
           description:
-            "Diffondiamo la passione e l'amore per la cura degli animali, stando dalla parte di chi ama i propri pet. Contiamo diverse sedi in Italia e siamo incoraggiati a crescere ancora, diffondendo consapevolezza e curiosità a tutte le generazioni.",
+            "<em>Diffondiamo</em> la passione e l'amore per la cura degli animali, stando dalla parte di chi ama i propri <span lang='en' xml:lang='en'>pet</span>. Contiamo diverse sedi in Italia e siamo incoraggiati a crescere ancora, diffondendo consapevolezza e curiosità a tutte le generazioni.",
         },
       ],
     };
@@ -157,13 +159,13 @@ export default {
   margin-bottom: 0;
 }
 
-.timeline__content h4 {
+.timeline__content h5 {
   margin-top: 0;
   font-size: 22px;
 }
 
 .date {
-  color: #f84444;
+  color: #c1121f;
   font-weight: italic;
 }
 

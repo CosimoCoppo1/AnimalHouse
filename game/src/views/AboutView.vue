@@ -1,54 +1,64 @@
 <template>
   <div>
     <!-- hero section -->
-    <div class="hero">
+    <section class="hero">
       <div class="hero__content">
-        <p class="intro-text">parlano di noi</p>
-        <h1 class="big-text">La storia di Animal House</h1>
+        <h1 class="intro-text">parlano di noi</h1>
+        <h2 class="big-text">
+          La storia di <span lang="en" xml:lang="en">Animal House</span>
+        </h2>
       </div>
-      <video autoplay muted loop class="hero__video">
+      <video autoplay muted loop class="hero__video" alt="">
         <source src="../assets/about/bg__hero.mp4" type="video/mp4" />
       </video>
-    </div>
+    </section>
 
     <!-- page-intro section -->
-    <div class="grid page-intro my-5">
+    <section class="grid page-intro my-5">
       <div class="col">
         <p>
           Questa è una storia di passione e innovazione.<br />
-          <b>Animal House</b> è una realtà piccola ma dinamica, specializzata
-          nel campo del Pet care. Siamo guidati da due elementi: passione per il
-          nostro lavoro e la volontà di mettere i clienti al centro, animali e
-          padroni. Ci impegniamo, giorno dopo giorno, per offrirti tutto questo
-          (e molto altro) a portata di click.<br />Se stai cercando qualcosa di
-          nuovo, sei nel <b>posto giusto</b>.
+          <b lang="en" xml:lang="en">Animal House</b> è una realtà piccola ma
+          dinamica, specializzata nel campo del
+          <span lang="en" xml:lang="en">Pet care</span>. Siamo guidati da due
+          elementi: <em>passione</em> per il nostro lavoro e la volontà di
+          mettere i <em>clienti al centro</em>, animali e padroni. Ci
+          impegniamo, giorno dopo giorno, per offrirti tutto questo (e molto
+          altro) a portata di
+          <span lang="en" xml:lang="en">click</span>.<br />Se stai cercando
+          qualcosa di nuovo, sei nel <b><em>posto giusto</em></b
+          >.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- poster section -->
-    <div class="poster">
-      <div class="poster__content">
-        <h3>La nostra missione</h3>
-        <p>
+    <section class="poster">
+      <main class="poster__content">
+        <ol>
+          <em>La nostra missione</em>
+        </ol>
+        <li>
           Selezionare prodotti e servizi <b>eccelsi</b> che garantiscano
           nutrizione, igiene, benessere e amore al vostro animale.
-        </p>
-        <h3 class="mt-5">La nostra visione</h3>
-        <p>
+        </li>
+        <ol class="mt-5">
+          <em>La nostra visione</em>
+        </ol>
+        <li>
           Fare delle scelte che, se solo potesse,
           <b>sarebbe il tuo amico animale a fare</b>. Quelle, e non altre.
-        </p>
-      </div>
+        </li>
+      </main>
       <div class="poster__img">
-        <video autoplay muted loop>
+        <video autoplay muted loop alt="">
           <source src="../assets/about/video__poster.mp4" type="video/mp4" />
         </video>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid">
+    <section class="grid paragraph">
       <div class="col">
         <h3 class="description__title big-text">
           Come soddisfare i bisogni dei nostri clienti?
@@ -57,15 +67,16 @@
           Qui potrai trovare i <b>migliori</b> prodotti per i tuoi animali, per
           tutti i gusti e occasioni. Lavoriamo a stretto contatto con i
           fornitori per garantire la migliore qualità presente sul mercato e
-          offrirti la crème de la crème.<br />Crediamo nell'importanza della
-          qualità e non solo quando di parla di prodotti, ma anche quando si
-          parla di assistenza.
+          offrirti la
+          <span lang="fr" xml:lang="fr">crème de la crème</span>.<br />Crediamo
+          nell'importanza della <em>qualità</em> e non solo quando di parla di
+          prodotti, ma anche quando si parla di assistenza.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- image-gallery section -->
-    <div class="container-fluid">
+    <section class="container-fluid">
       <div class="row">
         <div
           class="col-md-6"
@@ -77,9 +88,10 @@
             <img
               :src="require(`@/assets/about/${client.img}`)"
               class="image"
-              alt=".."
+              alt=""
             />
             <router-link
+              role="button"
               type="button"
               class="btn"
               :to="{ path: `${client.link}` }"
@@ -88,104 +100,126 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid mb-5">
+    <section class="grid mb-5 paragraph">
       <div class="col">
         <p class="description__text">
           Vuoi accedere al negozio per <b>acquistare</b> tutti i nostri prodotti
-          e prenotare una <b>consulenza immediata</b> per il tuo animale?<br />Passa
-          all'area
-          <a href="http://localhost:8000/frontoffice/services">
-            <button class="btn btn-danger" type="button">VIP</button>
+          e prenotare una <b>consulenza <em>immediata</em></b> per il tuo
+          animale?<br />Passa all'area
+          <a
+            href="http://localhost:8000/frontoffice/services"
+            class="btn btn-danger"
+            role="button"
+            lang="en"
+            xml:lang="en"
+          >
+            VIP
           </a>
-          di Animal House!
+          di <span lang="en" xml:lang="en">Animal House</span>!
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- bubble section -->
-    <div class="container-fluid">
-      <h3 class="description__title big-text">Come nasce Animal House?</h3>
+    <section class="container-fluid">
+      <h3 class="description__title big-text">
+        Come nasce <span lang="en" xml:lang="en">Animal House</span>?
+      </h3>
       <div class="row">
         <div
           class="col-lg-4"
           v-for="(member, index) in this.members"
           :key="index"
         >
-          <div class="bubble-member">
+          <menu class="bubble-member">
             <img
               class="mx-auto rounded-circle"
               :src="require(`@/assets/about/${member.img}`)"
-              alt="..."
+              alt=""
             />
-            <h4>{{ member.name }}</h4>
-            <p class="text-muted">{{ member.animal }}</p>
-          </div>
+            <li>
+              <h4>{{ member.name }}</h4>
+            </li>
+            <li>
+              <p class="text-muted">{{ member.animal }}</p>
+            </li>
+          </menu>
         </div>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid py-0">
+    <section class="grid py-0 paragraph">
       <div class="col">
         <p class="description__text mb-5 text-center">
-          Da tre amici ad una <b>comunità</b> in continua crescita!<br />
+          Da tre amici ad una <b><em>comunità</em></b> in continua crescita!<br />
           <i>(alla fine l'abbiamo presa la birra...)</i>
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- timeline section -->
     <TimelineComponent />
 
     <!-- description section -->
-    <div class="grid mt-5">
+    <section class="grid mt-5 paragraph">
       <div class="col">
-        <h3 class="description__title big-text">Le persone di Animal House</h3>
+        <h3 class="description__title big-text">
+          Le persone di <span lang="en" xml:lang="en">Animal House</span>
+        </h3>
         <p class="description__text">
-          Il nostro staff è composto da oltre 100 persone che lavorano come
-          <b>Pet care specialist</b> e tutti siamo determinati nel diffondere la
-          passione e la cura degli animali a coloro a cui veniamo in
-          contatto.<br />
-          Facendo di questa <b>dedizione</b> un lavoro, avanziamo sostenendo
-          questi valori nel team, convinti che il successo dell'azienda scorra
-          attraverso la valorizzazione e la realizzazione del contributo di
-          ciascuno.
+          Il nostro <span lang="en" xml:lang="en">staff</span> è composto da
+          oltre 100 persone che lavorano come
+          <b lang="en" xml:lang="en">Pet care specialist</b> e tutti siamo
+          determinati nel diffondere la <em>passione</em> e la
+          <em>cura</em> degli animali a coloro a cui veniamo in contatto.<br />
+          Facendo di questa <b><em>dedizione</em></b> un lavoro, avanziamo
+          sostenendo questi valori nel
+          <span lang="en" xml:lang="en">team</span>, convinti che il successo
+          dell'azienda scorra attraverso la valorizzazione e la realizzazione
+          del <em>contributo di ciascuno</em>.
         </p>
       </div>
-    </div>
+    </section>
 
     <!-- keywords section -->
-    <div class="container-fluid">
+    <section class="container-fluid">
       <div class="row mt-3 keyword">
-        <div
+        <menu
           class="col-md-4"
           v-for="(keyword, index) in this.keywords"
           :key="index"
         >
-          <img :src="require(`@/assets/about/${keyword.img}`)" alt=".." />
-          <h4>{{ keyword.title }}</h4>
-        </div>
+          <img :src="require(`@/assets/about/${keyword.img}`)" alt="" />
+          <li>
+            <h4>{{ keyword.title }}</h4>
+          </li>
+        </menu>
       </div>
-    </div>
+    </section>
 
     <!-- description section -->
-    <div class="grid mt-5">
+    <section class="grid mt-5 paragraph">
       <div class="col">
         <h3 class="description__title big-text">Resta in contatto con noi!</h3>
         <p class="description__text">
           A volte sappiamo meglio di te quello di cui hai <b>bisogno</b> e di
-          cosa necessita il tuo amico animale.<br />Per avere informazioni sui
-          prodotti in negozio o indicazioni sui servizi contattaci passando alla
-          sezione dedicata.<br />
-          <router-link :to="{ path: '/contatti' }">
-            <button type="button" class="btn btn-danger mt-3">chiamaci</button>
+          <em>cosa necessita</em> il tuo amico animale.<br />Per avere
+          informazioni sui prodotti in negozio o indicazioni sui servizi
+          contattaci passando alla sezione dedicata.<br />
+          <router-link
+            :to="{ path: '/contatti' }"
+            role="button"
+            class="btn btn-danger mt-3"
+          >
+            chiamaci
           </router-link>
         </p>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
@@ -234,10 +268,10 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .btn {
-  background-color: #f84444;
-  color: #fff;
+  background-color: #ff6868;
+  color: #000;
   border: 1px solid black;
 }
 
@@ -247,7 +281,7 @@ export default {
 }
 
 .hero__content h1,
-.hero__content p {
+.hero__content h2 {
   color: #f84444;
 }
 
@@ -266,12 +300,13 @@ export default {
 }
 
 .poster__content {
+  list-style-type: none;
   width: 45%;
   padding: 20px;
   font-size: 20px;
 }
 
-.poster__content h3 {
+.poster__content ol {
   color: #f84444;
   font-size: 44px;
   font-weight: bolder;
@@ -282,8 +317,8 @@ export default {
     height: 100%;
   }
 
-  .poster__content h3 {
-    font-size: 38px;
+  .poster__content ol {
+    font-size: 33px;
   }
 
   .poster__img,
@@ -317,17 +352,25 @@ export default {
   margin-top: 0;
 }
 
+.bubble-member li {
+  list-style-type: none;
+}
+
 /* keywords section */
 .keyword {
   text-align: center;
   padding: 0;
 }
 
+.keyword li {
+  list-style-type: none;
+}
+
 .keyword h4 {
   font-size: 16px;
   text-transform: uppercase;
   font-weight: bold;
-  color: #f84444;
+  color: #b1101b;
   margin-top: 5px;
 }
 </style>

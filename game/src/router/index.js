@@ -47,18 +47,6 @@ const routes = [
       import(/* webpackChunkName: "contatti" */ "../views/ContactsView.vue"),
   },
   {
-    path: "/giochi/feed",
-    name: "feed",
-    component: () =>
-      import(/* webpackChunkName: "feed" */ "../views/FeedView.vue"),
-  },
-  {
-    path: "/giochi/puzzle",
-    name: "puzzle",
-    component: () =>
-      import(/* webpackChunkName: "puzzle" */ "../views/PuzzleView.vue"),
-  },
-  {
     path: "/giochi/morra-cinese",
     name: "Morra cinese",
     component: () =>
@@ -73,10 +61,10 @@ const routes = [
       import(/* webpackChunkName: "scarabeo" */ "../views/ScrabbleView.vue"),
   },
   {
-    path: "/giochi/peek",
-    name: "peek",
+    path: "/giochi/memory",
+    name: "Memory",
     component: () =>
-      import(/* webpackChunkName: "lab" */ "../views/PeekView.vue"),
+      import(/* webpackChunkName: "memory" */ "../views/MemoryView.vue"),
   },
   {
     path: "/giochi/quiz",
@@ -85,28 +73,37 @@ const routes = [
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
   },
   {
-    path: "/accedi",
-    name: "Accedi",
-    component: () =>
-      import(/* webpackChunkName: "accedi" */ "../views/LoginView.vue"),
-  },
-  {
-    path: "/signup",
-    name: "signup",
-    component: () =>
-      import(/* webpackChunkName: "signup" */ "../views/SignupView.vue"),
-  },
-  {
-    path: "/giochi/informazioni-curiose",
+    path: "/informazioni-curiose",
     name: "Informazioni curiose",
     component: () =>
       import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),
+  },
+  {
+    path: "/prova",
+    name: "prova",
+    component: () =>
+      import(
+        /* webpackChunkName: "prova" */ "../components/SignInUpComponent.vue"
+      ),
+  },
+  {
+    path: "/admin",
+    name: "Admin",
+    component: () =>
+      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
   },
 ];
 
 const router = createRouter({
   history: createWebHistory("/game/"),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { left: 0, top: 0 };
+    }
+  },
 });
 
 export default router;
