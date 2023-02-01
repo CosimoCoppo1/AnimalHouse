@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Form, Button, Container, Row, Col} from "react-bootstrap";
 import "react-datepicker/dist/react-datepicker.css";
 
 const Filters = ({tofilter}) => {
@@ -58,7 +58,6 @@ const Filters = ({tofilter}) => {
 				<Form.Label>Select Date</Form.Label>
 				<Form.Control 
 					type="date" 
-					aria-label="selectDate"
 					value={selectDate} 
 					onChange={e => {
                        setSelectDate(e.target.value);

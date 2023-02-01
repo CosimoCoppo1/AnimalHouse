@@ -26,11 +26,11 @@ const LocationServiceScreen = () => {
     return (
         <div className='homescreen'>
         
-            <p className="text-center fs-1">Servizi disponibili nella sede selezionata</p>
+            <h2 className="text-center">Servizi disponibili nella sede selezionata</h2>
 
             <div className="mx-auto" style={{width: '50vw', height: '60vh' }}>  
                 { services.length === 0 ? (
-                    <h4>Siamo spiacenti ma non sono al momento disponibili servizi prenotabili in questa sede</h4>
+                    <h5>Siamo spiacenti ma non sono al momento disponibili servizi prenotabili in questa sede</h5>
                   ) :(
                     services.map((s) => {
                         

@@ -87,11 +87,11 @@ const Login = () => {
         </form>
       </div>
     :
-      <div className="homescreen">        
+      <div className="homescreen"> 
 
         <button type="button" class="btn btn-secondary" style={{width: "100px"}}onClick={() => logoutHandler()}>Logout</button>
-
-        <br />
+  
+        <hr/>
 
         <ProfilePage />
 

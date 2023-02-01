@@ -13,7 +13,7 @@ const Navbar = ({click}) => {
 
   return (
     <div>
-        <nav className="navbar">
+        <nav className="navbar fixed-top" >
             <div className="navbar_logo">
                 <img src={Company} width="60" height="45" className="d-inline-block align-top" alt="" />
             </div>            

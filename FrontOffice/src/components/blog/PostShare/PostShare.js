@@ -66,12 +66,12 @@ const PostShare = ({setShared}) => {
     <div className="PostShare">
       <img
         src={defaultProfile }
-        alt="Profile"
+        alt=""
       />
       <div>
         <input
           type="text"
-          placeholder="what's about animals?"
+          placeholder="Animali, curiosità, offerte.."
           required
           ref={desc}
         />
@@ -100,7 +100,7 @@ const PostShare = ({setShared}) => {
         {image && (
           <div className="previewImage">
             <UilTimes onClick={() => setImage(null)} />
-            <img src={URL.createObjectURL(image)} alt="preview" />
+            <img src={URL.createObjectURL(image)} alt="immagine condivisa" />
           </div>
         )}
       </div>

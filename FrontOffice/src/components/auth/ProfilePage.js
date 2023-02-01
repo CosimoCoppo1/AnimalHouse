@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import MyReservations from '../services/MyReservations';
 import MyAnimals from '../blog/MyAnimals';
 
-
+ 
 const ProfilePage = () => {
 
 
@@ -12,22 +12,22 @@ const ProfilePage = () => {
     <Row style={{marginLeft:"5rem", marginTop:"2rem", marginRight:"5rem"}} className="text-center rounded bg-secondary bg-opacity-10 shadow p-2">
                     <Col>
                         <p className=" fs-5">In questa sezione puoi vedere le prenotazioni che hai effettuato dei nostri <a href="/frontoffice/services">servizi</a> e 
-                                            le informazioni riguardanti i tuoi animali salvate sulla nostra app <a target="_blank" href="/game">GAME</a>.  </p>
+                                            le informazioni riguardanti i tuoi animali salvate sull'app <a target="_blank" href="https://localhost:8000/game">GAME</a>.  </p>
                     </Col>
     </Row>
 
-    <hr />
+    <br />
 
     <Row>
         <Col>
             <Row>
-                <h4 className="text-center">MY RESERVATIONS</h4>
+                <h3 className="text-center">LE MIE PRENOTAZIONI</h3>
                 <MyReservations />
             </Row>
         </Col>
         <Col>
                 
-                <h4 className="text-center">MY ANIMALS</h4>
+                <h3 className="text-center">I MIEI ANIMALI</h3>
                 <MyAnimals />          
         </Col>
     </Row>    

@@ -21,14 +21,14 @@ const SectionScreen = ({radioPetValue, keyProduct}) => {
       setProductSec(products.filter(p => (p.pet.name === localStorage.petSection )))  
     }, [radioPetValue, loading]);
 
-    useEffect(() => { 
+    useEffect(() => {  
       if(keyProduct != null){
         setProductSec(products.filter(p => (p.pet.name === localStorage.petSection ) && (p.section.name === keyProduct ) ))
       }    
     }, [keyProduct]);
     
     return(
-        <div className="homescreen__products">
+        <div className="d-flex justify-content-start flex-wrap" >
           { error ? (
             <h2>{error}</h2>
           ) : (
