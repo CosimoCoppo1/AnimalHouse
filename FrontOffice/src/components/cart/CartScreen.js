@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import Cart from './Cart'
 import { addToCart, removeFromCart, buyFromCart} from "../../redux/actions/cartActions";
-import swal from 'sweetalert';
 
 const CartScreen = () => {
   const dispatch = useDispatch();
@@ -30,18 +29,7 @@ const CartScreen = () => {
   };
 
   const checkoutHandler = () => {
-    dispatch(buyFromCart()) 
-    let result = localStorage.getItem("cartResult")
-    let msg = localStorage.getItem("cartMsg")
-    if(result === 0){
-      swal({title: msg, icon: "success"})
-    }else{
-      swal({title: msg, icon: "warning"})
-    } 
-
-    localStorage.removeItem("cartResult")
-    localStorage.removeItem("cartMsg")
-       
+    dispatch(buyFromCart())        
   };
 
 
@@ -49,7 +37,7 @@ const CartScreen = () => {
     <>
         <div className="cartscreen">
             <div className="cartscreen__left">
-                <h2>Shopping Cart</h2>
+                <h1>Carrello</h1>
                 {cartItems.length === 0 ? (                                    
                     <div>
                       Il tuo carrello è vuoto <Link to="/e-commerce">Vai indietro</Link>

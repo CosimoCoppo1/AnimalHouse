@@ -13,7 +13,7 @@ const ECommerce = () => {
     const [keyProduct, setKeyProduct] = useState(null);
     const [radioPetValue, setRadioPetValue] = useState(null);
 
-    useEffect(() => {
+    useEffect(() => { 
       if(!localStorage.petSection){
         localStorage.setItem("petSection", "Cani")
         setRadioPetValue("Cani")
@@ -23,6 +23,8 @@ const ECommerce = () => {
 
     return ( 
       <div className="homescreen">
+
+        <h1 className="text-center">E-commerce</h1>
 
         <Row md={2}>
           <Container> 
@@ -34,11 +36,11 @@ const ECommerce = () => {
         <Container fluid>
           <Row>
 
-            <Col md={2} style={{ paddingBottom: "100%"}}>
+            <Col md={2} >
               <ProductSection keyProduct={keyProduct} setKeyProduct={setKeyProduct} />               					
             </Col>
 
-            <Col >	
+            <Col>	
                 <SectionScreen radioPetValue={radioPetValue} keyProduct={keyProduct}/>		              		
             </Col>
           </Row>

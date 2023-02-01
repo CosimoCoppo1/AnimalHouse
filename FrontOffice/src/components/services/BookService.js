@@ -39,14 +39,14 @@ const BookService = ({servizio, date, orario}) => {
 
 
     return (
-        <Card className="text-center mx-auto" style={{maxWidth: '50vw'}}>
+        <Card className="bookable__screen" style={{maxWidth: '50vw'}}> 
             <Card.Header>{servizio.service.name}</Card.Header>
             <Card.Body>
             <Card.Title>Animale</Card.Title>
             <Card.Text>
                 {servizio.pet.name} 
             </Card.Text>
-            <Card.Title>Taglia</Card.Title>
+            <Card.Title>Taglia</Card.Title> 
             <Card.Text>
                 {servizio.pet_size}
             </Card.Text>

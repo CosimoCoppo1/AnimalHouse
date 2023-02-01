@@ -1,6 +1,5 @@
 import React from 'react'
-import { useState } from "react";
-import { Container, Row, Col, ButtonGroup, ToggleButton } from "react-bootstrap";
+import { Container, Row, ButtonGroup, ToggleButton } from "react-bootstrap";
 
 const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
     const radios = [
@@ -13,15 +12,14 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
     ];
 
   function selectSection(animale){
-    localStorage.setItem("petSection", animale)
+    localStorage.setItem("petSection", animale) 
   } 
 
   return (
     <Container>
       <Row>
-        <div>
-          <span style={{ fontWeight: 'bold' }}>{localStorage.petSection}</span>
-        </div>
+      <fieldset>
+          <legend hidden>Prodotti per i seguenti animali:</legend>
           <ButtonGroup>
             {radios.map((radio, idx) => (
               <ToggleButton
@@ -38,6 +36,7 @@ const SelectSection = ({ radioPetValue, setRadioPetValue}) => {
               </ToggleButton>
             ))}
           </ButtonGroup>
+        </fieldset>
       </Row>
       <Row>
         <div>

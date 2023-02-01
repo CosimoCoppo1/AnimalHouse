@@ -1,16 +1,16 @@
 import Carousel from 'react-bootstrap/Carousel';
 
-const ServiceCarousel = ({services}) => {
+const ServiceCarousel = ({services}) => { 
   return (
     <Carousel fade>
         {
-            services.map((s) => {
+            services.map((s) => { 
                 return(
                     <Carousel.Item>
                     <img
-                    className="d-block w-100"
+                    className="carousel__service"
                     src={s.image}
-                    alt="servizi animali"
+                    alt=""
                     />
                     <Carousel.Caption>
                       <h4>{s.name}</h4>

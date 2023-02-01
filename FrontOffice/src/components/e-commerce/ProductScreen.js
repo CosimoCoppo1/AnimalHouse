@@ -34,14 +34,14 @@ const ProductScreen = () => {
             <h2>{error}</h2>
         ) : (
             <>
-                <div className="productscreen__left">
+                <div className="productscreen__left"> 
                     <div className="left__image">
                         <img src={product.image} alt={product.title} />
                     </div>
                     <div className="left__info">
                         <p className="left__name">{product.title}</p>
                         <p>Prezzo: ${product.price}</p>
-                        <p>Descrizione: {product.description}</p>
+                        <p >Descrizione: <p dangerouslySetInnerHTML={{__html: product.description}}/></p>
                     </div>
                 </div>
                 <div className="productscreen__right">

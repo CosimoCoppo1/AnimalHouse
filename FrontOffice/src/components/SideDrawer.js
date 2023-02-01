@@ -41,8 +41,9 @@ const SideDrawer = ({show, click}) => {
                     <Link className="navbar-brand" to={'/community'}> Community </Link>
                 </li>
           <li className="nav-item">
-                    <Link className="navbar-brand" to={'/auth'}>
+                    <Link className="navbar-brand d-flex" to={'/auth'}>
                         <i className="fa-sharp fa-solid fa-user"></i>
+                        <span> {localStorage.userName ?? "Accedi" }</span>
                     </Link>
                 </li>       
         </ul>

@@ -76,8 +76,8 @@ const ServiceScreen = () => {
       
 					<Col>
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <h2 className="text-center"> I nostri servizi </h2>
-              <div style={{width: '50vw', height: '60vh' }}>
+              <h1 className="text-center"> Servizi </h1>
+              <div style={{width: '50vw'}}>
                 {services === null
                   ? "Fetching services...."
                   :  <ServiceCarousel services={services}  />                   
@@ -85,6 +85,7 @@ const ServiceScreen = () => {
                 }
               </div>
             </Row> 
+            <br/>
             
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
               <h2 className="text-center"> Le nostre sedi </h2>
@@ -99,28 +100,30 @@ const ServiceScreen = () => {
                 ) : searchedServices.length === 0 ? (
                   <h2>Nessun servizio disponibile trovato</h2>
                 ) : (
-                  <div>
-                    <h2 className="text-center">Servizi disponibili trovati:</h2>
-                    {
-                      searchedServices.map((servizio) => {
+                  <>
+                    <h3 className="text-center">Servizi disponibili trovati:</h3>
+                    <div className="bookable__screen">
+                      {
+                        searchedServices.map((servizio) => {
 
-                        let time = servizio.day;
-                        time = time.split("T");
-                        let date = time[0];
-                        let orario = time[1].split(".")[0];
-        
-                        return <BookService servizio={servizio} date={date} orario={orario}/>
-                      })
-                    }
+                          let time = servizio.day;
+                          time = time.split("T");
+                          let date = time[0];
+                          let orario = time[1].split(".")[0];
+          
+                          return <BookService servizio={servizio} date={date} orario={orario}/>
+                        })
+                      }
+                    </div>
                     <br/>
-                  </div>         
+                  </>         
                         
                 )
               }            
             </Row>
             <Row style={{ justifyContent: 'center', alignItems: 'center', marginBottom: '1rem' }}>
-              <h2 className="text-center"> Tutti i servizi prenotabili </h2>
-              <div >
+              <h3 className="text-center"> Tutti i servizi prenotabili </h3>
+              <div className="bookable__screen text-center">
                 { 
                   bookableServices.length === 0 ? (
                     <h4>Nessun servizio prenotabile disponibile</h4>

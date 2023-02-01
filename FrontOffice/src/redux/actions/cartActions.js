@@ -1,6 +1,7 @@
 import * as actionTypes from "../constants/cartConstants";
 import axios from "axios";
 import apiUrl from '../../config'
+import swal from 'sweetalert';
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`http://${apiUrl}/products/front/${id}`);
@@ -36,6 +37,20 @@ export const buyFromCart = () => async (dispatch, getState) => {
   
   localStorage.setItem("cartMsg", data.msg)
   localStorage.setItem("cartResult", data.result)
+
+  let result = localStorage.getItem("cartResult")
+  let msg = localStorage.getItem("cartMsg")
+
+
+  if(result == 0){
+    swal({title: msg, icon: "success"})
+  }else{
+    console.log(result)
+    swal({title: msg, icon: "warning"})
+  }
+
+  localStorage.removeItem("cartResult")
+  localStorage.removeItem("cartMsg")
 
   dispatch({
     type: actionTypes.BUY_THE_CART,

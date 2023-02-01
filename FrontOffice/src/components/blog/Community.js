@@ -13,7 +13,7 @@ const Community = () => {
         <div className='homescreen'>  
             <Container>
                 <Row>
-                    <p className="text-center fs-1">Our community</p>
+                    <h1 className="text-center">Community</h1>
                 </Row>
                 <Row style={{marginLeft:"5rem", marginTop:"2rem", marginRight:"5rem"}} className="text-center rounded bg-secondary bg-opacity-10 shadow p-2">
                     <Col>
@@ -29,11 +29,11 @@ const Community = () => {
                 <br />
                 <Row>
                     <Col>
-                        <p className="text-center  fs-1">BLOG POSTS</p>   
+                        <h3 className="text-center">BLOG POSTS</h3>   
                         <PostSide /> 
                     </Col>
                     <Col>    
-                        <p className="text-center  fs-1">LEADERBOARD QUIZ</p>   
+                        <h3 className="text-center">LEADERBOARD QUIZ</h3>   
                         <Leaderboard />                     
                     </Col>
                 </Row>  

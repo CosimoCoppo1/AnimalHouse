@@ -31,14 +31,15 @@ const ProductSection = ({keyProduct, setKeyProduct}) => {
       activeKey={keyProduct}
       onSelect={(k) => setKeyProduct(k)}
       className="mb-3"
+      fill
+      role="tablist"
     >
       {
         sections.map((section, id) => (
-          <Tab eventKey={section.name} title={section.name}></Tab>
+          <Tab eventKey={section.name} title={section.name} ></Tab>
         ))
       }
-    </Tabs>
-    
+    </Tabs>    
   );
 
 }

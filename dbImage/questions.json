@@ -9,7 +9,7 @@
 	},
 	{
 	  "category": "Animali australiani",
-	  "question": "Perch&eacute; la &quot;lucertola dalla lingua blu&quot; ha la lingua di colore blu?",
+	  "question": "Perché la \"lucertola dalla lingua blu\" ha la lingua di colore blu?",
 	  "answers": ["Per spaventare i suoi nemici", "Per colorare i sassi", "Per attirare le prede che finiscono in questo modo direttamente nella sua bocca"],
 	  "correctAnswer": 0,
 	  
@@ -17,7 +17,7 @@
 	},
 	{
 	  "category": "Animali australiani",
-	  "question": "Quale di questi serpenti australiani non &egrave; velenoso?",
+	  "question": "Quale di questi serpenti australiani non è velenoso?",
 	  "answers": ["Serpente bruno reale (King Brown Snake)", "Taipan", "Keelback"],
 	  "correctAnswer": 2, 
 	  
@@ -50,15 +50,15 @@
 	{
 	  "category": "Animali australiani",
 	  "question": "Come nascono i cuccioli di echidna dal becco corto?",
-	  "answers": ["La femmina partorisce i piccoli gi&agrave; formati, proprio come i ricci che vivono nel nostro giardino", "La femmina partorisce i piccoli non ancora formati, che assomigliano a dei bruchi. Le larve poi si chiudono in bozzoli e si trasformano in echidna dal becco corto", "La femmina depone le uova"],
+	  "answers": ["La femmina partorisce i piccoli già formati, proprio come i ricci che vivono nel nostro giardino", "La femmina partorisce i piccoli non ancora formati, che assomigliano a dei bruchi. Le larve poi si chiudono in bozzoli e si trasformano in echidna dal becco corto", "La femmina depone le uova"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/06/Medium_WW186094.jpg" 
 	},
 	{
 	  "category": "Animali delle Galapagos",
-	  "question": "Qual &egrave; la particolarit&agrave; delle zampe azzurre delle sule dai piedi azzurri?",
-	  "answers": ["Le femmine delle sule sono attratte dalle zampe azzurre", "Quando le suel sono in acqua, le zampe sono ben mimetizzate", "Pi&ugrave; le zampe sono azzurre e pi&ugrave; le uova saranno azzurre"],
+	  "question": "Qual è la particolarità delle zampe azzurre delle sule dai piedi azzurri?",
+	  "answers": ["Le femmine delle sule sono attratte dalle zampe azzurre", "Quando le suel sono in acqua, le zampe sono ben mimetizzate", "Più le zampe sono azzurre e più le uova saranno azzurre"],
 	  "correctAnswer": 0, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/02/WW288930-scaled.jpg"
@@ -66,7 +66,7 @@
 	{
 	  "category": "Animali delle Galapagos",
 	  "question": "Le tartarughe giganti delle Galapagos possono vivere molto a lungo",
-	  "answers": ["Pi&ugrave; di 75 anni", "Pi&ugrave; di 110 anni", "Pi&ugrave; di 175 anni"],
+	  "answers": ["Più di 75 anni", "Più di 110 anni", "Più di 175 anni"],
 	  "correctAnswer": 2, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/02/WW289408-scaled.jpg"
@@ -84,7 +84,7 @@
 	  "question": "Le iguane terrestri delle Galapagos mangiano volentieri i cactus. Come fanno con le spine?",
 	  "answers": ["Mangiano i cactus attorno alle spine", "Mangiano le spine piccole, invece quelle grandi le tolgono", "Mangiano tutte le spine, soprattutto quelle più grandi"],
 	  "correctAnswer": 1, 
-	  "comment": "Mangiano solo le spine piccole, mentre quelle pi&ugrave; grandi vengono rimosse spostando il pezzo di cactus qui e l&agrave; in bocca. Oppure fanno rotolare per terra il pezzo di cactus con le zampe anteriori fino a quando le spine non si staccano",
+	  "comment": "Mangiano solo le spine piccole, mentre quelle più grandi vengono rimosse spostando il pezzo di cactus qui e là in bocca. Oppure fanno rotolare per terra il pezzo di cactus con le zampe anteriori fino a quando le spine non si staccano",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/08/WW185678-scaled.jpg"
 	},
 	{
@@ -92,7 +92,7 @@
 	  "question": "Quale specie animale vive solo alle Isole Galapagos e da nessun'altra parte del mondo?",
 	  "answers": ["I leoni marini delle Galapagos", "Il cormorano attero delle Galapagos", "Il granchio Grapsus grapsus"],
 	  "correctAnswer": 1, 
-	  "comment": "Il cormorano attero delle Galapagos &egrave; l'unico cormorano che non &egrave; in grado di volare",
+	  "comment": "Il cormorano attero delle Galapagos è l'unico cormorano che non è in grado di volare",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/02/WW288148-scaled.jpg"
 	},
 	{
@@ -122,14 +122,14 @@
 	{
 	  "category": "Aquila Reale",
 	  "question": "Cosa fanno le aquile durante il corteggiamento?",
-	  "answers": ["Il maschio emette dei richiami d'amore per la femmina", "Fanno spettacolari voli e a terra il maschio saltella attorno alla femmina", "Il maschio gonfia le piume e distende le ali per sembrare pi&ugrave; grosso"],
+	  "answers": ["Il maschio emette dei richiami d'amore per la femmina", "Fanno spettacolari voli e a terra il maschio saltella attorno alla femmina", "Il maschio gonfia le piume e distende le ali per sembrare più grosso"],
 	  "correctAnswer": 1, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW115690-e1558357150450.jpg"
 	},
 	{
 	  "category": "Aquila Reale",
-	  "question": "Quanto &egrave; grande il territorio di un'aquila reale?",
+	  "question": "Quanto è grande il territorio di un'aquila reale?",
 	  "answers": ["Circa come un campo di calcio", "Circa come cento campi di calcio", "Circa come 14.000 campi di calcio"],
 	  "correctAnswer": 2, 
 	  
@@ -137,7 +137,7 @@
 	},
 	{
 	  "category": "Aquila Reale",
-	  "question": "Quale di questi tre uccelli &egrave; un rapace?",
+	  "question": "Quale di questi tre uccelli è un rapace?",
 	  "answers": ["Regolo", "Nibbio", "Cornacchia"],
 	  "correctAnswer": 1, 
 	  
@@ -156,7 +156,7 @@
 	  "question": "Come ti comporti se incontri un animale sulle Alpi?",
 	  "answers": ["Cerco di accarezzarlo", "Lo scaccio", "Resto tranquillo lo osservo da lontano"],
 	  "correctAnswer": 2, 
-	  "comment": "Si d&agrave; la possibilit&agrave; all'animale anche di ritirarsi",
+	  "comment": "Si dà la possibilità all'animale anche di ritirarsi",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW114049.jpg"
 	},
 	{
@@ -177,10 +177,10 @@
 	},
 	{
 	  "category": "Bombo",
-	  "question": "Perch&eacute; i bombi sono minacciati?",
+	  "question": "Perché i bombi sono minacciati?",
 	  "answers": ["Ci sono sempre meno prati adatti e posti dove poter nidificare", "Ci sono troppe vespe che mangiano i bombi", "Le temperature sono troppo fredde per i bombi"],
 	  "correctAnswer": 0, 
-	  "comment": "I bombi non trovano abbastanza habitat ideali, perch&eacute; ci sono sempre meno prati secchi",
+	  "comment": "I bombi non trovano abbastanza habitat ideali, perché ci sono sempre meno prati secchi",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Trockenwiese_Unterengadin.jpg"
 	},
 	{
@@ -193,10 +193,10 @@
 	},
 	{
 	  "category": "Bombo",
-	  "question": "Chi &egrave; pi&ugrave; grande?",
+	  "question": "Chi è più grande?",
 	  "answers": ["Il fuco (maschio)", "L'operaia", "La regina"],
 	  "correctAnswer": 0, 
-	  "comment": " I fuchi sono un po' pi&ugrave; grandi delle operaie",
+	  "comment": " I fuchi sono un po' più grandi delle operaie",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Hummel-Paarung_Bombus.jpg"
 	},
 	{
@@ -241,7 +241,7 @@
 	},
 	{
 	  "category": "Bonobo",
-	  "question": "Qual &egrave; la principale minaccia per i bonobo?",
+	  "question": "Qual è la principale minaccia per i bonobo?",
 	  "answers": ["Mangiano solo determinate foglie e dunque non trovano sufficiente cibo", "Spesso annegano nei fiumi", "Il loro habitat, vale a dire le foreste pluviali, viene distrutto"],
 	  "correctAnswer": 2, 
 	  
@@ -257,8 +257,8 @@
 	},
 	{
 	  "category": "Camaleonte",
-	  "question": "Qual &egrave; il motivo principale per cui i camaleonti cambiano colore?",
-	  "answers": ["Per mimetizzarsi", "Per mostrare di che umore sono", "Perch&eacute; hanno fame"],
+	  "question": "Qual è il motivo principale per cui i camaleonti cambiano colore?",
+	  "answers": ["Per mimetizzarsi", "Per mostrare di che umore sono", "Perché hanno fame"],
 	  "correctAnswer": 1, 
 	  "comment": "I camaleonti cambiano colore soprattutto per mostrare lo stato d'animo, ma anche a dipendenza della temperatura",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW121065.jpg"
@@ -266,7 +266,7 @@
 	{
 	  "category": "Camaleonte",
 	  "question": "Il camaleonte...",
-	  "answers": ["... &egrave; un animale principalmente solitario", "... vive principalmente in coppia", "... vive in grandi comunit&agrave;"],
+	  "answers": ["... è un animale principalmente solitario", "... vive principalmente in coppia", "... vive in grandi comunità"],
 	  "correctAnswer": 0, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW122193.jpg"
@@ -289,8 +289,8 @@
 	},
 	{
 	  "category": "Camaleonte",
-	  "question": "Perch&eacute; alcune specie di camaleonte sono particolarmente a rischio?",
-	  "answers": ["Il loro habitat &egrave; sempre più piccolo", "L'uomo caccia e mangia i camaleonti", "I lemuri rubano la loro fonte di nutrimento"],
+	  "question": "Perché alcune specie di camaleonte sono particolarmente a rischio?",
+	  "answers": ["Il loro habitat è sempre più piccolo", "L'uomo caccia e mangia i camaleonti", "I lemuri rubano la loro fonte di nutrimento"],
 	  "correctAnswer": 0, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW188063.jpg"
@@ -298,7 +298,7 @@
 	{
 	  "category": "Camaleonte",
 	  "question": "Come si riconoscono vincitore e sconfitto in alcune lotte tra camaleonti?",
-	  "answers": ["Il vincitore fa un balletto sfrenato. Lo sconfitto si appende con la coda a un ramo, a testa in gi&ugrave;", "Il vincitore si colora di tonalit&agrave; vivaci. Lo sconfitto assume un colore non appariscente e si lascia cadere a terra dal ramo", "Il vincitore si alza sulle zampe posteriori e si batte il petto a tamburo con quelle anteriori. Lo sconfitto arrotola la coda e si fa piccolo"],
+	  "answers": ["Il vincitore fa un balletto sfrenato. Lo sconfitto si appende con la coda a un ramo, a testa in giù", "Il vincitore si colora di tonalità vivaci. Lo sconfitto assume un colore non appariscente e si lascia cadere a terra dal ramo", "Il vincitore si alza sulle zampe posteriori e si batte il petto a tamburo con quelle anteriori. Lo sconfitto arrotola la coda e si fa piccolo"],
 	  "correctAnswer": 1, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW267207.jpg"
@@ -322,7 +322,7 @@
 	{
 	  "category": "Castoro",
 	  "question": "Dove vivono i castori...",
-	  "answers": ["... ci sono meno animali e piante diversi", "... ci sono pi&ugarve; animali e piante diversi", "... il paesaggio non viene modificato"],
+	  "answers": ["... ci sono meno animali e piante diversi", "... ci sono più animali e piante diversi", "... il paesaggio non viene modificato"],
 	  "correctAnswer": 1, 
 	  "comment": "I castori modificano il paesaggio: fermano il corso dei ruscelli con le loro dighe, abbattono gli alberi e scavano dei canali. Per molte piante e molti animali gli stagni e il bosco luminoso che vengono a crearsi sono un habitat ideale",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW255330.jpg"
@@ -337,7 +337,7 @@
 	},
 	{
 	  "category": "Castoro",
-	  "question": "Allo stato selvatico, quanto a lungo pu&ograve; vivere un castoro?",
+	  "question": "Allo stato selvatico, quanto a lungo può vivere un castoro?",
 	  "answers": ["Fino a 11 anni", "Fino a 21 anni", "Fino a 31 anni"],
 	  "correctAnswer": 1, 
 	  
@@ -346,15 +346,15 @@
 	{
 	  "category": "Castoro",
 	  "question": "In Svizzera...",
-	  "answers": ["... i castori sono stati reintrodotti", "... non ci sono pi&ugrave; castori", "... ci sono castori solo nei parchi faunistici"],
+	  "answers": ["... i castori sono stati reintrodotti", "... non ci sono più castori", "... ci sono castori solo nei parchi faunistici"],
 	  "correctAnswer": 0, 
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/05/shutterstock_1938981637-scaled.jpg"
 	},
 	{
 	  "category": "Castoro",
-	  "question": "Perch&eacute; 200 anni fa i castori in Svizzera si sono estinti?",
-	  "answers": ["Non trovavano pi&ugrave; abbastanza cibo", "Si sono spostati in Austria", "Erano molto cacciati"],
+	  "question": "Perché 200 anni fa i castori in Svizzera si sono estinti?",
+	  "answers": ["Non trovavano più abbastanza cibo", "Si sono spostati in Austria", "Erano molto cacciati"],
 	  "correctAnswer": 2, 
 	  "comment": "Venivano cacciati soprattutto per la loro pelliccia e una ghiandola speciale. Ma anche per mangiarne la carne",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW125782.jpg"
@@ -370,14 +370,14 @@
 	{
 	  "category": "Cervo",
 	  "question": "Il cervo...",
-	  "answers": ["... &egrave; uno dei due animali selvatici pi&ugrave; grandi della Svizzera", "... si nutre principalmente di piccoli animali che vivono nel terreno come vermi o insetti", "... vive solo in poche aree dell’Europa"],
+	  "answers": ["... è uno dei due animali selvatici più grandi della Svizzera", "... si nutre principalmente di piccoli animali che vivono nel terreno come vermi o insetti", "... vive solo in poche aree dell’Europa"],
 	  "correctAnswer": 0, 
-	  "comment": "Il cervo, assieme all'orso bruno, &egrave; il pi&ugrave; grande animale selvatico della Svizzera",
+	  "comment": "Il cervo, assieme all'orso bruno, è il più grande animale selvatico della Svizzera",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/08/dreamstime_xl_123827094-scaled.jpg"
 	},
 	{
 	  "category": "Cervo",
-	  "question": "Quanti anni pu&ograve; vivere un cervo?",
+	  "question": "Quanti anni può vivere un cervo?",
 	  "answers": ["Fino a 10 anni", "Fino a 15 anni", "Fino a 20 anni"],
 	  "correctAnswer": 2, 
 	  
@@ -393,7 +393,7 @@
 	},
 	{
 	  "category": "Cervo",
-	  "question": "Quanto pu&ograve; pesare un palco di un cervo?",
+	  "question": "Quanto può pesare un palco di un cervo?",
 	  "answers": ["Fino a 3 chili", "Fino a 8 chili", "Fino a 12 chili"],
 	  "correctAnswer": 1, 
 	  
@@ -417,7 +417,7 @@
 	},
 	{
 	  "category": "Cetacei",
-	  "question": "Quanto &egrave; lunga una balenottera azzurra?",
+	  "question": "Quanto è lunga una balenottera azzurra?",
 	  "answers": ["Quasi come un treno", "Quasi come un'automobile", "Quasi come un vagone di un treno"],
 	  "correctAnswer": 2, 
 	  
@@ -433,17 +433,17 @@
 	},
 	{
 	  "category": "Cetacei",
-	  "question": "Quale tra queste frasi &egrave; falsa?",
-	  "answers": ["I cetacei sono minacciati perch&eacute; sono tutti allergici all'acqua salata", "I cetacei sono minacciati a causa dell'inquinamento degli oceani e del traffico navale", "I cetacei sono minacciati a causa del cambiamento climatico"],
+	  "question": "Quale tra queste frasi è falsa?",
+	  "answers": ["I cetacei sono minacciati perché sono tutti allergici all'acqua salata", "I cetacei sono minacciati a causa dell'inquinamento degli oceani e del traffico navale", "I cetacei sono minacciati a causa del cambiamento climatico"],
 	  "correctAnswer": 0, 
 	  "comment": "La maggior parte dei cetacei vive nei mari",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW247872.jpg"
 	},{
 	  "category": "Cetacei",
-	  "question": "Di che colore &egrave; il beluga?",
+	  "question": "Di che colore è il beluga?",
 	  "answers": ["Turchese", "Nero", "Bianco"],
 	  "correctAnswer": 2, 
-	  "comment": "I beluag vengono anche chiamati &quot;balene bianche&quot;",
+	  "comment": "I beluag vengono anche chiamati \"balene bianche\"",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW249000.jpg"
 	},
 	{
@@ -505,7 +505,7 @@
 	{
 	  "category": "Coccinella",
 	  "question": "Come si difendono dai pericole le coccinelle?",
-	  "answers": ["Possono ferire i nemici con le loro ali", "Producendo un liquido giallo velenoso per i loro predatori", "Le coccinelle volano molto veloce perch&eacute; non hanno altri metodi di difesa"],
+	  "answers": ["Possono ferire i nemici con le loro ali", "Producendo un liquido giallo velenoso per i loro predatori", "Le coccinelle volano molto veloce perché non hanno altri metodi di difesa"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/04/AdobeStock_306887317-scaled.jpeg"
@@ -531,23 +531,23 @@
 	  "question": "Chi sono i parenti più vicini dei coccodrilli?",
 	  "answers": ["Piranha", "Ippopotami", "Uccelli"],
 	  "correctAnswer": 2,
-	  "comment": "Entrambi sono i parenti viventi pi&ugrave; vicini ai dinosauri",
+	  "comment": "Entrambi sono i parenti viventi più vicini ai dinosauri",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1110758.jpg"
 	},
 	{
 	  "category": "Coccodrillo",
 	  "question": "Come si comportano i coccodrilli con una grossa preda?",
-	  "answers": ["Azzannano la preda e girano su s&eacute; stessi rapidamente, facendo a pezzi la preda", "Attendono finch&eacute; l'animale si decompone e si cibano delle sue parti", "Mordono e masticano le prede con molta forza con i loro denti appuntiti"],
+	  "answers": ["Azzannano la preda e girano su sé stessi rapidamente, facendo a pezzi la preda", "Attendono finché l'animale si decompone e si cibano delle sue parti", "Mordono e masticano le prede con molta forza con i loro denti appuntiti"],
 	  "correctAnswer": 0,
-	  "comment": "Non masticano le prede siccome la loro mascella non &egrave; mobile",
+	  "comment": "Non masticano le prede siccome la loro mascella non è mobile",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/11/Nilkrokodil-scaled.jpg"
 	},
 	{
 	  "category": "Coccodrillo",
-	  "question": "Quale specie di coccodrillo pu&ograve; sopravvivere anche nell'acqua ghiacciata?",
-	  "answers": ["Il coccodrillo marino", "Il caimano jacar&egrave;", "L'alligatore del Mississipi"],
+	  "question": "Quale specie di coccodrillo può sopravvivere anche nell'acqua ghiacciata?",
+	  "answers": ["Il coccodrillo marino", "Il caimano jacarè", "L'alligatore del Mississipi"],
 	  "correctAnswer": 2,
-	  "comment": "Il coccodrillo marino e il caimano jacar&egrave; vivono nei tropici, in Asia, in Australia e in Sudamerica. A loro non piace il freddo. L'alligatore del Mississippi invece vive a sud degli Stati Uniti e sopravvive a temperature fino a -15°C",
+	  "comment": "Il coccodrillo marino e il caimano jacarè vivono nei tropici, in Asia, in Australia e in Sudamerica. A loro non piace il freddo. L'alligatore del Mississippi invece vive a sud degli Stati Uniti e sopravvive a temperature fino a -15°C",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/11/dreamstime_l_210822277-scaled.jpg"
 	},
 	{
@@ -560,10 +560,10 @@
 	},
 	{
 	  "category": "Coccodrillo",
-	  "question": "Capitano sempre pi&ugrave; incidenti tra i coccodrilli del Nilo e gli umani perch&eacute;...",
-	  "answers": ["... i coccodrilli del Nilo sono golosi di carne umana", "... i coccodrilli si stanno riproducendo in modo incontrollato e quindi si avvicinano ai villaggi", "... ci sono sempre pi&ugrave; umani negli habitat dei coccodrilli e quindi c'&egrave; sempre meno spazio per questi animali"],
+	  "question": "Capitano sempre più incidenti tra i coccodrilli del Nilo e gli umani perché...",
+	  "answers": ["... i coccodrilli del Nilo sono golosi di carne umana", "... i coccodrilli si stanno riproducendo in modo incontrollato e quindi si avvicinano ai villaggi", "... ci sono sempre più umani negli habitat dei coccodrilli e quindi c'è sempre meno spazio per questi animali"],
 	  "correctAnswer": 2,
-	  "comment": "I coccodrilli del Nilo non si cibano di carne umana. Evitano gli umani. Purtroppo hanno sempre meno posti dove vivere, e ci sono sempre pi&ugrave; umani che si avvicinano a loro",
+	  "comment": "I coccodrilli del Nilo non si cibano di carne umana. Evitano gli umani. Purtroppo hanno sempre meno posti dove vivere, e ci sono sempre più umani che si avvicinano a loro",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/11/marsh-g2e3dca701_1920.jpg"
 	},
 	{
@@ -575,56 +575,56 @@
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/11/dreamstime_l_129025999-scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Qual &egrave; la specialit&agrave; dei colibr&igrave?",
-	  "answers": ["Volare all'indietro", "Rompere le noci di cocco con il becco", "Immergersi fino a cinque metri di profondit&agrave;"],
+	  "category": "Colibrì",
+	  "question": "Qual è la specialità dei colibrì?",
+	  "answers": ["Volare all'indietro", "Rompere le noci di cocco con il becco", "Immergersi fino a cinque metri di profondità"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/Large_WW179988-scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Come fanno i colibr&igrave; a prendere il nettare dai fiori?",
-	  "answers": ["Il loro lungo becco &egrave; come una cannuccia con la quale succhiano il nettare", "I colibr&igrave; hanno una lunga lingua, che assomiglia a una cannuccia e che usano per succhiare il nettare", "Inclinano il fiore per far uscire il nettare, poi lo leccano con la lingua"],
+	  "category": "Colibrì",
+	  "question": "Come fanno i colibrì a prendere il nettare dai fiori?",
+	  "answers": ["Il loro lungo becco è come una cannuccia con la quale succhiano il nettare", "I colibrì hanno una lunga lingua, che assomiglia a una cannuccia e che usano per succhiare il nettare", "Inclinano il fiore per far uscire il nettare, poi lo leccano con la lingua"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/Large_WW1113846.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Di cosa &egrave; fatto il nido dei colibr&igrave;?",
+	  "category": "Colibrì",
+	  "question": "Di cosa è fatto il nido dei colibrì?",
 	  "answers": ["Di rami, foglie e saliva", "Di erba lunga, rametti, fango e sabbia", "Di fibre vegetali, peli di animali, ragnatele, muschio e licheni"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/dreamstime_xxl_39983680-scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Che velocit/&agrave; riescono a raggiungere i colibr&igrave; con il volo in picchiata?",
-	  "answers": ["In un secondo fanno una distanza 112 volte pi&ugrave; lunga della lunghezza del loro corpo", "In un secondo fanno una distanza 234 volte pi&ugrave; lunga della lunghezza del loro corpo", "In un secondo fanno una distanza 385 volte pi&ugrave; lunga della lunghezza del loro corpo"],
+	  "category": "Colibrì",
+	  "question": "Che velocit/à riescono a raggiungere i colibrì con il volo in picchiata?",
+	  "answers": ["In un secondo fanno una distanza 112 volte più lunga della lunghezza del loro corpo", "In un secondo fanno una distanza 234 volte più lunga della lunghezza del loro corpo", "In un secondo fanno una distanza 385 volte più lunga della lunghezza del loro corpo"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/dreamstime_xxl_31033087-scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Come vola un colibr&igrave;?",
+	  "category": "Colibrì",
+	  "question": "Come vola un colibrì?",
 	  "answers": ["Sbatte le ali molto velocemente", "Volteggia nell'aria come un rapace", "Sbatte le ali molto tranquillamente"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/Kolibri_Quiz_Pexels-auf-Pixabay--scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Alcuni colibr&igrave; hanno dei nomi piuttosto curiosi. Quale tra questi non esiste?",
-	  "answers": ["Colibr&igrave; fata turchina", "Mango collonero", "Colibr&igrave; codaforcuta", "Colibr&igrave; di Elena"],
+	  "category": "Colibrì",
+	  "question": "Alcuni colibrì hanno dei nomi piuttosto curiosi. Quale tra questi non esiste?",
+	  "answers": ["Colibrì fata turchina", "Mango collonero", "Colibrì codaforcuta", "Colibrì di Elena"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/05/Large_WW13614-scaled.jpg"
 	},
 	{
-	  "category": "Colibr&igrave;",
-	  "question": "Dove vivono i colibr&igrave;?",
+	  "category": "Colibrì",
+	  "question": "Dove vivono i colibrì?",
 	  "answers": ["In Nord e Sudamerica", "In Australia e Nuova Zelanda", "In Africa"],
 	  "correctAnswer": 0,
 	  
@@ -640,15 +640,15 @@
 	},
 	{
 	  "category": "Coralli",
-	  "question": "Perch&eacute; le barriere coralline sono così importanti per il nostro pianeta?",
-	  "answers": ["Perch&eacute; sono molto belle da guardare", "Perch&eacute; sono molto antiche", "Perch&eacute; sono l'habitat di molte specie animali e vegetali che vivono nel mare"],
+	  "question": "Perché le barriere coralline sono così importanti per il nostro pianeta?",
+	  "answers": ["Perché sono molto belle da guardare", "Perché sono molto antiche", "Perché sono l'habitat di molte specie animali e vegetali che vivono nel mare"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/11/Korallenriff_indischer-Ozean_Alexis-Rosenfeld.jpg"
 	},
 	{
 	  "category": "Coralli",
-	  "question": "Tra queste tre opzioni, chi &egrave; il parente pi&ugrave; vicino dei coralli?",
+	  "question": "Tra queste tre opzioni, chi è il parente più vicino dei coralli?",
 	  "answers": ["Meduse", "Felci", "Cactus"],
 	  "correctAnswer": 0,
 	  
@@ -680,7 +680,7 @@
 	},
 	{
 	  "category": "Dugongo",
-	  "question": "Qual &egrave; la principale fonte di cibo per il dugongo?",
+	  "question": "Qual è la principale fonte di cibo per il dugongo?",
 	  "answers": ["Alghe", "Piccoli granchi e pesci", "Lumache di mare"],
 	  "correctAnswer": 0,
 	  "comment": "I dugonghi sono vegetariani",
@@ -688,7 +688,7 @@
 	},
 	{
 	  "category": "Dugongo",
-	  "question": "Quanto pu&ograve; essere grande il dugongo?",
+	  "question": "Quanto può essere grande il dugongo?",
 	  "answers": ["Fino a un metro di lunghezza", "Fino a due metri di lunghezza.", "Fino a tre metri di lunghezza"],
 	  "correctAnswer": 2,
 	  
@@ -697,14 +697,14 @@
 	{
 	  "category": "Dugongo",
 	  "question": "Dove vivono i dugonghi?",
-	  "answers": ["Nell'Oceano Artico, dove pu&ograve; stare al fresco", "Nelle profondità dell'Oceano Atlantico", "Nelle acque costiere dell'Oceano Pacifico e dell'Oceano Indiano"],
+	  "answers": ["Nell'Oceano Artico, dove può stare al fresco", "Nelle profondità dell'Oceano Atlantico", "Nelle acque costiere dell'Oceano Pacifico e dell'Oceano Indiano"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/06/iStock-140402383-scaled.jpg"
 	},
 	{
 	  "category": "Dugongo",
-	  "question": "Quale animale &egrave; il parente pi&ugrave; vicino del dugongo?",
+	  "question": "Quale animale è il parente più vicino del dugongo?",
 	  "answers": ["Elefante", "Tricheco", "Delfino"],
 	  "correctAnswer": 0,
 	  
@@ -712,7 +712,7 @@
 	},
 	{
 	  "category": "Dugongo",
-	  "question": "Quale delle seguenti &egrave; una caratteristica dei dugonghi?",
+	  "question": "Quale delle seguenti è una caratteristica dei dugonghi?",
 	  "answers": ["Hanno un'ottima vista", "Hanno un ottimo udito", "Possono fare dei grandi salti fuori dall'acqua"],
 	  "correctAnswer": 1,
 	  
@@ -728,7 +728,7 @@
 	},
 	{
 	  "category": "Elefante",
-	  "question": "Qual &egrave; la frase corretta?",
+	  "question": "Qual è la frase corretta?",
 	  "answers": ["Solo le femmine degli elefanti africani hanno le zanne", "Solo i maschi degli elefanti africani hanno le zanne", "Sia i maschi che le femmine hanno le zanne"],
 	  "correctAnswer": 2,
 	  
@@ -737,7 +737,7 @@
 	{
 	  "category": "Elefante",
 	  "question": "Come si distinguono gli elefanti africani da quelli asiatici?",
-	  "answers": ["Gli elefanti asiatici hanno orecchie più piccole e due evidenti &quot;bernoccoli&quot; sulla fronte", "Gli elefanti asiatici hanno la proboscide pi&ugrave; corta e la coda pi&ugrave; lunga", "Gli elefanti asiatici hanno la pelle pi&ugrave; chiara e occhi pi&ugrave; grandi"],
+	  "answers": ["Gli elefanti asiatici hanno orecchie più piccole e due evidenti \"bernoccoli\" sulla fronte", "Gli elefanti asiatici hanno la proboscide più corta e la coda più lunga", "Gli elefanti asiatici hanno la pelle più chiara e occhi più grandi"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW1103324.jpg"
@@ -753,7 +753,7 @@
 	{
 	  "category": "Elefante",
 	  "question": "Chi si occupa dei cuccioli di elefante?",
-	  "answers": ["Solo la mamma", "Solo il pap&agrave;", "Tutti i membri del branco"],
+	  "answers": ["Solo la mamma", "Solo il papà", "Tutti i membri del branco"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW188743.jpg"
@@ -761,7 +761,7 @@
 	{
 	  "category": "Elefante",
 	  "question": "Chi guida il branco degli elefanti?",
-	  "answers": ["La femmina pi&ugrave; vecchia", "Il maschio pi&ugrave; forte", "Tutti gli elefanti a turno guidano il branco"],
+	  "answers": ["La femmina più vecchia", "Il maschio più forte", "Tutti gli elefanti a turno guidano il branco"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW225798.jpg"
@@ -776,8 +776,8 @@
 	},
 	{
 	  "category": "Farfalle",
-	  "question": "Qual &egrave; la caratteristica principale delle ali delle farfalle?",
-	  "answers": ["Sono composte da minuscole scaglie disposte come le tegole di un tetto", "Se vengono toccate, le farfalle non riescono pi&ugrave; a volare", "Sono sempre molto colorate"],
+	  "question": "Qual è la caratteristica principale delle ali delle farfalle?",
+	  "answers": ["Sono composte da minuscole scaglie disposte come le tegole di un tetto", "Se vengono toccate, le farfalle non riescono più a volare", "Sono sempre molto colorate"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/06/Tagpfauenauge_Fl%C3%BCgel_Aglais-io.jpg"
@@ -792,7 +792,7 @@
 	},
 	{
 	  "category": "Farfalle",
-	  "question": "Quanto &egrave; grande l'apertura alare del pi&ugrave; grande lepidottero?",
+	  "question": "Quanto è grande l'apertura alare del più grande lepidottero?",
 	  "answers": ["Circa un metro", "Circa 15 centimetri", "Circa 30 centimetri"],
 	  "correctAnswer": 2,
 	  
@@ -816,7 +816,7 @@
 	},
 	{
 	  "category": "Farfalle",
-	  "question": "Perch&eacute; le ali delle farfalle hanno un certo tipo di colore?",
+	  "question": "Perché le ali delle farfalle hanno un certo tipo di colore?",
 	  "answers": ["Per confondere i loro predatori", "Per poter essere ammirate", "Per impressionare le femmine di farfalla e riprodursi"],
 	  "correctAnswer": 0,
 	  "comment": "Le farfalle non vogliono impressionare nessuno con i loro colori, ma vogliono proteggersi dai predatori",
@@ -824,26 +824,26 @@
 	},
 	{
 	  "category": "Farfalle",
-	  "question": "Quanto pu&ograve; durare la metamorfosi da bruco a farfalla?",
+	  "question": "Quanto può durare la metamorfosi da bruco a farfalla?",
 	  "answers": ["Fino a un anno", "Alcune settimane", "Anche fino a otto anni"],
 	  "correctAnswer": 2,
-	  "comment": "La metamorfosi pu&ograve; durare anche fino a otto anni! Come nel caso della Eriogaster lanestris",
+	  "comment": "La metamorfosi può durare anche fino a otto anni! Come nel caso della Eriogaster lanestris",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/06/Schwalbenschwanz_Raupe_Papilio-machaon.jpg"
 	},
 	{
 	  "category": "Foche, otarie e trichechi",
-	  "question": "Le orecchie delle otarie si vedono, mentre quelle delle foche no. Qual &egrave; l'altra caratteristica principale che distingue le otarie dalle foche?",
-	  "answers": ["Il muso delle foche &egrave; appuntito, mentre quello delle otarie &egrave; arrotondato", "Le otarie riescono a piegare la pinna caudale (coda) sotto il corpo, in questo modo la usano per spostarsi. Le foche invece &quot;strisciano&quot; sulla pancia"],
+	  "question": "Le orecchie delle otarie si vedono, mentre quelle delle foche no. Qual è l'altra caratteristica principale che distingue le otarie dalle foche?",
+	  "answers": ["Il muso delle foche è appuntito, mentre quello delle otarie è arrotondato", "Le otarie riescono a piegare la pinna caudale (coda) sotto il corpo, in questo modo la usano per spostarsi. Le foche invece \"strisciano\" sulla pancia"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Manfred-Richter_Pixabay.jpg"
 	},
 	{
 	  "category": "Foche, otarie e trichechi",
-	  "question": "Qual &egrave; la specie pi&ugrave; grande tra le foche, le otarie e i trichechi?",
+	  "question": "Qual è la specie più grande tra le foche, le otarie e i trichechi?",
 	  "answers": ["L'elefante marino del Sud", "L'otaria della California", "Il tricheco"],
 	  "correctAnswer": 0,
-	  "comment": " L'elefante marino del Sud (nella foto) &egrave; la specie di pinnipede pi&ugrave; grande. Pu&ograve; raggiungere i cinque metri di grandezza e le tre tonnellate di peso",
+	  "comment": " L'elefante marino del Sud (nella foto) è la specie di pinnipede più grande. Può raggiungere i cinque metri di grandezza e le tre tonnellate di peso",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Large_WW191820.jpg"
 	},
 	{
@@ -851,7 +851,7 @@
 	  "question": "Le foche dagli anelli dell'Artico dove partoriscono i loro piccoli?",
 	  "answers": ["Nel mare glaciale", "In una caverna di neve", "In un nido, che viene costruito con la loro pelliccia"],
 	  "correctAnswer": 1,
-	  "comment": "Se i piccoli nascono sul ghiaccio, senza protezione, hanno poche possibilit&agrave; di sopravvivenza",
+	  "comment": "Se i piccoli nascono sul ghiaccio, senza protezione, hanno poche possibilità di sopravvivenza",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Large_WW245601.jpg"
 	},
 	{
@@ -875,7 +875,7 @@
 	  "question": "Tra questi animali, quale non esiste?",
 	  "answers": ["La foca leopardo", "Il leone marino australiano", "L'otaria orsina antartica", "Il giaguaro marino sudamericano"],
 	  "correctAnswer": 3,
-	  "comment": "Quella nella foto &egrave; una foca leopardo",
+	  "comment": "Quella nella foto è una foca leopardo",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Large_WW122213.jpg"
 	},
 	{
@@ -889,9 +889,9 @@
 	{
 	  "category": "Formica",
 	  "question": "Le formiche rosse si nutrono tra le altre cose di melata. Da dove arriva la melata?",
-	  "answers": ["La melata si ottiene direttamente dai fiori di viola silvestre e da altri fiori", "Le api perdono melata e le formiche la raccolgono", "La melata &egrave; prodotta dagli afidi, i pidocchi delle piante"],
+	  "answers": ["La melata si ottiene direttamente dai fiori di viola silvestre e da altri fiori", "Le api perdono melata e le formiche la raccolgono", "La melata è prodotta dagli afidi, i pidocchi delle piante"],
 	  "correctAnswer": 2,
-	  "comment": "Gli afidi si nutrono di un succo zuccherato prodotto dalle piante e producono quindi melata. Le formiche accarezzano gli afidi con le loro antenne, che cos&igrave; espellono la melata",
+	  "comment": "Gli afidi si nutrono di un succo zuccherato prodotto dalle piante e producono quindi melata. Le formiche accarezzano gli afidi con le loro antenne, che così espellono la melata",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/03/shutterstock_375981130-scaled.jpg"
 	},
 	{
@@ -904,7 +904,7 @@
 	},
 	{
 	  "category": "Formica",
-	  "question": "Quanto pu&ograve; arrivare in profondit&agrave; il formicaio delle formiche rosse?",
+	  "question": "Quanto può arrivare in profondità il formicaio delle formiche rosse?",
 	  "answers": ["Il formicaio si trova solo in superficie", "Fino a 30 centimetri", "Fino a 2 metri"],
 	  "correctAnswer": 2,
 	  
@@ -912,7 +912,7 @@
 	},
 	{
 	  "category": "Formica",
-	  "question": "Quale formica corre pi&ugrave; velocemente del campione del mondo Usain Bolt?",
+	  "question": "Quale formica corre più velocemente del campione del mondo Usain Bolt?",
 	  "answers": ["Formica di bronzo del Sudafrica", "Formica d'argento del Sahara", "Formica d'oro dell'Australia"],
 	  "correctAnswer": 1,
 	  
@@ -947,7 +947,7 @@
 	  "question": "Dove vivono i giaguari?",
 	  "answers": ["Nell'America Centrale e del Sud", "Ovunque dove ci sono foreste tropicali", "Soprattutto in Asia"],
 	  "correctAnswer": 0,
-	  "comment": "La maggior parte vive nella foresta tropicale amazzonica. Sono animali schivi che amano rimanere nelle foreste pi&ugrave; fitte e nelle zone umide ricoperte di vegetazione",
+	  "comment": "La maggior parte vive nella foresta tropicale amazzonica. Sono animali schivi che amano rimanere nelle foreste più fitte e nelle zone umide ricoperte di vegetazione",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW214903.jpg"
 	},
 	{
@@ -960,8 +960,8 @@
 	},
 	{
 	  "category": "Giaguaro",
-	  "question": "Perch&eacute; sulla pelliccia dei giaguari ci sono dei cerchi scuri?",
-	  "answers": ["Perch&eacute; ogni anno si aggiunge un cerchio in pi&ugrave;. Cos&igrave; &egrave; facile calcolare la loro et&agrave;", "Per essere pi&ugrave; belli e attirare gli altri giaguari", "Per mimetizzarsi meglio nella foresta"],
+	  "question": "Perché sulla pelliccia dei giaguari ci sono dei cerchi scuri?",
+	  "answers": ["Perché ogni anno si aggiunge un cerchio in più. Così è facile calcolare la loro età", "Per essere più belli e attirare gli altri giaguari", "Per mimetizzarsi meglio nella foresta"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW22540.jpg"
@@ -977,22 +977,22 @@
 	{
 	  "category": "Giaguaro",
 	  "question": "Cosa fanno i giaguari con i resti delle loro prede dopo che hanno mangiato abbastanza?",
-	  "answers": ["Lasciano i resti incustoditi cos&igrave; possono essere mangiati da altri animali", "Portano i resti a un altro giaguaro che vive in un territorio vicino al loro", "Nascondono i resti sottoterra e li mangiano in un altro momento"],
+	  "answers": ["Lasciano i resti incustoditi così possono essere mangiati da altri animali", "Portano i resti a un altro giaguaro che vive in un territorio vicino al loro", "Nascondono i resti sottoterra e li mangiano in un altro momento"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW22538.jpg"
 	},
 	{
 	  "category": "Giaguari",
-	  "question": "La minaccia principale per i giaguari &egrave;...",
+	  "question": "La minaccia principale per i giaguari è...",
 	  "answers": ["... la distruzione della foresta pluviale", "... i cacciatori alla ricerca delle loro zanne utilizzate in medicina", "... una nuova pianta che fa ammalare e morire gli alberi della foresta pluviale"],
 	  "correctAnswer": 0,
-	  "comment": "La pi&ugrave; grande minaccia &egrave; la distruzione del loro habitat. Grandi superfici vengono disboscate per lasciare lo spazio a campi, strade e insediamenti umani. I territori dei singoli giaguari diventano piccoli e distanti l'uno dall'altro, cosicch&eacute; i giaguari non riescono ad incontrarsi per accoppiarsi e nascono quindi sempre meno cuccioli",
+	  "comment": "La più grande minaccia è la distruzione del loro habitat. Grandi superfici vengono disboscate per lasciare lo spazio a campi, strade e insediamenti umani. I territori dei singoli giaguari diventano piccoli e distanti l'uno dall'altro, cosicché i giaguari non riescono ad incontrarsi per accoppiarsi e nascono quindi sempre meno cuccioli",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW280608.jpg"
 	},
 	{
 	  "category": "Gipeto barbuto",
-	  "question": "Quanto &egrave; grande l'apertura alare del gipeto?",
+	  "question": "Quanto è grande l'apertura alare del gipeto?",
 	  "answers": ["30 centimetri", "1 metro", "3 metri"],
 	  "correctAnswer": 2,
 	  
@@ -1000,8 +1000,8 @@
 	},
 	{
 	  "category": "Gipeto barbuto",
-	  "question": "Perch&eacute; il gipeto barbuto si chiama cos&igrave;?",
-	  "answers": ["Perch&eacute; mangia peli di barba", "Perch&eacute; da entrambi i lati del becco pendono delle piume nere che sembrano una barba", "Perch&eacute; fodera il suo nido di peli di barba di stambecco"],
+	  "question": "Perché il gipeto barbuto si chiama così?",
+	  "answers": ["Perché mangia peli di barba", "Perché da entrambi i lati del becco pendono delle piume nere che sembrano una barba", "Perché fodera il suo nido di peli di barba di stambecco"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW114178.jpg"
@@ -1024,7 +1024,7 @@
 	},
 	{
 	  "category": "Gipeto barbuto",
-	  "question": "Qual &egrave; il pi&ugrave; grande uccello alpino?",
+	  "question": "Qual è il più grande uccello alpino?",
 	  "answers": ["L'acquila reale", "La cicogna", "Il gipeto barbuto"],
 	  "correctAnswer": 2,
 	  
@@ -1032,15 +1032,15 @@
 	},
 	{
 	  "category": "Gipeto barbuto",
-	  "question": "Come mai 100 anni fa nelle Alpi il gipeto si &egrave; estinto?",
-	  "answers": ["Si pensava che il gipeto uccidesse gli agnelli e rapisse i bambini", "Non c'era abbastanza spazio per loro nelle Alpi", "&Egrave; stato cacciato perch&eacute; mangiava il cibo degli esseri umani"],
+	  "question": "Come mai 100 anni fa nelle Alpi il gipeto si è estinto?",
+	  "answers": ["Si pensava che il gipeto uccidesse gli agnelli e rapisse i bambini", "Non c'era abbastanza spazio per loro nelle Alpi", "È; stato cacciato perché mangiava il cibo degli esseri umani"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/12/Medium_WW114164.jpg"
 	},
 	{
 	  "category": "Giraffa",
-	  "question": "Che et&agrave; possono raggiungere le giraffe?",
+	  "question": "Che età possono raggiungere le giraffe?",
 	  "answers": ["Fino a 5 anni", "Fino a 20 anni", "Fino a 60 anni"],
 	  "correctAnswer": 1,
 	  
@@ -1048,7 +1048,7 @@
 	},
 	{
 	  "category": "Giraffa",
-	  "question": "Quanto &egrave; lungo il collo di una giraffa?",
+	  "question": "Quanto è lungo il collo di una giraffa?",
 	  "answers": ["Circa 2 metri", "Circa 4 metri", "Circa 6 metri"],
 	  "correctAnswer": 0,
 	  
@@ -1056,7 +1056,7 @@
 	},
 	{
 	  "category": "Giraffa",
-	  "question": "Quale affermazione &egrave; sbagliata?",
+	  "question": "Quale affermazione è sbagliata?",
 	  "answers": ["Le giraffe ogni tanto masticano delle ossa", "Le giraffe bevono solo ogni due giorni circa", "Le giraffe evitano le piante con le spine"],
 	  "correctAnswer": 2,
 	  
@@ -1064,7 +1064,7 @@
 	},
 	{
 	  "category": "Giraffa",
-	  "question": "Chi &egrave; il parente pi&ugrave; vicino delle giraffe?",
+	  "question": "Chi è il parente più vicino delle giraffe?",
 	  "answers": ["Il cavallo", "L'elefante", "L'okapi"],
 	  "correctAnswer": 2,
 	  
@@ -1081,7 +1081,7 @@
 	{
 	  "category": "Giraffa",
 	  "question": "Come si distinguono le femmine dai maschi?",
-	  "answers": ["Non c'&egrave; nessuna differenza", "Le corna (ossa frontali) della femmina sono ricoperte di peli, mentre quelle dei maschi no", "I maschi sono più piccoli delle femmine"],
+	  "answers": ["Non c'è nessuna differenza", "Le corna (ossa frontali) della femmina sono ricoperte di peli, mentre quelle dei maschi no", "I maschi sono più piccoli delle femmine"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/04/Frage6_Medium_WW1106561.jpg"
@@ -1096,7 +1096,7 @@
 	},
 	{
 	  "category": "Gorilla",
-	  "question": "Quanto pu&ograve; pesare un gorilla adulto maschio?",
+	  "question": "Quanto può pesare un gorilla adulto maschio?",
 	  "answers": ["Fino a 100 chilogrammi", "Fino a 200 chilogrammi", "Fino a 300 chilogrammi"],
 	  "correctAnswer": 1,
 	  
@@ -1105,7 +1105,7 @@
 	{
 	  "category": "Gorilla",
 	  "question": "I gorilla vivono solo in Africa?",
-	  "answers": ["S&igrave;", "No, anche in Asia", "Una volta c'erano gorilla anche in America, ora ci sono solo in Africa"],
+	  "answers": ["Sì", "No, anche in Asia", "Una volta c'erano gorilla anche in America, ora ci sono solo in Africa"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1101705.jpg"
@@ -1113,9 +1113,9 @@
 	{
 	  "category": "Gorilla",
 	  "question": "Come vengono chiamati gli esemplari maschi con i peli grigi sulla schiena?",
-	  "answers": ["Capogrigio", "&quot;Silverback&quot;", "Schiena luccicante"],
+	  "answers": ["Capogrigio", "\"Silverback\"", "Schiena luccicante"],
 	  "correctAnswer": 1,
-	  "comment": "Si utilizza un termine in inglese &quot;silverback&quot; che in italiano significa &quot;schiena argentata&quot;",
+	  "comment": "Si utilizza un termine in inglese \"silverback\" che in italiano significa \"schiena argentata\"",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW225800.jpg"
 	},
 	{
@@ -1128,7 +1128,7 @@
 	},
 	{
 	  "category": "Gorilla",
-	  "question": "Chi &egrave; il capo di un gruppo di gorilla?",
+	  "question": "Chi è il capo di un gruppo di gorilla?",
 	  "answers": ["Un maschio", "Una femmina", "Un maschio e una femmina insieme"],
 	  "correctAnswer": 0,
 	  
@@ -1136,8 +1136,8 @@
 	},
 	{
 	  "category": "Gorilla",
-	  "question": "Perch&eacute; i gorilla vengono cacciati?",
-	  "answers": ["Perch&eacute; continuano a disturbare i contadini e distruggono i loro campi", "Perch&eacute; la loro pelliccia &egrave; preziosa", "Perch&eacute; se ne mangia la carne che viene venduta a caro prezzo"],
+	  "question": "Perché i gorilla vengono cacciati?",
+	  "answers": ["Perché continuano a disturbare i contadini e distruggono i loro campi", "Perché la loro pelliccia è preziosa", "Perché se ne mangia la carne che viene venduta a caro prezzo"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW22664.jpg"
@@ -1155,13 +1155,13 @@
 	  "question": "Quale specie di lemuri esiste davvero?",
 	  "answers": ["Microcebo di Mister Jack", "Microcebo di Monsieur Gainsbourg", "Microcebo di Madame Berthe"],
 	  "correctAnswer": 2,
-	  "comment": "Si chiama cos&igrave; in onore della ricercatrice malgascia Berthe Rakotosamimanana ed &egrave; stato scoperto nel 2000",
+	  "comment": "Si chiama così in onore della ricercatrice malgascia Berthe Rakotosamimanana ed è stato scoperto nel 2000",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1112571.jpg"
 	},
 	{
 	  "category": "Lemuri",
 	  "question": "Cosa fanno i catta per conquistarsi la loro posizione nella gerarchia del gruppo?",
-	  "answers": ["Fanno delle gare di urli. Vince chi urla più forte", "Si sfidano con lotte olfattive. Vince chi puzza di pi&ugrave;", "Si fissano negli occhi. Perde chi distoglie lo sguardo per primo"],
+	  "answers": ["Fanno delle gare di urli. Vince chi urla più forte", "Si sfidano con lotte olfattive. Vince chi puzza di più", "Si fissano negli occhi. Perde chi distoglie lo sguardo per primo"],
 	  "correctAnswer": 1,
 	  "comment": "I catta hanno delle ghiandole olfattive sotto le ascelle. Impregnano la coda con l'odore e la fanno oscillare in direzione dell'avversario",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW187204.jpg"
@@ -1176,7 +1176,7 @@
 	},
 	{
 	  "category": "Lemuri",
-	  "question": "Qual &egrave; la specie di lemuri pi&ugrave; grande?",
+	  "question": "Qual è la specie di lemuri più grande?",
 	  "answers": ["Indri", "Catta", "Sifaka setoso"],
 	  "correctAnswer": 0,
 	  "comment": "Sono grandi quasi come delle volpi",
@@ -1185,7 +1185,7 @@
 	{
 	  "category": "Lemuri",
 	  "question": "Come fa l'apalemure del lago Alaotra a spostarsi tra i canneti?",
-	  "answers": ["Fa un grande balzo, gli apalemuri del lago Alaotra possono infatti saltare molto lontano", "Lancia sassi e legname in acqua e si costruisce cos&igrave; un ponte", "Si arrampica su una canna fino a quando questa si piega sotto il suo peso. Si lascia poi oscillare verso la prossima canna"],
+	  "answers": ["Fa un grande balzo, gli apalemuri del lago Alaotra possono infatti saltare molto lontano", "Lancia sassi e legname in acqua e si costruisce così un ponte", "Si arrampica su una canna fino a quando questa si piega sotto il suo peso. Si lascia poi oscillare verso la prossima canna"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW139256-1.jpg"
@@ -1211,7 +1211,7 @@
 	  "question": "In media un leone ha bisogno di 5 chili di carne al giorno. Tra tutte queste prede, quale non appartiene alla sua dieta tipica?",
 	  "answers": ["Gnu", "Zebra", "Buffalo", "Iena"],
 	  "correctAnswer": 3,
-	  "comment": "I leoni cacciano principalmente in gruppo e spesso sono le femmine che vanno a caccia. Ogni tanto per&ograve; anche i maschi vanno a caccia di grandi prede",
+	  "comment": "I leoni cacciano principalmente in gruppo e spesso sono le femmine che vanno a caccia. Ogni tanto però anche i maschi vanno a caccia di grandi prede",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/L%C3%B6wen_zwei-M%C3%A4nnchen_Panthera-leo-scaled.jpg"
 	},
 	{
@@ -1225,7 +1225,7 @@
 	{
 	  "category": "Leone",
 	  "question": "Dove nascono i piccoli di leone?",
-	  "answers": ["Vicino a un fiume, cos&igrave; la mamma pu&ograve; bere subito dopo aver partorito", "In mezzo al branco, cos&igrave; la mamma e i cuccioli sono protetti durante il parto", "In un nascondiglio, cos&igrave; la mamma e i cuccioli sono al sicuro dai pericoli"],
+	  "answers": ["Vicino a un fiume, così la mamma può bere subito dopo aver partorito", "In mezzo al branco, così la mamma e i cuccioli sono protetti durante il parto", "In un nascondiglio, così la mamma e i cuccioli sono al sicuro dai pericoli"],
 	  "correctAnswer": 2,
 	  "comment": "I cuccioli nascono in un nascondiglio. SOlo dopo circa 10 settimane la mamma li porta nel branco",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/L%C3%B6we_Junges_Panthera-leo-scaled.jpg"
@@ -1233,17 +1233,17 @@
 	{
 	  "category": "Leone",
 	  "question": "Come si fanno a distinguere i leoni asiatici (Panthera leo persica) da quelli africani (Panthera leo leo)?",
-	  "answers": ["Il leone asiatico &egrave; pi&ugrave; grande, il pelo &egrave; pi&ugrave; chiaro e la coda &egrave; pi&ugrave; lunga", "Il leone asiatico &egrave; pi&ugrave; piccolo, la criniera &egrave; pi&ugrave; corta e il pelo della coda &egrave; pi&ugrave; lungo", "Hanno circa la stessa grandezza, ma il leone asiatico &egrave; po' pi&ugrave; robusto e la sua criniera &egrave; pi&ugrave; lunga, tanto da nascondere le orecchie"],
+	  "answers": ["Il leone asiatico è più grande, il pelo è più chiaro e la coda è più lunga", "Il leone asiatico è più piccolo, la criniera è più corta e il pelo della coda è più lungo", "Hanno circa la stessa grandezza, ma il leone asiatico è po' più robusto e la sua criniera è più lunga, tanto da nascondere le orecchie"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/L%C3%B6we_M%C3%A4nnchen-im-Wasser_Panthera-leo-scaled.jpg"
 	},
 	{
 	  "category": "Leone",
-	  "question": "Quando &egrave; grande un leone adulto (altezza alle spalle)?",
+	  "question": "Quando è grande un leone adulto (altezza alle spalle)?",
 	  "answers": ["120 centimetri, quindi circa come un bambino di 6 anni", "80 centimetri, quindi circa come l'altezza di una scrivania", "150 centimetri, quindi circa come un ragazzo di 12 anni"],
 	  "correctAnswer": 0,
-	  "comment": "La lunghezza del corpo (senza la coda) invece &egrave; di 250 centimetri, quindi &egrave; lungo circa pi&ugrave; del doppio rispetto all'altezza",
+	  "comment": "La lunghezza del corpo (senza la coda) invece è di 250 centimetri, quindi è lungo circa più del doppio rispetto all'altezza",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/L%C3%B6wenrudel_Panthera-leo-scaled.jpg"
 	},
 	{
@@ -1259,7 +1259,7 @@
 	  "question": "In che parte del mondo non ci sono leoni?",
 	  "answers": ["Nelle steppe in Africa", "Nella foresta di Gir in India", "Nelle savane in Africa", "Nelle montagne dell'Himalaya"],
 	  "correctAnswer": 3,
-	  "comment": " In Himalaya non vivono leoni, ma il &quot;leone delle nevi&quot; &egrave; un animale simbolico sacro raffigurato anche sulla bandiera del Tibet",
+	  "comment": " In Himalaya non vivono leoni, ma il \"leone delle nevi\" è un animale simbolico sacro raffigurato anche sulla bandiera del Tibet",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/L%C3%B6we_M%C3%A4nnchen_Panthera-leo-scaled.jpg"
 	},
 	{
@@ -1288,7 +1288,7 @@
 	},
 	{
 	  "category": "Leopardo",
-	  "question": "Qual &egrave; la principale minaccia per i leopardi?",
+	  "question": "Qual è la principale minaccia per i leopardi?",
 	  "answers": ["Valanghe", "Distruzione dell'habitat", "Vengono catturati e venduti come animali domestici"],
 	  "correctAnswer": 1,
 	  "comment": "La distruzione del loro habitat rappresenta la minaccia principale per i leopardi: l'uomo disbosca le foreste per fare spazio a campi, pascoli ed edifici",
@@ -1304,15 +1304,15 @@
 	},
 	{
 	  "category": "Lepri e conigli",
-	  "question": "La lepre del deserto, tra tutte le lepri e i conigli, &egrave; la specie con le orecchie pi&ugrave; lunghe. Sai quanto possono essere lunghe?",
-	  "answers": ["Fino a 10 centimetri", "Fino a 14 centimetri", "pi&ugrave; di 17 centimetri"],
+	  "question": "La lepre del deserto, tra tutte le lepri e i conigli, è la specie con le orecchie più lunghe. Sai quanto possono essere lunghe?",
+	  "answers": ["Fino a 10 centimetri", "Fino a 14 centimetri", "più di 17 centimetri"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/07/shutterstock_1281391792-scaled.jpg"
 	},
 	{
 	  "category": "Lepri e conigli",
-	  "question": "Con un salto, che distanza pu&ograve; raggiungere una lepre comune?",
+	  "question": "Con un salto, che distanza può raggiungere una lepre comune?",
 	  "answers": ["Fino a un metro e mezzo", "Fino a 3 metri", "Fino a 5 metri"],
 	  "correctAnswer": 1,
 	  "comment": "Possono saltare fino a 3 metri di distanza. Ma non saltano solo lontano, possono saltare anche molto in alto! Infatti possono raggiungere fino a due metri di altezza",
@@ -1329,7 +1329,7 @@
 	{
 	  "category": "Lepri e conigli",
 	  "question": "Di che colore è il pelo della lepre variabile?",
-	  "answers": ["Sempre bianco", "In inverno bianco e in estate marrone-grigio", "&Egrave; sempre bianco. Ma ci sono anche alcune lepri variabili che sono sempre di colore marrone chiaro"],
+	  "answers": ["Sempre bianco", "In inverno bianco e in estate marrone-grigio", "È; sempre bianco. Ma ci sono anche alcune lepri variabili che sono sempre di colore marrone chiaro"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/07/dreamstime_m_111415384.jpg"
@@ -1352,8 +1352,8 @@
 	},
 	{
 	  "category": "Lepri e conigli",
-	  "question": "Prima del accoppiamento, le lepri comuni fanno qualcosa di particolare. Quale tra queste affermazioni &egrave; quella giusta?",
-	  "answers": ["Prima dell'accoppiamento, il maschio insegue la femmina, e a volte la femmina gli d&agrave; delle zampate", "I maschi fanno una gara di velocit&agrave;. Il pi&ugrave; veloce pu&ograve; accoppiarsi con la femmina", "Le femmine fanno salti molto alti, poi scappano tutte assieme per cercare di essere la prima a raggiungere il maschio"],
+	  "question": "Prima del accoppiamento, le lepri comuni fanno qualcosa di particolare. Quale tra queste affermazioni è quella giusta?",
+	  "answers": ["Prima dell'accoppiamento, il maschio insegue la femmina, e a volte la femmina gli dà delle zampate", "I maschi fanno una gara di velocità. Il più veloce può accoppiarsi con la femmina", "Le femmine fanno salti molto alti, poi scappano tutte assieme per cercare di essere la prima a raggiungere il maschio"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/07/dreamstime_m_33863415.jpg"
@@ -1376,24 +1376,24 @@
 	},
 	{
 	  "category": "Lince",
-	  "question": "Quanto &egrave; grande una lince eurasiatica?",
+	  "question": "Quanto è grande una lince eurasiatica?",
 	  "answers": ["Circa come un cane pastore", "Circa come un gatto", "Circa come una tigre"],
 	  "correctAnswer": 0,
-	  "comment": "L'altezza alle spalle varia tra 50 e 75 cm e il corpo &egrave; lungo tra 80 e 130 centimetri",
+	  "comment": "L'altezza alle spalle varia tra 50 e 75 cm e il corpo è lungo tra 80 e 130 centimetri",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW229323.jpg"
 	},
 	{
 	  "category": "Lince",
 	  "question": "Come si riconosce l'impronta di una lince?",
-	  "answers": ["Assomiglia a quella di un cane o un lupo", "Assomiglia a quella di un gatto, non si vede il solco degli artigli", "Assomiglia a quella di un orso, ma &egrave; più piccola"],
+	  "answers": ["Assomiglia a quella di un cane o un lupo", "Assomiglia a quella di un gatto, non si vede il solco degli artigli", "Assomiglia a quella di un orso, ma è più piccola"],
 	  "correctAnswer": 1,
-	  "comment": "Le linci ritirano gli artigli mentre camminano, ecco perch&eacute; non si vedono nelle impronte",
+	  "comment": "Le linci ritirano gli artigli mentre camminano, ecco perché non si vedono nelle impronte",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW272276.jpg"
 	},
 	{
 	  "category": "Lince",
-	  "question": "Qual &egrave; l'origine del nome &quot;lince&quot;?",
-	  "answers": ["Deriva dalla parola greca &quot;lynx&quot; che significa &quot;luce&quot; o &quot;brillare&quot; e si riferisce agli occhi della lince", "Deriva dalla parola latina &quot;luxus&quot; che significa ricchezza e si riferisce alle lunghe basette della lince", "Deriva dalla parola latina &quot;luctare&quot; che significa lottare e si riferisce alle giovani linci scatenate"],
+	  "question": "Qual è l'origine del nome \"lince\"?",
+	  "answers": ["Deriva dalla parola greca \"lynx\" che significa \"luce\" o \"brillare\" e si riferisce agli occhi della lince", "Deriva dalla parola latina \"luxus\" che significa ricchezza e si riferisce alle lunghe basette della lince", "Deriva dalla parola latina \"luctare\" che significa lottare e si riferisce alle giovani linci scatenate"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1114694.jpg"
@@ -1401,14 +1401,14 @@
 	{
 	  "category": "Lince",
 	  "question": "Che cosa mangia la lince eurasiatica?",
-	  "answers": ["&Egrave; un animale onnivoro, la lince mangia di tutto: selvaggina, vegetali, carcasse di animali", "Mangia principalmente piante, erbe, frutta e radici", "Mangia caprioli, camosci, lepri e scoiattoli. &Egrave; un animale carnivoro"],
+	  "answers": ["È; un animale onnivoro, la lince mangia di tutto: selvaggina, vegetali, carcasse di animali", "Mangia principalmente piante, erbe, frutta e radici", "Mangia caprioli, camosci, lepri e scoiattoli. È; un animale carnivoro"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW229340.jpg"
 	},
 	{
 	  "category": "Lince",
-	  "question": "Qual &egrave; la principale minaccia della lince in Svizzera?",
+	  "question": "Qual è la principale minaccia della lince in Svizzera?",
 	  "answers": ["Le linci sono ancora ambiti trofei e vengono cacciate", "Le linci non sono minacciate", "Ci sono troppi ostacoli e le linci che vivono in regioni diverse non possono riprodursi"],
 	  "correctAnswer": 2,
 	  
@@ -1417,14 +1417,14 @@
 	{
 	  "category": "Lupo",
 	  "question": "I lupi mangiano anche frutta?",
-	  "answers": ["No, solo carne", "S&igrave;, a volte", "S&igrave;, infatti sono il loro cibo preferito"],
+	  "answers": ["No, solo carne", "Sì, a volte", "Sì, infatti sono il loro cibo preferito"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW255037.jpg"
 	},
 	{
 	  "category": "Lupo",
-	  "question": "Dove &egrave; molto difficile trovare un lupo?",
+	  "question": "Dove è molto difficile trovare un lupo?",
 	  "answers": ["Nella foresta tropicale", "In montagna", "Nella steppa"],
 	  "correctAnswer": 0,
 	  
@@ -1433,7 +1433,7 @@
 	{
 	  "category": "Lupo",
 	  "question": "In che modo il WWF aiuta i lupi?",
-	  "answers": ["D&agrave; loro cibo", "Sostiene dei progetti per proteggere le greggi dal lupo", "Costruisce delle tane per lupi"],
+	  "answers": ["Dà loro cibo", "Sostiene dei progetti per proteggere le greggi dal lupo", "Costruisce delle tane per lupi"],
 	  "correctAnswer": 1,
 	  "comment": "Il WWF sostiene dei progetti per proteggere meglio gli animali da reddito dal lupo. In questo modo le persone sono meno propense a rifutare la presenza del lupo",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW1110491.jpg"
@@ -1459,12 +1459,12 @@
 	  "question": "Come si chiama un gruppo di lupi?",
 	  "answers": ["Branco", "Gregge", "Sciame"],
 	  "correctAnswer": 0,
-	  "comment": "Nella maggior parte dei casi in un branco vivono da tre a nove lupi. Il branco pi&ugrave; piccolo &egrave; composto dal maschio, dalla femmina e dal loro cucciolo",
+	  "comment": "Nella maggior parte dei casi in un branco vivono da tre a nove lupi. Il branco più piccolo è composto dal maschio, dalla femmina e dal loro cucciolo",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW180985-1.jpg"
 	},
 	{
 	  "category": "Marmotta",
-	  "question": "Fino a quanto pu&ograve; pesare una marmotta?",
+	  "question": "Fino a quanto può pesare una marmotta?",
 	  "answers": ["1-2 chilogrammi", "3-6 chilogrammi", "10-12 chilogrammi"],
 	  "correctAnswer": 1,
 	  
@@ -1473,7 +1473,7 @@
 	{
 	  "category": "Marmotta",
 	  "question": "Cosa fanno le marmotte in inverno?",
-	  "answers": ["Vanno in letargo", "Migrano in regioni di montagna dove fa pi&ugrave; caldo", "La pelliccia diventa bianca"],
+	  "answers": ["Vanno in letargo", "Migrano in regioni di montagna dove fa più caldo", "La pelliccia diventa bianca"],
 	  "correctAnswer": 0,
 	  "comment": "Le marmotte tra ottobre e aprile vanno in letargo",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/08/Alpenmurmeltiere_Marmota-marmota_Bildagentur-Zoonar-GmbH_Shutterstock-scaled.jpg"
@@ -1496,34 +1496,34 @@
 	},
 	{
 	  "category": "Marmotta",
-	  "question": "Perch&eacute; le marmotte fischiano?",
-	  "answers": ["Per avvisare le altre marmotte che c'&egrave; un pericolo", "Per avvisare le altre che c'&egrave; un posto dove il cibo &egrave; buono", "Per marcare il territorio"],
+	  "question": "Perché le marmotte fischiano?",
+	  "answers": ["Per avvisare le altre marmotte che c'è un pericolo", "Per avvisare le altre che c'è un posto dove il cibo è buono", "Per marcare il territorio"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/08/Alpenmurmeltier_Schnee_Marmota-marmota_Bildagentur-Zoonar-GmbH_Shutterstock-scaled.jpg"
 	},
 	{
 	  "category": "Marmotta",
-	  "question": "Qual &egrave; il pericolo principale per le marmotte?",
+	  "question": "Qual è il pericolo principale per le marmotte?",
 	  "answers": ["Le aquile", "Le persone", "I cambiamenti climatici"],
 	  "correctAnswer": 1,
-	  "comment": "Le temperature pi&ugrave; calde dovute ai cambiamenti climatici e il disturbo causato dalle attivit&agrave; umane impediscono alle marmotte di mangiare abbastanza e accumulare il grasso necessario per l'inverno",
+	  "comment": "Le temperature più calde dovute ai cambiamenti climatici e il disturbo causato dalle attività umane impediscono alle marmotte di mangiare abbastanza e accumulare il grasso necessario per l'inverno",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/08/Alpenmurmeltier_Marmota-marmota_PatP66_Shutterstock-scaled.jpg"
 	},
 	{
 	  "category": "Meduse",
 	  "question": "Per cosa usano i tentacoli le meduse?",
-	  "answers": ["Si avvolgono il corpo quando dormono", "Li usano per catturare le prede", "Li usano per aggrapparsi alle alghe cos&igrave; non vanno alla deriva"],
+	  "answers": ["Si avvolgono il corpo quando dormono", "Li usano per catturare le prede", "Li usano per aggrapparsi alle alghe così non vanno alla deriva"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/08/imago0098030678h-scaled.jpg"
 	},
 	{
 	  "category": "Meduse",
-	  "question": "Le meduse hanno una struttura semplice. Cosa c'&egrave; nel loro corpo?",
+	  "question": "Le meduse hanno una struttura semplice. Cosa c'è nel loro corpo?",
 	  "answers": ["Sangue", "Stomaco", "Cuore", "Cervello"],
 	  "correctAnswer": 1,
-	  "comment": "A parte lo stomaco, non hanno nulla di tutto ci&ograve;",
+	  "comment": "A parte lo stomaco, non hanno nulla di tutto ciò",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/08/imago0108862591h-scaled.jpg"
 	},
 	{
@@ -1539,7 +1539,7 @@
 	  "question": "Quale specie di medusa non esiste?",
 	  "answers": ["Cassiopea mediterannea", "Medusa criniera di leone", "Medusa lampadario", "Medua quadrifoglio"],
 	  "correctAnswer": 2,
-	  "comment": "C'&egrave; anche una medusa chiamata medusa dell'elmo, che fa luce. Nella foto si vedono le meduse quadrifoglio",
+	  "comment": "C'è anche una medusa chiamata medusa dell'elmo, che fa luce. Nella foto si vedono le meduse quadrifoglio",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/08/imago0063510373h-scaled.jpg"
 	},
 	{
@@ -1552,10 +1552,10 @@
 	},
 	{
 	  "category": "Meduse",
-	  "question": "Qual &egrave; considerata la medusa pi&ugrave; pericolosa in assoluto?",
+	  "question": "Qual è considerata la medusa più pericolosa in assoluto?",
 	  "answers": ["La medua a pois", "La medusa nera gigante", "La vespa di mare"],
 	  "correctAnswer": 2,
-	  "comment": "Se una persona viene punta, pu&ograve; morire nel giro di pochi minuti. La vespa di mare vive nel mare al largo del nord dell'Australia",
+	  "comment": "Se una persona viene punta, può morire nel giro di pochi minuti. La vespa di mare vive nel mare al largo del nord dell'Australia",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2022/08/imago0103520569h-scaled.jpg"
 	},
 	{
@@ -1584,7 +1584,7 @@
 	},
 	{
 	  "category": "Okapi",
-	  "question": "Quanto &egrave; lunga la lingua di un okapi?",
+	  "question": "Quanto è lunga la lingua di un okapi?",
 	  "answers": ["Fino a 15 centimetri", "Fino a 20 centimetri", "Fino a 30 centimetri"],
 	  "correctAnswer": 2,
 	  "comment": "Riescono addirittura a pulirsi le orecchie con la lingua!",
@@ -1592,7 +1592,7 @@
 	},
 	{
 	  "category": "Okapi",
-	  "question": "Quali sono i parenti pi&ugrave; vicini degli okapi?",
+	  "question": "Quali sono i parenti più vicini degli okapi?",
 	  "answers": ["Giraffe", "Zebre", "Gnu"],
 	  "correctAnswer": 0,
 	  
@@ -1600,16 +1600,16 @@
 	},
 	{
 	  "category": "Okapi",
-	  "question": "Qual &egrave; la particolarit&agrave; della pelliccia degli okapi?",
-	  "answers": ["La pelliccia cambia spesso colore, dal bianco al grigio e poi al marrone", "La pelliccia immagazzina tanta acqua. Cos&igrave; gli okapi possono bere con la loro lunga lingua direttamente dalla pelliccia", "La pelliccia &egrave; oleosa e impermeabile all'acqua"],
+	  "question": "Qual è la particolarità della pelliccia degli okapi?",
+	  "answers": ["La pelliccia cambia spesso colore, dal bianco al grigio e poi al marrone", "La pelliccia immagazzina tanta acqua. Così gli okapi possono bere con la loro lunga lingua direttamente dalla pelliccia", "La pelliccia è oleosa e impermeabile all'acqua"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/05/dreamstime_m_8663249.jpg"
 	},
 	{
 	  "category": "Okapi",
-	  "question": "Le ricercatrici e i ricercatori hanno scoperto gli okapi solo recentemente. Qual &egrave; la particolarit&agrave; di questa scoperta?",
-	  "answers": ["Gli okapi sono i mammiferi pi&ugrave; grandi ad essere stati scoperti nelle foreste africane", "Gli okapi sono gli ultimi grandi mammiferi ad essere tati scoperti nelle foreste africane", "Finora &egrave; stato scoperto solo un unico esemplare di okapi nelle foreste africane"],
+	  "question": "Le ricercatrici e i ricercatori hanno scoperto gli okapi solo recentemente. Qual è la particolarità di questa scoperta?",
+	  "answers": ["Gli okapi sono i mammiferi più grandi ad essere stati scoperti nelle foreste africane", "Gli okapi sono gli ultimi grandi mammiferi ad essere tati scoperti nelle foreste africane", "Finora è stato scoperto solo un unico esemplare di okapi nelle foreste africane"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/05/dreamstime_m_132083652.jpg"
@@ -1617,7 +1617,7 @@
 	{
 	  "category": "Okapi",
 	  "question": "Come vivono gli okapi?",
-	  "answers": ["Sono soprattutto degli animali solitari", "Vivono in piccoli gruppi", "Vivono in una famiglia (mamma, pap&agrave; e un cucciolo)"],
+	  "answers": ["Sono soprattutto degli animali solitari", "Vivono in piccoli gruppi", "Vivono in una famiglia (mamma, papà e un cucciolo)"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/05/dreamstime_s_132083717.jpg"
@@ -1640,7 +1640,7 @@
 	},
 	{
 	  "category": "Orango",
-	  "question": "Cosa significa &quot;Orang-utan&quot;?",
+	  "question": "Cosa significa \"Orang-utan\"?",
 	  "answers": ["Uomo delle foreste", "Scimmia dal pelo rosso-arancione", "Scimmia che mangia arance"],
 	  "correctAnswer": 0,
 	  
@@ -1648,7 +1648,7 @@
 	},
 	{
 	  "category": "Orango",
-	  "question": "Qual &egrave; probabilmente la pi&ugrave; grande minaccia per gli oranghi?",
+	  "question": "Qual è probabilmente la più grande minaccia per gli oranghi?",
 	  "answers": ["I cambiamenti climatici", "La deforestazione", "Ci sono troppe tigri che mangiano gli oranghi"],
 	  "correctAnswer": 1,
 	  
@@ -1665,9 +1665,9 @@
 	{
 	  "category": "Orango",
 	  "question": "Come vivono gli oranghi?",
-	  "answers": ["Sono animali perlopi&ugrave; solitari, ma alcune femmine formano piccoli gruppi", "I maschi creano un grande gruppo e le femmine formano un altro gruppo", "Vivono in grandi gruppi di circa 20 esemplari. A capo del gruppo c'&egrave; una femmina"],
+	  "answers": ["Sono animali perlopiù solitari, ma alcune femmine formano piccoli gruppi", "I maschi creano un grande gruppo e le femmine formano un altro gruppo", "Vivono in grandi gruppi di circa 20 esemplari. A capo del gruppo c'è una femmina"],
 	  "correctAnswer": 0,
-	  "comment": "Gli oranghi fanno perlopi&ugrave; una vita da solitari. Alcune femmine formano per&ograve; piccoli gruppi",
+	  "comment": "Gli oranghi fanno perlopiù una vita da solitari. Alcune femmine formano però piccoli gruppi",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW142572.jpg"
 	},
 	{
@@ -1681,7 +1681,7 @@
 	{
 	  "category": "Orso bruno",
 	  "question": "Cosa fanno gli orsi bruni d'inverno?",
-	  "answers": ["Costruiscono dei pupazzi di neve e giocano a scivolare sul ghiaccio", "Passano l'inverno in una grotta e cadono in un sonno profondo, che per&ograve; non &egrave; un vero e proprio letargo", "Vanno in letargo proprio come le marmotte"],
+	  "answers": ["Costruiscono dei pupazzi di neve e giocano a scivolare sul ghiaccio", "Passano l'inverno in una grotta e cadono in un sonno profondo, che però non è un vero e proprio letargo", "Vanno in letargo proprio come le marmotte"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1113998.jpg"
@@ -1689,7 +1689,7 @@
 	{
 	  "category": "Orso bruno",
 	  "question": "Come mai gli orsi bruni mangiano tanto in autunno?",
-	  "answers": ["Perch&eacute; in autunno il cibo &egrave; pi&ugrave; gustoso", "Perch&eacute; gli orsi devono accumulare uno strato di grasso abbastanza spesso per affrontare l'inverno", "Cos&igrave; in primavera possono rimettersi a dieta"],
+	  "answers": ["Perché in autunno il cibo è più gustoso", "Perché gli orsi devono accumulare uno strato di grasso abbastanza spesso per affrontare l'inverno", "Così in primavera possono rimettersi a dieta"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW229355.jpg"
@@ -1697,7 +1697,7 @@
 	{
 	  "category": "Orso bruno",
 	  "question": "Quanto pesano i cuccioli alla nascita?",
-	  "answers": ["Pi&ugrave; o meno 400 grammi, tanto quanto un porcellino d'India", "Pi&ugrave; o meno 4 chili, tanto quanto un gatto", "Pi&ugrave; o meno 100 grammi, tanto quanto una tavoletta di cioccolato"],
+	  "answers": ["Più o meno 400 grammi, tanto quanto un porcellino d'India", "Più o meno 4 chili, tanto quanto un gatto", "Più o meno 100 grammi, tanto quanto una tavoletta di cioccolato"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1113668.jpg"
@@ -1712,7 +1712,7 @@
 	},
 	{
 	  "category": "Orso polare",
-	  "question": "Che et&agrave; raggiunge un orso polare in libert&agrave;?",
+	  "question": "Che età raggiunge un orso polare in libertà?",
 	  "answers": ["12 anni", "25 anni", "80 anni"],
 	  "correctAnswer": 1,
 	  
@@ -1728,8 +1728,8 @@
 	},
 	{
 	  "category": "Orso polare",
-	  "question": "Perch&eacute; il ghiaccio rimane intatto sotto il peso degli orsi polari?",
-	  "answers": ["Hanno delle zampe molto grandi che permettono di distribuire uniformemente il peso", "Gli orsi polari sono molto leggeri", "In realt&agrave; questo &egrave; un problema degli orsi polari: continuano a cadere nell'acqua gelida"],
+	  "question": "Perché il ghiaccio rimane intatto sotto il peso degli orsi polari?",
+	  "answers": ["Hanno delle zampe molto grandi che permettono di distribuire uniformemente il peso", "Gli orsi polari sono molto leggeri", "In realtà questo è un problema degli orsi polari: continuano a cadere nell'acqua gelida"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW215284.jpg"
@@ -1761,9 +1761,9 @@
 	{
 	  "category": "Panda Gigante",
 	  "question": "Che cosa mangia il panda gigante?",
-	  "answers": ["Erba, insetti e foglie", "Quasi esclusivamente bamb&ugrave;", "Bamb&ugrave;, carne e molta frutta"],
+	  "answers": ["Erba, insetti e foglie", "Quasi esclusivamente bambù", "Bambù, carne e molta frutta"],
 	  "correctAnswer": 1,
-	  "comment": "Dato che il bamb&ugrave; non &egrave; molto nutriente, ne mangia dai 12 ai 40 chili al giorno",
+	  "comment": "Dato che il bambù non è molto nutriente, ne mangia dai 12 ai 40 chili al giorno",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW231554.jpg"
 	},
 	{
@@ -1792,10 +1792,10 @@
 	},
 	{
 	  "category": "Panda Gigante",
-	  "question": "Perch&eacute; i panda giganti sono ancora minacciati?",
-	  "answers": ["Il loro habitat diventa sempre pi&ugrave; piccolo e le foreste in cui vivono sono frammentate", "I bracconieri cacciano i panda per vendere a caro prezzo la loro bella pelliccia", "I panda rossi divorano il bamb&ugrave; lasciando i panda giganti senza cibo"],
+	  "question": "Perché i panda giganti sono ancora minacciati?",
+	  "answers": ["Il loro habitat diventa sempre più piccolo e le foreste in cui vivono sono frammentate", "I bracconieri cacciano i panda per vendere a caro prezzo la loro bella pelliccia", "I panda rossi divorano il bambù lasciando i panda giganti senza cibo"],
 	  "correctAnswer": 0,
-	  "comment": "Le foreste sono separate da villaggi, strade e campi. Per i panda risulta cos&igrave; difficile spostarsi in nuove foreste per cercare nuovo bamb&ugrave; e rischiano cos&igrave; di morire di fame",
+	  "comment": "Le foreste sono separate da villaggi, strade e campi. Per i panda risulta così difficile spostarsi in nuove foreste per cercare nuovo bambù e rischiano così di morire di fame",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW2115802.jpg"
 	},
 	{
@@ -1808,15 +1808,15 @@
 	},
 	{
 	  "category": "Panda Rosso",
-	  "question": "Qual &egrave; il cibo preferito del panda rosso?",
-	  "answers": ["Pesci", "Insetti", "Bamb&ugrave;"],
+	  "question": "Qual è il cibo preferito del panda rosso?",
+	  "answers": ["Pesci", "Insetti", "Bambù"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW177094.jpg"
 	},
 	{
 	  "category": "Panda Rosso",
-	  "question": "Quale di queste affermazioni &egrave; sbagliata?",
+	  "question": "Quale di queste affermazioni è sbagliata?",
 	  "answers": ["I panda rossi sono animali solitari", "I panda rossi vivono in grandi famiglie", "I panda rossi lasciano il loro partner dopo l'accoppiamento"],
 	  "correctAnswer": 1,
 	  
@@ -1825,14 +1825,14 @@
 	{
 	  "category": "Panda Rosso",
 	  "question": "Dove nascono i piccoli di panda rosso?",
-	  "answers": ["In nidi sugli alberi", "In buchi nel terreno scavati dalle mamme", "In cavit&agrave; degli alberi o tra le rocce"],
+	  "answers": ["In nidi sugli alberi", "In buchi nel terreno scavati dalle mamme", "In cavità degli alberi o tra le rocce"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW215502.jpg"
 	},
 	{
 	  "category": "Panda Rosso",
-	  "question": "Quale di queste affermazioni &egrave; giusta?",
+	  "question": "Quale di queste affermazioni è giusta?",
 	  "answers": ["Alla nascita i piccoli sono ciechi", "I cuccioli nascono senza pelo", "I cuccioli nascono con il pelo e vedono subito"],
 	  "correctAnswer": 0,
 	  
@@ -1840,8 +1840,8 @@
 	},
 	{
 	  "category": "Panda Rosso",
-	  "question": "Perch&eacute; i panda rossi sono minacciati?",
-	  "answers": ["Perch&egrave; mangiano i rifiuti che li fanno morire", "Perch&eacute; stanno perdendo il loro habitat", "Perch&eacute; i grandi predatori cacciano i panda rossi"],
+	  "question": "Perché i panda rossi sono minacciati?",
+	  "answers": ["Perchè mangiano i rifiuti che li fanno morire", "Perché stanno perdendo il loro habitat", "Perché i grandi predatori cacciano i panda rossi"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW1478.jpg"
@@ -1849,7 +1849,7 @@
 	{
 	  "category": "Pangolino",
 	  "question": "Cosa fa il pangolino in caso di pericolo?",
-	  "answers": ["Fugge velocemente", "Si raggomitola su s&eacute; stesso", "Si difende usando i lunghi artigli"],
+	  "answers": ["Fugge velocemente", "Si raggomitola su sé stesso", "Si difende usando i lunghi artigli"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/12/Malaiische-Schuppentier_auf-Baum_Manis-javanica_Suzi-Eszterhas-scaled.jpg"
@@ -1865,17 +1865,17 @@
 	{
 	  "category": "Pangolino",
 	  "question": "Come mai i pangolini sono in pericolo di estinzione?",
-	  "answers": ["A causa dei cambiamenti climatici perdono i loro habitat", "Non trovano pi&ugrave; abbastanza cibo", "Vengono cacciati dai bracconieri"],
+	  "answers": ["A causa dei cambiamenti climatici perdono i loro habitat", "Non trovano più abbastanza cibo", "Vengono cacciati dai bracconieri"],
 	  "correctAnswer": 2,
 	  "comment": "I bracconieri cacciano i pangolini per via delle loro scaglie e della loro carne, malgrado questo sia vietato",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/12/Weissbauchschuppentier_Phataginus-tricuspis-scaled.jpg"
 	},
 	{
 	  "category": "Pangolino",
-	  "question": "Chi sono i parenti pi&ugrave; vicini dei pangolini?",
+	  "question": "Chi sono i parenti più vicini dei pangolini?",
 	  "answers": ["Bradipi", "Formichieri", "Predatori come leoni e lupi"],
 	  "correctAnswer": "2",
-	  "comment": "I pangolini assomigliano ai formichieri, sono per&ograve; parenti di predatori come orsi, lupi e tigri",
+	  "comment": "I pangolini assomigliano ai formichieri, sono però parenti di predatori come orsi, lupi e tigri",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/12/Malaiische-Schuppentier_Manis-javanicaWWF-Malaysia-Stephen-Hogg-scaled.jpg"
 	},
 	{
@@ -1904,7 +1904,7 @@
 	},
 	{
 	  "category": "Pernice bianca",
-	  "question": "Che et&agrave; possono raggiungere le pernici bianche?",
+	  "question": "Che età possono raggiungere le pernici bianche?",
 	  "answers": ["Al massimo 5 anni", "Al massimo 9 anni", "Al massimo 13 anni"],
 	  "correctAnswer": 1,
 	  
@@ -1952,7 +1952,7 @@
 	},
 	{
 	  "category": "Pernice bianca",
-	  "question": "Qual &egrave; il pericolo principale per la pernice bianca?",
+	  "question": "Qual è il pericolo principale per la pernice bianca?",
 	  "answers": ["L'acquila reale", "Le valanghe", "I cambiamenti climatici"],
 	  "correctAnswer": 2,
 	  
@@ -1960,8 +1960,8 @@
 	},
 	{
 	  "category": "Pesci",
-	  "question": "In che periodo il salmone &egrave; stato considerato estinto in Svizzera?",
-	  "answers": ["Dopo l'era glaciale", "Dopo il 1950", "Non si &egrave; mai estinto in Svizzera"],
+	  "question": "In che periodo il salmone è stato considerato estinto in Svizzera?",
+	  "answers": ["Dopo l'era glaciale", "Dopo il 1950", "Non si è mai estinto in Svizzera"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/09/AdobeStock_369152221-scaled.jpeg"
@@ -1971,15 +1971,15 @@
 	  "question": "Quante specie di pesci ci sono in Svizzera?",
 	  "answers": ["Circa 70", "Circa 700", "Circa 7000"],
 	  "correctAnswer": 0,
-	  "comment": "A livello mondiale ci sono pi&ugrave; di 30.000 specie di pesci",
+	  "comment": "A livello mondiale ci sono più di 30.000 specie di pesci",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/07/shutterstock_631655993-scaled.jpg"
 	},
 	{
 	  "category": "Pesci",
-	  "question": "Quanto pu&ograve; pesare un salmone adulto?",
+	  "question": "Quanto può pesare un salmone adulto?",
 	  "answers": ["Come un pulmino della scuola", "Come un bambino delle elementari", "Come uno stuzzicadenti"],
 	  "correctAnswer": 1,
-	  "comment": "Un salmone pu&ograve; arrivare a pesare come un bambino delle elementari, circa 30 chili e ad essere lungo come un luccio",
+	  "comment": "Un salmone può arrivare a pesare come un bambino delle elementari, circa 30 chili e ad essere lungo come un luccio",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/09/WW231567-scaled.jpg"
 	},
 	{
@@ -1992,7 +1992,7 @@
 	},
 	{
 	  "category": "Pesci",
-	  "question": "Il salmone &egrave; noto per la sua lunga migrazione andata e ritorno dal mare. Quale altro pesce presente in Svizzera compie migrazioni di simile lunghezza passando per l'oceano Atlantico?",
+	  "question": "Il salmone è noto per la sua lunga migrazione andata e ritorno dal mare. Quale altro pesce presente in Svizzera compie migrazioni di simile lunghezza passando per l'oceano Atlantico?",
 	  "answers": ["Il pesce persico", "Il naso", "L'anguilla europea"],
 	  "correctAnswer": 2,
 	  "comment": "L'anguilla europea nasce nelle vicinanze delle Bahamas e inseguito nuota fino alle coste europee",
@@ -2000,26 +2000,26 @@
 	},
 	{
 	  "category": "Pesci",
-	  "question": "Perch&eacute; i salmoni muoiono alla fine della loro migrazione?",
-	  "answers": ["I genitori si prendono cura per settimane della loro prole. Questo li stanca al punto che muoiono", "Dopo la migrazione e la riproduzione i pesci non hanno pi&ugrave; energie e muoiono per sfinimento", "Le larve appena nate si nutrono dei genitori. Cos&igrave; facendo hanno abbastanza nutrimento per crescere velocemente"],
+	  "question": "Perché i salmoni muoiono alla fine della loro migrazione?",
+	  "answers": ["I genitori si prendono cura per settimane della loro prole. Questo li stanca al punto che muoiono", "Dopo la migrazione e la riproduzione i pesci non hanno più energie e muoiono per sfinimento", "Le larve appena nate si nutrono dei genitori. Così facendo hanno abbastanza nutrimento per crescere velocemente"],
 	  "correctAnswer": 1,
 	  "comment": "I salmoni usano tutte le energie e le riserve di grasso durante la migrazione",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/08/WW1110106-scaled.jpg"
 	},
 	{
 	  "category": "Pesci",
-	  "question": "Qual &egrave; il pi&ugrave; grande pericolo per i pesci migratori?",
+	  "question": "Qual è il più grande pericolo per i pesci migratori?",
 	  "answers": ["Pesca intensiva", "Inquinamento delle acque", "Gli ostacoli come le chiuse, le dighe o le centrali idroelettriche"],
 	  "correctAnswer": 2,
-	  "comment": "Gli ostacoli sono il pi&ugrave; grande pericolo per le specie migratrici, siccome impediscono ai pesci di raggiungere le loro acque di origine. La pesca intensiva e l'inquinamento delle acque mettono in pericolo tutte le specie di pesci",
+	  "comment": "Gli ostacoli sono il più grande pericolo per le specie migratrici, siccome impediscono ai pesci di raggiungere le loro acque di origine. La pesca intensiva e l'inquinamento delle acque mettono in pericolo tutte le specie di pesci",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2021/09/WW25299-scaled.jpg"
 	},
 	{
 	  "category": "Pinguini",
-	  "question": "Perch&eacute; i pinguini hanno la pancia bianca e la schiena nera?",
-	  "answers": ["Per essere sempre eleganti", "Per mimetizzarsi bene in acqua", "Per fare in modo che gli altri pinguini capiscano gi&agrave; da lontano, dove si trova il davanti e dove si trova il dietro dei pinguini"],
+	  "question": "Perché i pinguini hanno la pancia bianca e la schiena nera?",
+	  "answers": ["Per essere sempre eleganti", "Per mimetizzarsi bene in acqua", "Per fare in modo che gli altri pinguini capiscano già da lontano, dove si trova il davanti e dove si trova il dietro dei pinguini"],
 	  "correctAnswer": 1,
-	  "comment": "I pinguini si mimetizzano in acqua dagli animali che vogliono mangiarli. La pancia bianca &egrave; difficile da vedere dal basso, la schiena nera invece li protegge quando i nemici sono sopra di loro",
+	  "comment": "I pinguini si mimetizzano in acqua dagli animali che vogliono mangiarli. La pancia bianca è difficile da vedere dal basso, la schiena nera invece li protegge quando i nemici sono sopra di loro",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/08/Medium_WW2104771.jpg"
 	},
 	{
@@ -2040,8 +2040,8 @@
 	},
 	{
 	  "category": "Pinguini",
-	  "question": "Quale delle seguenti risposte &egrave; vera?",
-	  "answers": ["La stagione riproduttiva dei pinguini &egrave; sempre in inverno", "La maggior parte dei pinguini si riproduce in primavera. Solo il pinguino imperatore si riproduce nell'inverno antartico", "Poich&eacute; al Polo Sud fa sempre freddo, i pinguini si riproducono durante tutto l'anno"],
+	  "question": "Quale delle seguenti risposte è vera?",
+	  "answers": ["La stagione riproduttiva dei pinguini è sempre in inverno", "La maggior parte dei pinguini si riproduce in primavera. Solo il pinguino imperatore si riproduce nell'inverno antartico", "Poiché al Polo Sud fa sempre freddo, i pinguini si riproducono durante tutto l'anno"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/08/Medium_WW176766.jpg"
@@ -2056,18 +2056,18 @@
 	},
 	{
 	  "category": "Pinguini",
-	  "question": "Qual &egrave; la pi&ugrave; grande minaccia per i pinguini?",
+	  "question": "Qual è la più grande minaccia per i pinguini?",
 	  "answers": ["Il surriscaldamento climatico", "L'uomo, che caccia i pinguini per le loro uova", "Gli orsi polari e altri predatori"],
 	  "correctAnswer": 0,
-	  "comment": "Il surriscaldamento globale ha un forte impatto sul ghiaccio antartico e sulla quantit&agrave; di pesci e di krill",
+	  "comment": "Il surriscaldamento globale ha un forte impatto sul ghiaccio antartico e sulla quantità di pesci e di krill",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/08/Medium_WW172049.jpg"
 	},
 	{
 	  "category": "Pipistrelli",
-	  "question": "Che et&agrave; possono raggiungere i pipistrelli?",
+	  "question": "Che età possono raggiungere i pipistrelli?",
 	  "answers": ["Fino a 5 anni", "Fino a 45 anni", "Fino a 85 anni"],
 	  "correctAnswer": 0,
-	  "comment": "In media i pipistrelli vivono tra 3 e 5 anni. Per&ograve; sono gi&agrave; stati trovati esemplari che avevano oltre 40 anni",
+	  "comment": "In media i pipistrelli vivono tra 3 e 5 anni. Però sono già stati trovati esemplari che avevano oltre 40 anni",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/02/Meheley-Hufeisennase_Rhinolophus-mehelyi_Bulgarien.jpg"
 	},
 	{
@@ -2088,10 +2088,10 @@
 	},
 	{
 	  "category": "Pipistrelli",
-	  "question": "Chi sono i parenti pi&ugrave; vicini dei pipistrelli?",
+	  "question": "Chi sono i parenti più vicini dei pipistrelli?",
 	  "answers": ["Topi", "Passeri", "Volpi volanti"],
 	  "correctAnswer": 2,
-	  "comment": "I pipistrelli non sono n&eacute; uccelli n&eacute; topi. Con le volpi volanti appartengono all'ordine dei chirotteri",
+	  "comment": "I pipistrelli non sono né uccelli né topi. Con le volpi volanti appartengono all'ordine dei chirotteri",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/02/Sichelfl%C3%BCgelfledermaus_Phyllops-falcatus_Kuba.jpg"
 	},
 	{
@@ -2104,8 +2104,8 @@
 	},
 	{
 	  "category": "Pipistrelli",
-	  "question": "Perch&eacute; i pipistrelli sono attivi di notte?",
-	  "answers": ["Perch&eacute; la luce del sole &egrave; troppo abbagliante", "Perch&eacute; di notte ci sono meno animali che mangiano le loro stesse prede", "Per proteggersi dai loro nemici"],
+	  "question": "Perché i pipistrelli sono attivi di notte?",
+	  "answers": ["Perché la luce del sole è troppo abbagliante", "Perché di notte ci sono meno animali che mangiano le loro stesse prede", "Per proteggersi dai loro nemici"],
 	  "correctAnswer": 1,
 	  "comment": "I pipistrelli approfittano del fatto che di notte gli uccelli insettivori dormono. Inoltre al buio i pipistrelli sono meno visibili per i loro predatori",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/02/Myotis-lucifugus_Seite.jpg"
@@ -2120,15 +2120,15 @@
 	},
 	{
 	  "category": "Polpi, seppie e calamari",
-	  "question": "I polpi possono muoversi in diversi modi. Tra queste affermazioni, qual &egrave; quella sbagliata?",
-	  "answers": ["I polpi possono nuotare, strisciare e spostarsi in punta di piedi sul fondale marino", "Alcuni polpi possono spostarsi per breve tempo anche sulla terraferma", "I polpi aspirano l'acqua e la espellono attraverso l'imbuto. In questo modo vengono catapultati in avanti a grande velocit&agrave;", "Alcuni polpi separano gli otto tentacoli a due a due e sembrano cos&igrave; ad un quadrupede. In questo modo possono partire al galoppo sul fondale marino"],
+	  "question": "I polpi possono muoversi in diversi modi. Tra queste affermazioni, qual è quella sbagliata?",
+	  "answers": ["I polpi possono nuotare, strisciare e spostarsi in punta di piedi sul fondale marino", "Alcuni polpi possono spostarsi per breve tempo anche sulla terraferma", "I polpi aspirano l'acqua e la espellono attraverso l'imbuto. In questo modo vengono catapultati in avanti a grande velocità", "Alcuni polpi separano gli otto tentacoli a due a due e sembrano così ad un quadrupede. In questo modo possono partire al galoppo sul fondale marino"],
 	  "correctAnswer": 3,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/Large_WW184130-scaled.jpg"
 	},
 	{
 	  "category": "Polpi, seppie e calamari",
-	  "question": "Di che colore &egrave; il sangue di polpi, seppie e calamari?",
+	  "question": "Di che colore è il sangue di polpi, seppie e calamari?",
 	  "answers": ["Rosso", "Nero", "Blu", "Trasparente"],
 	  "correctAnswer": 2,
 	  
@@ -2137,7 +2137,7 @@
 	{
 	  "category": "Polpi, seppie e calamari",
 	  "question": "Da cosa si riconoscono le seppie dagli altri molluschi tentacolati?",
-	  "answers": ["Sulla pancia hanno una striscia azzurra", "Hanno un terzo occhio sulla fronte", "Il contorno del corpo &egrave; ricoperto dai bordi del mantello"],
+	  "answers": ["Sulla pancia hanno una striscia azzurra", "Hanno un terzo occhio sulla fronte", "Il contorno del corpo è ricoperto dai bordi del mantello"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/iStock-979858324-scaled.jpg"
@@ -2152,16 +2152,16 @@
 	},
 	{
 	  "category": "Polpi, seppie e calamari",
-	  "question": "Perch&eacuteM la maggior parte di seppie, polpi e calamari spruzza l'inchiostro?",
-	  "answers": ["Per allontanare e confondere gli animali che li attaccano", "Perch&eacute; preferiscono stare nell'acqua scura", "Per scrivere nel mare con l'inchiostro", "Per liberarsi dai resti di cibo"],
+	  "question": "Perché la maggior parte di seppie, polpi e calamari spruzza l'inchiostro?",
+	  "answers": ["Per allontanare e confondere gli animali che li attaccano", "Perché preferiscono stare nell'acqua scura", "Per scrivere nel mare con l'inchiostro", "Per liberarsi dai resti di cibo"],
 	  "correctAnswer": 0,
 	  "comment": "L'inchiostro della tua penna stilografica non proviene da seppie, polpi o calamari, ma viene prodotto artificialmente",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/shutterstock_61613554-scaled.jpg"
 	},
 	{
 	  "category": "Polpi, seppie e calamari",
-	  "question": "Qual &egrave; una caratteristica particolare delle ventose sui tentacoli?",
-	  "answers": ["Servono per guardare, infatti in ogni ventosa c'&egrave; un occhio", "Possono essere utilizzate per sentire il gusto", "Servono per aspirare l'acqua"],
+	  "question": "Qual è una caratteristica particolare delle ventose sui tentacoli?",
+	  "answers": ["Servono per guardare, infatti in ogni ventosa c'è un occhio", "Possono essere utilizzate per sentire il gusto", "Servono per aspirare l'acqua"],
 	  "correctAnswer": 1,
 	  "comment": "Inoltre, riescono anche a muovere ogni singola ventosa",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/iStock-933906804-scaled.jpg"
@@ -2169,7 +2169,7 @@
 	{
 	  "category": "Polpi, seppie e calamari",
 	  "question": "Come nascono i giovani polpi?",
-	  "answers": ["Le femmine depongono le uova da cui nascono i piccoli", "Le femmine danno alla luce dei polpi completamente gi&agrave; formati", "Sono i maschi che partoriscono i cuccioli, come i cavallucci marini"],
+	  "answers": ["Le femmine depongono le uova da cui nascono i piccoli", "Le femmine danno alla luce dei polpi completamente già formati", "Sono i maschi che partoriscono i cuccioli, come i cavallucci marini"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/09/iStock-119753509-scaled.jpg"
@@ -2177,17 +2177,17 @@
 	{
 	  "category": "Ragni",
 	  "question": "Come si distinguono i ragni dagli insetti?",
-	  "answers": ["Gli insetti hanno sempre le ali", "Gli insetti hanno sei zampe, i ragni otto", "Gli insetti sono pi&ugrave; piccoli dei ragni"],
+	  "answers": ["Gli insetti hanno sempre le ali", "Gli insetti hanno sei zampe, i ragni otto", "Gli insetti sono più piccoli dei ragni"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/09/Spinne_Insekt_Cesar-Augusto-ramirez-Vallejo-auf-Pixabay.jpg"
 	},
 	{
 	  "category": "Ragni",
-	  "question": "Da cosa &egrave; composta la ragnatela?",
+	  "question": "Da cosa è composta la ragnatela?",
 	  "answers": ["Radnetz", "Da saliva", "Soprattutto da grasso"],
 	  "correctAnswer": 0,
-	  "comment": "La ragnatela &egrave; composta principalmente da proteine",
+	  "comment": "La ragnatela è composta principalmente da proteine",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/09/Netz_skeeze-auf-Pixabay.jpg"
 	},
 	{
@@ -2216,15 +2216,15 @@
 	},
 	{
 	  "category": "Ragni",
-	  "question": "Il ragno Misumena vatia pu&ograve; cambiare colore per mimetizzarsi con i fiori. Di quali colori pu&ograve; diventare?",
-	  "answers": ["Bianco, giallo o verdognolo", "Pu&ograve; assumere qualsiasi colore", "Giallo, verde o rosa chiaro"],
+	  "question": "Il ragno Misumena vatia può cambiare colore per mimetizzarsi con i fiori. Di quali colori può diventare?",
+	  "answers": ["Bianco, giallo o verdognolo", "Può assumere qualsiasi colore", "Giallo, verde o rosa chiaro"],
 	  "correctAnswer": 0,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/09/Krabbenspinne_Heiko-Stein-auf-Pixabay.jpg"
 	},
 	{
 	  "category": "Ragni",
-	  "question": "Cosa fa il maschio del ragno Pisaura mirabilis per avere maggiori possibilit&agrave; di accoppiarsi?",
+	  "question": "Cosa fa il maschio del ragno Pisaura mirabilis per avere maggiori possibilità di accoppiarsi?",
 	  "answers": ["Si esibisce in una spettacolare danza", "Tesse una sorta di abito da sposa per la femmina", "Porta in regalo alla femmina un insetto avvolto nella ragnatela"],
 	  "correctAnswer": 2,
 	  
@@ -2240,7 +2240,7 @@
 	},
 	{
 	  "category": "Rane, rospi e raganelle",
-	  "question": "La rana dorata, chiamata anche rana freccia, &egrave; molto velenosa. Quanti topi potrebbero venir uccisi con il veleno di una sola rana?",
+	  "question": "La rana dorata, chiamata anche rana freccia, è molto velenosa. Quanti topi potrebbero venir uccisi con il veleno di una sola rana?",
 	  "answers": ["Fino a 200 topi", "Fino a 2000 topi", "Fino a 20.000 topi"],
 	  "correctAnswer": 2,
 	  
@@ -2264,15 +2264,15 @@
 	},
 	{
 	  "category": "Rane, rospi e raganelle",
-	  "question": "Tra queste rane e raganelle qual &egrave; la pi&ugrave; abile arrampicatrice?",
+	  "question": "Tra queste rane e raganelle qual è la più abile arrampicatrice?",
 	  "answers": ["Raganella comune", "Rana rossa", "Rana dei fossi"],
 	  "correctAnswer": 0,
-	  "comment": "La raganella comune &egrave; la pi&ugrave; abile arrampicatrice e ama stare tra i cespugli. Quella nella foto &egrave; una rana rossa",
+	  "comment": "La raganella comune è la più abile arrampicatrice e ama stare tra i cespugli. Quella nella foto è una rana rossa",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/02/Medium_WW114386.jpg"
 	},
 	{
 	  "category": "Rane, rospi e raganelle",
-	  "question": "Quanto &egrave; lungo il corpo di una rana golia?",
+	  "question": "Quanto è lungo il corpo di una rana golia?",
 	  "answers": ["Circa 15 centimetri", "Circa 30 centimetri", "Circa 50 centimetri"],
 	  "correctAnswer": 1,
 	  
@@ -2304,10 +2304,10 @@
 	},
 	{
 	  "category": "Rapaci notturni",
-	  "question": "Come si chiama il gufo pi&ugrave; piccolo del mondo?",
+	  "question": "Come si chiama il gufo più piccolo del mondo?",
 	  "answers": ["Elfo dei cactus", "Gufo delle fatine", "Microgufo"],
 	  "correctAnswer": 0,
-	  "comment": " Il gufo pi&ugrave; piccolo del mondo si chiama Elfo dei cactus ed &egrave; grande appena 13 centimetri. Il gufo delle fatine e il microgufo invece non esistono",
+	  "comment": " Il gufo più piccolo del mondo si chiama Elfo dei cactus ed è grande appena 13 centimetri. Il gufo delle fatine e il microgufo invece non esistono",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/07/Kanincheneule_Athene-cunicularia-scaled.jpg"
 	},
 	{
@@ -2329,7 +2329,7 @@
 	{
 	  "category": "Rapaci notturni",
 	  "question": "I piccoli quando lasciano il nido per la prima volta?",
-	  "answers": ["Prima di essere in grado di volare perfettamente", "Quando i genitori non gli procurano pi&ugrave; il cibo", "Solo quando sono in grado di volare perfettamente"],
+	  "answers": ["Prima di essere in grado di volare perfettamente", "Quando i genitori non gli procurano più il cibo", "Solo quando sono in grado di volare perfettamente"],
 	  "correctAnswer": 0,
 	  "comment": "I piccoli si arrampicano da un ramo all'altro o sulle rocce per esplorare i dintorni",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/07/Sumpfohreule_Asio-flammeus.jpg"
@@ -2344,7 +2344,7 @@
 	},
 	{
 	  "category": "Rapaci notturni",
-	  "question": "Qual &egrave; il rapace notturno pi&ugrave; grande del mondo?",
+	  "question": "Qual è il rapace notturno più grande del mondo?",
 	  "answers": ["Gufo delle nevi", "Civetta reale", "Gufo reale"],
 	  "correctAnswer": 2,
 	  
@@ -2368,7 +2368,7 @@
 	},
 	{
 	  "category": "Riccio",
-	  "question": "Quale predatore pu&igrave; essere pericoloso per un riccio adulto?",
+	  "question": "Quale predatore puì essere pericoloso per un riccio adulto?",
 	  "answers": ["Il tasso", "La volpe", "Il gufo reale"],
 	  "correctAnswer": 0,
 	  "comment": "La volpe ha artigli troppo corti per aprire un riccio appallottolato. Solo il tasso e il gufo reale riescono ad aprirlo con i loro artigli potenti",
@@ -2377,14 +2377,14 @@
 	{
 	  "category": "Riccio",
 	  "question": "I cuccioli di riccio, a partire da quando cominciano ad avere gli aculei?",
-	  "answers": ["Appena nati gli hanno gi&agrave;", "Dopo una settimana dalla nascita", "Dopo due settimane dalla nascita"],
+	  "answers": ["Appena nati gli hanno già", "Dopo una settimana dalla nascita", "Dopo due settimane dalla nascita"],
 	  "correctAnswer": 0,
-	  "comment": "Appena nati i ricci hanno gi&agrave; degli aculei bianchi e morbidi",
+	  "comment": "Appena nati i ricci hanno già degli aculei bianchi e morbidi",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/04/Bild4_Junger-Igel_Pixabay_Jochen-Liedtke.jpg"
 	},
 	{
 	  "category": "Riccio",
-	  "question": "Almeno quanto deve essere grande un passaggio in una recinzione, affinch&eacute; un riccio possa attraversarla?",
+	  "question": "Almeno quanto deve essere grande un passaggio in una recinzione, affinché un riccio possa attraversarla?",
 	  "answers": ["Come il pugno di un bambino", "Come il pugno di un adulto", "Come la distanza tra il pollice e il mignolo di un adulto"],
 	  "correctAnswer": 1,
 	  "comment": "Il riccio ha bisogno di un'apertura di circa 10 centimetri",
@@ -2416,8 +2416,8 @@
 	},
 	{
 	  "category": "Rinoceronte",
-	  "question": "Perch&eacute; i rinoceronti fanno il bagno nel fango?",
-	  "answers": ["Perch&eacute; si divertono", "Perch&eacute; se no la loro pelle diventa bianca", "Per rinfrescarsi"],
+	  "question": "Perché i rinoceronti fanno il bagno nel fango?",
+	  "answers": ["Perché si divertono", "Perché se no la loro pelle diventa bianca", "Per rinfrescarsi"],
 	  "correctAnswer": 2,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW228982.jpg"
@@ -2432,8 +2432,8 @@
 	},
 	{
 	  "category": "Rinoceronte",
-	  "question": "Perch&eacute; i rinoceronti sono minacciati?",
-	  "answers": ["Sono cacciati a causa del loro corno", "La pelle viene venduta a caro prezzo", "La carne di rinoceronte &egrave; una prelibatezza"],
+	  "question": "Perché i rinoceronti sono minacciati?",
+	  "answers": ["Sono cacciati a causa del loro corno", "La pelle viene venduta a caro prezzo", "La carne di rinoceronte è una prelibatezza"],
 	  "correctAnswer": 0,
 	  "comment": "Ci sono persone che credono che con il corno di rinoceronte si possono preparare medicamenti",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW1106483.jpg"
@@ -2448,15 +2448,15 @@
 	},
 	{
 	  "category": "Serpenti",
-	  "question": "Quanto &egrave; grande il serpente pi&ugrave; lungo del mondo?",
+	  "question": "Quanto è grande il serpente più lungo del mondo?",
 	  "answers": ["3 metri", "9 metri", "13 metri"],
 	  "correctAnswer": 1,
-	  "comment": "La specie pi&ugrave; lunga &egrave; il pitone reticolato",
+	  "comment": "La specie più lunga è il pitone reticolato",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/04/Netzpython_Python-reticulatus_iStock_Mark-Kostich-scaled.jpg"
 	},
 	{
 	  "category": "Serpenti",
-	  "question": "Perch&eacute; i serpenti tirano fuori la lingua?",
+	  "question": "Perché i serpenti tirano fuori la lingua?",
 	  "answers": ["Per comunicare con gli altri serpenti", "Per scacciare i nemici", "Per sentire gli odori"],
 	  "correctAnswer": 2,
 	  
@@ -2481,17 +2481,17 @@
 	{
 	  "category": "Serpenti",
 	  "question": "I serpenti come fanno a mangiare le prede di grandi dimensioni?",
-	  "answers": ["Mangiano le prede un pezzo per volta", "Hanno delle mandibole elastiche", "Stringono la preda finch&eacute; entra facilmente in bocca"],
+	  "answers": ["Mangiano le prede un pezzo per volta", "Hanno delle mandibole elastiche", "Stringono la preda finché entra facilmente in bocca"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2020/04/Zwergpuffotter_Bitis-peringueyi_verdauend_Shutterstock_Chantelle-Bosch-scaled.jpg"
 	},
 	{
 	  "category": "Squalo",
-	  "question": "Di che materiale &egrave; fatto lo scheletro degli squali?",
+	  "question": "Di che materiale è fatto lo scheletro degli squali?",
 	  "answers": ["Ossa", "Cartilagine", "Carne"],
 	  "correctAnswer": 1,
-	  "comment": "Per questo gli squali sono pi&ugrave; mobili e leggeri rispetto ad altri pesci",
+	  "comment": "Per questo gli squali sono più mobili e leggeri rispetto ad altri pesci",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW2105314.jpg"
 	},
 	{
@@ -2504,7 +2504,7 @@
 	},
 	{
 	  "category": "Squalo",
-	  "question": "Qual &egrave; la specie di squalo pi&ugrave; grande?",
+	  "question": "Qual è la specie di squalo più grande?",
 	  "answers": ["Squalo balena", "Squalo gigante", "Mega squalo"],
 	  "correctAnswer": 0,
 	  "comment": "Nonostante le sue enormi dimensioni, lo squalo balena si ciba di plancton, costituito da esseri viventi minuscoli. Per catturare il nutrimento filtra l'acqua attraverso le sue branchie dotate di una specie di setaccio, a cui rimane attaccato il plancton",
@@ -2528,7 +2528,7 @@
 	},
 	{
 	  "category": "Tigre",
-	  "question": "Tra questi animali, qual &egrave; il pi&ugrave; grande?",
+	  "question": "Tra questi animali, qual è il più grande?",
 	  "answers": ["Il leone", "La tigre", "Il leopardo"],
 	  "correctAnswer": 1,
 	  
@@ -2536,15 +2536,15 @@
 	},
 	{
 	  "category": "Tigre",
-	  "question": "Perch&eacute; le tigri sono minacciate?",
+	  "question": "Perché le tigri sono minacciate?",
 	  "answers": ["I bracconieri danno loro la caccia", "Affogano spesso nei fiumi", "Vengono uccise dagli elefanti"],
 	  "correctAnswer": 0,
-	  "comment": "I bracconieri danno la caccia alle tigri perch&eacute; possono vendere a caro prezzo pellicce e ossa",
+	  "comment": "I bracconieri danno la caccia alle tigri perché possono vendere a caro prezzo pellicce e ossa",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW267249.jpg"
 	},
 	{
 	  "category": "Tigre",
-	  "question": "Quanta carne pu&ograve; mangiare una tigre durante un pasto?",
+	  "question": "Quanta carne può mangiare una tigre durante un pasto?",
 	  "answers": ["Fino a 40 chilogrammi", "Fino a 20 chilogrammi", "Fino a 10 chilogrammi"],
 	  "correctAnswer": 0,
 	  
@@ -2552,8 +2552,8 @@
 	},
 	{
 	  "category": "Tigre",
-	  "question": "Perch&eacute; le tigri hanno la pelliccia a strisce?",
-	  "answers": ["Le tigri si riconoscono subito tra di loro grazie alle strisce", "Le tigri sono ben mimetizzate grazie alle strisce", "La pelliccia a strisce &egrave; particolarmente calda"],
+	  "question": "Perché le tigri hanno la pelliccia a strisce?",
+	  "answers": ["Le tigri si riconoscono subito tra di loro grazie alle strisce", "Le tigri sono ben mimetizzate grazie alle strisce", "La pelliccia a strisce è particolarmente calda"],
 	  "correctAnswer": 1,
 	  
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW137482.jpg"
@@ -2576,15 +2576,15 @@
 	},
 	{
 	  "category": "Tracce degli animali",
-	  "question": "Quale uccello &egrave; passato di qui nella neve?",
+	  "question": "Quale uccello è passato di qui nella neve?",
 	  "answers": ["Il corvo", "Il gallo", "L'anatra"],
 	  "correctAnswer": 0,
-	  "comment": "Si possono trovare impronte di corvi anche in centro citt&agrave;, perch&eacute; molti corvi comuni covano le uova nei parchi o nei viali delle citt&agrave;",
+	  "comment": "Si possono trovare impronte di corvi anche in centro città, perché molti corvi comuni covano le uova nei parchi o nei viali delle città",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/09/Kr%C3%A4he_Tierspur.png"
 	},
 	{
 	  "category": "Tracce degli animali",
-	  "question": "Quale animale &egrave; passato nella neve di questo paesaggio invernale?",
+	  "question": "Quale animale è passato nella neve di questo paesaggio invernale?",
 	  "answers": ["Lo scoiattolo", "La pernice bianca", "La lepre variabile"],
 	  "correctAnswer": 2,
 	  "comment": "Puoi trovare queste tracce ad altitudini elevate (oltre gli 800 metri sopra il livello del mare) nei boschi radi",
@@ -2600,7 +2600,7 @@
 	},
 	{
 	  "category": "Tracce degli animali",
-	  "question": "Le impronte di quale animale con gli zoccoli possono essere trovate nei boschi, vicino alle citt&agrave; e nei campi?",
+	  "question": "Le impronte di quale animale con gli zoccoli possono essere trovate nei boschi, vicino alle città e nei campi?",
 	  "answers": ["Il cinghiale", "Il cervo", "Lo stambecco"],
 	  "correctAnswer": 0,
 	  "comment": "I cinghiali vivono ovunque dove riescono a trovare cibo, in particolare amano i campi di mais",
@@ -2611,12 +2611,12 @@
 	  "question": "Quale onnivoro ha lasciato le sue tracce qui?",
 	  "answers": ["La donnola", "Il tasso", "La volpe"],
 	  "correctAnswer": 1,
-	  "comment": "Vive nei boschi e nelle siepi ed &egrave; attivo soprattutto di notte. In inverno non vedrai le sue impronte, perch&eacute; il tasso va in letargo",
+	  "comment": "Vive nei boschi e nelle siepi ed è attivo soprattutto di notte. In inverno non vedrai le sue impronte, perché il tasso va in letargo",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/09/Dachs_Tierspur.png"
 	},
 	{
 	  "category": "Volpe artica",
-	  "question": "Qual &egrave; il cibo preferito delle volpi polari?",
+	  "question": "Qual è il cibo preferito delle volpi polari?",
 	  "answers": ["Pesci", "Foche", "Lemming"],
 	  "correctAnswer": 2,
 	  
@@ -2625,17 +2625,17 @@
 	{
 	  "category": "Volpe artica",
 	  "question": "Dove vive la volpe polare?",
-	  "answers": ["Si trova solo al Polo Sud", "Vive in tutte le zone attorno al Polo Nord", "Si pu&ograve; trovare al Polo Sud, al Polo Nord e sulle maggiori catene montuose del mondo"],
+	  "answers": ["Si trova solo al Polo Sud", "Vive in tutte le zone attorno al Polo Nord", "Si può trovare al Polo Sud, al Polo Nord e sulle maggiori catene montuose del mondo"],
 	  "correctAnswer": 1,
 	  "comment": "Le volpi polari sono diffuse in tutta l'area geografica attorno al Polo Nord: in Russia, Canada, Groenlandia, nell'estremo nord dell'Alaska e dell'Europa",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW225721-2.jpg"
 	},
 	{
 	  "category": "Volpe artica",
-	  "question": "Qual &egrave; oggi la minaccia più grande per la volpe polare?",
-	  "answers": ["Gli orsi polari perch&eacute; mangiano moltissime volpi polari", "Il riscaldamento globale", "L'arrivo di una nuova era glaciale"],
+	  "question": "Qual è oggi la minaccia più grande per la volpe polare?",
+	  "answers": ["Gli orsi polari perché mangiano moltissime volpi polari", "Il riscaldamento globale", "L'arrivo di una nuova era glaciale"],
 	  "correctAnswer": 1,
-	  "comment": "La Terra si sta riscaldando in fretta e anche nell'habitat della volpe polare fa pi&ugrave; caldo. Per questo, la volpe rossa si sposta sempre pi&ugrave; a nord e ruba le prede alla volpe polare, pi&ugrave; piccola, che viene scacciata dal suo habitat naturale",
+	  "comment": "La Terra si sta riscaldando in fretta e anche nell'habitat della volpe polare fa più caldo. Per questo, la volpe rossa si sposta sempre più a nord e ruba le prede alla volpe polare, più piccola, che viene scacciata dal suo habitat naturale",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/05/Medium_WW298480.jpg"
 	},
 	{
@@ -2648,8 +2648,8 @@
 	},
 	{
 	  "category": "Volpe artica",
-	  "question": "Di che colore &egrave; la sua pelliccia?",
-	  "answers": ["In estate &egrave; di colore marrone-grigio, mentre in inverno &egrave; bianca", "In inverno &egrave; di colore marrone-grigio mentre in estate &egrave; bianca", "&Egrave; bianca come la neve"],
+	  "question": "Di che colore è la sua pelliccia?",
+	  "answers": ["In estate è di colore marrone-grigio, mentre in inverno è bianca", "In inverno è di colore marrone-grigio mentre in estate è bianca", "È; bianca come la neve"],
 	  "correctAnswer": 0,
 	  "comment": "Ci sono anche volpi artiche che in inverno non hanno la pelliccia bianca come la neve. Questo dipende da dove vivono le volpi artiche",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW225715-2.jpg"
@@ -2659,7 +2659,7 @@
 	  "question": "La volpe artica ha...",
 	  "answers": ["... un udito particolarmente buono", "... orecchie molto grandi", "... una coda corta"],
 	  "correctAnswer": 0,
-	  "comment": "La volpe artica ha un ottimo udito, cos&igrave; riesce a sentire i lemming sotto la neve mentre si nascondono nelle loro gallerie",
+	  "comment": "La volpe artica ha un ottimo udito, così riesce a sentire i lemming sotto la neve mentre si nascondono nelle loro gallerie",
 	  "img": "https://www.pandaclub.ch/wp-content/uploads/2019/04/Medium_WW2984812.jpg"
 	}
 ]
