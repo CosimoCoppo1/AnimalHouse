@@ -220,7 +220,7 @@ export default {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: url("../assets/bg__gallery.png") no-repeat center center;
+  background: url("../assets/scrabble/bg__gallery.png") no-repeat center center;
   background-size: 740px;
 }
 

@@ -1,155 +1,257 @@
 <template>
   <div>
-    <div class="poster mt-3">
-      <div class="poster__img">
-        <img src="../assets/bg-video.jpg" alt="" />
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="intro-text">
+          Per i nuovi clienti o per i nostri affezzionati
+        </h1>
+        <h2 class="big-text">
+          Benvenuti ad <span lang="en" xml:lang="en">Animal House</span>
+        </h2>
+        <h3 class="mt-5 fw-bold">
+          Negozio, servizi, giochi, curiosità... Tutto questo in un unico
+          sito!<br />Naviga senza limiti e fatti coinvolgere dalla nostra
+          passione<br />per il lavoro che facciamo ogni giorno, venendo<br />
+          incontro a voi e ai vostri compagni animali.
+        </h3>
+        <div class="buttons mt-4">
+          <router-link
+            :to="{ path: '/dati-personali' }"
+            role="button"
+            class="btn btn-warning data link access"
+          >
+            Accedi
+          </router-link>
+        </div>
       </div>
-      <div class="poster__content">
-        <h3 class="big-text">Titolo della mia poster</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
-          aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint obcaecat cupiditat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum
-        </p>
-        <a href="" class="button">Call to action</a>
-      </div>
-    </div>
+      <video autoplay muted loop class="hero__video" alt="">
+        <source src="../assets/home/bg__hero.mp4" type="video/mp4" />
+      </video>
+    </section>
 
-    <div class="bg-cover mt-3">
+    <section class="grid page-intro my-5">
+      <div class="col">
+        <p>
+          Noi di <b lang="en" xml:lang="en">Animal House</b> siamo come una
+          <em>famiglia</em>: <b>non lasciamo indietro nessuno</b>.<br />
+          Fin da quando siamo nati, il nostro <em>desiderio</em> era quello di
+          essere una comunità di begli ideali e belle persone... così come anche
+          <b>bei clienti</b>!<br />
+          Offriamo tante esperienze per la <em>conoscenza</em> e il
+          <em>piacere</em> degli animali e non sono: veniamo incontro anche a
+          tutti i padroni con attenzioni che derivano solamente dalla
+          <b>passione per il nostro lavoro</b>.
+        </p>
+      </div>
+    </section>
+
+    <section class="poster mt-3">
+      <section class="poster__content">
+        <h3 class="big-text title-color">
+          Negozio <span lang="en" xml:lang="en">Animal House</span>
+        </h3>
+        <p>
+          <b>Amare il proprio animale</b> significa anche scegliere per lui i
+          migliori prodotti che si <em>adattino</em> alla sua quotidianità e ai
+          suoi ritmi di vita.<br />
+          Con <span lang="en" xml:lang="en">Animal House</span> questo semplice
+          <em>principio</em> è sempre rispettato, e portiamo avanti con
+          <em>rigore</em> la ricerca dei prodotti di <em>migliore</em> qualità
+          per tutti i <span lang="en" xml:lang="en">pet</span>.
+        </p>
+        <p>Vedi tutti i nostri prodotti cliccando il bottone!</p>
+        <div class="buttons">
+          <router-link
+            :to="{ path: '/negozio' }"
+            role="button"
+            class="btn btn-warning access link"
+          >
+            Vai al negozio!
+          </router-link>
+        </div>
+      </section>
+      <div class="poster__img">
+        <img src="../assets/home/gallery1.jpg" alt="" />
+      </div>
+    </section>
+
+    <section class="poster mt-3">
+      <div class="poster__img">
+        <img src="../assets/home/gallery0.jpg" alt="" />
+      </div>
+      <section class="poster__content">
+        <h3 class="big-text title-color">
+          Servizi <span lang="en" xml:lang="en">Animal House</span>
+        </h3>
+        <p>
+          <em>Prendersi cura</em> degli animali è la
+          <b>parola <em>chiave</em></b> in tutti i nostri servizi, e i nostri
+          professionisti del <span lang="en" xml:lang="en">Pet care</span> hanno
+          <em>a cuore</em> la salute dei nostri clienti e dei loro padroni.<br />
+          I nostri studi sono in <b>continuo aggiornamento</b>, per permettervi
+          di ottenere i migliori trattamenti per una vita sana e piacevole.<br />
+          Relativamente "nuovi" nel mercato delle aziende
+          <span lang="en" xml:lang="en">specialist</span> del
+          <span lang="en" xml:lang="en">Pet care</span> abbiamo tanta
+          <em>voglia</em> di affermarci e proporre nuovi orizzonti per il campo.
+        </p>
+        <p>Vedi tutti i nostri servizi cliccando il bottone!</p>
+        <div class="buttons">
+          <router-link
+            :to="{ path: '/servizi' }"
+            role="button"
+            class="btn btn-warning access link"
+          >
+            Vedi i servizi!
+          </router-link>
+        </div>
+      </section>
+    </section>
+
+    <section class="bg-cover mt-3">
       <div class="bg-cover__title">
-        <h3 class="big-text tw">Titolo del mio blocco cover</h3>
+        <h3 class="big-text title-color">Riguardo a noi...</h3>
       </div>
       <div class="bg-cover__text">
-        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-        <p class="tw">
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
-          aliquid ex ea commodi consequatur.
+        <h4 class="fw-bold">
+          Come nasce <span lang="en" xml:lang="en">Animal House</span>
+        </h4>
+        <p>
+          Da un gruppo di amici ad una <em>comunità</em> ancora in crescita.<br />
+          Scopri tutto ciò che significa essere membro e socio di
+          <span lang="en" xml:lang="en">Animal House</span>!<br />
+          Una storia di <em>passione</em>, <em>attenzione</em> e
+          <em>ascolto</em>.<br />Passa alla sezione:<router-link
+            :to="{ path: '/chi-siamo' }"
+            class="link"
+          >
+            chi siamo
+          </router-link>
+          per conoscerci meglio!
         </p>
 
-        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-        <p class="tw">
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
-          aliquid ex ea commodi consequatur.
+        <h4 class="fw-bold">Entra in contatto con <em>noi</em></h4>
+        <p>
+          Vuoi farci una domanda? Vuoi avere informazioni sui tuoi ordini o
+          richiedi una qualsiasi altra informazione?<br />Passa alla sezione
+          <router-link :to="{ path: '/contatti' }" class="link"
+            >contatti</router-link
+          >
+          per scrivere alla nostra casella di posta elettronica o contattarci
+          tramite numero teleefonico.
         </p>
 
-        <h4 class="normal-text tw">Titolo del mio paragrafo</h4>
-        <p class="tw">
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
-          aliquid ex ea commodi consequatur.
+        <h4 class="fw-bold">
+          Altre sezioni di <span lang="en" xml:lang="en">Animal House</span>
+        </h4>
+        <p>
+          Passa alla sezione
+          <a href="http://localhost:8000/frontoffice" class="link"
+            ><span lang="en" xml:lang="en">VIP</span></a
+          >
+          per usufruire di tutti i servizi senza limitazioni e comprare
+          direttamente i prodotti dal nostro negozio. Tante altre sorprese al
+          <span lang="en" xml:lang="en">link</span> che scoprirai solamente
+          provando!<br />
+          Passa alla sezione
+          <a href="http://localhost:8000/backoffice" class="link">riservata</a>
+          se sei un dipendente
+          <span lang="en" xml:lang="en">Animal House</span>.
         </p>
       </div>
-    </div>
+    </section>
 
-    <div class="grid mt-3">
-      <div class="col">
-        <div class="big-text">
-          <h3 class="big-text">
-            Lorem ispums <br />
-            sia maet
-          </h3>
-        </div>
-      </div>
-      <div class="col">
-        <p class="mt-2">
-          Lorem ipsum dolor sit amet, consectetur adipisci elit
-        </p>
-      </div>
-    </div>
-
-    <div class="panel-blue mt-3">
-      <div class="grid panel-blue" style="border: 6px solid green">
+    <section class="panel-blue mt-3">
+      <div class="grid panel-blue">
         <div class="col panel-blue__dots">
-          <div class="dot">Text</div>
-          <div class="dot">Text</div>
-          <div class="dot">Text</div>
-          <div class="dot">Text</div>
+          <router-link
+            :to="{ path: '/giochi/memory' }"
+            role="button"
+            class="dot"
+          >
+            <img src="../assets/games/gallery2.png" alt="" />
+            <p hidden>Gioca al <span lang="en" xml:lang="en">memory</span></p>
+          </router-link>
+          <router-link :to="{ path: '/giochi/quiz' }" role="button" class="dot">
+            <img src="../assets/games/gallery3.png" alt="" />
+            <p hidden>Gioca al <span lang="en" xml:lang="en">quiz</span></p>
+          </router-link>
+          <router-link
+            :to="{ path: '/giochi/morra-cinese' }"
+            role="button"
+            class="dot"
+          >
+            <img src="../assets/games/gallery4.png" alt="" />
+            <p hidden>Gioca a morra cinese</p>
+          </router-link>
+          <router-link
+            :to="{ path: '/giochi/scarabeo' }"
+            role="button"
+            class="dot"
+          >
+            <img src="../assets/games/gallery5.png" alt="" />
+            <p hidden>Gioca a scarabeo</p>
+          </router-link>
         </div>
-        <div class="col panel-blue__text" style="border: 4px solid yellow">
+        <div class="col panel-blue__text">
           <div class="grid">
             <div class="col">
-              <h3 class="big-text tw">Lorem ispums</h3>
+              <h3 class="big-text text-color">Sezione giochi</h3>
             </div>
-            <div class="col">
-              <p class="tw mt-2">
-                Lorem ipsum dolor sit amet, consectetur adipisci elit
+            <div class="col m-4">
+              <p class="mt-2">
+                Non <em>solo</em> negozio e servizi...<br /><span
+                  lang="en"
+                  xml:lang="en"
+                  >Animal House</span
+                >
+                offre anche altro:
+                <b><em>divertiti</em> con i nostri giochi a tema animale</b>,
+                scegliendo tra <i lang="en" xml:lang="en">memory</i> con carte
+                di animali da differenti parti del mondo e
+                <i lang="en" xml:lang="en">quiz</i> su tante specie!<br />
+                Non perdere anche la <i>morra cinese</i> con particolare sasso,
+                carta e forbice e il gioco <i>scarabeo</i> su
+                <span lang="en" xml:lang="en">habitat</span> e alimentazione
+                degli animali!<br />
+              </p>
+              <p>
+                Entra nella sezione
+                <router-link :to="{ path: '/giochi' }" class="link"
+                  >giochi</router-link
+                >
+                o inizia le partite direttamente dai bollini a fianco.
               </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="poster mt-3">
-      <div class="poster__content">
-        <h3 class="big-text">Titolo della mia poster</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-          tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim
-          veniam, quis nostrum exercitationem ullamco laboriosam, nisi ut
-          aliquid ex ea commodi consequatur. Duis aute irure reprehenderit in
-          voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
-          sint obcaecat cupiditat non proident, sunt in culpa qui officia
-          deserunt mollit anim id est laborum
+    <section class="grid" style="margin-bottom: 100px">
+      <div class="col">
+        <div>
+          <h3 class="big-text text-color">
+            Dimentichi <br />
+            qualcosa...
+          </h3>
+        </div>
+      </div>
+      <div class="col">
+        <p class="mt-2">
+          Oltre ai giochi, divertiti a immergerti in un mondo di curiosità sul
+          mondo animale!<br />Impara ogni giorno!
         </p>
-        <a href="" class="button">Call to action</a>
-      </div>
-      <div class="poster__img">
-        <img src="../assets/bg-video.jpg" alt="" />
-      </div>
-    </div>
-
-    <div class="content">
-      <h3>Lorem</h3>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisci elit, sed do eiusmod
-      </p>
-    </div>
-
-    <footer class="footer mt-1">
-      <div class="grid">
-        <div class="col">
-          <h4 class="normal-text tw">Lorem ipsums</h4>
-          <p>Lorem ipsums Lorem ipsums</p>
-        </div>
-        <div class="col">
-          <h4 class="normal-text tw">Lorem ipsums</h4>
-          <p>Lorem ipsums Lorem ipsums</p>
-        </div>
-        <div class="col">
-          <h4 class="normal-text tw">Lorem ipsums</h4>
-          <p>Lorem ipsums Lorem ipsums</p>
-        </div>
-        <div class="col">
-          <h4 class="normal-text tw">Lorem ipsums</h4>
-          <p>Lorem ipsums Lorem ipsums</p>
+        <div class="buttons">
+          <router-link
+            class="btn btn-warning access link"
+            role="button"
+            :to="{ path: '/informazioni-curiose' }"
+            >Scopri le curiosità</router-link
+          >
         </div>
       </div>
-    </footer>
+    </section>
   </div>
 </template>
 
@@ -170,57 +272,53 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.link {
+  text-decoration: none;
+}
+
+.title-color {
+  color: #03045e;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+.buttons button,
+.buttons .link {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 0;
+  font-size: 16px;
+  border-radius: 5px;
+  width: calc(100% / 2 - 8px);
+  border: 1px solid #000;
+}
+
+.buttons .data {
+  width: 15% !important;
+}
+
+.buttons .access {
+  color: #fff;
+  background-color: #03045e;
+}
+
+/* hero section */
 .hero {
   height: 100vh;
-  position: relative;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background-size: cover;
-  overflow: hidden;
-}
-
-.hero:after {
-  content: " ";
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background: #000;
-  opacity: 0.4;
-}
-
-.hero__content {
-  width: 100%;
-  max-width: 1350px;
-  margin: 0 auto;
-  padding: 30px;
-  z-index: 1;
-  position: relative;
 }
 
 .hero__content h1,
-.hero__content p {
-  color: yellow;
+.hero__content h2,
+.hero__content h3 {
+  color: #03045e;
 }
 
-.hero--small {
-  height: 450px;
-  text-align: center;
-}
-
-#video-back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 0;
-  bottom: 0;
-}
 /* poster */
 .poster {
   display: flex;
@@ -261,7 +359,7 @@ export default {
 .bg-cover {
   display: flex;
   padding: 100px 0;
-  background: url("../assets/bg-video.jpg") no-repeat center center;
+  background: url("../assets/quiz/bg__poster.jpg") no-repeat center center;
 }
 
 .bg-cover__text {
@@ -290,14 +388,12 @@ export default {
 
 /* panel */
 .panel-blue {
-  background: #4bb1e9;
   padding: 100px 30px;
 }
 
 .dot {
   height: 250px;
   width: 250px;
-  background: #6adf91;
   border-radius: 100%;
   line-height: 250px;
   text-align: center;
@@ -306,32 +402,16 @@ export default {
   margin-bottom: 40px;
 }
 
+.dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 100%;
+  border: 3px solid #03045e;
+}
+
 .panel-blue__text {
   display: flex;
   align-items: center;
 }
-
-/* content */
-.content {
-  max-width: 900px;
-  margin: 40px auto;
-}
-
-/* footer */
-.footer {
-  background: #010e30;
-  padding: 150px 0;
-}
 </style>
-
-<!--
-  <p>Feed game: da finire, unico file "FeedView.vue"</p>
-  <p>RockPaperScissors: da finire, unico file "RPSView.vue</p>
-  <p>scramble: da finire, unico fil "ScrambleView"</p>
-  <p>peek: da finire, componente "CardCOmponent" e file "PeekView"</p>
-  <p>
-    puzzlegame blocca il gioco, perchè??, componenti: startcomponent,
-    gamecomponent, playagaincomponent
-  </p>
-  <p>quizview: da finire, unico file QuizView</p>
--->

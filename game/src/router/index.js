@@ -56,7 +56,7 @@ const routes = [
   },
   {
     path: "/giochi/scarabeo",
-    name: "scarabeo",
+    name: "Scarabeo",
     component: () =>
       import(/* webpackChunkName: "scarabeo" */ "../views/ScrabbleView.vue"),
   },
@@ -68,7 +68,7 @@ const routes = [
   },
   {
     path: "/giochi/quiz",
-    name: "quiz",
+    name: "Quiz",
     component: () =>
       import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
   },
