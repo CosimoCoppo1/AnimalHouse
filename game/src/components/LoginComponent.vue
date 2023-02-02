@@ -16,6 +16,7 @@
               class="form-control"
               name="login email"
               v-model="login.email"
+              required
             />
           </div>
           <div class="form-group mt-4">
@@ -29,6 +30,7 @@
               placeholder="......"
               name="login password"
               v-model="login.password"
+              required
             />
           </div>
           <div class="buttons">
@@ -54,6 +56,9 @@ export default {
         password: null,
       },
       logindata: {},
+      message: "",
+      success: false,
+      loginId: "",
     };
   },
   methods: {
@@ -63,9 +68,18 @@ export default {
         .post("http://localhost:8000/auth/user/login", this.login)
         .then((response) => {
           if (response.status == 200) {
-            console.warn(response);
             this.logindata = response.data;
-            console.log(this.logindata);
+            this.message = "Accesso avvenuto con successo!";
+            this.success = true;
+            localStorage.setItem(
+              this.logindata.token,
+              JSON.stringify({
+                username: this.logindata.username,
+                email: this.logindata.email,
+              })
+            );
+          } else {
+            this.message = "Accesso negato... Email o password scorretta";
           }
         });
       e.preventDefault();

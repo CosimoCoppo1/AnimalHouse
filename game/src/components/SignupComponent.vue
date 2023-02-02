@@ -16,6 +16,7 @@
               class="form-control"
               name="signup username"
               v-model="signup.username"
+              required
             />
           </div>
           <div class="form-group mt-4">
@@ -29,6 +30,7 @@
               class="form-control"
               name="signup email"
               v-model="signup.email"
+              required
             />
           </div>
           <div class="form-group mt-4">
@@ -42,6 +44,7 @@
               placeholder="......"
               name="signup password"
               v-model="signup.password"
+              required
             />
           </div>
           <div class="buttons">
@@ -67,6 +70,8 @@ export default {
         email: null,
         password: null,
       },
+      message: "",
+      success: false,
     };
   },
   methods: {
@@ -75,7 +80,22 @@ export default {
       axios
         .post("http://localhost:8000/auth/user/register", this.signup)
         .then((response) => {
-          console.warn(response);
+          if (response.status == 200) {
+            this.signup = response.data;
+            this.message = "Registrazione avvenuta con successo!";
+            this.success = true;
+            console.log(this.signup);
+            localStorage.setItem(
+              this.signup.token,
+              JSON.stringify({
+                username: this.signup.username,
+                email: this.signup.email,
+                id: this.signup.userId,
+              })
+            );
+          } else {
+            this.message = "registrazione negata...";
+          }
         });
       e.preventDefault();
     },

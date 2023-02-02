@@ -95,6 +95,14 @@ const routes = [
       ),
   },
   {
+    path: "/prova2",
+    name: "prova2",
+    component: () =>
+      import(
+        /* webpackChunkName: "prova2" */ "../components/UserPetComponent.vue"
+      ),
+  },
+  {
     path: "/admin",
     name: "Admin",
     component: () =>
