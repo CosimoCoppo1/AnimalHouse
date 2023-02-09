@@ -29,10 +29,23 @@ const MyReservations = () => {
             {
                 reservs.map((reserv, id) => {
 
-                    let time = reserv.bookable_service.day;
+					let d = new Date(reserv.bookable_service.day);
+					let options = {
+						'weekday': 'short', 
+						'year': 'numeric', 
+						'month': '2-digit', 
+						'day': '2-digit'
+					};
+					let date = d.toLocaleDateString('it-IT', options);
+						date = date.charAt(0).toUpperCase() + date.slice(1);
+					let orario = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
+
+				   /*
+                   let time = reserv.bookable_service.day;
                     time = time.split("T");
                     let date = time[0];
                     let orario = time[1].split(".")[0];
+					*/
 
                     return <Reservation data={reserv} date={date} orario={orario} key={id} />;
                 })
