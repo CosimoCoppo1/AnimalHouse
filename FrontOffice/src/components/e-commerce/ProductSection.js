@@ -33,6 +33,7 @@ const ProductSection = ({keyProduct, setKeyProduct}) => {
       className="mb-3"
       fill
       role="tablist"
+      tabIndex={0}
     >
       {
         sections.map((section, id) => (

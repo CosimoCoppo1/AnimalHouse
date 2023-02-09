@@ -89,10 +89,10 @@ const Home = () => {
                 <Col>
                     <header>
                         <div
-                        className='p-5 text-center bg-image'
-                        style={{ backgroundImage: "url('https://fantagiochi.it/wp-content/uploads/2012/05/copertina16.jpg')", height:300  }}
+                        className='p-5 text-center bg-image w-100'
+                        style={{ backgroundImage: "url('https://www.animeemanga.it/wp-content/uploads/2012/06/Hamtaro.jpg')",  height:300 }}
                         >
-                        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.3)', height: "100%" }}>
+                        <div className='mask' style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)', height: "100%" }}>
                             <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
                                 <h2 className='my-3'>Gioca con la nostra App e registra i tuoi punteggi!</h2>

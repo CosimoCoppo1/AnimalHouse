@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Form, Button, Container, Row, Col} from "react-bootstrap";
-import "react-datepicker/dist/react-datepicker.css";
 
 const Filters = ({tofilter}) => {
 	
@@ -51,7 +50,6 @@ const Filters = ({tofilter}) => {
 	}
 
     const [selectDate, setSelectDate] = useState(undefined);
-
 	function SelectDate() {
 		return (  	
 			<Form.Group controlId="formSelect">
