@@ -110,7 +110,7 @@
           e prenotare una <b>consulenza <em>immediata</em></b> per il tuo
           animale?<br />Passa all'area
           <a
-            href="http://localhost:8000/frontoffice/services"
+            href="http://localhost:8000/frontoffice"
             class="btn btn-danger"
             role="button"
             lang="en"

@@ -112,7 +112,7 @@
               >
                 <span
                   class="carousel-control-prev-icon bg-dark"
-                  aria-hidden="true"
+                  aria-hidden="false"
                 ></span>
                 <span class="sr-only"></span>
               </button>
@@ -125,7 +125,7 @@
               >
                 <span
                   class="carousel-control-next-icon bg-dark"
-                  aria-hidden="true"
+                  aria-hidden="false"
                 ></span>
                 <span class="sr-only"></span>
               </button>
@@ -231,7 +231,6 @@ export default {
     },
     goNext(petId) {
       let maxProducts = this.maxSectionProduct(petId);
-      console.log(maxProducts);
       if (this.showProduct[petId] < maxProducts - 1) {
         this.showProduct[petId]++;
       }
@@ -284,7 +283,7 @@ export default {
 .card {
   left: 12.5%;
   border: 1.5px solid;
-  height: 440px;
+  height: 442px;
 }
 
 .card-body {
@@ -316,6 +315,14 @@ export default {
 
   .card {
     left: 0%;
+  }
+
+  .card-body h5 {
+    font-size: 14px;
+  }
+
+  .card-text {
+    height: 20px;
   }
 }
 </style>

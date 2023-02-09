@@ -49,19 +49,43 @@
 
       <!-- block section -->
       <div v-if="this.show == 'signup'">
-        <SignupComponent :empty="empty" />
+        <SignupComponent />
       </div>
       <div v-else-if="this.show == 'login'">
-        <LoginComponent :empty="empty" />
+        <LoginComponent />
       </div>
     </div>
     <div v-else>
       <div class="buttons">
-        <button class="btn btn-warning" type="button" @click="logout()">
+        <button
+          type="button"
+          class="btn btn-warning"
+          @click="this.showBlock('register-animal')"
+        >
+          Registra animale
+        </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          @click="this.showBlock('show-animal')"
+        >
+          I tuoi animali
+        </button>
+      </div>
+
+      <!-- block section -->
+      <div v-if="this.show == 'register-animal'">
+        <RegisterPetComponent />
+      </div>
+      <div v-else-if="this.show == 'show-animal'">
+        <UserPetComponent />
+      </div>
+
+      <div class="buttons">
+        <button class="btn btn-warning mt-5" type="button" @click="logout()">
           Esci dal profilo
         </button>
       </div>
-      <!-- <UserPetComponent /> -->
     </div>
   </div>
 </template>
@@ -69,7 +93,8 @@
 <script>
 import LoginComponent from "../components/LoginComponent.vue";
 import SignupComponent from "../components/SignupComponent.vue";
-// import UserPetComponent from "../components/UserPetComponent.vue";
+import RegisterPetComponent from "../components/RegisterPetComponent.vue";
+import UserPetComponent from "../components/UserPetComponent.vue";
 
 export default {
   name: "AdminView",
@@ -78,20 +103,15 @@ export default {
       show: "",
     };
   },
-  props: {
-    empty: {
-      type: Boolean,
-    },
-  },
   components: {
     LoginComponent,
     SignupComponent,
-    // UserPetComponent,
+    RegisterPetComponent,
+    UserPetComponent,
   },
   methods: {
     showBlock(data) {
       this.show = data;
-      console.log(this.show);
     },
     alreadyLogin() {
       if (localStorage.length == 0) {
@@ -102,8 +122,9 @@ export default {
     },
     logout() {
       localStorage.clear();
-      console.log("fuori");
       this.alreadyLogin();
+      this.show = "";
+      window.location.reload();
     },
   },
 };
@@ -127,6 +148,12 @@ export default {
   width: calc(40% / 2 - 8px);
   border: 1px solid #000;
   background-color: #9e0089;
+}
+
+@media (max-width: 768px) {
+  .buttons button {
+    width: calc(80% / 2 - 8px);
+  }
 }
 
 /* hero section */

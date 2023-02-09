@@ -56,8 +56,6 @@ export default {
         password: null,
       },
       logindata: {},
-      message: "",
-      success: false,
       loginId: "",
     };
   },
@@ -69,8 +67,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.logindata = response.data;
-            this.message = "Accesso avvenuto con successo!";
-            this.success = true;
+            alert("Accesso avvenuto con successo!");
             localStorage.setItem(
               this.logindata.token,
               JSON.stringify({
@@ -78,8 +75,11 @@ export default {
                 email: this.logindata.email,
               })
             );
+            window.location.href = "./dati-personali";
           } else {
-            this.message = "Accesso negato... Email o password scorretta";
+            alert("Accesso negato... Email o password scorretta");
+            this.login.email = null;
+            this.login.password = null;
           }
         });
       e.preventDefault();

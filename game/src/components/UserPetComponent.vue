@@ -2,72 +2,28 @@
   <div class="card-container mx-auto mt-5">
     <div class="card">
       <section class="card-body">
-        <h3 class="card__title">Registra Animale</h3>
-        <p>Divertiti ad inserire dati relativi al tuo animale!</p>
+        <h3 class="card__title">I tuoi animali</h3>
+        <p>Ecco la lista degli animali registrati al tuo profilo!</p>
         <hr />
-        <form @submit="postData" method="post">
-          <label for="choose-pet" class="small fw-bold mt-2"
-            >A che categoria appartiene il tuo animale?</label
-          >
-          <div class="input-group mt-3">
-            <select
-              id="choose-pet"
-              class="form-select fw-bold"
-              required
-              name="animal category"
-              v-model="this.chooseCategory"
-            >
-              <option
-                v-for="(category, index) in this.categories"
-                :key="index"
-                :value="index"
-              >
-                {{ category.name }}
-              </option>
-            </select>
-          </div>
-          <div class="form-group mt-4">
-            <label for="formPetNameP" class="small mb-3">
-              <b>Come si chiama?</b>
-            </label>
-            <input
-              type="text"
-              id="formPetNameP"
-              class="form-control"
-              placeholder="cucciolone"
-              name="user petName"
-              v-model="userpet.petName"
-              required
-            />
-          </div>
-          <div class="form-group mt-4">
-            <label for="formDescriptionP" class="small mb-3">
-              <b>Descrizione</b>
-            </label>
-            <textarea
-              id="formDescriptionP"
-              class="form-control"
-              placeholder="raccontaci del tuo cucciolone..."
-              name="user description"
-              v-model="userpet.desc"
-            ></textarea>
-          </div>
-          <div class="buttons">
-            <button type="submit" class="btn btn-success">
-              Registra l'animale!
-            </button>
-          </div>
-        </form>
+        <div
+          v-for="(animal, index) in this.userAnimals"
+          :key="index"
+          class="text-center m-4"
+        >
+          <img
+            :src="require(`@/assets/admin/${animal.pet.name}.png`)"
+            alt=""
+            width="80"
+            class="rounded-circle"
+            style="border: 2px solid #9e0089"
+          />
+          <br />
+          <b style="color: #9e0089">{{ animal.petName }}</b>
+          <br />
+          <i v-if="animal.desc != null" class="small">"{{ animal.desc }}"</i>
+        </div>
       </section>
     </div>
-    <button
-      type="button"
-      class="btn btn-warning"
-      @click="this.getUserPet()"
-      style="margin-top: 800px"
-    >
-      vedi animali user
-    </button>
   </div>
 </template>
 
@@ -78,58 +34,30 @@ export default {
   name: "UserPetComponent",
   data() {
     return {
-      userpet: {
-        user: null,
-        pet: null,
-        petName: null,
-        desc: null,
-      },
-      chooseCategory: 0,
-      categories: {},
-      userData: {},
-      finalData: "",
-      message: "",
+      userId: "",
       userAnimals: [],
     };
   },
   methods: {
-    async getPets() {
-      let response = await axios.get("http://localhost:8000/pets");
-      this.categories = response.data;
-    },
     async getUser() {
       let key = localStorage.key(0);
       this.userData = JSON.parse(localStorage.getItem(key));
       let response = await axios.get(
         `http://localhost:8000/users?username=${this.userData.username}`
       );
-      this.userpet.user = response.data[0]._id;
-    },
-    postData(e) {
-      this.userpet.pet = this.categories[this.chooseCategory]._id;
-      console.warn(this.userpet);
-      axios
-        .post("http://localhost:8000/userPet/register", this.userpet)
-        .then((response) => {
-          if (response.status == 200) {
-            this.message = "Registrazione dell'animale avvenuta con successo!";
-          } else {
-            this.message = "Registrazione negata...";
-          }
-        });
-      e.preventDefault();
+      this.userId = response.data[0]._id;
     },
     async getUserPet() {
       let response = await axios.get(
-        `http://localhost:8000/userPet/user/${this.userpet.user}`
+        `http://localhost:8000/userPet/user/${this.userId}`
       );
       this.userAnimals = response.data;
       console.log(this.userAnimals);
     },
   },
   created: async function () {
-    await this.getPets();
     await this.getUser();
+    await this.getUserPet();
   },
 };
 </script>
@@ -150,6 +78,7 @@ export default {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   border-radius: 20px;
+  overflow: auto;
 }
 
 .card-body {

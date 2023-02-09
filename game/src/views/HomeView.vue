@@ -308,6 +308,12 @@ export default {
   background-color: #03045e;
 }
 
+@media (max-width: 768px) {
+  .buttons .data {
+    width: 40% !important;
+  }
+}
+
 /* hero section */
 .hero {
   height: 100vh;

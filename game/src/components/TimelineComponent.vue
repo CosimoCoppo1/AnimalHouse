@@ -14,12 +14,12 @@
           />
         </div>
         <div class="timeline__panel">
-          <hgroup>
+          <div>
             <div class="timeline__content">
               <h5 class="date">{{ step.year }}</h5>
               <h5 class="subheading">{{ step.intro }}</h5>
             </div>
-          </hgroup>
+          </div>
           <div class="timeline__body">
             <p class="text-muted" v-html="step.description"></p>
           </div>
@@ -75,7 +75,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* timeline section */
 .timeline {
   position: relative;

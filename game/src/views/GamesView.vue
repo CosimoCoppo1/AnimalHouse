@@ -57,7 +57,7 @@
             />
             <router-link
               role="button"
-              class="btn btn-warning"
+              class="btn btn-warning game-title"
               :to="{ path: `${game.link}` }"
               >{{ game.direct }}</router-link
             >
@@ -83,13 +83,13 @@ export default {
           img: "gallery2.png",
           link: "/giochi/memory",
           direct: "memory",
-          description: "Aiuta le coppie a ritrovarsi!",
+          description: "Aiuta le coppie a ricongiungersi!",
         },
         {
           img: "gallery3.png",
           link: "/giochi/quiz",
           direct: "quiz",
-          description: "Sei acculturato sul campo animale?",
+          description: "Sei acculturato nel campo animale?",
         },
         {
           img: "gallery4.png",
@@ -137,5 +137,11 @@ export default {
 
 li {
   list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 14px;
+  }
 }
 </style>

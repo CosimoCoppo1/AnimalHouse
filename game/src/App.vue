@@ -29,7 +29,6 @@ export default {
 
 /* hero section */
 .hero {
-  /* height: 38vh; */
   position: relative;
   display: flex;
   width: 100%;
@@ -85,7 +84,7 @@ export default {
 @media (max-width: 768px) {
   .page-intro {
     font-size: 19px;
-    text-align: justify;
+    text-align: center;
   }
 }
 
@@ -103,14 +102,13 @@ export default {
 @media (max-width: 768px) {
   .description__text {
     font-size: 17px;
-    text-align: justify;
+    text-align: center;
   }
 }
 
 /* poster section */
 .poster {
   display: flex;
-  /* height: 100vh; */
   width: 100%;
   align-items: center;
   margin-top: 20px;
@@ -118,7 +116,6 @@ export default {
 }
 
 .poster__img {
-  /* width: 65%; */
   height: 100%;
 }
 
@@ -129,21 +126,16 @@ export default {
 }
 
 .poster__content {
-  /* width: 35%; */
-  /* padding: 50px; */
-  /* margin-left: 10px; */
   text-align: left;
-  /* font-size: 17px; */
 }
 
 @media (max-width: 768px) {
   .poster {
     flex-wrap: wrap;
-    /* height: auto; */
   }
 
   .poster__content {
-    text-align: justify;
+    text-align: center;
   }
 
   .poster__img,
@@ -196,18 +188,6 @@ export default {
   font-weight: 900;
 }
 
-.med-text {
-  font-size: 40px;
-}
-
-.normal-text {
-  font-size: 20px;
-}
-
-.small-text {
-  font-size: 14px;
-}
-
 .intro-text {
   text-transform: uppercase;
   font-size: 20px;
@@ -226,12 +206,10 @@ export default {
   max-width: 1350px;
   padding: 0 30px;
   margin: 0 auto;
-  /* border: 1px solid red; */
 }
 
 .grid .col {
   width: 100%;
-  /* border: 1px solid red; */
 }
 
 @media (max-width: 768px) {
@@ -256,9 +234,5 @@ nav {
 nav a {
   font-weight: bold;
   color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
 }
 </style>

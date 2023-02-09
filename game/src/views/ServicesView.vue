@@ -152,8 +152,8 @@
             Alcuni servizi di
             <span lang="en" xml:lang="en">Animal House</span> possono non essere
             al momento <b>disponibili</b>.<br />Ti incoraggiamo a vedere nella
-            lista che segue i servizi <em>prenotabili</em> al momento per
-            animale nelle nostre sedi!
+            lista che segue i servizi <em>prenotabili</em> subito per animale
+            nelle nostre sedi!
           </p>
         </div>
       </section>
@@ -185,18 +185,28 @@
             :aria-labelledby="`heading${index}`"
             data-bs-parent="#accordionExample"
           >
-            <section
-              class="accordion-body"
-              v-for="(service, index) in this.servicesPet"
-              :key="index"
-            >
-              Potrai effettuare il servizio di
-              <b>{{ service.service.name }}</b> presso la sede in
-              <b>{{ service.location.address }}</b
-              >, <b>{{ service.location.city }}</b
-              >. <br />Ancora <b>{{ service.reservation_left }}</b> date
-              prenotabili.<br />Affrettati!
-            </section>
+            <div v-if="this.servicesPet.length == 0" class="accordion-body">
+              <p>
+                Al momento <em>non</em> sono presenti servizi prenotabili per
+                questa categoria.
+              </p>
+            </div>
+            <div v-else>
+              <section
+                class="accordion-body"
+                v-for="(service, index) in this.servicesPet"
+                :key="index"
+              >
+                <div>
+                  Potrai effettuare il servizio di
+                  <b>{{ service.service.name }}</b> presso la sede in
+                  <b>{{ service.location.address }}</b
+                  >, <b>{{ service.location.city }}</b
+                  >. <br />Ancora <b>{{ service.reservation_left }}</b> date
+                  prenotabili.<br />Affrettati!
+                </div>
+              </section>
+            </div>
           </div>
         </div>
       </section>
@@ -493,6 +503,10 @@ export default {
   font-size: 22px;
 }
 
+.accordion-button {
+  color: #000;
+}
+
 .accordion-body b {
   color: #006eec;
 }
@@ -523,7 +537,3 @@ export default {
   list-style-type: none;
 }
 </style>
-
-<!--
-per immagini da db: <img :src="`${section.img}`" alt="..." />
--->

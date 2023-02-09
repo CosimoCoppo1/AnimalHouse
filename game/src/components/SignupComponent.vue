@@ -70,7 +70,6 @@ export default {
         email: null,
         password: null,
       },
-      message: "",
       success: false,
     };
   },
@@ -82,8 +81,7 @@ export default {
         .then((response) => {
           if (response.status == 200) {
             this.signup = response.data;
-            this.message = "Registrazione avvenuta con successo!";
-            this.success = true;
+            alert("Registrazione avvenuta con successo!");
             console.log(this.signup);
             localStorage.setItem(
               this.signup.token,
@@ -93,8 +91,12 @@ export default {
                 id: this.signup.userId,
               })
             );
+            window.location.href = "./dati-personali";
           } else {
-            this.message = "registrazione negata...";
+            alert("registrazione negata...");
+            this.signup.username = null;
+            this.signup.email = null;
+            this.signup.password = null;
           }
         });
       e.preventDefault();

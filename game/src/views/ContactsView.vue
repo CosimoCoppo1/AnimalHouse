@@ -138,8 +138,8 @@
             :key="index"
           >
             Potrai effettuare presso la sede il servizio di
-            <b class="text-warning">{{ service.service.name }}</b> per
-            <b class="text-warning">{{ service.pet.name }}</b
+            <b class="text-col">{{ service.service.name }}</b> per
+            <b class="text-col">{{ service.pet.name }}</b
             >.
           </section>
         </div>
@@ -280,6 +280,10 @@ export default {
   border: 1px solid black;
 }
 
+.text-col {
+  color: #7000f0;
+}
+
 /* hero section */
 .hero {
   height: 38vh;
@@ -392,6 +396,10 @@ export default {
 
 .accordion-button:hover {
   color: #7000f0;
+}
+
+.accordion-button {
+  color: #000;
 }
 
 @media (max-width: 768px) {
