@@ -163,7 +163,7 @@ function showSearchResult(results)
 						</p>
 						<p>Posti prenotati: <span class="text-black fw-bold">${results[i].qty}</span></p>
 						<div class="d-flex justify-content-end">
-							<button class="ms-2 btn btn-outline-danger" onclick="delete_reservation('${results[i]._id}')"><span class="fw-bold">Elimina</span></button>
+							<button class="ms-2 btn btn-outline-danger" id="delete-${results[i]._id}"><span class="fw-bold">Elimina</span></button>
 						</div>
 					</div>
 				</div>
@@ -173,12 +173,18 @@ function showSearchResult(results)
 	
 
 	r.html(innerHTML);
+
+	for (let i = 0; i < results.length; i++) {
+		$(`#delete-${results[i]._id}`).click({ 'id': `${results[i]._id}` }, delete_reservation);
+	}
 }
 
-function delete_reservation(id)
-{	$.ajax({
-			'url': `/bookable_services/reservation/${id}`,
-			'method': 'DELETE'
+function delete_reservation(event)
+{	
+	let id = event.data.id;
+	$.ajax({
+		'url': `/bookable_services/reservation/${id}`,
+		'method': 'DELETE'
 	})
 	.then((res) => {
 		getReservation();

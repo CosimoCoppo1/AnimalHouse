@@ -17,7 +17,6 @@ const BookService = ({servizio, date, orario}) => {
 
             try {
                 const {data} = await axios.post(`http://${apiUrl}/bookable_services/reservation`, {qty, user ,bookable_service})            
-                console.log( data)
                 if(data.reservationResult){
                     swal({title: "Prenotazione servizio avvenuta con successo!", icon: "success"})
                     .then(() => {window.location.href = "/frontoffice/services"})

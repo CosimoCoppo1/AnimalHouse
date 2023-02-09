@@ -6,24 +6,13 @@ import { Col, Container, Row } from "react-bootstrap";
 import Filters from "./Filters.js";
 import Mappa from "./Mappa.js";
 import BookService from './BookService'
-import ServiceCarousel from "./ServiceCarousel.js";
 import FooterBasic from "../FooterBasic.js";
 import apiUrl from '../../config'
 
 
 const ServiceScreen = () => {
-  const [services, setServices] = useState([]);
   const [bookableServices, setBookableServices] = useState([]);
   const [searchedServices, setSearchedServices] = useState(null);
-
-  const getServices = async () => {
-    try {
-      const { data } = await axios.get(`http://${apiUrl}/services`)
-      setServices(data) 
-    } catch (error) {
-      console.log(error);
-    }
-  };
   
   const getBookableServices = async () => {
     try {
@@ -35,8 +24,7 @@ const ServiceScreen = () => {
   };
 
 
-  useEffect(() => {
-    getServices()  
+  useEffect(() => {  
     getBookableServices()
   }, []);
 
@@ -75,17 +63,6 @@ const ServiceScreen = () => {
 					</Col>
       
 					<Col>
-            <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
-              <h1 className="text-center"> Servizi </h1>
-              <div style={{width: '50vw'}}>
-                {services === null
-                  ? "Fetching services...."
-                  :  <ServiceCarousel services={services}  />                   
-                  
-                }
-              </div>
-            </Row> 
-            <br/>
             
             <Row style={{ justifyContent: 'center', alignItems: 'center' }}>
               <h2 className="text-center"> Le nostre sedi </h2>
@@ -102,14 +79,27 @@ const ServiceScreen = () => {
                 ) : (
                   <>
                     <h3 className="text-center">Servizi disponibili trovati:</h3>
-                    <div className="bookable__screen">
+                    <div className="bookable__screen mb-4">
                       {
                         searchedServices.map((servizio) => {
 
-                          let time = servizio.day;
-                          time = time.split("T");
-                          let date = time[0];
-                          let orario = time[1].split(".")[0];
+                            /*
+                                        let time = servizio.day;
+                                        time = time.split("T");
+                                        let date = time[0];
+                                        let orario = time[1].split(".")[0];
+                            */
+
+                          let d = new Date(servizio.day);
+                          let options = {
+                            'weekday': 'short', 
+                            'year': 'numeric', 
+                            'month': '2-digit', 
+                            'day': '2-digit'
+                          };
+                          let date = d.toLocaleDateString('it-IT', options);
+                            date = date.charAt(0).toUpperCase() + date.slice(1);
+                          let orario = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
           
                           return <BookService servizio={servizio} date={date} orario={orario}/>
                         })
@@ -130,11 +120,24 @@ const ServiceScreen = () => {
                   ) :(
                     bookableServices.map((servizio) => {
 
+					  /*
                       let time = servizio.day;
                       time = time.split("T");
                       let date = time[0];
                       let orario = time[1].split(".")[0];
-      
+					  */
+
+					let d = new Date(servizio.day);
+					let options = {
+						'weekday': 'short', 
+						'year': 'numeric', 
+						'month': '2-digit', 
+						'day': '2-digit'
+					};
+					let date = d.toLocaleDateString('it-IT', options);
+						date = date.charAt(0).toUpperCase() + date.slice(1);
+					let orario = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
+
                       return <BookService servizio={servizio} date={date} orario={orario}/>
                     })
                   )

@@ -15,6 +15,7 @@ const Cart = ({item, qtyChangeHandler, removeHandler}) => {
 
       <select
         value={item.qty}
+        aria-label="Selezione numero prodotti"
         onChange={(e) => qtyChangeHandler(item.product, e.target.value)}
         className="cartItem__select"
       >
@@ -28,6 +29,7 @@ const Cart = ({item, qtyChangeHandler, removeHandler}) => {
       <button
         className="cartItem__deleteBtn"
         onClick={() => removeHandler(item.product)}
+        aria-label="Elimina prodotto"
       >
         <i className="fas fa-trash"></i>
       </button>

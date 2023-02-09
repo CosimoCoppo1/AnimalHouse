@@ -12,7 +12,7 @@
 		"pet": "Cani",
 		"location": "Milano-via Tortona 37",
 		"service": "Dog sitter-Cani",
-		"day": "2023-02-02T08:30:00Z",
+		"day": "2023-03-02T08:30:00Z",
 		"price": 20.22,
 		"reservation_left": 3,
 		"pet_size": "grande"
@@ -21,7 +21,7 @@
 		"pet": "Gatti",
 		"location": "Ancona-via Marconi 131",
 		"service": "Veterinario-Gatti",
-		"day": "2023-01-10T14:30:00Z",
+		"day": "2023-03-10T14:30:00Z",
 		"price": 10.50,
 		"reservation_left": 1,
 		"pet_size": "grande"
@@ -30,7 +30,7 @@
 		"pet": "Pesci",
 		"location": "Cagliari-viale Italia 10",
 		"service": "Veterinario-Pesci",
-		"day": "2023-01-23T14:30:00Z",
+		"day": "2023-02-23T14:30:00Z",
 		"price": 10.50,
 		"reservation_left": 2,
 		"pet_size": "piccola"
