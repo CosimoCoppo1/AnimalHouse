@@ -79,27 +79,27 @@ const ServiceScreen = () => {
                 ) : (
                   <>
                     <h3 className="text-center">Servizi disponibili trovati:</h3>
-                    <div className="bookable__screen">
+                    <div className="bookable__screen mb-4">
                       {
                         searchedServices.map((servizio) => {
 
-						  /*
-                          let time = servizio.day;
-                          time = time.split("T");
-                          let date = time[0];
-                          let orario = time[1].split(".")[0];
-						  */
+                            /*
+                                        let time = servizio.day;
+                                        time = time.split("T");
+                                        let date = time[0];
+                                        let orario = time[1].split(".")[0];
+                            */
 
-						let d = new Date(servizio.day);
-						let options = {
-							'weekday': 'short', 
-							'year': 'numeric', 
-							'month': '2-digit', 
-							'day': '2-digit'
-						};
-						let date = d.toLocaleDateString('it-IT', options);
-							date = date.charAt(0).toUpperCase() + date.slice(1);
-						let orario = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
+                          let d = new Date(servizio.day);
+                          let options = {
+                            'weekday': 'short', 
+                            'year': 'numeric', 
+                            'month': '2-digit', 
+                            'day': '2-digit'
+                          };
+                          let date = d.toLocaleDateString('it-IT', options);
+                            date = date.charAt(0).toUpperCase() + date.slice(1);
+                          let orario = d.toLocaleTimeString('it-IT', { 'timeStyle': 'short' });
           
                           return <BookService servizio={servizio} date={date} orario={orario}/>
                         })

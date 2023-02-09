@@ -45,7 +45,6 @@ export const buyFromCart = () => async (dispatch, getState) => {
   if(result == 0){
     swal({title: msg, icon: "success"})
   }else{
-    console.log(result)
     swal({title: msg, icon: "warning"})
   }
 

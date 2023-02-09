@@ -4,7 +4,6 @@ import apiUrl from '../../../config'
 
 export const uploadImage = async (data) => {
   try {
-    console.log("Image upload Action start")
     await axios.post(`http://${apiUrl}/upload`, data)
   } catch (error) {
     console.log(error);
