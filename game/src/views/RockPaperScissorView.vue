@@ -133,6 +133,7 @@
             <button
               class="btn btn-warning border border-dark"
               style="background-color: #f77f00"
+              @click="this.postScores()"
             >
               Salva il punteggio!
             </button>
@@ -144,6 +145,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "RockPaperScissorView",
   data() {
@@ -157,9 +160,25 @@ export default {
       totalRounds: 0,
       fighting: false,
       finalPoints: 0,
+      userId: "",
+      userData: {},
+      userPoints: {
+        game: "morra cinese",
+        bestScore: null,
+        user: null,
+      },
     };
   },
   methods: {
+    getUser() {
+      let key = localStorage.key(0);
+      if (key != null) {
+        this.userData = JSON.parse(localStorage.getItem(key));
+        axios
+          .get(`${this.$globalVar}/users?username=${this.userData.username}`)
+          .then((response) => (this.userId = response.data[0]._id));
+      }
+    },
     chooseWeapon(weapon) {
       this.yourWeapon = weapon;
       this.result = "";
@@ -216,13 +235,19 @@ export default {
       this.result = "vittoria";
       this.yourScore++;
       this.totalRounds++;
-      this.finalPoints = this.yourScore * 2 - this.computerScore;
+      this.finalPoints = this.yourScore * 5 - this.computerScore;
+      if (this.finalPoints < 0) {
+        this.finalPoints = 0;
+      }
     },
     lost() {
       this.result = "sconfitta";
       this.computerScore++;
       this.totalRounds++;
-      this.finalPoints = this.yourScore * 2 - this.computerScore;
+      this.finalPoints = this.yourScore * 5 - this.computerScore;
+      if (this.finalPoints < 0) {
+        this.finalPoints = 0;
+      }
     },
     reset() {
       this.computerScore = 0;
@@ -233,6 +258,31 @@ export default {
       this.totalRounds = 0;
       this.finalPoints = 0;
     },
+    postScores() {
+      if (this.finalPoints < 0) {
+        this.finalPoints = 0;
+      }
+      this.userPoints.bestScore = this.finalPoints;
+      this.userPoints.user = this.userId;
+      axios
+        .post(`${this.$globalVar}/scores/updateOrCreate`, this.userPoints)
+        .then((response) => {
+          if (response.status == 200) {
+            alert(
+              "Punteggio salvato con successo! Vedi i tuoi punteggi alla sezione dati personali."
+            );
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert(
+            "Non sei ancora membro della famiglia Animal House e non puoi memorizzare i tuoi punteggi di gioco! Passa alla sezione Dati personali accedendo o effettuando la registrazione per scalare le classifiche di gioco con gli altri membri di Animal House"
+          );
+        });
+    },
+  },
+  created() {
+    this.getUser();
   },
 };
 </script>

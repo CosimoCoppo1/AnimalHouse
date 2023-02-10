@@ -250,6 +250,7 @@ export default {
     };
   },
   methods: {
+    /* cambia colore delle icone della card section */
     changeColor(index) {
       for (let i = 0; i <= 2; i++) {
         if (index % 3 == i) {
@@ -257,11 +258,13 @@ export default {
         }
       }
     },
+    /* GET */
     getLocations() {
       axios
         .get(`${this.$globalVar}/locations`)
         .then((response) => (this.locations = response.data));
     },
+    /* GET */
     getBookableServices(locationId) {
       axios
         .get(`${this.$globalVar}/bookable_services?location=${locationId}`)

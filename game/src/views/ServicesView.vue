@@ -29,7 +29,7 @@
       </div>
     </section>
 
-    <!-- image gallery section -->
+    <!-- gallery section -->
     <section class="container-fluid image-gallery">
       <div class="row">
         <div
@@ -72,7 +72,7 @@
       </div>
     </section>
 
-    <!-- locations section -->
+    <!-- location section -->
     <section class="container mt-4">
       <ol
         class="location__container"
@@ -88,7 +88,7 @@
     <section class="container alert alert-info" role="alert">
       Prenota subito un appuntamento passando all'area
       <a
-        href="http://localhost:8000/frontoffice/"
+        :href="`${this.$globalVar}/frontoffice/`"
         class="link"
         lang="en"
         xml:lang="en"
@@ -116,7 +116,7 @@
             <span lang="en" xml:lang="en">pet</span>, a cui si possono rivolgere
             sia chi ha dedicato il proprio lavoro agli animali, sia per chi ne
             fa richiesta.<br />Prenota un
-            <a href="http://localhost:8000/frontoffice/services" class="link"
+            <a :href="`${this.$globalVar}/frontoffice/services`" class="link"
               ><b>colloquio</b></a
             >
             adesso, per il benessere del tuo pet
@@ -146,6 +146,7 @@
         </ol>
       </section>
 
+      <!-- description section -->
       <section class="grid paragraph">
         <div class="col">
           <p class="description__text">
@@ -248,7 +249,7 @@
             <img
               class="mx-auto rounded-circle"
               :src="require(`@/assets/services/${member.img}`)"
-              :alt="member.alt"
+              alt=""
             />
             <li>
               <h4 class="member__name">{{ member.name }}</h4>
@@ -312,62 +313,48 @@ export default {
           name: "Dott.ssa Rossella Terragni",
           job: "Direttore sanitario",
           img: "team0.png",
-          alt: "Foto Dott.ssa Rossella Terragni",
         },
         {
           name: "Dott. Massimo Vignoli",
           job: "Diagnostica per immagini",
           img: "team1.jpg",
-          alt: "Foto Dott. Massimo Vignoli",
         },
         {
           name: "Dott.ssa Valentina Pagliardini",
           job: "Ecografia",
           img: "team2.jpg",
-          alt: "Foto Dott.ssa Valentina Pagliardini",
         },
       ],
       locations: [],
       pets: [],
       services: [],
       servicesPet: [],
-      colors: [
-        "#469374",
-        "#9341b3",
-        "#e3427d",
-        "#c4331c",
-        "#e68653",
-        "#f0c808",
-      ],
     };
   },
   methods: {
+    /* GET sedi di Animal House */
     getLocations() {
       axios
         .get(`${this.$globalVar}/locations`)
         .then((response) => (this.locations = response.data));
     },
+    /* GET animali memorizzati per servizi/negozio in Animal House */
     getPets() {
       axios
         .get(`${this.$globalVar}/pets`)
         .then((response) => (this.pets = response.data));
     },
+    /* GET servizi offerti da Animal House */
     getServices() {
       axios
         .get(`${this.$globalVar}/services`)
         .then((response) => (this.services = response.data));
     },
+    /* GET servizi prenotabili per pet id */
     getBookableServices(petId) {
       axios
         .get(`${this.$globalVar}/bookable_services?pet=${petId}`)
         .then((response) => (this.servicesPet = response.data));
-    },
-    changeColor(index) {
-      for (let i = 0; i <= 5; i++) {
-        if (index % 6 == i) {
-          return this.colors[i];
-        }
-      }
     },
   },
   created: function () {
@@ -379,6 +366,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .link {
   color: #8e00ec;
   text-decoration: none;
@@ -414,7 +402,7 @@ export default {
   color: #006eec;
 }
 
-/* locations section */
+/* location section */
 .location__container {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   position: relative;

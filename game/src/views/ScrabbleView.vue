@@ -138,7 +138,6 @@ export default {
         bestScore: null,
         user: null,
       },
-      returnPost: null,
     };
   },
   watch: {
@@ -156,10 +155,12 @@ export default {
   methods: {
     getUser() {
       let key = localStorage.key(0);
-      this.userData = JSON.parse(localStorage.getItem(key));
-      axios
-        .get(`${this.$globalVar}/users?username=${this.userData.username}`)
-        .then((response) => (this.userId = response.data[0]._id));
+      if (key != null) {
+        this.userData = JSON.parse(localStorage.getItem(key));
+        axios
+          .get(`${this.$globalVar}/users?username=${this.userData.username}`)
+          .then((response) => (this.userId = response.data[0]._id));
+      }
     },
     generateQuizQuestions() {
       axios
@@ -234,7 +235,7 @@ export default {
       }
     },
     stopGame() {
-      this.finalPoints = this.points * 3 - this.malus;
+      this.finalPoints = this.points * 4 + 100 - this.malus * 2;
       if (this.finalPoints < 0) {
         this.finalPoints = 0;
       }
@@ -253,11 +254,16 @@ export default {
         .post(`${this.$globalVar}/scores/updateOrCreate`, this.userPoints)
         .then((response) => {
           if (response.status == 200) {
-            console.log(response.data);
-            this.returnPost = response.data;
-            console.log(this.returnPost);
-            alert("Punteggio salvato con successo!");
+            alert(
+              "Punteggio salvato con successo! Vedi i tuoi punteggi alla sezione dati personali."
+            );
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert(
+            "Non sei ancora membro della famiglia Animal House e non puoi memorizzare i tuoi punteggi di gioco! Passa alla sezione Dati personali accedendo o effettuando la registrazione per scalare le classifiche di gioco con gli altri membri di Animal House"
+          );
         });
     },
   },

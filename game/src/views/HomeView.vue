@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- hero section -->
     <section class="hero">
       <div class="hero__content">
         <h1 class="intro-text">
@@ -29,6 +30,7 @@
       </video>
     </section>
 
+    <!-- page-intro section -->
     <section class="grid page-intro my-5">
       <div class="col">
         <p>
@@ -45,6 +47,7 @@
       </div>
     </section>
 
+    <!-- poster section -->
     <section class="poster mt-3">
       <section class="poster__content">
         <h3 class="big-text title-color">
@@ -75,6 +78,7 @@
       </div>
     </section>
 
+    <!-- poster section -->
     <section class="poster mt-3">
       <div class="poster__img">
         <img src="../assets/home/gallery0.jpg" alt="" />
@@ -108,6 +112,7 @@
       </section>
     </section>
 
+    <!-- cover section -->
     <section class="bg-cover mt-3">
       <div class="bg-cover__title">
         <h3 class="big-text title-color">Riguardo a noi...</h3>
@@ -161,6 +166,7 @@
       </div>
     </section>
 
+    <!-- panel section -->
     <section class="panel-blue mt-3">
       <div class="grid panel-blue">
         <div class="col panel-blue__dots">
@@ -228,6 +234,7 @@
       </div>
     </section>
 
+    <!-- description section -->
     <section class="grid" style="margin-bottom: 100px">
       <div class="col">
         <div>
@@ -261,19 +268,13 @@ export default {
   data() {
     return {
       myVar: this.$globalVar,
-      openMenu: true,
     };
-  },
-  methods: {
-    open() {
-      this.openMenu = !this.openMenu;
-      console.log(this.openMenu);
-    },
   },
 };
 </script>
 
 <style scoped>
+/* helpers */
 .link {
   text-decoration: none;
 }
@@ -326,7 +327,7 @@ export default {
   color: #03045e;
 }
 
-/* poster */
+/* poster section */
 .poster {
   display: flex;
   height: 100vh;
@@ -362,7 +363,7 @@ export default {
   }
 }
 
-/* bg cover */
+/* cover section */
 .bg-cover {
   display: flex;
   padding: 100px 0;
@@ -393,7 +394,7 @@ export default {
   }
 }
 
-/* panel */
+/* panel section */
 .panel-blue {
   padding: 100px 30px;
 }

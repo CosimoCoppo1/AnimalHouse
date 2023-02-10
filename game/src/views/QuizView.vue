@@ -98,11 +98,16 @@
               ><b class="link">Risposte errate: </b>
               {{ this.wrongAnswers }}</span
             >
+            <br />
+            <span
+              ><b class="link">Punteggio accumulato: </b>
+              {{ this.finalPoints }}</span
+            >
             <div class="buttons">
               <button class="btn init" type="button" @click="resetQuiz()">
                 Rigioca!
               </button>
-              <button class="btn send" type="button" @click="sendResults()">
+              <button class="btn send" type="button" @click="this.postScores()">
                 Salva il punteggio!
               </button>
             </div>
@@ -128,6 +133,7 @@ export default {
       wrongAnswers: 0,
       questions: [],
       chooseCategory: 0,
+      finalPoints: 0,
       categories: [
         "Tutti",
         "Animali australiani",
@@ -181,9 +187,25 @@ export default {
         "Tigre",
         "Volpe artica",
       ],
+      userId: "",
+      userData: {},
+      userPoints: {
+        game: "quiz",
+        bestScore: null,
+        user: null,
+      },
     };
   },
   methods: {
+    getUser() {
+      let key = localStorage.key(0);
+      if (key != null) {
+        this.userData = JSON.parse(localStorage.getItem(key));
+        axios
+          .get(`${this.$globalVar}/users?username=${this.userData.username}`)
+          .then((response) => (this.userId = response.data[0]._id));
+      }
+    },
     initGame() {
       if (this.chooseCategory == 0) {
         axios
@@ -202,7 +224,6 @@ export default {
             this.count = this.questions.length;
           });
       }
-      console.log(this.questions);
       this.index = 0;
     },
     answered(key) {
@@ -214,7 +235,6 @@ export default {
       }
     },
     selectClass(key, num) {
-      console.log(key, num);
       if (key === this.questions[num].correctAnswer) {
         return "correct";
       }
@@ -228,6 +248,7 @@ export default {
     },
     showResults() {
       this.index++;
+      this.finalPoints = this.correctAnswers * 3 + 100 - this.wrongAnswers * 2;
     },
     resetQuiz() {
       this.chooseCategory = 0;
@@ -236,7 +257,28 @@ export default {
       this.correctAnswers = 0;
       this.wrongAnswers = 0;
     },
-    sendResults() {},
+    postScores() {
+      this.userPoints.bestScore = this.finalPoints;
+      this.userPoints.user = this.userId;
+      axios
+        .post(`${this.$globalVar}/scores/updateOrCreate`, this.userPoints)
+        .then((response) => {
+          if (response.status == 200) {
+            alert(
+              "Punteggio salvato con successo! Vedi i tuoi punteggi alla sezione dati personali."
+            );
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert(
+            "Non sei ancora membro della famiglia Animal House e non puoi memorizzare i tuoi punteggi di gioco! Passa alla sezione Dati personali accedendo o effettuando la registrazione per scalare le classifiche di gioco con gli altri membri di Animal House"
+          );
+        });
+    },
+  },
+  created() {
+    this.getUser();
   },
 };
 </script>

@@ -83,6 +83,9 @@ const routes = [
 const router = createRouter({
   history: createWebHistory("/game/"),
   routes,
+  /** permette il reindirizzamento nella posizione
+   * giusta nelle pagine di navigazione
+   */
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
       return savedPosition;

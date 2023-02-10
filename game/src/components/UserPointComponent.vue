@@ -10,21 +10,25 @@
         </p>
         <hr />
         <div
-          v-for="(animal, index) in this.userAnimals"
-          :key="index"
-          class="text-center m-4"
+          v-for="point in this.gamesPoints"
+          :key="point._id"
+          class="text-center m-4 game"
         >
-          <img
-            :src="require(`@/assets/admin/${animal.pet.name}.png`)"
-            :alt="animal.pet.name"
-            width="80"
-            class="rounded-circle"
-            style="border: 2px solid #9e0089"
-          />
+          <b>{{ point.game }}</b>
           <br />
-          <b style="color: #9e0089">{{ animal.petName }}</b>
+          <i>Miglior punteggio:</i> <span>{{ point.bestScore }}</span>
           <br />
-          <i v-if="animal.desc != null" class="small">"{{ animal.desc }}"</i>
+          <i>Il punteggio è stato registrato il giorno:</i>
+          <br />
+          <span>{{ point.updatedAt }}</span>
+        </div>
+        <div class="buttons">
+          <router-link
+            role="button"
+            class="btn btn-success"
+            :to="{ path: '/giochi' }"
+            >Vai ai giochi!</router-link
+          >
         </div>
       </section>
     </div>
@@ -41,7 +45,7 @@ export default {
       myVar: this.$globalVar,
       userId: "",
       userData: {},
-      userAnimals: [],
+      gamesPoints: [],
     };
   },
   methods: {
@@ -57,12 +61,22 @@ export default {
       let response = await axios.get(
         `${this.$globalVar}/scores/user/${this.userId}`
       );
-      this.userAnimals = response.data;
+      this.gamesPoints = response.data;
+      for (let game of this.gamesPoints) {
+        let d = new Date(game.updatedAt);
+        let options = {
+          weekday: "short",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        };
+        game.updatedAt = d.toLocaleDateString("it-IT", options);
+      }
     },
   },
   created: async function () {
     await this.getUser();
-    await this.getUserPet();
+    await this.getUserPoint();
   },
 };
 </script>
@@ -109,10 +123,10 @@ export default {
 .buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 120px;
+  margin-top: 50px;
 }
 
-.buttons button {
+.buttons .btn {
   outline: none;
   color: #fff;
   cursor: pointer;
@@ -125,7 +139,21 @@ export default {
 
 @media (max-width: 768px) {
   .buttons {
-    margin-top: 80px;
+    margin-top: 30px;
   }
+}
+
+.game b {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #9e0089;
+}
+
+.game i {
+  font-weight: bold;
+}
+
+.game span {
+  color: #9e0089;
 }
 </style>

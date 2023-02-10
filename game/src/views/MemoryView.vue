@@ -26,8 +26,19 @@
           :position="card.position"
           :matched="card.matched"
           @select-card="flipCard"
+          @click="this.countClick()"
         />
       </main>
+    </section>
+    <section
+      v-if="status == 'HAI VINTO'"
+      class="text-center"
+      style="margin-top: 1000px"
+    >
+      <p>Il tuo punteggio ammonta a {{ this.count }} punti!</p>
+      <button class="btn my-3" type="button" @click="this.restartGame()">
+        Salva il punteggio!
+      </button>
     </section>
   </div>
 </template>
@@ -39,6 +50,17 @@ import CardComponent from "../components/CardComponent.vue";
 
 export default {
   name: "MemoryView",
+  data() {
+    return {
+      count: 0,
+    };
+  },
+  methods: {
+    countClick() {
+      console.log(this.count);
+      this.count++;
+    },
+  },
   components: { CardComponent },
   setup() {
     const cardList = ref([]);

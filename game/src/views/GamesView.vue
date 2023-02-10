@@ -56,7 +56,7 @@
       </div>
     </section>
 
-    <!-- image-gallery section -->
+    <!-- gallery section -->
     <main class="container">
       <div class="row">
         <ol
@@ -69,7 +69,7 @@
             <img
               :src="require(`@/assets/games/${game.img}`)"
               class="image"
-              alt=""
+              :alt="game.alt"
             />
             <router-link
               role="button"
@@ -100,24 +100,28 @@ export default {
           img: "gallery2.png",
           link: "/giochi/memory",
           direct: "memory",
+          alt: "Una coppia di uccellini si baciano sopra un ramo",
           description: "Aiuta le coppie a ricongiungersi!",
         },
         {
           img: "gallery3.png",
           link: "/giochi/quiz",
           direct: "quiz",
+          alt: "Un cane felice con occhiali da intelettuale sul muso",
           description: "Sei acculturato nel campo animale?",
         },
         {
           img: "gallery4.png",
           link: "/giochi/morra-cinese",
           direct: "morra cinese",
+          alt: "La statuetta di un elefantino",
           description: "Sasso, Carta, Forbice.... Ah, no?",
         },
         {
           img: "gallery5.png",
           link: "/giochi/scarabeo",
           direct: "scarabeo",
+          alt: "Un gruppo di fenicotteri rosa bevono in uno stagno nel loro habitat naturale",
           description: "Indovina l'animale da habitat e alimentazione!",
         },
       ],
@@ -127,6 +131,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .btn {
   background-color: #830094;
   color: #fff;
@@ -147,7 +152,7 @@ export default {
   color: #830094;
 }
 
-/* image-gallery section */
+/* gallery section */
 .image {
   border-radius: 20px;
 }
