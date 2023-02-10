@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import Footer from './FooterBasic';
+import apiUrl from '../config'
 
 
 
@@ -96,7 +97,7 @@ const Home = () => {
                             <div className='d-flex justify-content-center align-items-center h-100'>
                             <div className='text-white'>
                                 <h2 className='my-3'>Gioca con la nostra App e registra i tuoi punteggi!</h2>
-                                <a className='btn btn-light' style={{width: "100px"}} href='https://localhost:8000/game' role='button'>
+                                <a className='btn btn-light' style={{width: "100px"}} href={`http://${apiUrl}/game`} role='button'>
                                 Game
                                 </a>
                             </div>

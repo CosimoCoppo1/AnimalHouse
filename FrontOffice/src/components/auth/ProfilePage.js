@@ -1,7 +1,8 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import MyReservations from '../services/MyReservations';
-import MyAnimals from '../blog/MyAnimals';
+import MyAnimals from '../blog/MyAnimals'; 
+import apiUrl from '../../config'
 
  
 const ProfilePage = () => {
@@ -12,7 +13,7 @@ const ProfilePage = () => {
     <Row style={{marginLeft:"5rem", marginTop:"2rem", marginRight:"5rem"}} className="text-center rounded bg-secondary bg-opacity-10 shadow p-2">
                     <Col>
                         <p className=" fs-5">In questa sezione puoi vedere le prenotazioni che hai effettuato dei nostri <a href="/frontoffice/services">servizi</a> e 
-                                            le informazioni riguardanti i tuoi animali salvate sull'app <a target="_blank" href="https://localhost:8000/game">GAME</a>.  </p>
+                                            le informazioni riguardanti i tuoi animali salvate sull'app <a target="_blank" href={`http://${apiUrl}/game`}>GAME</a>.  </p>
                     </Col>
     </Row>
 
