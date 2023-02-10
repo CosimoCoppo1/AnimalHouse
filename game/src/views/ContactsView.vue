@@ -258,13 +258,13 @@ export default {
         }
       }
     },
-    /* GET */
+    /* GET sedi di Animal House */
     getLocations() {
       axios
         .get(`${this.$globalVar}/locations`)
         .then((response) => (this.locations = response.data));
     },
-    /* GET */
+    /* GET servizi prenotabili per location id */
     getBookableServices(locationId) {
       axios
         .get(`${this.$globalVar}/bookable_services?location=${locationId}`)
