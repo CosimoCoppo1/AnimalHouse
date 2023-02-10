@@ -61,7 +61,7 @@
 				{{#each petWithSections}}
 					<section>
 						<h1 class="ps-1 p-4"><span><img src="backoffice/img/icons8-forward-32.png" height="20" class="pe-3" alt=""></span>{{this.name}}</h1>
-						<div class="row row-cols-1 row-cols-xl-4 g-4">
+						<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
 							{{#each this.sections}}
 								<div class="col">
 									<div class="card shadow h-100 border border-1 border-opacity-50">
@@ -88,7 +88,7 @@
 		</main>
 		<footer class="border-top bg-secondary" style="--bs-bg-opacity: .1">
 			<div class="container-fluid py-5">
-				<p class="text-center">Questa è una frase finale per riempire lo spazio del footer</p>
+				<p class="text-center">© 2023 Copyright: <b>AnimalHouse</b> <br> site212225.tw.cs.unibo.it</p>
 			</div>
 		</footer>
 	</body>
