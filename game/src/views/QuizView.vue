@@ -103,7 +103,7 @@
                 Rigioca!
               </button>
               <button class="btn send" type="button" @click="sendResults()">
-                Invia risultati!
+                Salva il punteggio!
               </button>
             </div>
           </div>

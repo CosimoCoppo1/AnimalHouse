@@ -75,14 +75,12 @@ export default {
   },
   methods: {
     postData(e) {
-      console.warn(this.signup);
       axios
         .post("http://localhost:8000/auth/user/register", this.signup)
         .then((response) => {
           if (response.status == 200) {
             this.signup = response.data;
             alert("Registrazione avvenuta con successo!");
-            console.log(this.signup);
             localStorage.setItem(
               this.signup.token,
               JSON.stringify({
@@ -92,12 +90,14 @@ export default {
               })
             );
             window.location.href = "./dati-personali";
-          } else {
-            alert("registrazione negata...");
-            this.signup.username = null;
-            this.signup.email = null;
-            this.signup.password = null;
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Registrazione negata... Qualcosa è andato storto");
+          this.signup.username = null;
+          this.signup.email = null;
+          this.signup.password = null;
         });
       e.preventDefault();
     },

@@ -40,6 +40,22 @@
       </div>
     </section>
 
+    <!-- description section -->
+    <section class="paragraph grid">
+      <div class="col">
+        Sapevi che è possibile giocare e <em>salvare</em> i propri punteggi?<br />
+        Per vedere la <b><em>classifica generale</em></b> dei membri di
+        <span lang="en" xml:lang="en">Animal House</span> alla sezione
+        <a
+          href="http://localhost:8000/frontoffice/community"
+          style="color: #830094"
+          lang="en"
+          xml:lang="en"
+          >community</a
+        >!
+      </div>
+    </section>
+
     <!-- image-gallery section -->
     <main class="container">
       <div class="row">
@@ -114,6 +130,10 @@ export default {
   background-color: #830094;
   color: #fff;
   border: 1px solid #000;
+}
+
+.grid {
+  font-size: 20px;
 }
 
 /* hero section */

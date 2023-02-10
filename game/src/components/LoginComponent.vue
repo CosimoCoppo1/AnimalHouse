@@ -61,7 +61,6 @@ export default {
   },
   methods: {
     postData(e) {
-      console.warn(this.login);
       axios
         .post("http://localhost:8000/auth/user/login", this.login)
         .then((response) => {
@@ -76,11 +75,13 @@ export default {
               })
             );
             window.location.href = "./dati-personali";
-          } else {
-            alert("Accesso negato... Email o password scorretta");
-            this.login.email = null;
-            this.login.password = null;
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Accesso negato... Email o password scorretta");
+          this.login.email = null;
+          this.login.password = null;
         });
       e.preventDefault();
     },

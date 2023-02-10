@@ -14,7 +14,7 @@
     </section>
     <section class="text-center">
       <button class="btn my-3" type="button" @click="this.restartGame()">
-        Inizia a giocare
+        Inizia a giocare!
       </button>
       <h2 class="status">{{ status }}</h2>
       <main class="game-board mb-2">

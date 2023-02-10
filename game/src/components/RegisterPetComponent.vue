@@ -100,7 +100,6 @@ export default {
     },
     postData(e) {
       this.userpet.pet = this.categories[this.chooseCategory]._id;
-      console.warn(this.userpet);
       axios
         .post("http://localhost:8000/userPet/register", this.userpet)
         .then((response) => {
@@ -110,9 +109,15 @@ export default {
             this.userpet.petName = null;
             this.userpet.desc = null;
             this.chooseCategory = 0;
-          } else {
-            alert("Registrazione negata...");
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Registrazione animale negata... Qualcosa è andato storto");
+          this.userpet.pet = null;
+          this.userpet.petName = null;
+          this.userpet.desc = null;
+          this.chooseCategory = 0;
         });
       e.preventDefault();
     },
@@ -121,7 +126,6 @@ export default {
         `http://localhost:8000/userPet/user/${this.userpet.user}`
       );
       this.userAnimals = response.data;
-      console.log(this.userAnimals);
     },
   },
   created: async function () {

@@ -71,6 +71,13 @@
         >
           I tuoi animali
         </button>
+        <button
+          type="button"
+          class="btn btn-warning"
+          @click="this.showBlock('points')"
+        >
+          I tuoi punteggi
+        </button>
       </div>
 
       <!-- block section -->
@@ -79,6 +86,9 @@
       </div>
       <div v-else-if="this.show == 'show-animal'">
         <UserPetComponent />
+      </div>
+      <div v-else-if="this.show == 'points'">
+        <UserPointComponent />
       </div>
 
       <div class="buttons">
@@ -95,6 +105,7 @@ import LoginComponent from "../components/LoginComponent.vue";
 import SignupComponent from "../components/SignupComponent.vue";
 import RegisterPetComponent from "../components/RegisterPetComponent.vue";
 import UserPetComponent from "../components/UserPetComponent.vue";
+import UserPointComponent from "../components/UserPointComponent.vue";
 
 export default {
   name: "AdminView",
@@ -108,6 +119,7 @@ export default {
     SignupComponent,
     RegisterPetComponent,
     UserPetComponent,
+    UserPointComponent,
   },
   methods: {
     showBlock(data) {
