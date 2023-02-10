@@ -74,7 +74,7 @@
           <span lang="en" xml:lang="en">Animal House!</span><br />Con un
           <span lang="en" xml:lang="en">click</span> passa alla sezione
           <a
-            href="http://localhost:8000/frontoffice/"
+            :href="`${this.$globalVar}/frontoffice`"
             role="button"
             class="btn btn-danger border"
           >
@@ -97,7 +97,7 @@
           le date disponibili, i prezzi e prenotare subito un appuntamento,
           contattaci secondo le modalità sopra indicate o passa alla sezione
 
-          <a href="http://localhost:8000/frontoffice/services" class="link"
+          <a :href="`${this.$globalVar}/frontoffice/services`" class="link"
             >servizi</a
           >
           nell'applicazione.
@@ -178,6 +178,7 @@ export default {
   name: "ContactsView",
   data() {
     return {
+      myVar: this.$globalVar,
       locations: [],
       servicesLocation: [],
       actions: [
@@ -196,7 +197,7 @@ export default {
         {
           type: "Chatta",
           description:
-            "Vuoi entrare in contatto con i membri della <a href='http://localhost:8000/frontoffice/community' style='color: #662e9b' lang='en' xml:lang='en'>community</a> <span lang='en' xml:lang='en'>Animal House</span>? Accedi all'area <span lang='en' xml:lang='en'>VIP</span> per usufruire del servizio.",
+            "Vuoi entrare in contatto con i membri della <span lang='en' xml:lang='en'>community Animal House</span>? Accedi all'area <span lang='en' xml:lang='en'>VIP</span> per usufruire del servizio.",
           img: "icon3.png",
         },
       ],
@@ -258,12 +259,12 @@ export default {
     },
     getLocations() {
       axios
-        .get("http://localhost:8000/locations")
+        .get(`${this.$globalVar}/locations`)
         .then((response) => (this.locations = response.data));
     },
     getBookableServices(locationId) {
       axios
-        .get(`http://localhost:8000/bookable_services?location=${locationId}`)
+        .get(`${this.$globalVar}/bookable_services?location=${locationId}`)
         .then((response) => (this.servicesLocation = response.data));
     },
   },

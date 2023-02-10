@@ -34,6 +34,7 @@ export default {
   name: "UserPetComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       userId: "",
       userData: {},
       userAnimals: [],
@@ -44,13 +45,13 @@ export default {
       let key = localStorage.key(0);
       this.userData = JSON.parse(localStorage.getItem(key));
       let response = await axios.get(
-        `http://localhost:8000/users?username=${this.userData.username}`
+        `${this.$globalVar}/users?username=${this.userData.username}`
       );
       this.userId = response.data[0]._id;
     },
     async getUserPet() {
       let response = await axios.get(
-        `http://localhost:8000/userPet/user/${this.userId}`
+        `${this.$globalVar}/userPet/user/${this.userId}`
       );
       this.userAnimals = response.data;
     },

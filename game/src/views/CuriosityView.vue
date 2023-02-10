@@ -229,6 +229,7 @@ export default {
   name: "CuriosityView",
   data() {
     return {
+      myVar: this.$globalVar,
       keywords: [
         { direct: "#card", img: "button1.png", title: "conoscenza" },
         { direct: "#card", img: "button2.png", title: "aneddoti" },
@@ -253,7 +254,7 @@ export default {
     },
     getCuriosities() {
       axios
-        .get("http://localhost:8000/curiosities?qty=16")
+        .get(`${this.$globalVar}/curiosities?qty=16`)
         .then((response) => (this.categories = response.data));
     },
   },

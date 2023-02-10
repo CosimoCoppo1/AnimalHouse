@@ -47,7 +47,7 @@
         Per vedere la <b><em>classifica generale</em></b> dei membri di
         <span lang="en" xml:lang="en">Animal House</span> alla sezione
         <a
-          href="http://localhost:8000/frontoffice/community"
+          :href="`${this.$globalVar}/frontoffice/community`"
           style="color: #830094"
           lang="en"
           xml:lang="en"
@@ -94,6 +94,7 @@ export default {
   name: "GamesView",
   data() {
     return {
+      myVar: this.$globalVar,
       games: [
         {
           img: "gallery2.png",

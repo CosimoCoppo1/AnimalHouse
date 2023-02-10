@@ -65,6 +65,7 @@ export default {
   name: "SignupComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       signup: {
         username: null,
         email: null,
@@ -76,7 +77,7 @@ export default {
   methods: {
     postData(e) {
       axios
-        .post("http://localhost:8000/auth/user/register", this.signup)
+        .post(`${this.$globalVar}/auth/user/register`, this.signup)
         .then((response) => {
           if (response.status == 200) {
             this.signup = response.data;
@@ -94,9 +95,9 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          alert("Registrazione negata... Qualcosa è andato storto");
-          this.signup.username = null;
-          this.signup.email = null;
+          alert(
+            "Registrazione negata... Qualcosa è andato storto. Utilizza una password di almeno 6 caratteri!"
+          );
           this.signup.password = null;
         });
       e.preventDefault();

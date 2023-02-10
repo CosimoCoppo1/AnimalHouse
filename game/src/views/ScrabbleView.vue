@@ -117,6 +117,7 @@ export default {
   name: "ScrambleView",
   data() {
     return {
+      myVar: this.$globalVar,
       gameQuestions: [],
       scrabble: [{ textAnswer: "", textQuestion: "" }],
       userAnswer: "",
@@ -157,12 +158,12 @@ export default {
       let key = localStorage.key(0);
       this.userData = JSON.parse(localStorage.getItem(key));
       axios
-        .get(`http://localhost:8000/users?username=${this.userData.username}`)
+        .get(`${this.$globalVar}/users?username=${this.userData.username}`)
         .then((response) => (this.userId = response.data[0]._id));
     },
     generateQuizQuestions() {
       axios
-        .get("http://localhost:8000/curiosities?qty=50")
+        .get(`${this.$globalVar}/curiosities?qty=50`)
         .then((response) => (this.gameQuestions = response.data));
     },
     initFeed() {
@@ -249,7 +250,7 @@ export default {
       this.userPoints.bestScore = this.finalPoints;
       this.userPoints.user = this.userId;
       axios
-        .post("http://localhost:8000/scores/updateOrCreate", this.userPoints)
+        .post(`${this.$globalVar}/scores/updateOrCreate`, this.userPoints)
         .then((response) => {
           if (response.status == 200) {
             console.log(response.data);

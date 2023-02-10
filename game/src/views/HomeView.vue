@@ -146,7 +146,7 @@
         </h4>
         <p>
           Passa alla sezione
-          <a href="http://localhost:8000/frontoffice" class="link"
+          <a :href="`${this.$globalVar}/frontoffice`" class="link"
             ><span lang="en" xml:lang="en">VIP</span></a
           >
           per usufruire di tutti i servizi senza limitazioni e comprare
@@ -154,7 +154,7 @@
           <span lang="en" xml:lang="en">link</span> che scoprirai solamente
           provando!<br />
           Passa alla sezione
-          <a href="http://localhost:8000/backoffice" class="link">riservata</a>
+          <a :href="`${this.$globalVar}/backoffice`" class="link">riservata</a>
           se sei un dipendente
           <span lang="en" xml:lang="en">Animal House</span>.
         </p>
@@ -260,6 +260,7 @@ export default {
   name: "HomeView",
   data() {
     return {
+      myVar: this.$globalVar,
       openMenu: true,
     };
   },

@@ -286,6 +286,7 @@ export default {
   name: "ServicesView",
   data() {
     return {
+      myVar: this.$globalVar,
       clients: [
         {
           position: "right",
@@ -343,22 +344,22 @@ export default {
   methods: {
     getLocations() {
       axios
-        .get("http://localhost:8000/locations")
+        .get(`${this.$globalVar}/locations`)
         .then((response) => (this.locations = response.data));
     },
     getPets() {
       axios
-        .get("http://localhost:8000/pets")
+        .get(`${this.$globalVar}/pets`)
         .then((response) => (this.pets = response.data));
     },
     getServices() {
       axios
-        .get("http://localhost:8000/services")
+        .get(`${this.$globalVar}/services`)
         .then((response) => (this.services = response.data));
     },
     getBookableServices(petId) {
       axios
-        .get(`http://localhost:8000/bookable_services?pet=${petId}`)
+        .get(`${this.$globalVar}/bookable_services?pet=${petId}`)
         .then((response) => (this.servicesPet = response.data));
     },
     changeColor(index) {

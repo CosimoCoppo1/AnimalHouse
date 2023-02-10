@@ -73,6 +73,7 @@ export default {
   name: "RegisterPetComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       userpet: {
         user: null,
         pet: null,
@@ -87,21 +88,21 @@ export default {
   },
   methods: {
     async getPets() {
-      let response = await axios.get("http://localhost:8000/pets");
+      let response = await axios.get(`${this.$globalVar}/pets`);
       this.categories = response.data;
     },
     async getUser() {
       let key = localStorage.key(0);
       this.userData = JSON.parse(localStorage.getItem(key));
       let response = await axios.get(
-        `http://localhost:8000/users?username=${this.userData.username}`
+        `${this.$globalVar}/users?username=${this.userData.username}`
       );
       this.userpet.user = response.data[0]._id;
     },
     postData(e) {
       this.userpet.pet = this.categories[this.chooseCategory]._id;
       axios
-        .post("http://localhost:8000/userPet/register", this.userpet)
+        .post(`${this.$globalVar}/userPet/register`, this.userpet)
         .then((response) => {
           if (response.status == 200) {
             alert("Registrazione dell'animale avvenuta con successo!");
@@ -123,7 +124,7 @@ export default {
     },
     async getUserPet() {
       let response = await axios.get(
-        `http://localhost:8000/userPet/user/${this.userpet.user}`
+        `${this.$globalVar}/userPet/user/${this.userpet.user}`
       );
       this.userAnimals = response.data;
     },

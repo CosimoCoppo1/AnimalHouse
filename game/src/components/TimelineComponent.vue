@@ -28,7 +28,7 @@
     </ul>
     <div class="text-center">
       <a
-        href="http://localhost:8000/frontoffice/"
+        :href="`${this.$globalVar}/frontoffice`"
         class="btn btn-danger"
         role="button"
       >
@@ -47,6 +47,7 @@ export default {
   name: "TimelineComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       steps: [
         {
           img: "story1.jpg",

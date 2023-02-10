@@ -51,6 +51,7 @@ export default {
   name: "LoginComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       login: {
         email: null,
         password: null,
@@ -62,7 +63,7 @@ export default {
   methods: {
     postData(e) {
       axios
-        .post("http://localhost:8000/auth/user/login", this.login)
+        .post(`${this.$globalVar}/auth/user/login`, this.login)
         .then((response) => {
           if (response.status == 200) {
             this.logindata = response.data;
@@ -79,7 +80,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          alert("Accesso negato... Email o password scorretta");
+          alert("Accesso negato... Email o password scorretta!");
           this.login.email = null;
           this.login.password = null;
         });
