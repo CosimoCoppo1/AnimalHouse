@@ -65,26 +65,23 @@ export default {
   name: "SignupComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       signup: {
         username: null,
         email: null,
         password: null,
       },
-      message: "",
       success: false,
     };
   },
   methods: {
     postData(e) {
-      console.warn(this.signup);
       axios
-        .post("http://localhost:8000/auth/user/register", this.signup)
+        .post(`${this.$globalVar}/auth/user/register`, this.signup)
         .then((response) => {
           if (response.status == 200) {
             this.signup = response.data;
-            this.message = "Registrazione avvenuta con successo!";
-            this.success = true;
-            console.log(this.signup);
+            alert("Registrazione avvenuta con successo!");
             localStorage.setItem(
               this.signup.token,
               JSON.stringify({
@@ -93,9 +90,15 @@ export default {
                 id: this.signup.userId,
               })
             );
-          } else {
-            this.message = "registrazione negata...";
+            window.location.href = "./dati-personali";
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert(
+            "Registrazione negata... Qualcosa è andato storto. Utilizza una password di almeno 6 caratteri!"
+          );
+          this.signup.password = null;
         });
       e.preventDefault();
     },

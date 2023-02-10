@@ -20,10 +20,14 @@
             bottone!
           </p>
           <div class="buttons">
-            <button class="feed-choice" type="button" @click="initFeed()">
+            <button class="feed-choice" type="button" @click="this.initFeed()">
               Alimentazione!
             </button>
-            <button class="habitat-choice" type="button" @click="initHabitat()">
+            <button
+              class="habitat-choice"
+              type="button"
+              @click="this.initHabitat()"
+            >
               Habitat!
             </button>
           </div>
@@ -49,15 +53,23 @@
             placeholder="Riordina le lettere e indovina l'animale..."
           />
           <div class="buttons">
-            <button type="button" class="refresh-word" @click="refreshGame()">
+            <button
+              type="button"
+              class="refresh-word"
+              @click="this.refreshGame()"
+            >
               Cambia parola
             </button>
-            <button type="button" class="check-word" @click="checkUserWord()">
+            <button
+              type="button"
+              class="check-word"
+              @click="this.checkUserWord()"
+            >
               Verifica parola
             </button>
           </div>
           <div class="buttons">
-            <button type="button" class="final" @click="stopGame()">
+            <button type="button" class="final" @click="this.stopGame()">
               Smetti di giocare...
             </button>
           </div>
@@ -77,8 +89,19 @@
             Inizia una nuova partita cliccando il pulsante!
           </p>
           <div class="buttons">
-            <button class="feed-choice" type="button" @click="restartGame()">
+            <button
+              class="feed-choice"
+              type="button"
+              @click="this.restartGame()"
+            >
               Rigioca!
+            </button>
+            <button
+              class="habitat-choice"
+              type="button"
+              @click="this.postScores()"
+            >
+              Salva il punteggio!
             </button>
           </div>
         </section>
@@ -94,6 +117,7 @@ export default {
   name: "ScrambleView",
   data() {
     return {
+      myVar: this.$globalVar,
       gameQuestions: [],
       scrabble: [{ textAnswer: "", textQuestion: "" }],
       userAnswer: "",
@@ -107,6 +131,14 @@ export default {
       points: 0,
       malus: 0,
       finalPoints: 0,
+      userId: "",
+      userData: {},
+      userPoints: {
+        game: "scarabeo",
+        bestScore: null,
+        user: null,
+      },
+      returnPost: null,
     };
   },
   watch: {
@@ -122,10 +154,17 @@ export default {
     },
   },
   methods: {
+    getUser() {
+      let key = localStorage.key(0);
+      this.userData = JSON.parse(localStorage.getItem(key));
+      axios
+        .get(`${this.$globalVar}/users?username=${this.userData.username}`)
+        .then((response) => (this.userId = response.data[0]._id));
+    },
     generateQuizQuestions() {
-      axios.get("http://localhost:8000/curiosities?qty=50").then((response) => {
-        this.gameQuestions = response.data;
-      });
+      axios
+        .get(`${this.$globalVar}/curiosities?qty=50`)
+        .then((response) => (this.gameQuestions = response.data));
     },
     initFeed() {
       this.choice = "Alimentazione";
@@ -175,7 +214,7 @@ export default {
       this.scrabble.textQuestion = "";
       this.userAnswer = "";
       this.correctAnswer = "";
-      this.malus += 2;
+      this.malus++;
       this.initGame();
     },
     // confronta risposta dell'utente con risposta corretta
@@ -207,9 +246,24 @@ export default {
       this.malus = 0;
       this.finalPoints = 0;
     },
+    postScores() {
+      this.userPoints.bestScore = this.finalPoints;
+      this.userPoints.user = this.userId;
+      axios
+        .post(`${this.$globalVar}/scores/updateOrCreate`, this.userPoints)
+        .then((response) => {
+          if (response.status == 200) {
+            console.log(response.data);
+            this.returnPost = response.data;
+            console.log(this.returnPost);
+            alert("Punteggio salvato con successo!");
+          }
+        });
+    },
   },
   created() {
     this.generateQuizQuestions();
+    this.getUser();
   },
 };
 </script>

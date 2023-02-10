@@ -14,12 +14,12 @@
           />
         </div>
         <div class="timeline__panel">
-          <hgroup>
+          <div>
             <div class="timeline__content">
               <h5 class="date">{{ step.year }}</h5>
               <h5 class="subheading">{{ step.intro }}</h5>
             </div>
-          </hgroup>
+          </div>
           <div class="timeline__body">
             <p class="text-muted" v-html="step.description"></p>
           </div>
@@ -28,7 +28,7 @@
     </ul>
     <div class="text-center">
       <a
-        href="http://localhost:8000/frontoffice/"
+        :href="`${this.$globalVar}/frontoffice`"
         class="btn btn-danger"
         role="button"
       >
@@ -47,6 +47,7 @@ export default {
   name: "TimelineComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       steps: [
         {
           img: "story1.jpg",
@@ -75,7 +76,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 /* timeline section */
 .timeline {
   position: relative;

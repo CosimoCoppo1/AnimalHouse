@@ -103,7 +103,7 @@
                 Rigioca!
               </button>
               <button class="btn send" type="button" @click="sendResults()">
-                Invia risultati!
+                Salva il punteggio!
               </button>
             </div>
           </div>
@@ -120,6 +120,7 @@ export default {
   name: "QuizView",
   data() {
     return {
+      myVar: this.$globalVar,
       selectedAnswer: "",
       index: -1,
       count: 0,
@@ -186,13 +187,13 @@ export default {
     initGame() {
       if (this.chooseCategory == 0) {
         axios
-          .get("http://localhost:8000/questions")
+          .get(`${this.$globalVar}/questions`)
           .then((response) => (this.questions = response.data));
         this.count = 10;
       } else {
         axios
           .get(
-            `http://localhost:8000/questions?category=${
+            `${this.$globalVar}/questions?category=${
               this.categories[this.chooseCategory]
             }`
           )

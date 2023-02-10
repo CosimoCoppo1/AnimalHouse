@@ -41,7 +41,7 @@
             noi.<br />Abbiamo la <em>combinazione perfetta</em> tra i migliori
             prodotti e la nostra semplice pratica di acquisto: passa all'area
             <a
-              href="http://localhost:8000/frontoffice/e-commerce"
+              :href="`${this.$globalVar}/frontoffice/e-commerce`"
               role="button"
               class="btn btn-success"
               lang="en"
@@ -92,7 +92,7 @@
                         <h5 class="text-muted">{{ product.price }}€</h5>
                         <p class="card-text" v-html="product.description"></p>
                         <a
-                          :href="`http://localhost:8000/frontoffice/products/${product._id}`"
+                          :href="`${this.$globalVar}/frontoffice/products/${product._id}`"
                           role="button"
                           class="btn btn-success"
                           >Compra!</a
@@ -112,7 +112,7 @@
               >
                 <span
                   class="carousel-control-prev-icon bg-dark"
-                  aria-hidden="true"
+                  aria-hidden="false"
                 ></span>
                 <span class="sr-only"></span>
               </button>
@@ -125,7 +125,7 @@
               >
                 <span
                   class="carousel-control-next-icon bg-dark"
-                  aria-hidden="true"
+                  aria-hidden="false"
                 ></span>
                 <span class="sr-only"></span>
               </button>
@@ -139,7 +139,7 @@
               <em>acquistare</em>
               passa alla sezione
               <a
-                href="http://localhost:8000/frontoffice/e-commerce"
+                :href="`${this.$globalVar}/frontoffice/e-commerce`"
                 role="button"
                 class="btn btn-success fw-bold"
                 lang="en"
@@ -185,6 +185,7 @@ export default {
   name: "ShopView",
   data() {
     return {
+      myVar: this.$globalVar,
       pets: [],
       showSection: {},
       showProduct: {},
@@ -194,7 +195,7 @@ export default {
   },
   methods: {
     async getPets() {
-      let response = await axios.get("http://localhost:8000/pets");
+      let response = await axios.get(`${this.$globalVar}/pets`);
       this.pets = response.data;
       for (let pet of this.pets) {
         this.showSection[pet._id] = 0;
@@ -204,7 +205,7 @@ export default {
     async getPetSections() {
       for (let pet of this.pets) {
         let response = await axios.get(
-          `http://localhost:8000/sections?pet=${pet._id}`
+          `${this.$globalVar}/sections?pet=${pet._id}`
         );
         this.sections[pet._id] = response.data;
       }
@@ -214,7 +215,7 @@ export default {
         let petSections = keyValue[1];
         for (let section of petSections) {
           let response = await axios.get(
-            `http://localhost:8000/products?section=${section._id}`
+            `${this.$globalVar}/products?section=${section._id}`
           );
           this.products[section._id] = response.data;
         }
@@ -231,7 +232,6 @@ export default {
     },
     goNext(petId) {
       let maxProducts = this.maxSectionProduct(petId);
-      console.log(maxProducts);
       if (this.showProduct[petId] < maxProducts - 1) {
         this.showProduct[petId]++;
       }
@@ -284,7 +284,7 @@ export default {
 .card {
   left: 12.5%;
   border: 1.5px solid;
-  height: 440px;
+  height: 442px;
 }
 
 .card-body {
@@ -316,6 +316,14 @@ export default {
 
   .card {
     left: 0%;
+  }
+
+  .card-body h5 {
+    font-size: 14px;
+  }
+
+  .card-text {
+    height: 20px;
   }
 }
 </style>

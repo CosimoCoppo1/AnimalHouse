@@ -40,6 +40,22 @@
       </div>
     </section>
 
+    <!-- description section -->
+    <section class="paragraph grid">
+      <div class="col">
+        Sapevi che è possibile giocare e <em>salvare</em> i propri punteggi?<br />
+        Per vedere la <b><em>classifica generale</em></b> dei membri di
+        <span lang="en" xml:lang="en">Animal House</span> alla sezione
+        <a
+          :href="`${this.$globalVar}/frontoffice/community`"
+          style="color: #830094"
+          lang="en"
+          xml:lang="en"
+          >community</a
+        >!
+      </div>
+    </section>
+
     <!-- image-gallery section -->
     <main class="container">
       <div class="row">
@@ -57,7 +73,7 @@
             />
             <router-link
               role="button"
-              class="btn btn-warning"
+              class="btn btn-warning game-title"
               :to="{ path: `${game.link}` }"
               >{{ game.direct }}</router-link
             >
@@ -78,18 +94,19 @@ export default {
   name: "GamesView",
   data() {
     return {
+      myVar: this.$globalVar,
       games: [
         {
           img: "gallery2.png",
           link: "/giochi/memory",
           direct: "memory",
-          description: "Aiuta le coppie a ritrovarsi!",
+          description: "Aiuta le coppie a ricongiungersi!",
         },
         {
           img: "gallery3.png",
           link: "/giochi/quiz",
           direct: "quiz",
-          description: "Sei acculturato sul campo animale?",
+          description: "Sei acculturato nel campo animale?",
         },
         {
           img: "gallery4.png",
@@ -116,6 +133,10 @@ export default {
   border: 1px solid #000;
 }
 
+.grid {
+  font-size: 20px;
+}
+
 /* hero section */
 .hero {
   height: 38vh;
@@ -137,5 +158,11 @@ export default {
 
 li {
   list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .game-title {
+    font-size: 14px;
+  }
 }
 </style>

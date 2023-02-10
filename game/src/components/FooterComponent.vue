@@ -20,10 +20,10 @@
               <span lang="en" xml:lang="en">Link</span> utili
             </p>
             <p class="list">
-              <a href="http://localhost:8000/frontoffice/"
+              <a :href="`${this.$globalVar}/frontoffice`"
                 >area <span lang="en" xml:lang="en">VIP</span></a
               ><br />
-              <a href="http://localhost:8000/backoffice">area riservata</a>
+              <a :href="`${this.$globalVar}/backoffice`">area riservata</a>
             </p>
           </section>
 
@@ -53,6 +53,11 @@
 <script>
 export default {
   name: "FooterComponent",
+  data() {
+    return {
+      myVar: this.$globalVar,
+    };
+  },
 };
 </script>
 

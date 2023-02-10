@@ -11,22 +11,10 @@ const routes = [
       import(/* webpackChunkName: "home" */ "../views/HomeView.vue"),
   },
   {
-    path: "/servizi",
-    name: "Servizi",
+    path: "/chi-siamo",
+    name: "Chi siamo",
     component: () =>
-      import(/* webpackChunkName: "servizi" */ "../views/ServicesView.vue"),
-  },
-  {
-    path: "/negozio",
-    name: "Negozio",
-    component: () =>
-      import(/* webpackChunkName: "negozio" */ "../views/ShopView.vue"),
-  },
-  {
-    path: "/giochi",
-    name: "Giochi",
-    component: () =>
-      import(/* webpackChunkName: "giochi" */ "../views/GamesView.vue"),
+      import(/* webpackChunkName: "chi-siamo" */ "../views/AboutView.vue"),
   },
   {
     path: "/dati-personali",
@@ -35,16 +23,34 @@ const routes = [
       import(/* webpackChunkName: "dati-personali" */ "../views/AdminView.vue"),
   },
   {
-    path: "/chi-siamo",
-    name: "Chi siamo",
-    component: () =>
-      import(/* webpackChunkName: "chi-siamo" */ "../views/AboutView.vue"),
-  },
-  {
     path: "/contatti",
     name: "Contatti",
     component: () =>
       import(/* webpackChunkName: "contatti" */ "../views/ContactsView.vue"),
+  },
+  {
+    path: "/informazioni-curiose",
+    name: "Informazioni curiose",
+    component: () =>
+      import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),
+  },
+  {
+    path: "/giochi",
+    name: "Giochi",
+    component: () =>
+      import(/* webpackChunkName: "giochi" */ "../views/GamesView.vue"),
+  },
+  {
+    path: "/giochi/memory",
+    name: "Memory",
+    component: () =>
+      import(/* webpackChunkName: "memory" */ "../views/MemoryView.vue"),
+  },
+  {
+    path: "/giochi/quiz",
+    name: "Quiz",
+    component: () =>
+      import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
   },
   {
     path: "/giochi/morra-cinese",
@@ -61,52 +67,16 @@ const routes = [
       import(/* webpackChunkName: "scarabeo" */ "../views/ScrabbleView.vue"),
   },
   {
-    path: "/giochi/memory",
-    name: "Memory",
+    path: "/servizi",
+    name: "Servizi",
     component: () =>
-      import(/* webpackChunkName: "memory" */ "../views/MemoryView.vue"),
+      import(/* webpackChunkName: "servizi" */ "../views/ServicesView.vue"),
   },
   {
-    path: "/giochi/quiz",
-    name: "Quiz",
+    path: "/negozio",
+    name: "Negozio",
     component: () =>
-      import(/* webpackChunkName: "quiz" */ "../views/QuizView.vue"),
-  },
-  {
-    path: "/informazioni-curiose",
-    name: "Informazioni curiose",
-    component: () =>
-      import(/* webpackChunkName: "curiosità" */ "../views/CuriosityView.vue"),
-  },
-  {
-    path: "/prova",
-    name: "prova",
-    component: () =>
-      import(
-        /* webpackChunkName: "prova" */ "../components/LoginComponent.vue"
-      ),
-  },
-  {
-    path: "/prova1",
-    name: "prova1",
-    component: () =>
-      import(
-        /* webpackChunkName: "prova1" */ "../components/SignupComponent.vue"
-      ),
-  },
-  {
-    path: "/prova2",
-    name: "prova2",
-    component: () =>
-      import(
-        /* webpackChunkName: "prova2" */ "../components/UserPetComponent.vue"
-      ),
-  },
-  {
-    path: "/admin",
-    name: "Admin",
-    component: () =>
-      import(/* webpackChunkName: "admin" */ "../views/AdminView.vue"),
+      import(/* webpackChunkName: "negozio" */ "../views/ShopView.vue"),
   },
 ];
 

@@ -111,7 +111,7 @@ function createHtmlPost(post)
 		innerHTML += `
 						<hr>
 						<div class="d-flex justify-content-end">
-							<button type="button" onclick="deletePost('${post._id}')" class="btn btn-sm btn-danger">Elimina</button>
+							<button type="button" id="delete-${post._id}" class="btn btn-sm btn-danger">Elimina</button>
 						</div>
 					</div>
 				</div>	
@@ -142,10 +142,14 @@ function showPosts(posts)
 
 	p.html(p.html() + innerHTML);
 
+	for (let i = 0; i < posts.length; i++) {
+		$(`#delete-${posts[i]._id}`).click({ 'id': `${posts[i]._id}` }, deletePost);
+	}
 }
 
-function deletePost(id)
+function deletePost(event)
 {
+	let id = event.data.id;
 	$.ajax({
 		'url': `/posts/${id}`,
 		'method': 'DELETE'

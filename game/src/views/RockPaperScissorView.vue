@@ -123,8 +123,18 @@
             </div>
           </div>
           <div class="flex-fill">
-            <button class="btn btn-warning border border-dark" @click="reset()">
-              Rigioca
+            <button
+              class="btn btn-warning border border-dark"
+              style="margin-right: 10px"
+              @click="reset()"
+            >
+              Rigioca!
+            </button>
+            <button
+              class="btn btn-warning border border-dark"
+              style="background-color: #f77f00"
+            >
+              Salva il punteggio!
             </button>
           </div>
         </section>

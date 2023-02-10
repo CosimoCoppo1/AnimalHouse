@@ -2,8 +2,12 @@
   <div class="card-container mx-auto mt-5">
     <div class="card">
       <section class="card-body">
-        <h3 class="card__title">I tuoi animali</h3>
-        <p>Ecco la lista degli animali registrati al tuo profilo!</p>
+        <h3 class="card__title">I tuoi punteggi</h3>
+        <p>
+          Hai fatto un salto alla sezione giochi di
+          <span lang="en" xml:lang="en">Animal House</span>?<br />Se sì, qui
+          troverai i tuoi migliori <span lang="en" xml:lang="en">scores</span>!
+        </p>
         <hr />
         <div
           v-for="(animal, index) in this.userAnimals"
@@ -49,9 +53,9 @@ export default {
       );
       this.userId = response.data[0]._id;
     },
-    async getUserPet() {
+    async getUserPoint() {
       let response = await axios.get(
-        `${this.$globalVar}/userPet/user/${this.userId}`
+        `${this.$globalVar}/scores/user/${this.userId}`
       );
       this.userAnimals = response.data;
     },

@@ -51,26 +51,23 @@ export default {
   name: "LoginComponent",
   data() {
     return {
+      myVar: this.$globalVar,
       login: {
         email: null,
         password: null,
       },
       logindata: {},
-      message: "",
-      success: false,
       loginId: "",
     };
   },
   methods: {
     postData(e) {
-      console.warn(this.login);
       axios
-        .post("http://localhost:8000/auth/user/login", this.login)
+        .post(`${this.$globalVar}/auth/user/login`, this.login)
         .then((response) => {
           if (response.status == 200) {
             this.logindata = response.data;
-            this.message = "Accesso avvenuto con successo!";
-            this.success = true;
+            alert("Accesso avvenuto con successo!");
             localStorage.setItem(
               this.logindata.token,
               JSON.stringify({
@@ -78,9 +75,14 @@ export default {
                 email: this.logindata.email,
               })
             );
-          } else {
-            this.message = "Accesso negato... Email o password scorretta";
+            window.location.href = "./dati-personali";
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          alert("Accesso negato... Email o password scorretta!");
+          this.login.email = null;
+          this.login.password = null;
         });
       e.preventDefault();
     },
