@@ -61,7 +61,7 @@
 				{{#each petWithSections}}
 					<section>
 						<h1 class="ps-1 p-4"><span><img src="backoffice/img/icons8-forward-32.png" height="20" class="pe-3" alt=""></span>{{this.name}}</h1>
-						<div class="row row-cols-1 row-cols-xl-4 g-4">
+						<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
 							{{#each this.sections}}
 								<div class="col">
 									<div class="card shadow h-100 border border-1 border-opacity-50">
