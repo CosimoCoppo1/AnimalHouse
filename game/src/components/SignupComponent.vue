@@ -65,7 +65,7 @@ export default {
   name: "SignupComponent",
   data() {
     return {
-      myVar: this.$globalVar,
+      myVar: [this.$globalVar, this.$keyName],
       signup: {
         username: null,
         email: null,
@@ -83,7 +83,7 @@ export default {
             this.signup = response.data;
             alert("Registrazione avvenuta con successo!");
             localStorage.setItem(
-              this.signup.token,
+              this.$keyName,
               JSON.stringify({
                 username: this.signup.username,
                 email: this.signup.email,

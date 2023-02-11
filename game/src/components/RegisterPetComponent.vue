@@ -73,7 +73,7 @@ export default {
   name: "RegisterPetComponent",
   data() {
     return {
-      myVar: this.$globalVar,
+      myVar: [this.$globalVar, this.$keyName],
       userpet: {
         user: null,
         pet: null,
@@ -92,8 +92,7 @@ export default {
       this.categories = response.data;
     },
     async getUser() {
-      let key = localStorage.key(0);
-      this.userData = JSON.parse(localStorage.getItem(key));
+      this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       let response = await axios.get(
         `${this.$globalVar}/users?username=${this.userData.username}`
       );

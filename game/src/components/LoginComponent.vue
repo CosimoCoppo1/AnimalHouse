@@ -51,7 +51,7 @@ export default {
   name: "LoginComponent",
   data() {
     return {
-      myVar: this.$globalVar,
+      myVar: [this.$globalVar, this.$$keyName],
       login: {
         email: null,
         password: null,
@@ -69,7 +69,7 @@ export default {
             this.logindata = response.data;
             alert("Accesso avvenuto con successo!");
             localStorage.setItem(
-              this.logindata.token,
+              this.$keyName,
               JSON.stringify({
                 username: this.logindata.username,
                 email: this.logindata.email,

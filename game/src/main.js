@@ -8,4 +8,5 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 let app = createApp(App);
 app.config.globalProperties.$globalVar = "http://localhost:8000";
+app.config.globalProperties.$keyName = "userKey";
 app.use(router).mount("#app");
