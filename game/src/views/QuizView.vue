@@ -40,7 +40,7 @@
               </select>
             </div>
             <div class="buttons">
-              <button type="button" class="btn init" @click="initGame()">
+              <button type="button" class="btn init" @click="this.initGame()">
                 Inizia!
               </button>
             </div>
@@ -104,7 +104,7 @@
               {{ this.finalPoints }}</span
             >
             <div class="buttons">
-              <button class="btn init" type="button" @click="resetQuiz()">
+              <button class="btn init" type="button" @click="this.resetQuiz()">
                 Rigioca!
               </button>
               <button class="btn send" type="button" @click="this.postScores()">
@@ -206,23 +206,19 @@ export default {
           .then((response) => (this.userId = response.data[0]._id));
       }
     },
-    initGame() {
+    async initGame() {
       if (this.chooseCategory == 0) {
-        axios
-          .get(`${this.$globalVar}/questions`)
-          .then((response) => (this.questions = response.data));
+        let response = await axios.get(`${this.$globalVar}/questions`);
+        this.questions = response.data;
         this.count = 10;
       } else {
-        axios
-          .get(
-            `${this.$globalVar}/questions?category=${
-              this.categories[this.chooseCategory]
-            }`
-          )
-          .then((response) => {
-            this.questions = response.data;
-            this.count = this.questions.length;
-          });
+        let response = await axios.get(
+          `${this.$globalVar}/questions?category=${
+            this.categories[this.chooseCategory]
+          }`
+        );
+        this.questions = response.data;
+        this.count = this.questions.length;
       }
       this.index = 0;
     },
