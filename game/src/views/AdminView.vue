@@ -112,6 +112,7 @@ export default {
   data() {
     return {
       show: "",
+      myVar: this.$keyName,
     };
   },
   components: {
@@ -126,7 +127,9 @@ export default {
       this.show = data;
     },
     alreadyLogin() {
-      if (localStorage.length == 0) {
+      let key = localStorage.getItem(this.$keyName);
+      console.log(key);
+      if (key == null) {
         return false;
       } else {
         return true;
@@ -138,6 +141,9 @@ export default {
       this.show = "";
       window.location.reload();
     },
+  },
+  created() {
+    this.alreadyLogin();
   },
 };
 </script>
