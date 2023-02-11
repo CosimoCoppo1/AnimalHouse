@@ -51,7 +51,7 @@ export default {
   name: "LoginComponent",
   data() {
     return {
-      myVar: [this.$globalVar, this.$$keyName],
+      myVar: [this.$globalVar, this.$keyName],
       login: {
         email: null,
         password: null,

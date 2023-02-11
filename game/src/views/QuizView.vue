@@ -125,7 +125,7 @@ export default {
   name: "QuizView",
   data() {
     return {
-      myVar: this.$globalVar,
+      myVar: [this.$globalVar, this.$keyName],
       selectedAnswer: "",
       index: -1,
       count: 0,
@@ -198,9 +198,8 @@ export default {
   },
   methods: {
     getUser() {
-      let key = localStorage.key(0);
-      if (key != null) {
-        this.userData = JSON.parse(localStorage.getItem(key));
+      this.userData = JSON.parse(localStorage.getItem(this.$keyName));
+      if (this.userData != null) {
         axios
           .get(`${this.$globalVar}/users?username=${this.userData.username}`)
           .then((response) => (this.userId = response.data[0]._id));
@@ -244,7 +243,7 @@ export default {
     },
     showResults() {
       this.index++;
-      this.finalPoints = this.correctAnswers * 3 + 100 - this.wrongAnswers * 2;
+      this.finalPoints = this.correctAnswers * 3 + 80 - this.wrongAnswers * 2;
     },
     resetQuiz() {
       this.chooseCategory = 0;

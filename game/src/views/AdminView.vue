@@ -136,7 +136,7 @@ export default {
       }
     },
     logout() {
-      localStorage.clear();
+      localStorage.removeItem(this.$keyName);
       this.alreadyLogin();
       this.show = "";
       window.location.reload();

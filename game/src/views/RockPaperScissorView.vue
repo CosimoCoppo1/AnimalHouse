@@ -151,6 +151,7 @@ export default {
   name: "RockPaperScissorView",
   data() {
     return {
+      myVar: [this.$globalVar, this.$keyName],
       options: ["Rock", "Paper", "Scissor"],
       yourWeapon: "",
       computerWeapon: "",
@@ -171,9 +172,8 @@ export default {
   },
   methods: {
     getUser() {
-      let key = localStorage.key(0);
-      if (key != null) {
-        this.userData = JSON.parse(localStorage.getItem(key));
+      this.userData = JSON.parse(localStorage.getItem(this.$keyName));
+      if (this.userData != null) {
         axios
           .get(`${this.$globalVar}/users?username=${this.userData.username}`)
           .then((response) => (this.userId = response.data[0]._id));
