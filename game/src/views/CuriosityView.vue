@@ -46,15 +46,14 @@
       <div class="grid" v-for="(keyword, index) in this.keywords" :key="index">
         <menu class="col">
           <li>
-            <button
-              type="button"
-              class="btn keyword__button"
+            <div
+              class="keyword__button"
               :style="{
                 'background-color': this.changeColor(`${index}`),
               }"
             >
               <h4>{{ keyword.title }}</h4>
-            </button>
+            </div>
           </li>
         </menu>
       </div>
@@ -296,9 +295,9 @@ export default {
 }
 
 .keyword__button {
-  border-radius: 50%;
+  border-radius: 100%;
   border: 0.5px solid #0000008c;
-  padding: 15px;
+  padding: 30px;
   margin: 10px;
   color: #fff;
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
