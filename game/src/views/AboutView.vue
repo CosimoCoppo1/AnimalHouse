@@ -75,7 +75,7 @@
       </div>
     </section>
 
-    <!-- image-gallery section -->
+    <!-- gallery section -->
     <section class="container-fluid">
       <div class="row">
         <div
@@ -113,10 +113,8 @@
             :href="`${this.$globalVar}/frontoffice`"
             class="btn btn-danger"
             role="button"
-            lang="en"
-            xml:lang="en"
           >
-            VIP
+            clienti
           </a>
           di <span lang="en" xml:lang="en">Animal House</span>!
         </p>
@@ -270,6 +268,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .btn {
   background-color: #ff6868;
   color: #000;
@@ -334,7 +333,7 @@ export default {
   color: #f84444;
 }
 
-/* client section */
+/* gallery section */
 .image {
   border-radius: 20px;
 }

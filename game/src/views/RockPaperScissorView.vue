@@ -62,7 +62,7 @@
       </div>
     </section>
 
-    <!-- reset area -->
+    <!-- game section -->
     <div class="row">
       <section class="col-md-6 mx-auto">
         <main
@@ -74,28 +74,28 @@
               :class="this.yourWeapon === 'Rock' ? 'checked' : ''"
               @click="chooseWeapon('Rock')"
             >
-              <p hidden>clicca</p>
+              <p>elefante</p>
             </button>
             <button
               class="p"
               :class="this.yourWeapon === 'Paper' ? 'checked' : ''"
               @click="chooseWeapon('Paper')"
             >
-              <p hidden>clicca</p>
+              <p>topo</p>
             </button>
             <button
               class="s"
               :class="this.yourWeapon === 'Scissor' ? 'checked' : ''"
               @click="chooseWeapon('Scissor')"
             >
-              <p hidden>clicca</p>
+              <p>gatto</p>
             </button>
           </section>
           <div class="game">
             <button class="chooseWeapon" v-if="!this.yourWeapon">
               Scegli il tuo animale
             </button>
-            <button class="fight" v-if="this.yourWeapon" @click="fight()">
+            <button class="fight" v-if="this.yourWeapon" @click="this.fight()">
               SFIDA!
             </button>
             <div class="fighting" v-if="this.fighting">
@@ -122,11 +122,13 @@
               <span class="badge">{{ this.totalRounds }}</span>
             </div>
           </div>
+
+          <!-- cta section -->
           <div class="flex-fill">
             <button
               class="btn btn-warning border border-dark"
               style="margin-right: 10px"
-              @click="reset()"
+              @click="this.reset()"
             >
               Rigioca!
             </button>
@@ -171,6 +173,7 @@ export default {
     };
   },
   methods: {
+    /* GET credenziali utente con accesso effettuato */
     getUser() {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       if (this.userData != null) {
@@ -179,15 +182,18 @@ export default {
           .then((response) => (this.userId = response.data[0]._id));
       }
     },
+    /* impostazione mossa dell'utente  */
     chooseWeapon(weapon) {
       this.yourWeapon = weapon;
       this.result = "";
       this.computerWeapon = "";
     },
+    /* set caricamento per la sfida */
     fight() {
       this.fighting = true;
       this.pretendProcessing();
     },
+    /* caricamento visivo prima che venga scelta la mossa del computer  */
     pretendProcessing() {
       let x = 0;
       let intervalID = setInterval(() => {
@@ -201,6 +207,7 @@ export default {
         }
       }, 100);
     },
+    /* shuffle choice della mossa del computer */
     _fight() {
       this.computerWeapon =
         this.options[Math.floor(Math.random() * this.options.length)];
@@ -227,10 +234,12 @@ export default {
         }
       }
     },
+    /* impostazioni per sfida finita in pareggio */
     draw() {
       this.result = "pareggio";
       this.totalRounds++;
     },
+    /* impostazioni per sfida finita in vittoria per l'utente */
     win() {
       this.result = "vittoria";
       this.yourScore++;
@@ -240,6 +249,7 @@ export default {
         this.finalPoints = 0;
       }
     },
+    /* impostazioni per sfida finita in vittoria per il computer */
     lost() {
       this.result = "sconfitta";
       this.computerScore++;
@@ -249,6 +259,7 @@ export default {
         this.finalPoints = 0;
       }
     },
+    /* reimposta le caratteristiche di gioco iniziali */
     reset() {
       this.computerScore = 0;
       this.yourScore = 0;
@@ -258,6 +269,7 @@ export default {
       this.totalRounds = 0;
       this.finalPoints = 0;
     },
+    /* POST punteggio di gioco dell'utente che ha effettuato l'accesso */
     postScores() {
       if (this.finalPoints < 0) {
         this.finalPoints = 0;
@@ -288,6 +300,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .text {
   font-size: 18px;
 }
@@ -358,6 +371,14 @@ export default {
 .options button.checked {
   background-color: #bfcca3;
   transform: scale(1.2);
+}
+
+.options button.r p,
+.options button.p p,
+.options button.s p {
+  position: relative;
+  top: -30px;
+  font-weight: bold;
 }
 
 .it {

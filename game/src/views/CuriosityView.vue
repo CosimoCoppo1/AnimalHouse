@@ -35,9 +35,8 @@
       <div class="col">
         <h3 class="keyword__title">In questa pagina</h3>
         <p class="keyword__text">
-          Divertiti con i simpatici video sui nostri amici animali in fondo alla
-          pagina e impara nuove cose consultando le carte bifronte. Accedi alle
-          aree di interesse con un <span lang="en" xml:lang="en">click</span>.
+          Impara nuove cose consultando le carte bifronte e accedi alle aree di
+          interesse con un <span lang="en" xml:lang="en">click</span>.
         </p>
       </div>
     </section>
@@ -47,16 +46,15 @@
       <div class="grid" v-for="(keyword, index) in this.keywords" :key="index">
         <menu class="col">
           <li>
-            <a
-              role="button"
+            <button
+              type="button"
               class="btn keyword__button"
-              :href="`${keyword.direct}`"
               :style="{
                 'background-color': this.changeColor(`${index}`),
               }"
             >
               <h4>{{ keyword.title }}</h4>
-            </a>
+            </button>
           </li>
         </menu>
       </div>
@@ -140,85 +138,70 @@
       </section>
 
       <!-- card section -->
-      <article class="container-fluid" id="card" style="margin-bottom: 80px">
+      <article class="container-fluid" style="margin-bottom: 80px">
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
           <div
             v-for="(category, index) in this.categories"
             :key="category"
             class="col"
           >
-            <div class="card-container mx-auto mt-5">
-              <div class="card card-front">
-                <section class="card-body">
-                  <h4
-                    class="card__name"
-                    :style="{
-                      color: this.changeColor(`${index}`),
-                      'border-color': this.changeColor(`${index}`),
-                    }"
-                  >
-                    {{ category.name }}
-                  </h4>
-                  <p>{{ category.desc }}</p>
-                </section>
-              </div>
-              <div class="card card-back">
-                <div
-                  class="card-body"
-                  :style="{ 'background-color': this.changeColor(`${index}`) }"
-                >
-                  <h5 class="card__name">Carta d'identità</h5>
-                  <section>
-                    <p>
-                      <i class="bi bi-balloon"></i>
-                      Età :
-                      {{ category.età }}
-                    </p>
-
-                    <p>
-                      <i class="bi bi-egg"></i>
-
-                      Alimentazione :
-                      {{ category.alimentazione }}
-                    </p>
-                    <p>
-                      <i class="bi bi-globe-americas"></i>
-
-                      <span lang="en" xml:lang="en">Habitat</span> :
-                      {{ category.habitat }}
-                    </p>
+            <button
+              class="button-card"
+              :id="`${index}`"
+              :class="this.calcCard(`${index}`) ? '' : 'change-front'"
+              @click="this.changeCard(`${index}`)"
+            >
+              <div class="card-container mx-auto mt-5">
+                <div class="card card-front">
+                  <section class="card-body">
+                    <h4
+                      class="card__name"
+                      :style="{
+                        color: this.changeColor(`${index}`),
+                        'border-color': this.changeColor(`${index}`),
+                      }"
+                    >
+                      {{ category.name }}
+                    </h4>
+                    <p>{{ category.desc }}</p>
                   </section>
                 </div>
+                <div class="card card-back">
+                  <div
+                    class="card-body"
+                    :style="{
+                      'background-color': this.changeColor(`${index}`),
+                    }"
+                  >
+                    <h5 class="card__name">Carta d'identità</h5>
+                    <section>
+                      <p>
+                        <i class="bi bi-balloon"></i>
+                        Età :
+                        {{ category.età }}
+                      </p>
+
+                      <p>
+                        <i class="bi bi-egg"></i>
+
+                        Alimentazione :
+                        {{ category.alimentazione }}
+                      </p>
+                      <p>
+                        <i class="bi bi-globe-americas"></i>
+
+                        <span lang="en" xml:lang="en">Habitat</span> :
+                        {{ category.habitat }}
+                      </p>
+                    </section>
+                  </div>
+                </div>
               </div>
-            </div>
+            </button>
           </div>
         </div>
       </article>
     </main>
-
-    <!-- description section -->
-    <section class="grid paragraph">
-      <div class="col">
-        <h3 class="big-text description__title">Simpatici video di animali!</h3>
-        <p class="description__text">
-          Ecco alcuni video di animali che ti strapperanno un sorriso!
-        </p>
-      </div>
-    </section>
-
-    <!-- video-gallery section -->
-    <section class="video__container" id="gallery">
-      <div class="video__list">
-        <div class="video" v-for="(video, index) in this.videos" :key="index">
-          <video muted controls alt="">
-            <source
-              :src="require(`@/assets/curiosity/${video.source}`)"
-              type="video/mp4"
-            />
-          </video>
-        </div>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -231,20 +214,23 @@ export default {
     return {
       myVar: this.$globalVar,
       keywords: [
-        { direct: "#card", img: "button1.png", title: "conoscenza" },
-        { direct: "#card", img: "button2.png", title: "aneddoti" },
-        { direct: "#gallery", img: "button3.png", title: "divertimento" },
-      ],
-      videos: [
-        { source: "gallery1.mp4", alt: ".." },
-        { source: "gallery2.mp4", alt: ".." },
-        { source: "gallery3.mp4", alt: ".." },
+        { img: "button1.png", title: "conoscenza" },
+        { img: "button2.png", title: "aneddoti" },
+        { img: "button3.png", title: "divertimento" },
       ],
       categories: [],
+      click: {},
       colors: ["#2E604C", "#005180", "#9341b3", "#a52252", "#c4331c"],
     };
   },
   methods: {
+    /* imposta il counter dei click su ogni carta */
+    defineCount() {
+      for (let i = 0; i < 16; i++) {
+        this.click[i] = 0;
+      }
+    },
+    /* cambia colore delle icone della card section */
     changeColor(index) {
       for (let i = 0; i <= 4; i++) {
         if (index % 5 == i) {
@@ -252,6 +238,15 @@ export default {
         }
       }
     },
+    /* cambia il lato di visualizzazione delle card sulle curiosità */
+    changeCard(index) {
+      this.click[index]++;
+    },
+    /* definisce il lato di visualizzazione della card */
+    calcCard(index) {
+      return this.click[index] % 2 == 0;
+    },
+    /* GET curiosità sugli animali */
     getCuriosities() {
       axios
         .get(`${this.$globalVar}/curiosities?qty=16`)
@@ -260,11 +255,14 @@ export default {
   },
   created() {
     this.getCuriosities();
+    this.defineCount();
+    this.calcCard();
   },
 };
 </script>
 
 <style scoped>
+/* helpers */
 .btn {
   background-color: #1f6600;
   color: #fff;
@@ -394,6 +392,11 @@ export default {
   color: #0000008c;
 }
 
+.button-card {
+  border: none;
+  background-color: #fff;
+}
+
 .card__collaboration {
   text-decoration: none;
   color: #177bb5;
@@ -406,11 +409,11 @@ export default {
   height: 389px;
 }
 
-.card-container:hover .card-front {
+.change-front .card-front {
   transform: rotateY(180deg);
 }
 
-.card-container:hover .card-back {
+.change-front .card-back {
   transform: rotateY(0deg);
 }
 
@@ -457,39 +460,5 @@ export default {
     font-size: 17px;
     text-align: justify;
   }
-}
-
-/* video gallery section */
-.video__container {
-  position: relative;
-  margin-bottom: 50px;
-  width: 100%;
-}
-
-.video__container .video__list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
-  justify-content: center;
-}
-
-.video__container .video__list .video {
-  height: 250px;
-  width: 350px;
-  border-radius: 5px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.video__container .video__list .video video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transition: 0.2s linear;
-}
-
-.video__container .video__list .video:hover video {
-  transform: scale(1.03);
 }
 </style>

@@ -17,6 +17,8 @@
         Inizia a giocare!
       </button>
       <h2 class="status">{{ status }}</h2>
+
+      <!-- game section -->
       <main class="game-board mb-2">
         <CardComponent
           v-for="(card, index) in cardList"
@@ -164,17 +166,6 @@ export default {
   background-color: #03045e;
 }
 
-.description__title {
-  margin-top: 70px;
-  color: #03045e;
-}
-
-.status {
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-
 .buttons {
   display: flex;
   margin-top: 20px;
@@ -191,7 +182,18 @@ export default {
   width: calc(100% / 2 - 8px);
 }
 
+.description__title {
+  margin-top: 70px;
+  color: #03045e;
+}
+
 /* board section */
+.status {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
 .game-board {
   display: grid;
   grid-template-columns: repeat(4, 130px);

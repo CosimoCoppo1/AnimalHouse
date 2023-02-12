@@ -151,9 +151,7 @@
         </h4>
         <p>
           Passa alla sezione
-          <a :href="`${this.$globalVar}/frontoffice`" class="link"
-            ><span lang="en" xml:lang="en">VIP</span></a
-          >
+          <a :href="`${this.$globalVar}/frontoffice`" class="link">clienti</a>
           per usufruire di tutti i servizi senza limitazioni e comprare
           direttamente i prodotti dal nostro negozio. Tante altre sorprese al
           <span lang="en" xml:lang="en">link</span> che scoprirai solamente

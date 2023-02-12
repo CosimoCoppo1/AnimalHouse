@@ -1,4 +1,5 @@
 <template>
+  <!-- navbar section -->
   <div id="page-top">
     <nav class="navbar navbar-expand-lg fixed-top navbar-light">
       <a class="navbar-brand" href="#page-top">
@@ -73,17 +74,19 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
+.link {
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* navbar section */
 .navbar {
   background-color: #dfffff;
 }
 
 .logo {
   color: #03045e;
-  margin-left: 10px;
-}
-
-.link {
-  text-decoration: none;
   margin-left: 10px;
 }
 

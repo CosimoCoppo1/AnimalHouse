@@ -6,6 +6,7 @@
           <span lang="en" xml:lang="en">Quiz Animal House</span>
         </h1>
         <div class="question-container">
+          <!-- intro-container section -->
           <div v-if="this.index == -1" class="details">
             <p>
               Benvenuto nella sezione <b lang="en" xml:lang="en">quiz</b> di
@@ -45,9 +46,9 @@
               </button>
             </div>
           </div>
-          <!-- domande -->
+
+          <!-- game section -->
           <main v-else-if="this.index < this.count">
-            <!-- inizio box domande -->
             <h2
               class="question"
               v-html="this.questions[this.index].question"
@@ -65,14 +66,14 @@
             >
               <span v-html="answer"></span>
             </button>
-            <!-- fine box domande -->
+
             <div class="buttons">
               <button
                 class="btn init"
                 v-show="
                   this.selectedAnswer !== '' && this.index < this.count - 1
                 "
-                @click="nextQuestion()"
+                @click="this.nextQuestion()"
               >
                 Prossima domanda!
               </button>
@@ -81,13 +82,14 @@
                 v-show="
                   this.selectedAnswer !== '' && this.index === this.count - 1
                 "
-                @click="showResults()"
+                @click="this.showResults()"
               >
                 Termina il <span lang="en" xml:lang="en">quiz</span>!
               </button>
             </div>
           </main>
-          <!-- risultati -->
+
+          <!-- closed-game section -->
           <div v-else class="details">
             <p>Gioco terminato.<br />Dai uno sguardo al tuo punteggio:</p>
             <span
@@ -197,6 +199,7 @@ export default {
     };
   },
   methods: {
+    /* GET credenziali utente con accesso effettuato */
     getUser() {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       if (this.userData != null) {
@@ -205,6 +208,7 @@ export default {
           .then((response) => (this.userId = response.data[0]._id));
       }
     },
+    /* GEt domande e creazione table per il quiz game */
     async initGame() {
       if (this.chooseCategory == 0) {
         let response = await axios.get(`${this.$globalVar}/questions`);
@@ -221,6 +225,7 @@ export default {
       }
       this.index = 0;
     },
+    /* verifica correttezza della risposta dell'utente */
     answered(key) {
       this.selectedAnswer = key;
       if (this.selectedAnswer === this.questions[this.index].correctAnswer) {
@@ -229,6 +234,7 @@ export default {
         this.wrongAnswers++;
       }
     },
+    /* selezione della risposta per l'utente */
     selectClass(key, num) {
       if (key === this.questions[num].correctAnswer) {
         return "correct";
@@ -237,14 +243,17 @@ export default {
         return "incorrect";
       }
     },
+    /* vedi domanda-risposte successivi */
     nextQuestion() {
       this.index++;
       this.selectedAnswer = "";
     },
+    /* mostra i risultati finali del gioco */
     showResults() {
       this.index++;
       this.finalPoints = this.correctAnswers * 3 + 80 - this.wrongAnswers * 2;
     },
+    /* reimposta le caratteristiche di gioco */
     resetQuiz() {
       this.chooseCategory = 0;
       this.index = -1;
@@ -252,6 +261,7 @@ export default {
       this.correctAnswers = 0;
       this.wrongAnswers = 0;
     },
+    /* POST punteggio di gioco dell'utente che ha effettuato l'accesso */
     postScores() {
       this.userPoints.bestScore = this.finalPoints;
       this.userPoints.user = this.userId;
@@ -279,14 +289,10 @@ export default {
 </script>
 
 <style>
+/* helpers */
 .link {
   text-decoration: none;
   color: #4338ca;
-}
-
-.details p {
-  font-size: 18px;
-  margin-bottom: 20px;
 }
 
 .buttons {
@@ -303,6 +309,12 @@ export default {
   font-size: 16px;
   border-radius: 5px;
   width: calc(100% / 2 - 8px);
+}
+
+/* game section */
+.details p {
+  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .buttons .init {

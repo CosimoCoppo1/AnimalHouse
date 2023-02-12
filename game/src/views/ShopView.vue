@@ -44,10 +44,8 @@
               :href="`${this.$globalVar}/frontoffice/e-commerce`"
               role="button"
               class="btn btn-success"
-              lang="en"
-              xml:lang="en"
             >
-              VIP</a
+              clienti</a
             >
             per effettuare istantaneamente gli ordini .<br />
           </p>
@@ -72,7 +70,7 @@
               class="carousel slide"
               data-ride="carousel"
             >
-              <div class="carousel-inner">
+              <div class="carousel-inner" v-if="this.viewProducts">
                 <div
                   class="carousel-item"
                   v-for="(product, index) in this.products[
@@ -132,6 +130,8 @@
             </div>
             <!-- fine carousel -->
           </div>
+
+          <!-- description section -->
           <section class="col-12 col-lg-4 p-5">
             <h4 class="fw-bold">Prodotti per {{ pet.name }}</h4>
             <p>
@@ -142,10 +142,8 @@
                 :href="`${this.$globalVar}/frontoffice/e-commerce`"
                 role="button"
                 class="btn btn-success fw-bold"
-                lang="en"
-                xml:lang="en"
               >
-                VIP
+                clienti
               </a>
               di <span lang="en" xml:lang="en">Animal House</span> ora.
             </p>
@@ -155,7 +153,7 @@
                 prodotti nel catalogo!</label
               >
             </p>
-            <div class="input-group mt-3">
+            <div class="input-group mt-3" v-if="this.viewSections">
               <select
                 :id="`select-category${pet.name}`"
                 class="form-select fw-bold"
@@ -191,17 +189,21 @@ export default {
       showProduct: {},
       sections: {},
       products: {},
+      viewSections: false,
+      viewProducts: false,
     };
   },
   methods: {
+    /* GET animali memorizzati per servizi/negozio in Animal House */
     async getPets() {
       let response = await axios.get(`${this.$globalVar}/pets`);
       this.pets = response.data;
       for (let pet of this.pets) {
-        this.showSection[pet._id] = 0;
+        this.showSection[pet._id] = 1;
         this.showProduct[pet._id] = 0;
       }
     },
+    /* GET sezioni dei prodotti degli animali in AH  */
     async getPetSections() {
       for (let pet of this.pets) {
         let response = await axios.get(
@@ -209,7 +211,9 @@ export default {
         );
         this.sections[pet._id] = response.data;
       }
+      this.viewSections = true;
     },
+    /* GET prodotti della sezione indicata per animale */
     async getProductsSection() {
       for (let keyValue of Object.entries(this.sections)) {
         let petSections = keyValue[1];
@@ -220,16 +224,20 @@ export default {
           this.products[section._id] = response.data;
         }
       }
+      this.viewProducts = true;
     },
+    /* numero dei prodotti di una sezione */
     maxSectionProduct(petId) {
       return this.products[this.sections[petId][this.showSection[petId]]._id]
         .length;
     },
+    /* vedi il prodotto precedente nel carosello */
     goPrev(petId) {
       if (this.showProduct[petId] != 0) {
         this.showProduct[petId]--;
       }
     },
+    /* vedi il prodotto successivo nel carosello */
     goNext(petId) {
       let maxProducts = this.maxSectionProduct(petId);
       if (this.showProduct[petId] < maxProducts - 1) {

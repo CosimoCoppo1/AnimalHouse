@@ -1,4 +1,5 @@
 <template>
+  <!-- card section -->
   <div class="card-container mx-auto mt-5">
     <div class="card">
       <section class="card-body">
@@ -71,10 +72,10 @@ export default {
         email: null,
         password: null,
       },
-      success: false,
     };
   },
   methods: {
+    /* POST per registrazione nuovo utente */
     postData(e) {
       axios
         .post(`${this.$globalVar}/auth/user/register`, this.signup)
@@ -96,7 +97,7 @@ export default {
         .catch((error) => {
           console.log(error);
           alert(
-            "Registrazione negata... Qualcosa è andato storto. Utilizza una password di almeno 6 caratteri!"
+            "Registrazione negata... Qualcosa è andato storto. Utilizza una password di almeno 6 caratteri o fornisci un'e-mail non ancora registrata al sito Animal House!"
           );
           this.signup.password = null;
         });
@@ -107,6 +108,25 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 75px;
+}
+
+.buttons button {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: auto;
+  border: 1px solid #000;
+  background-color: #9e0089;
+}
+
+/* card section */
 .card-container {
   width: 30rem;
   perspective: 200rem;
@@ -138,22 +158,5 @@ export default {
   .card-container {
     width: 18rem;
   }
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 75px;
-}
-
-.buttons button {
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  width: auto;
-  border: 1px solid #000;
-  background-color: #9e0089;
 }
 </style>

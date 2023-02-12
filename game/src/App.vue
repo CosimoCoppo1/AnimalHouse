@@ -19,12 +19,38 @@ export default {
 </script>
 
 <style>
+/* helpers */
 #app {
   font-family: "Inter", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.big-text {
+  font-size: 70px;
+  font-weight: 900;
+}
+
+.intro-text {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .big-text {
+    font-size: 40px;
+  }
 }
 
 /* hero section */
@@ -144,7 +170,7 @@ export default {
   }
 }
 
-/* image-gallery section */
+/* gallery section */
 .image__container {
   position: relative;
 }
@@ -182,24 +208,6 @@ export default {
   border: 7px solid #fff;
 }
 
-/* helpers */
-.big-text {
-  font-size: 70px;
-  font-weight: 900;
-}
-
-.intro-text {
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .big-text {
-    font-size: 40px;
-  }
-}
-
 /* grid system */
 .grid {
   display: flex;
@@ -218,15 +226,7 @@ export default {
   }
 }
 
-/* helpers */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
+/* navbar section */
 nav {
   padding: 30px;
 }

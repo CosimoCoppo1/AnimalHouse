@@ -20,9 +20,7 @@
               <span lang="en" xml:lang="en">Link</span> utili
             </p>
             <p class="list">
-              <a :href="`${this.$globalVar}/frontoffice`"
-                >area <span lang="en" xml:lang="en">VIP</span></a
-              ><br />
+              <a :href="`${this.$globalVar}/frontoffice`">area clienti</a><br />
               <a :href="`${this.$globalVar}/backoffice`">area riservata</a>
             </p>
           </section>

@@ -87,13 +87,7 @@
     <!-- alert section -->
     <section class="container alert alert-info" role="alert">
       Prenota subito un appuntamento passando all'area
-      <a
-        :href="`${this.$globalVar}/frontoffice/`"
-        class="link"
-        lang="en"
-        xml:lang="en"
-        >VIP</a
-      >
+      <a :href="`${this.$globalVar}/frontoffice/`" class="link">clienti</a>
       di <span lang="en" xml:lang="en">Animal House</span>.
     </section>
 

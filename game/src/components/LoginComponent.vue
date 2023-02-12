@@ -1,4 +1,5 @@
 <template>
+  <!-- card section -->
   <div class="card-container mx-auto mt-5">
     <div class="card">
       <section class="card-body">
@@ -61,6 +62,7 @@ export default {
     };
   },
   methods: {
+    /* POST per accesso utente */
     postData(e) {
       axios
         .post(`${this.$globalVar}/auth/user/login`, this.login)
@@ -80,7 +82,7 @@ export default {
         })
         .catch((error) => {
           console.log(error);
-          alert("Accesso negato... Email o password scorretta!");
+          alert("Accesso negato... Password scorretta per l'e-mail inserita!");
           this.login.email = null;
           this.login.password = null;
         });
@@ -91,6 +93,25 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 160px;
+}
+
+.buttons button {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: auto;
+  border: 1px solid #000;
+  background-color: #9e0089;
+}
+
+/* card section */
 .card-container {
   width: 30rem;
   perspective: 200rem;
@@ -122,22 +143,5 @@ export default {
   .card-container {
     width: 18rem;
   }
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 160px;
-}
-
-.buttons button {
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  width: auto;
-  border: 1px solid #000;
-  background-color: #9e0089;
 }
 </style>

@@ -1,4 +1,5 @@
 <template>
+  <!-- timeline section -->
   <section class="container-fluid" style="margin-top: 80px">
     <ul class="timeline" v-for="(step, index) in this.steps" :key="index">
       <li
@@ -27,13 +28,13 @@
       </li>
     </ul>
     <div class="text-center">
-      <a
-        :href="`${this.$globalVar}/frontoffice`"
+      <router-link
+        :to="{ path: '/dati-personali' }"
         class="btn btn-danger"
         role="button"
       >
         Unisciti alla squadra!
-      </a>
+      </router-link>
       <h4 class="mt-2 comment">
         Diventa <b>membro</b> della comunità
         <span lang="en" xml:lang="en">Animal House</span>!
@@ -47,7 +48,6 @@ export default {
   name: "TimelineComponent",
   data() {
     return {
-      myVar: this.$globalVar,
       steps: [
         {
           img: "story1.jpg",

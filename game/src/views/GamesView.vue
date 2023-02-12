@@ -132,14 +132,14 @@ export default {
 
 <style scoped>
 /* helpers */
+.grid {
+  font-size: 20px;
+}
+
 .btn {
   background-color: #830094;
   color: #fff;
   border: 1px solid #000;
-}
-
-.grid {
-  font-size: 20px;
 }
 
 /* hero section */

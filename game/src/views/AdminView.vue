@@ -28,8 +28,8 @@
       </div>
     </section>
 
-    <div v-if="this.alreadyLogin() == false">
-      <!-- buttons section -->
+    <!-- block section -->
+    <div v-if="!this.viewElement">
       <div class="buttons">
         <button
           type="button"
@@ -47,7 +47,7 @@
         </button>
       </div>
 
-      <!-- block section -->
+      <!-- user section -->
       <div v-if="this.show == 'signup'">
         <SignupComponent />
       </div>
@@ -80,7 +80,6 @@
         </button>
       </div>
 
-      <!-- block section -->
       <div v-if="this.show == 'register-animal'">
         <RegisterPetComponent />
       </div>
@@ -92,7 +91,11 @@
       </div>
 
       <div class="buttons">
-        <button class="btn btn-warning mt-5" type="button" @click="logout()">
+        <button
+          class="btn btn-warning mt-5"
+          type="button"
+          @click="this.logout()"
+        >
           Esci dal profilo
         </button>
       </div>
@@ -112,6 +115,7 @@ export default {
   data() {
     return {
       show: "",
+      viewElement: false,
       myVar: this.$keyName,
     };
   },
@@ -123,18 +127,21 @@ export default {
     UserPointComponent,
   },
   methods: {
+    /** mostra il blocco d'azione selezionato tra
+     * registrazione, access, salvataggio animale,
+     * visualizzazione animali e punteggi dell'utente
+     */
     showBlock(data) {
       this.show = data;
     },
+    /** Permette di mostrare le sezioni per
+     * acceso/registrazione o per membro di AH
+     */
     alreadyLogin() {
       let key = localStorage.getItem(this.$keyName);
-      console.log(key);
-      if (key == null) {
-        return false;
-      } else {
-        return true;
-      }
+      this.viewElement = key != null;
     },
+    /* funzione per il logout dell'utente */
     logout() {
       localStorage.removeItem(this.$keyName);
       this.alreadyLogin();
@@ -149,6 +156,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .buttons {
   display: flex;
   margin: 20px;

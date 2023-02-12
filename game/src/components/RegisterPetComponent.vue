@@ -1,4 +1,5 @@
 <template>
+  <!-- card section -->
   <div class="card-container mx-auto mt-5">
     <div class="card">
       <section class="card-body">
@@ -34,7 +35,7 @@
               type="text"
               id="formPetNameP"
               class="form-control"
-              placeholder="cucciolone"
+              placeholder="Cucciolone"
               name="user petName"
               v-model="userpet.petName"
               required
@@ -50,7 +51,7 @@
             <textarea
               id="formDescriptionP"
               class="form-control"
-              placeholder="raccontaci del tuo cucciolone..."
+              placeholder="Raccontaci del tuo cucciolone..."
               name="user description"
               v-model="userpet.desc"
             ></textarea>
@@ -83,14 +84,15 @@ export default {
       chooseCategory: 0,
       categories: {},
       userData: {},
-      userAnimals: [],
     };
   },
   methods: {
+    /* GET animali memorizzati per servizi/negozio in Animal House */
     async getPets() {
       let response = await axios.get(`${this.$globalVar}/pets`);
       this.categories = response.data;
     },
+    /* GET credenziali utente con accesso effettuato */
     async getUser() {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       let response = await axios.get(
@@ -98,6 +100,7 @@ export default {
       );
       this.userpet.user = response.data[0]._id;
     },
+    /* POST per registrazione animale utente */
     postData(e) {
       this.userpet.pet = this.categories[this.chooseCategory]._id;
       axios
@@ -121,12 +124,6 @@ export default {
         });
       e.preventDefault();
     },
-    async getUserPet() {
-      let response = await axios.get(
-        `${this.$globalVar}/userPet/user/${this.userpet.user}`
-      );
-      this.userAnimals = response.data;
-    },
   },
   created: async function () {
     await this.getPets();
@@ -136,6 +133,31 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.buttons button {
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  width: auto;
+  border: 1px solid #000;
+  background-color: #9e0089;
+}
+
+@media (max-width: 768px) {
+  .buttons {
+    margin-top: 23px;
+  }
+}
+
+/* card section */
 .card-container {
   width: 30rem;
   perspective: 200rem;
@@ -170,29 +192,6 @@ export default {
 @media (max-width: 768px) {
   .card-container {
     width: 18rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 100px;
-}
-
-.buttons button {
-  outline: none;
-  color: #fff;
-  cursor: pointer;
-  font-size: 16px;
-  border-radius: 5px;
-  width: auto;
-  border: 1px solid #000;
-  background-color: #9e0089;
-}
-
-@media (max-width: 768px) {
-  .buttons {
-    margin-top: 23px;
   }
 }
 </style>

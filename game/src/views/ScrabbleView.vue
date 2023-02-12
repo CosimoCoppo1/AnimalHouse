@@ -1,6 +1,7 @@
 <template>
   <div class="body">
     <section class="container">
+      <!-- intro-container section -->
       <h1>Gioca a scarabeo!</h1>
       <div v-if="this.index == -1" class="content">
         <section class="details">
@@ -33,6 +34,8 @@
           </div>
         </section>
       </div>
+
+      <!-- game section -->
       <div v-else-if="this.index == 0" class="content">
         <main>
           <h2 class="word">{{ this.scrabble.textAnswer }}</h2>
@@ -78,16 +81,17 @@
           </p>
         </main>
       </div>
+
+      <!-- closed-game section -->
       <div v-else class="content">
         <section class="details">
           <p>Gioco terminato.<br />Dai uno sguardo al tuo punteggio:</p>
-          <span><b class="link">Punti:</b> {{ this.points }}</span
-          >, <span><b class="link">Malus:</b> {{ this.malus }}</span>
-          <p class="mt-2">
-            Hai quindi totalizzato un punteggio di:
-            {{ this.finalPoints }}!<br />
-            Inizia una nuova partita cliccando il pulsante!
-          </p>
+          <span><b class="link">Punti</b>: {{ this.points }}</span
+          >,
+          <span
+            ><b class="link">Punteggio finale</b>: {{ this.finalPoints }}
+          </span>
+          <p class="mt-2">Inizia una nuova partita cliccando il pulsante!</p>
           <div class="buttons">
             <button
               class="feed-choice"
@@ -129,7 +133,6 @@ export default {
       choice: "",
       index: -1,
       points: 0,
-      malus: 0,
       finalPoints: 0,
       userId: "",
       userData: {},
@@ -153,6 +156,7 @@ export default {
     },
   },
   methods: {
+    /* GET credenziali utente con accesso effettuato */
     getUser() {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       if (this.userData != null) {
@@ -161,42 +165,40 @@ export default {
           .then((response) => (this.userId = response.data[0]._id));
       }
     },
+    /* GET testi delle domande di gioco */
     generateQuizQuestions() {
       axios
         .get(`${this.$globalVar}/curiosities?qty=50`)
         .then((response) => (this.gameQuestions = response.data));
     },
+    /* inizio partita per filtro Alimentazione */
     initFeed() {
       this.choice = "Alimentazione";
       this.index = 0;
       this.initGame();
     },
+    /* inizio partita per filtro Habitat */
     initHabitat() {
       this.choice = "Habitat";
       this.index = 0;
       this.initGame();
     },
-    // crea box del turno domanda-risposta scarabeo
-    // Math.random(): restituisce 0 <= x < 1
-    // Math.floor(): arrotonda per difetto x
+    /** crea box del turno domanda-risposta scarabeo
+     * Math.random(): restituisce 0 <= x < 1
+     * Math.floor(): arrotonda per difetto x
+     */
     initGame() {
-      // resituisce x in virgola mobile, poi arrotondata
-      // x risultante è indice della domanda-risposta del turno
       let randomQuestion =
         this.gameQuestions[
           Math.floor(Math.random() * this.gameQuestions.length)
         ];
-      // split per ogni lettera della risposta
       let splittedAnswer = randomQuestion.name.split("");
-      // randomizza l'ordine delle lettere nella risposta
       for (let i = 0; i < splittedAnswer.length; i++) {
         let j = Math.floor(Math.random() * (i + 1));
         let tmp = splittedAnswer[i];
         splittedAnswer[i] = splittedAnswer[j];
         splittedAnswer[j] = tmp;
       }
-      // join("") concatena le lettere in splittedAnswer
-      // memorizza domanda-risposta nelle variabili di gioco
       this.scrabble.textAnswer = splittedAnswer.join("");
       if (this.choice == "Alimentazione") {
         this.scrabble.textQuestion = randomQuestion.alimentazione;
@@ -204,48 +206,44 @@ export default {
         this.scrabble.textQuestion = randomQuestion.habitat;
       }
       this.correctAnswer = randomQuestion.name.toLowerCase();
-      // impostata massima lunghezza di inserimento caratteri per
-      // l'utente, pari alla lunghezza della risposta del turno
       this.maxLength = this.correctAnswer.length;
     },
-    // reimposta condizioni di gioco iniziali
+    /* reimposta condizioni di gioco iniziali */
     refreshGame() {
       this.scrabble.textAnswer = "";
       this.scrabble.textQuestion = "";
       this.userAnswer = "";
       this.correctAnswer = "";
-      this.malus++;
       this.initGame();
     },
-    // confronta risposta dell'utente con risposta corretta
-    // mostra messaggi in basi alla relazione tra le due
-    // passa al turno successivo se le due combaciano
+    /* confronta risposta dell'utente con risposta corretta */
     checkUserWord() {
       if (this.userAnswer == "") {
         this.message = "";
-      } else if (this.userAnswer !== this.correctAnswer) {
+      } else if (this.userAnswer != this.correctAnswer) {
         this.message = "Non è la risposta corretta... Riprova!";
         this.userAnswer = "";
         this.timerMessage = 2;
-        this.malus++;
       } else {
         this.points++;
         this.refreshGame();
       }
     },
+    /* termina la partita */
     stopGame() {
-      this.finalPoints = this.points * 4 + 20 - this.malus * 2;
+      this.finalPoints = this.points * 4 + 20;
       if (this.finalPoints < 0) {
         this.finalPoints = 0;
       }
       this.index = 2;
     },
+    /* reimposta le caratteristiche di gioco iniziali */
     restartGame() {
       this.index = -1;
       this.points = 0;
-      this.malus = 0;
       this.finalPoints = 0;
     },
+    /* POST punteggio di gioco dell'utente che ha effettuato l'accesso */
     postScores() {
       this.userPoints.bestScore = this.finalPoints;
       this.userPoints.user = this.userId;
@@ -274,6 +272,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .body {
   display: flex;
   align-items: center;
@@ -283,50 +282,9 @@ export default {
   background-size: 740px;
 }
 
-.container {
-  width: 500px;
-  border-radius: 20px;
-  background: #fff;
-}
-
-.container h1 {
-  font-size: 20px;
-  font-weight: bold;
-  padding: 25px 25px;
-  border-bottom: 1px solid #ccc;
-  text-align: center;
-}
-
-.container .content {
-  margin: 25px 20px 35px;
-}
-
-.content .word {
-  font-size: 28px;
-  font-weight: bold;
-  text-align: center;
-  letter-spacing: 20px;
-  text-transform: uppercase;
-}
-
-.details p {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
 .link {
   text-decoration: none;
   color: #9e009e;
-}
-
-.content input {
-  width: 100%;
-  height: 50px;
-  outline: none;
-  font-size: 18px;
-  padding: 0 16px;
-  border-radius: 5px;
-  border: 1px solid #aaa;
 }
 
 .content .buttons {
@@ -343,6 +301,50 @@ export default {
   font-size: 16px;
   border-radius: 5px;
   width: calc(100% / 2 - 8px);
+}
+
+/* intro-container section */
+.container {
+  width: 500px;
+  border-radius: 20px;
+  background: #fff;
+}
+
+.container h1 {
+  font-size: 20px;
+  font-weight: bold;
+  padding: 25px 25px;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+/* game section */
+.container .content {
+  margin: 25px 20px 35px;
+}
+
+.content .word {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+  overflow: auto;
+}
+
+.details p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.content input {
+  width: 100%;
+  height: 50px;
+  outline: none;
+  font-size: 18px;
+  padding: 0 16px;
+  border-radius: 5px;
+  border: 1px solid #aaa;
 }
 
 .buttons .refresh-word {

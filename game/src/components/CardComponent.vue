@@ -1,4 +1,5 @@
 <template>
+  <!-- card section -->
   <button class="card" @click="selectCard">
     <div v-if="visible" class="card-face is-front">
       <img
@@ -47,6 +48,7 @@ export default {
 </script>
 
 <style scoped>
+/* card section */
 .card {
   position: relative;
   border: none;

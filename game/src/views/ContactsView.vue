@@ -78,7 +78,7 @@
             role="button"
             class="btn btn-danger border"
           >
-            <span lang="en" xml:lang="en">VIP</span>
+            clienti
           </a>
           e siamo <b>sicuri</b> che rimarrai <em>soddisfatto</em> della tua
           scelta!
@@ -197,7 +197,7 @@ export default {
         {
           type: "Chatta",
           description:
-            "Vuoi entrare in contatto con i membri della <span lang='en' xml:lang='en'>community Animal House</span>? Accedi all'area <span lang='en' xml:lang='en'>VIP</span> per usufruire del servizio.",
+            "Vuoi entrare in contatto con i membri della <span lang='en' xml:lang='en'>community Animal House</span>? Accedi all'area clienti per usufruire del servizio.",
           img: "icon3.png",
         },
       ],
@@ -278,6 +278,7 @@ export default {
 </script>
 
 <style scoped>
+/* helpers */
 .btn {
   background-color: #7000f0;
   color: #fff;
