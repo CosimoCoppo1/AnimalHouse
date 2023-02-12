@@ -167,7 +167,12 @@ function deletePost(event)
 	});
 }
 
-let before = (new Date(Date.now())).toISOString();
+let now = new Date(Date.now());
+/* aggiungi 1 ora in più per evitare errore di visualizzazione post
+ * se il client ha una data con qualche minuto in meno del server */
+now.setTime(now.getTime() + (1*60*60*1000))
+let before = now.toISOString();
+
 function getPosts()
 {
 	$.getJSON(`/posts?qty=3&before=${before}`, (posts) => { 
