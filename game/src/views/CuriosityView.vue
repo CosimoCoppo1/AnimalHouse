@@ -35,8 +35,7 @@
       <div class="col">
         <h3 class="keyword__title">In questa pagina</h3>
         <p class="keyword__text">
-          Impara nuove cose consultando le carte bifronte e accedi alle aree di
-          interesse con un <span lang="en" xml:lang="en">click</span>.
+          Impara nuove cose consultando le carte bifronte.
         </p>
       </div>
     </section>
