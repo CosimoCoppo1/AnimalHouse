@@ -54,7 +54,7 @@ export default {
     async getUser() {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       let response = await axios.get(
-        `${this.$globalVar}/users?username=${this.userData.username}`
+        `${this.$globalVar}/users?email=${this.userData.email}`
       );
       this.userId = response.data[0]._id;
     },

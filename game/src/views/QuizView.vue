@@ -204,7 +204,7 @@ export default {
       this.userData = JSON.parse(localStorage.getItem(this.$keyName));
       if (this.userData != null) {
         axios
-          .get(`${this.$globalVar}/users?username=${this.userData.username}`)
+          .get(`${this.$globalVar}/users?email=${this.userData.email}`)
           .then((response) => (this.userId = response.data[0]._id));
       }
     },
